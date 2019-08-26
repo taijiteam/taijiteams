@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>渠道plus 天朝上品微代理</title>
+    <meta name="keywords" content="渠道PLUS丨天朝上品贵人酒代理销售查询" />
+    <meta name="description" content="您可以查询您每月销售单量" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+    <link rel="shortcut icon" href="http://www.qudaoclub.com/images/favicon.ico" type="image/x-icon"/>
+    <script src="__JS__jquery.min.js"></script>
+    <script src="__JS__mobiscroll.jquery.min.js"></script>
+    <link href="__css__mobiscroll.jquery.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="__css__agent.css?v=1">
+    <script>
+      var str = '<?php echo $json ?>';
+      if ( str ) {
+        var obj = eval('(' + str + ')');
+        if ( obj.code=='1' ) {
+          if (obj.message) {
+            alert(obj.message);
+          }
+          $('body').html('');
+          window.location.href = obj.url;
+        }
+      }
+    </script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript">
+        var url=encodeURIComponent(location.href.split('#')[0]);
+        var title ="渠道plus 天朝上品微代理";            //标题
+        var description ="签署协议即可成为渠道plus天朝上品微代理";     //摘要
+        var thisUrl = location.href.split('#')[0];         //跳转的连接
+        var imgUrl ="http://www.qudaoplus.cn/merber_all_show/Public/Club/images/coupon/share.jpg";             // 图片
+        $.ajax({
+            type : "get",
+            url : "http://www.qudaoplus.cn/php/jssdk.php?url="+url,
+            dataType : "jsonp",
+            jsonp: "callback",
+            jsonpCallback:"success_jsonpCallback",
+            success : function(data){
+                wx.config({
+                    appId: data.appId,
+                    timestamp: data.timestamp,
+                    nonceStr: data.nonceStr,
+                    signature: data.signature,
+                    url: data.url,
+                    jsApiList: [
+                       "onMenuShareTimeline", //分享给好友
+                       "onMenuShareAppMessage", //分享到朋友圈
+                       "onMenuShareQQ",  //分享到QQ
+                       "onMenuShareWeibo" //分享到微博
+                    ]
+                });
+            },
+            error:function(data){
+                alert("连接失败！");
+            }
+        });
+        wx.ready(function (){
+            var shareData = {
+                title: title,                                    //标题
+                desc: description,                               //内容
+                link: thisUrl,                                   //链接
+                imgUrl: imgUrl                                   //图片
+            };
+            wx.onMenuShareAppMessage(shareData);
+            wx.onMenuShareTimeline(shareData);
+            wx.onMenuShareQQ(shareData);
+            wx.onMenuShareWeibo(shareData);
+        });
+    </script>
+    <script type=text/javascript>
+      var browser = {
+      ua: navigator.userAgent.toLowerCase(),
+      msie: function() {
+        return /msie/.test(this.ua);
+      },
+      ie6: function() {
+        var self = this;
+        return self.msie() && /msie 6./.test(self.ua);
+      },
+      ie7: function() {
+        var self = this;
+        return self.msie() && /msie 7.0/.test(self.ua);
+      },
+      ie8: function() {
+        var self = this;
+        return self.msie() && /msie 8.0/.test(self.ua);
+      }
+      };
+      if (!browser.ie6() && !browser.ie7()) {} else {
+      window.location.href = 'update.html';
+      }
+      $(document).ready(function(){
+          //	点击menu中的li改变banner中的图片
+              $(".menu li").click(function(){
+                  var num=$(this).index();
+                  $('.banner li').eq(num).fadeIn(500).siblings().fadeOut(500);
+                  $(this).addClass('active').siblings().removeClass('active');
+              });
+          //给banner中的img加遮罩
+              $(".banner li .img-box").hover(function(){
+                  $(this).addClass('active').find('a').fadeIn(300);
+              },function(){
+                  $(this).removeClass('active').find('a').fadeOut(300);
+              });
+      });
+    </script>
+    <style>
+      body, html{
+          height: 100%;
+          width: 100%;
+          margin: 0; padding: 0;
+      }
+      h2.port{
+        font-size: 20px;
+        text-align: center;
+        margin: 10px 0px;
+      }
+      p.cont{
+        margin:15px 20px;
+        font-size: 14px;
+        line-height: 25px;
+      }
+      div.btn{
+        text-align: center;
+        margin-top: 30px;
+        height: 40px;
+      }
+      div.btn button{
+        width: 100%;
+        height: 100%;
+        border: none;
+        outline: none;
+        background-color: #BF9A56;
+        color: #fff;
+        font-size: 20px;
+        border-radius: 5px;
+      }
+      table {
+          height: 80%;
+          width: 80%;         /*  必须设置一个宽度， margin: 0 auto才能使之居于父组件中央*/
+          margin: 10px auto;  /*  通过设置外边距（margin）中的左右外边距属性为auto使之居于父组件（body）中间*/
+
+      }
+      table tr{
+          height: 40px;
+          width: 100%;
+      }
+      table td{
+        border: 1px solid #fff;
+        text-align: center;
+      }
+      table>tr>td{
+          height: 100%;
+          width: 33.3%;
+      }
+      div a{
+          color: #918987;
+          text-decoration: none;
+          font-size: 14px;
+          font-weight: bold;
+      }
+      .agreement{
+        text-align: center;
+      }
+    </style>
+</head>
+
+<body>
+
+  <section>
+    <div>
+      <h2 class="port">《合作协议》</h2>
+      <p class="cont">甲方：上海渠道商务咨询有限公司</p>
+      <p class="cont">乙方：（注：加入渠道PLUS的会员/成员） </p>
+      <p class="cont">甲方是上海渠道商务咨询有限公司拥有天朝上品系列酒品推广及销售权，贵州茅台集团旗下天朝上品酒业（贵州）有限公司“核心战略合作伙伴”，授权文件作为本备忘录附件。乙方为加入渠道PLUS资源共享平台的成员/会员，乙方自愿成为甲方渠道PLUS资源共享平台的微商代理，合作销售天朝上品系列酒品。 </p>
+      <p class="cont">一、合作内容<br />&nbsp;&nbsp;1、甲方委托乙方销售53度酱香型茅台贵人酒（相关优惠及返佣条件详见《微代理规则及特点说明》），甲方向乙方开放甲方的微代查询后台，并指导乙方进行线上操作。乙方可推荐客户加入甲方渠道PLUS资源共享平台，乙方的客户成为甲方成员/会员后可直接线上付款购买茅台贵人酒。<br />&nbsp;&nbsp;2、乙方应告知其推荐的客户在注册时必须在“推荐人信息”中填写乙方的相关信息，甲方根据后台货款到账数据及“推荐人信息”为乙方结算佣金。若乙方推荐的客户未填写“推荐人信息”或填写错误，会导致该笔返佣无法结算。</p>
+      <p class="cont">二、权利义务<br>&nbsp;&nbsp;1、双方的合作期限为甲方拥有的授权期限，甲方有义务保证提供酒品全部为合格正品。<br />&nbsp;&nbsp;2、乙方应提供详细身份信息（包括身份证复印件）、返佣账号及联系电话给甲方备案。<br />&nbsp;&nbsp;3、甲方向乙方开放微代查询后台的操作权限，并对乙方进行必要的培训。</p>
+      <p class="cont">三、佣金结算<br>&nbsp;&nbsp;1、经双方协商同意，佣金结算周期按自然月月结，以实际货款到账时间为依据统计销售数据。每月5日至8日结算上一自然月的销售到账数据，双方完成对账后，乙方应按照确认的金额提供符合甲方要求的发票。甲方收到发票后于当月15 日发放上月返佣，如遇节假日顺延。<br />&nbsp;&nbsp;2、汇款账号为乙方唯一指定的汇款账号，若该账号发生变更，乙方有义务第一时间书面通知甲方，若因乙方未及时通知甲方造成任何损失的由乙方自行承担损失。</p>
+      <p class="cont">四、产品质量<br>&nbsp;&nbsp;双方一致认可，本协议项下的产品为“53度酱香型茅台贵人酒”，该产品原则上不存在保质期限的问题，故双方都不应当接受以此理由提出的退换货事宜。</p>
+      <p class="cont">五、发货方式及运费：<br>&nbsp;&nbsp;1、甲方平台收到货款3个工作日内，根据平台内付款人填写的收货地址和联系人安排发货。<br />&nbsp;&nbsp;2、双方一致同意，以快递签收证明作为乙方的客户签收货物的凭证。</p>
+      <p class="cont">六、保密条款<br>&nbsp;&nbsp;甲乙双方均有义务信守保密承诺，不得将本协议及其所有附件的内容透露给任何第三方。</p>
+      <p class="cont" style="margin-bottom: 80px;">七、未尽事宜双方可签订补充协议作为本协议的附件。补充协议与本协议有冲突的，以补充协议为准。</p>
+    </div>
+  </section>
+
+</body>
+</html>

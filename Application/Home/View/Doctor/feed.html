@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- 防止手机点击放大问题 -->
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+  <!-- the end -->
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Doctor/css/style.css">
+</head>
+<body class="feed">
+<img src="__PUBLIC__/Doctor/images/feed.png">
+{$title}
+<!-- <h2>恭喜您预约成功！</h2>
+<div>
+	<p>感谢您的预约，</p>
+	<p>稍后客服会与您联系，</p>
+	<p>请保持电话畅通，谢谢！</p>
+</div> -->
+<span id="show" style="font-size: 12px"></span>
+<a id="a" href="{:U('Doctor/center')}">进入个人中心</a>
+<script type="text/javascript">
+	var t = 5;//设定跳转时间
+	setInterval("refer()", 1000);//启动1秒定时
+	function refer(){
+		if (t == 0) {
+			location ="{:U('Doctor/center')}";//跳转的地址
+		}
+		document.getElementById('show').innerHTML = "" + t + "秒后跳转到个人中心";//显示倒计时
+		t--;//计数器递减
+	}
+</script>
+</body>
+</html>

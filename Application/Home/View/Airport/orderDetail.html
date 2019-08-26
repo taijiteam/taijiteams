@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>渠道•机场服务</title>
+	<link rel="stylesheet" type="text/css" href="/Public/Airport/css/index.css"/>
+</head>
+<body>
+	<div class="content">
+		<div class="banner">
+			<img src="/Public/Airport/images/banner.png" class="banner_img">
+		</div>
+		<div class="contents">
+			<div class="nav">
+				<button class="nav_btn example">订单详情</button>
+			</div>
+			<div class="CrewInformation">
+				<p class="title">乘机人员信息</p>
+				<form action="form_action.asp" method="get">
+					<div class="from_username">
+						<p class="username">姓名</p>
+						<p class="nametitle">{$orderList[0]['member_name']}</p>
+					</div>
+					<div class="from_username">
+						<p class="username">职务</p>
+						<p class="nametitle">{$orderList[0]['fruition_title']}</p>
+					</div>
+					<div class="from_username">
+						<p class="username">性别</p>
+						<p class="nametitle">{$orderList[0]['fruition_sex']}</p>
+					</div>
+					<div class="from_username">
+						<p class="username">国籍</p>
+						<p class="nametitle">{$orderList[0]['fruition_inter']}</p>
+					</div>
+					<div class="from_username">
+						<p class="username">所在省/市(或直辖市/区)</p>
+						<p class="nametitle">{$orderList[0]['fruition_city']}</p>
+					</div>
+					<div class="from_username">
+						<p class="username">证件类型</p>
+						<p class="nametitle">{$orderList[0]['fruition_card_type']}</p>
+					</div>
+					<div class="from_username">
+						<p class="username">证件号码</p>
+						<p class="nametitle">{$orderList[0]['fruition_Id_card']} </p>
+					</div>
+				</form>
+				<p class="title">温馨提示</p>
+				<div class="Reminder">
+					<ul>
+						<li>1:国内VIP进出港航班只需填写姓名，职务和证件号码</li>
+						<li>2:国际VIP进出港航班需填写以上所有信息</li>
+						<li>3:若乘机人数较多，可另附一页</li>
+						<li>4:如有疑问请致电:021-53829777</li>
+					</ul>
+				</div>
+				<p class="title">办证人员名单</p>
+				<form action="form_action.asp" method="get">
+					<div class="from_username">
+						<p class="username">姓名</p>
+						<p class="nametitle">{$orderList[0]['work_name']}</p>
+					</div>
+					<div class="from_username">
+						<p class="username">职务</p>
+						<p class="nametitle">{$orderList[0]['work_title']}</p>
+					</div>
+					<div class="from_username">
+						<p class="username">证件类型</p>
+						<p class="nametitle">{$orderList[0]['work_card_type']}</p>
+					</div>
+					<div class="from_username">
+						<p class="username">证件号码</p>
+						<p class="nametitle">{$orderList[0]['work_Id_card']}</p>
+					</div>
+				</form>
+				<p class="title">航班信息</p>
+				<form action="form_action.asp" method="get">
+					<div class="from_username">
+						<p class="username">航班号</p>
+						<p class="nametitle">{$orderList[0]['flight_number']}</p>
+					</div>
+					<div class="from_username">
+						<p class="username">航程</p>
+						<p class="nametitle">{$orderList[0]['flight_voyage']}</p>
+					</div>
+					<div class="from_username">
+						<p class="username">日期</p>
+						<p class="nametitle">{$orderList[0]['flight_time']}</p><br>
+					</div>
+					<div class="from_username">
+						<p class="username">国内/外航班</p>
+						<p class="nametitle">{$orderList[0]['flight_time']}</p><br>
+					</div>
+					<div class="from_username">
+						<p class="username">车号</p>
+						<p class="nametitle">{$orderList[0]['flight_car_number']}</p>
+					</div>
+					<div class="from_username">
+						<p class="username">备注</p>
+						<p class="nametitle">{$orderList[0]['remark']}</p>
+					</div>
+					<div class="from_username">
+						<p class="username">联系人</p>
+						<p class="nametitle">{$orderList[0]['contact']}</p>
+					</div>
+					<div class="from_username">
+						<p class="username">接送单位或会员卡号</p>
+						<p class="nametitle">{$orderList[0]['work_unit']}</p>
+					</div>
+				</form>
+			</div>
+			<div class="footer_section">
+				<label>
+					<input type="checkbox" id="checkbox" style="width: 1rem;height: 1rem;vertical-align: middle;" checked />
+					渠道PLUS服务条款
+				</label>
+			</div>
+			<div class="footer">
+				<button class="footer_btn example" id="btn">返 回</button>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="/Public/Airport/js/jquery.js"></script>
+<script>
+	$(function () {
+		var qudao = $('#checkbox').is(':checked');
+		$('#btn').click(function () {
+			if (qudao == false){
+				alert('请☑️渠道PLUS条款！')
+			}else{
+				window.location.href = "/Home/Airport/order?o_state&openid={$_SESSION['openid']}";
+			}
+		})
+
+	})
+</script>
+</html>

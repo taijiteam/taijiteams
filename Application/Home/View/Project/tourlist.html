@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>旅游列表页</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Project/css/style.css">
+<style type="text/css">
+.lvyou>.body>div>.ul2{
+	width: 90%;
+	margin: 10px auto;
+}
+.lvyou>.body>div>.ul2>a>li{
+	width: 46%;
+	display: block;
+	float: left;
+	margin: 2%;
+	text-align: center;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+}
+.lvyou>.body>div>.ul2>a>li>img{
+	width: 100%;
+	display: block;
+}
+.lvyou>.body>div>.ul2>a>li>span{
+	font-size: 13px;
+	display: block;
+	margin-top: 5px;
+}
+.lvyou>.body>div>.ul3>a>li{
+	width: 88%;
+	margin: 20px auto;
+	background: rgba(68,68,68,0.68);
+	overflow: hidden;
+	padding: 6px;
+}
+.lvyou>.body>div>.ul3>a>li>div{
+	margin: 0;
+	overflow: hidden;
+}
+.lvyou>.body>div>.ul3>a>li>div>img{
+	display: block;
+	float: left;
+	width: 30%;
+	margin-top: 5px;
+}
+.lvyou>.body>div>.ul3>a>li>div>div{
+	display: block;
+	float: left;
+	width: 68%;
+	margin-left: 2%;
+}
+.lvyou>.body>div>.ul3>a>li>div>div>h5{
+	margin: 0;
+	font-size: 14px;
+	color: rgb(248,194,84);
+}
+.lvyou>.body>div>.ul3>a>li>div>div>span{
+	padding-left: 4px;
+	padding-right: 4px;
+	color: #fff;
+	background: rgb(132,27,24);
+	display: block;
+	float: left;
+	margin-right: 10px;
+	line-height: 19px;
+	font-size: 12px;
+	margin-top: 2px;
+	border-radius: 2px;
+}
+.lvyou>.body>div>.ul3>a>li>p{
+	margin: 0;
+	font-size: 12px;
+	line-height: 20px;
+}
+</style>
+<body class="lvyou">
+<!-- 这里是头部 -->
+<header>
+	<!-- banner statr -->
+	<div class="fullSlide">
+		<div class="bd">
+			<ul>
+				<li _src="url(__PUBLIC__/Project/images/1.jpg)" style="background:#E2025E center 0 no-repeat;background-size: 200%;"><a href="#"></a></li>
+				<li _src="url(__PUBLIC__/Project/images/2.jpg)" style="background:#DED5A1 center 0 no-repeat;background-size: 200%;"><a href="#"></a></li>
+				<li _src="url(__PUBLIC__/Project/images/3.jpg)" style="background:#B8CED1 center 0 no-repeat;background-size: 200%;"><a href="#"></a></li>
+				
+			</ul>
+		</div>
+		<div class="hd"><ul></ul></div>
+		<span class="prev"></span>
+		<span class="next"></span>
+	</div>
+	<!--fullSlide end-->
+	<form action="{:U('Project/search')}">
+		<input type="text" class="text" placeholder="请输入" name="keywords">
+		<input type="submit" class="sub" value="搜索" name="">
+	</form>
+</header>
+<!-- 这里是身体 -->
+<div class="body">
+	<!-- 栏目1 -->
+	<div>
+		<h4>旅游类别</h4>
+		<ul class="ul1">
+			<a href="{:U('Project/tourclass')}?class=国际"><li><div><img src="__PUBLIC__/Project/images/chujingyou.png"></div></li></a>
+			<a href="{:U('Project/tourclass')}?class=国内"><li><div><img src="__PUBLIC__/Project/images/guoneiyou.jpg"></div></li></a>
+			<a href="{:U('Project/tourclass')}?class=周边"><li><div><img src="__PUBLIC__/Project/images/guoqing.jpg"></div></li></a>
+			<a href="{:U('Project/tourclass')}?class=亲子"><li><div><img src="__PUBLIC__/Project/images/qinziyou.jpg"></div></li></a>
+		</ul>
+	</div>
+	<!-- 栏目2 -->
+	<div>
+		<h4>热门推介</h4>
+		<ul class="ul2">
+			<volist name="remen" id="remen">
+				<a href="{:U('Project/tourcontent')}?p_id={$remen.p_id}&cardid={$_SESSION['cardId']}"><li><img src="__PUBLIC__/Uploads/Project/{$remen.i_image}"><span>{$remen.p_little}</span></li></a>
+			</volist>
+			<!-- <a href="{:U('Project/tourcontent')}?p_id=1"><li><img src="__PUBLIC__/Project/image/gny.png"><span>日本</span></li></a>
+			<a href="{:U('Project/tourcontent')}?p_id=1"><li><img src="__PUBLIC__/Project/image/gny.png"><span>日本</span></li></a>
+			<a href="{:U('Project/tourcontent')}?p_id=1"><li><img src="__PUBLIC__/Project/image/gny.png"><span>日本</span></li></a>
+			<a href="{:U('Project/tourcontent')}?p_id=1"><li><img src="__PUBLIC__/Project/image/gny.png"><span>日本</span></li></a>
+			<a href="{:U('Project/tourcontent')}?p_id=1"><li><img src="__PUBLIC__/Project/image/gny.png"><span>日本</span></li></a> -->
+		</ul>
+	</div>
+	<!-- 栏目3 -->
+	<div>
+		<h4>猜你喜欢</h4>
+		<ul class="ul3">
+			<volist name="xihuan" id="xihuan">
+				<a href="{:U('Project/tourcontent')}?p_id={$xihuan.p_id}&cardid={$_SESSION['cardId']}">
+					<li>
+						<div>
+							<img src="__PUBLIC__/Uploads/Project/{$xihuan.i_image}">
+							<div>
+								<h5>{$xihuan.p_title|htmlspecialchars_decode|strip_tags|mb_substr=0,39,'utf-8'}...</h5>
+								<volist name="xihuan.erji" id="xihuan_1">
+									<span>{$xihuan_1}</span>
+								</volist>
+								<!-- <span>无购物</span><span>无自费</span> -->
+							</div>
+						</div>
+						<p>{$xihuan.p_merit|htmlspecialchars_decode|strip_tags|mb_substr=0,39,'utf-8'}…</p>
+						<p>班期：{$xihuan.p_schedule}</p>
+						<p>供应商：{$xihuan.p_supplier}</p>
+					</li>
+				</a>
+			</volist>
+			<!-- <a href="{:U('Project/tourcontent')}?p_id=1">
+				<li>
+					<div>
+						<img src="__PUBLIC__/Project/images/guoneiyou.jpg">
+						<div>
+							<h5>法国+瑞士11日跟团游·4-5星+巴黎3晚市区连住+瑞士特色酒店 【ABC线精致小团】</h5>
+							<span>成团保障</span><span>无购物</span><span>无自费</span>
+						</div>
+					</div>
+					<p>上海出发 AB线：4-5星酒店+巴黎市区铂尔曼5星级酒店3晚连住+瑞士特色木屋或湖畔…</p>
+					<p>班期：春节、12/2、12/5、12/7</p>
+					<p>供应商：全景旅游</p>
+				</li>
+			</a>
+			<a href="{:U('Project/tourcontent')}?p_id=1">
+				<li>
+					<div>
+						<img src="__PUBLIC__/Project/images/guoneiyou.jpg">
+						<div>
+							<h5>法国+瑞士11日跟团游·4-5星+巴黎3晚市区连住+瑞士特色酒店 【ABC线精致小团】</h5>
+							<span>成团保障</span><span>无购物</span><span>无自费</span>
+						</div>
+					</div>
+					<p>上海出发 AB线：4-5星酒店+巴黎市区铂尔曼5星级酒店3晚连住+瑞士特色木屋或湖畔…</p>
+					<p>班期：春节、12/2、12/5、12/7</p>
+					<p>供应商：全景旅游</p>
+				</li>
+			</a>
+			<a href="{:U('Project/tourcontent')}?p_id=1">
+				<li>
+					<div>
+						<img src="__PUBLIC__/Project/images/guoneiyou.jpg">
+						<div>
+							<h5>法国+瑞士11日跟团游·4-5星+巴黎3晚市区连住+瑞士特色酒店 【ABC线精致小团】</h5>
+							<span>成团保障</span><span>无购物</span><span>无自费</span>
+						</div>
+					</div>
+					<p>上海出发 AB线：4-5星酒店+巴黎市区铂尔曼5星级酒店3晚连住+瑞士特色木屋或湖畔…</p>
+					<p>班期：春节、12/2、12/5、12/7</p>
+					<p>供应商：全景旅游</p>
+				</li>
+			</a> -->
+		</ul>
+	</div>
+</div>
+<!-- 这里是底部 -->
+<include file="ProjectPublic/footer" />
+
+</body>
+<!-- banner js -->
+<script type="text/javascript" src="__PUBLIC__/Project/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/js/superslide.2.1.js"></script>
+<script type="text/javascript">
+$(".fullSlide").hover(function(){
+    $(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
+},
+function(){
+    $(this).find(".prev,.next").fadeOut()
+});
+$(".fullSlide").slide({
+    titCell: ".hd ul",
+    mainCell: ".bd ul",
+    effect: "fold",
+    autoPlay: true,
+    autoPage: true,
+    trigger: "click",
+    startFun: function(i) {
+        var curLi = jQuery(".fullSlide .bd li").eq(i);
+        if ( !! curLi.attr("_src")) {
+            curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+        }
+    }
+});
+</script>
+<!-- the end -->
+</html>

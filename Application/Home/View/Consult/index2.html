@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>企业咨询B</title>
+<link rel="stylesheet" type="text/css" href="css/icon/iconfont.css">
+<style type="text/css">
+html{
+	font-size: 12px;
+	/*设定rem比例固定为1rem=10px*/
+}
+body{
+	padding: 0;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'PingFang SC', 'Microsoft YaHei', 'Source Han Sans SC', 'Noto Sans CJK SC', 'WenQuanYi Micro Hei', sans-serif;
+}
+ul{
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+li{
+	margin: 0;
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+/*banner*/
+.m-slider {
+	width: 100%;
+	margin: 0 auto 10px !important;
+}
+#slider {
+	width: 100%;
+	overflow: hidden;
+}
+.m-slider .cnt {
+	position: relative;
+	left: 0;
+	width: 2000%;
+}
+.m-slider .cnt li {
+	float: left;
+	width: 5%;
+	overflow: hidden;
+}
+.m-slider .cnt img {
+	display: block;
+	width: 100%;
+	vertical-align: top;
+}
+.m-slider .cnt p {
+	margin: -17px 0 0 0;
+}
+.m-slider .icons {
+	text-align: center;
+	color: #000;
+	margin-top: -20px;
+	position: relative;
+	z-index: 999;
+}
+.m-slider .icons span {
+	background: #fff;
+	border-radius: 5px;
+	box-shadow: 0 0 2px #b0b0b0 inset;
+	display: inline-block;
+	height: 10px;
+	margin: 0 5px;
+	overflow: hidden;
+	text-indent: -99em;
+	width: 10px;
+}
+.m-slider .icons .curr {
+	/*background: #ff5f5f;*/
+	background: #fff;
+}
+.nr {
+	list-style: none;
+	width: 6px;
+	height: 6px;
+	border: 1px solid #fff;
+	border-radius: 10px;
+	display: inline-block;
+	margin-right: 10px;
+	margin-bottom: 0px;
+}
+/*the end*/
+.index{
+	background: #000;
+}
+.index>header{
+	overflow: hidden;
+}
+.index>header>.search{
+	margin-bottom: -40px;
+	margin-top: 10px;
+	position: relative;
+	z-index: 1;
+	text-align: center;
+}
+.index>header>.search>form{
+	display: inline-block;
+	background: #fff;
+	border-radius: 15px;
+	line-height: 2.5rem;
+	padding: 0 0.5rem;
+}
+.index>header>.search>form>input{
+	-webkit-appearance:none;
+	outline:none;
+	background:none;
+	border:0px;
+	font-size: 13px;
+	color: #3c3c3c;
+
+}
+.index>header>.search>form>.text{
+	width: 4rem;
+	transition: width 2s;
+	-webkit-transition: width 2s; /* Safari */
+
+}
+.index>header>.search>form>.text:hover{
+	width: 12rem;
+
+}
+.index>header>.search>form>.sub{
+	font-size: 13px;
+	color: #3c3c3c;
+}
+/*header the end*/
+/*nav*/
+.index>nav{
+	width: 100%;
+}
+.index>nav>ul{
+	width: 26rem;
+	margin: 0 auto;
+	overflow: hidden;
+	text-align: center;
+	background: #353541;
+	padding: 1rem 0px;
+	border-radius: 10px;
+	border: 1px solid #c09a73;
+}
+.index>nav>ul>a>li{
+	width: 6rem;
+	/*height: 6rem;*/
+	display: inline-block;
+	text-align: center;
+}
+.index>nav>ul>a>li>.nav{
+	color: #c09a73;
+	font-size: 3rem;
+}
+.index>nav>ul>a>li>span{
+	color: #c09a73;
+	display: block;
+}
+/*nav the end*/
+/*tbody*/
+.index>.tbody{
+	overflow: hidden;
+	margin-bottom: 7rem;
+}
+.index>.tbody>div>h4{
+	color: #c3c3c3;
+	background: #353541;
+	font-size: 1.2rem;
+	font-weight: normal;
+	line-height: 2.3rem;
+	padding-left: 1.4rem;
+	width: 10rem;
+	margin-bottom: 1rem;
+	border-top-right-radius: 5rem;
+	border-bottom-right-radius: 5rem;
+}
+.index>.tbody>div>h4>.iconfont{
+	font-size: 1.6rem;
+	color: #c09a73;
+}
+.index>.tbody>.div1>ul{
+	background: #353541;
+	overflow: hidden;
+	max-width: 30rem;
+	margin: 0 auto;
+	text-align: center;
+	padding: 4px 0px;
+}
+.index>.tbody>.div1>ul>a>li{
+	width: 27.3%;
+	margin: 0.5rem 0.2rem 0.5rem 0.2rem;
+	padding: 0.5rem;
+	display: inline-block;
+	background: #fff;
+	box-shadow: 0px 3px 13px 2px #000000;
+}
+.index>.tbody>.div1>ul>a>li>img{
+	width: 100%;
+	box-shadow: 0px 1px 2px 2px #909090;
+}
+.index>.tbody>.div1>ul>a>li>span{
+	color: #c09a73;
+	display: block;
+}
+.index>.tbody>.div2>div{
+	background: #353541;
+	overflow: hidden;
+	max-width: 30rem;
+	margin: 0 auto;
+	text-align: center;
+	padding: 8px 0px;
+}
+.index>.tbody>.div2>div>a{
+	display: block;
+	padding: 0.5rem;
+	background: #fff;
+	margin: 0px 8px;
+	box-shadow: 0px 3px 13px 2px #000000;
+}
+.index>.tbody>.div2>div>a>img{
+	width: 100%;
+	box-shadow: 0px 1px 2px 2px #909090;
+}
+.index>.tbody>.div2>div>ul{
+	padding: 0.5rem;
+}
+.index>.tbody>.div2>div>ul>a>li{
+	width: 27.8%;
+	margin: 0.5rem 0.1rem 0.5rem 0.1rem;
+	padding: 0.5rem;
+	display: inline-block;
+	background: #fff;
+	box-shadow: 0px 3px 13px 2px #000000;
+}
+.index>.tbody>.div2>div>ul>a>li>img{
+	width: 100%;
+	box-shadow: 0px 1px 2px 2px #909090; 
+}
+.index>.tbody>.div2>div>ul>a>li>span{
+	color: #c09a73;
+	display: block;
+}
+.index>.tbody>.div3>div{
+	background: #353541;
+	overflow: hidden;
+	max-width: 30rem;
+	margin: 0 auto;
+	text-align: center;
+	padding: 8px 0px;
+}
+.index>.tbody>.div3>div>div{
+	display: block;
+	padding: 0.5rem;
+	background: #fff;
+	margin: 0px 8px;
+	overflow: hidden;
+	box-shadow: 0px 3px 13px 2px #000000;
+}
+.index>.tbody>.div3>div>div>img{
+	width: 10rem;
+	display: block;
+	float: left;
+	margin-top: 3px;
+}
+.index>.tbody>.div3>div>div>div{
+	width: 13.8rem;
+	float: left;
+	margin-left: 0.5rem;
+}
+.index>.tbody>.div3>div>div>div>h4{
+	color: #c09a73;
+	margin: 0;
+}
+.index>.tbody>.div3>div>div>div>p{
+	margin: 3px 0;
+	text-align: left;
+}
+.index>.tbody>.div3>div>ul{
+	padding: 0.5rem;
+}
+.index>.tbody>.div3>div>ul>a>li{
+	width: 27.8%;
+	margin: 0.5rem 0.1rem 0.5rem 0.1rem;
+	padding: 0.5rem;
+	display: inline-block;
+	background: #fff;
+	box-shadow: 0px 3px 13px 2px #000000;
+}
+.index>.tbody>.div3>div>ul>a>li>img{
+	width: 100%;
+	box-shadow: 0px 1px 2px 2px #909090; 
+}
+.index>.tbody>.div3>div>ul>a>li>span{
+	color: #c09a73;
+	display: block;
+}
+/*tbody the end*/
+</style>
+</head>
+<body class="index">
+<!-- header -->
+<header>
+	<!-- 全局检索 -->
+	<div class="search">
+		<form>
+			<i class="iconfont">&#xe74b;</i>
+			<input type="text" class="text" name="" placeholder="请输入">
+			<input type="submit" class="sub" name="" value="搜索">
+		</form>
+	</div>
+	<!-- the end -->
+	<!-- banner -->
+	<div class="m-slider">
+		<div id="slider">
+			<ul id="m-slider" class="cnt">
+				<li>
+					<a href="#1">
+						<img src="images/banner11(1).jpg" class="imga">
+						<!-- <p>1</p> -->
+					</a>
+				</li>
+				<li>
+					<a href="#2">
+						<img src="images/banner11(2).jpg" class="imga">
+						<!-- <p>2</p> -->
+					</a>
+				</li>
+				<li>
+					<a href="#3">
+						<img src="images/banner11(3).jpg" class="imga">
+						<!-- <p>3</p> -->
+					</a>
+				</li>
+				<li>
+					<a href="#4">
+						<img src="images/banner11(1).jpg" class="imga">
+						<!-- <p>4</p> -->
+					</a>
+				</li>
+				<li>
+					<a href="#1">
+						<img src="images/banner11(3).jpg" class="imga">
+						<!-- <p>5</p> -->
+					</a>
+				</li>
+			</ul>
+		</div>
+		<ul id="icons" class="icons">
+			<li class="nr curr"></li>
+			<li class="nr"></li>
+			<li class="nr"></li>
+			<li class="nr"></li>
+			<li class="nr"></li>
+		</ul>
+	</div>
+	<!-- the end -->
+</header>
+<!-- header the end -->
+<!-- nav -->
+<nav>
+	<ul>
+		<a href="">
+			<li>
+				<i class="iconfont nav">&#xe788;</i>
+				<span>财务记账</span>
+			</li>
+		</a>
+		<a href="">
+			<li>
+				<i class="iconfont nav">&#xe789;</i>
+				<span>注册公司</span>
+			</li>
+		</a>
+		<a href="">
+			<li>
+				<i class="iconfont nav">&#xe787;</i>
+				<span>法律咨询</span>
+			</li>
+		</a>
+		<a href="">
+			<li>
+				<i class="iconfont nav">&#xe786;</i>
+				<span>联系我们</span>
+			</li>
+		</a>
+	</ul>
+</nav>
+<!-- nav the end -->
+<!-- tbody -->
+<div class="tbody">
+	<div class="div1">
+		<h4><i class="iconfont">&#xe788;</i> 财务记账</h4>
+		<ul>
+			<a href="">
+				<li>
+					<img src="images/yangsheng1.jpg">
+					<span>财务记账</span>
+				</li>
+			</a>
+			<a href="">
+				<li>
+					<img src="images/yangsheng2.jpg">
+					<span>财务记账</span>
+				</li>
+			</a>
+			<a href="">
+				<li>
+					<img src="images/yangsheng3.jpg">
+					<span>财务记账</span>
+				</li>
+			</a>
+			<a href="">
+				<li>
+					<img src="images/yangsheng4.jpg">
+					<span>财务记账</span>
+				</li>
+			</a>
+			<a href="">
+				<li>
+					<img src="images/yangsheng5.jpg">
+					<span>财务记账</span>
+				</li>
+			</a>
+			<a href="">
+				<li>
+					<img src="images/yangsheng1.jpg">
+					<span>财务记账</span>
+				</li>
+			</a>
+		</ul>
+	</div>
+	<div class="div2">
+		<h4><i class="iconfont">&#xe789;</i> 注册公司</h4>
+		<div>
+			<a href=""><img src="images/gaoerfu333.jpg"></a>
+			<ul>
+				<a href="">
+					<li>
+						<img src="images/lanqiu.jpg">
+						<span>注册公司</span>
+					</li>
+				</a>
+				<a href="">
+					<li>
+						<img src="images/zuqiu.jpg">
+						<span>注册公司</span>
+					</li>
+				</a>
+				<a href="">
+					<li>
+						<img src="images/wangqiu.jpg">
+						<span>注册公司</span>
+					</li>
+				</a>
+			</ul>
+		</div>
+	</div>
+	<div class="div3">
+		<h4><i class="iconfont">&#xe787;</i> 法律咨询</h4>
+		<div>
+			<div>
+				<img src="images/jiuzhuang3.jpg">
+				<div>
+					<h4>法律咨询[CAMARTINA]</h4>
+					<p>来自罗纳河谷的AOC，在阿劳德斯古堡酿酒师的精心呵护下，采用最传统的纯手工酿造，深深融入了南部法国风情的灵魂</p>
+				</div>
+			</div>
+			<ul>
+				<a href="">
+					<li>
+						<img src="images/jiuzhuang1.jpg">
+						<span>法律咨询</span>
+					</li>
+				</a>
+				<a href="">
+					<li>
+						<img src="images/jiuzhuang2.jpg">
+						<span>法律咨询</span>
+					</li>
+				</a>
+				<a href="">
+					<li>
+						<img src="images/jiuzhuang4.jpg">
+						<span>法律咨询</span>
+					</li>
+				</a>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- tbody the end -->
+<link rel="stylesheet" type="text/css" href="http://www.qudaoplus.cn/statics/css/allfooter.css">
+<footer id="footer">
+  <ul>
+      <a href="http://www.qudaoplus.cn/merber_all_show/index.php/home/Personnal/central"><li class="core li"><em></em><span>成员中心</span></li></a>
+      <a href="http://www.qudaoplus.cn/index.php?m=content&c=index&a=lists&catid=22"><li class="vip on li"><em></em><span>成员专享</span></li></a>
+      <!-- <a href="http://www.qudaoplus.cn/index.php?m=content&c=index&a=lists&catid=32"><li class="activity"><em></em><span>精彩活动</span></li></a> -->
+      <a href="http://www.qudaoplus.cn/index.php?m=content&c=index&a=lists&catid=25"><li class="steward li"><em></em><span>联系管家</span></li></a>
+  </ul>
+</footer>
+<!-- 请在上方编写相关代码 -->
+<!-- banner js -->
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/banner1227.js"></script>
+</body>
+</html>

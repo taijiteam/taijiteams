@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>成员风采</title>
+</head>
+<style type="text/css">
+body{
+	background: #000;
+	margin: 0;
+	padding: 0;
+}
+.site>.body{
+	overflow: hidden;
+	width: 100%;
+}
+.site>.body>p{
+	width: 85%;
+	margin: 20px auto;
+	color: rgb(250,196,84);
+	font-size: 14px;
+}
+.site>.body>form{
+	margin-bottom: 60px;
+}
+.site>.body>form>p{
+	width: 85%;
+	margin: 10px auto;
+	color: #fff;
+	line-height: 30px;
+	overflow: hidden;
+}
+.site>.body>form>p>span{
+	display: block;
+	float: left;
+	width: 20%;
+	text-align: right;
+	padding-right: 5%;
+	font-size: 14px;
+}
+.site>.body>form>p>input{
+	display: block;
+	float: left;
+	width: 60%;
+	background: #fff;
+	border: none;
+	padding: 7px 5%;
+	border-radius: 3px;
+	color: #000;
+	-webkit-appearance: none;/*兼容苹果手机*/
+}
+.site>.body>form>p>select{
+	display: block;
+	float: left;
+	width: 70%;
+	background: #fff;
+	border: none;
+	padding: 7px 5%;
+	border-radius: 3px;
+	color: #000;
+	-webkit-appearance: none;/*兼容苹果手机*/
+}
+.site>.body>form>p>textarea{
+	display: block;
+	float: left;
+	width: 60%;
+	background: #fff;
+	border: none;
+	padding: 7px 5%;
+	border-radius: 3px;
+	color: #000;
+}
+.site>.body>footer{
+	width: 100%;
+	position: fixed;
+	bottom: 0px;
+	overflow: hidden;
+}
+.site>.body>footer>a{
+	width: 50%;
+	display: block;
+	float: left;
+	text-align: center;
+	line-height: 50px;
+	color: #fff;
+	text-decoration: none;
+}
+.site>.body>footer>.left{
+	background: #3c3c3c;
+}
+.site>.body>footer>.right{
+	background: #003a05;
+}
+</style>
+<body class="site">
+<div class="body">
+	<p>您想修改哪些内容可以写在下面文本框中，我们会第一时间帮助您更新内容。感谢您一直以来对我们的支持。</p>
+	<form method="post" enctype="multipart/form-data" id="uploadForm">
+		<p><span>中文名</span><input type="text" name="cname" value="{$merber.m_cname}" placeholder="请输入"></p>
+		<p><span>英文名</span><input type="text" name="ename" value="{$merber.m_ename}" placeholder="请输入"></p>
+		<p>
+			<span>性别</span>
+			<select name="sex">
+				<option value="先生" {$merber['m_sex'] == "先生"?'selected':''}>先生</option>
+				<option value="女士" {$merber['m_sex'] == "女士"?'selected':''}>女士</option>
+			</select>
+		</p>
+		<p>
+			<span>成员类别</span>
+			<select name="category">
+				<option value="商政名流" {$merber['m_category'] == "商政名流"?'selected':''}>商政名流</option>
+				<option value="企业精英" {$merber['m_category'] == "企业精英"?'selected':''}>企业精英</option>
+				<option value="文艺雅仕" {$merber['m_category'] == "文艺雅仕"?'selected':''}>文艺雅仕</option>
+				<option value="名医专家" {$merber['m_category'] == "名医专家"?'selected':''}>名医专家</option>
+			</select>
+		</p>
+		<p>
+			<span>公司名称<br>公司职务</span>
+			<textarea name="work" rows="5" placeholder="例：上海泰基企业 总经理,(可输入多个，中间用逗号隔开)"></textarea>
+		</p>
+		<p><span>社会职务</span><input type="text" name="socialposition" value="{$merber.m_socialposition}" placeholder="请输入"></p>
+		<p><span>从事行业</span><input type="text" name="industry" value="{$merber.m_industry}" placeholder="请输入"></p>
+		<p>
+			<span>个人简介</span>
+			<textarea name="introduce" rows="10" placeholder="请输入"></textarea>
+		</p>
+		<p><span>个人照片</span><input type="file" name="m_img"></p>
+		<input type="hidden" name="num" value="{$_SESSION['cardId']}">
+		<input type="hidden" name="openid" value="{$_SESSION['openid']}">
+	</form>
+	<footer><a href="{:U('Member/my')}" class="left">返回首页</a><a href="javascript:;" class="right"  onclick="siteimg()">确认提交</a></footer>
+</div>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Project/css/H-ui.min.css" />
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/Project/hui/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/layer/2.4/layer.js"></script>
+<!-- 请在上方写相关业务脚本 -->
+<script type="text/javascript">
+function siteimg(){
+	layer.confirm('确认要提交修改信息吗？',function(index){
+		//var m_img = $('input[name="m_img"]').val();	//
+		var form = new FormData($("#uploadForm")[0]);
+		//alert(JSON.stringify(form));
+		// die;
+		if(form == ''){
+			$.Huimodalalert('警告：小样啥也没选就想提交！！',2000);
+		}else{
+			$.ajax({
+				type:"post",
+				url:"{:U('Member/siteimg')}",//根据自己项目的需要写请求地址
+				data:form,
+				processData: false,
+	            contentType: false,
+				success:function(data){
+					//http://www.cnblogs.com/fengfen93fen/p/9983875.html
+					//http://www.thinkphp.cn/topic/52832.html
+					//alert(JSON.stringify(data));
+					if (data == 1){
+						layer.confirm('信息提交成功！我们会尽快处理您提交的信息！请保持电话畅通方便我们联系！',function(index){
+							location.href="http://www.qudaoplus.cn/merber_all_show/index.php/Home/Member/my"
+						});
+					}else{
+						layer.msg('哎呦，运气不好哦，提交失败咯！',function(){});
+					}
+					
+				},
+				error:function(data) {
+						console.log(data.msg);
+				},
+			})
+		}
+	});
+}
+</script>
+
+<!--/_footer 作为公共模版分离出去-->
+<SCRIPT language=javascript>
+function back(){
+	window.history.back();
+}
+</SCRIPT>
+</body>
+</html>

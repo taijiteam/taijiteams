@@ -1,0 +1,227 @@
+<form class="layui-form" id="goods-class-form">
+    <empty name="res">
+        <!-- 添加规格商品  -->
+        <div class="layui-form-item">
+            <label class="layui-form-label">商品类型</label>
+            <div class="layui-input-block">
+                <volist name="spec_list"  key="k" id="vo">
+                    <input type="checkbox" name="spec_class_ids" value="{$vo.id}" title="{$vo.spec_class_name}">
+                </volist>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn  layui-btn-lg" id="spec-table-btn">生成表格</button>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- spec_table -->
+        <form class="layui-form">
+            <table class="layui-table" style="margin-top: 60px" id="spec-table">
+                <tr id="spec-th">
+                </tr>
+            </table>
+        </form>
+        <div class="layui-form-item">
+            <button class="layui-btn" id="addOneRow" >添加一行</button>
+        </div>
+    <else />
+        <!-- 管理规格商品  -->
+        <table class="layui-table">
+            <tr>
+                <th>名称</th>
+                <!--<th>规格</th>-->
+                <volist name="spec_name" id="vo" key="k" >
+                    <th>{$vo}</th>
+                </volist>
+                <th>价格</th>
+                <th>库存</th>
+                <th>A积分</th>
+                <th>类型积分</th>
+                <th>添加时间</th>
+                <th>修改时间</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+
+            <volist name="goods_list" id="vo" key="k" >
+                <tr>
+                    <td>{$vo.goods_name}</td>
+                    <!-- 规格生成 -->
+                    <?php
+                        foreach($spec_name as $spec_class_id => $spec_class_name){
+                            foreach($vo['goods_spec'] as $spec_id => $spec){
+                                if(in_array(current($spec),$spec_val[$spec_class_id])){
+                                    echo "<td>".current($spec)."</td>";
+                                }
+                            }
+                        }
+                    ?>
+                    <td>{$vo.goods_price}</td>
+                    <td>{$vo.goods_storage}</td>
+                    <td>{$vo.goods_pocket_a}</td>
+                    <td>{$vo.goods_pocket}</td>
+                    <td>{$vo.addtime|date='Y-m-d H:i:s',###}</td>
+                    <td>{$vo.edittime|date='Y-m-d H:i:s',###}</td>
+                    <td>
+                        <switch name="vo.goods_status" >
+                            <case value="1">仓库</case>
+                            <case value="2">在售</case>
+                            <default />
+                        </switch>
+                    </td>
+                    <td>
+                        <switch name="vo.goods_status" >
+                            <case value="1"><a title="上架" class="online" data-goods-id="{$vo.goods_id}" data-common="{$vo.goods_common_id}" data-status="{$vo.goods_status}" href="javascript:;"> 上 架 </a></case>
+                            <case value="2"><a title="下架" class="offline" data-goods-id="{$vo.goods_id}" data-common="{$vo.goods_common_id}" data-status="{$vo.goods_status}" href="javascript:;"> 下 架 </a></case>
+                            <default />
+                        </switch>
+                    </td>
+                </tr>
+            </volist>
+        </table>
+
+        <div class="layui-form-item">
+            <span class="layui-btn" id="addNewGoodsItem"  >上架新商品</span>
+        </div>
+    </empty>
+</form>
+
+<script>
+    $(function(){
+        var spec_class_ids = {};
+        var table_line = 1;
+        var _td = new Array();//一行数据的原始值
+        var th = "<th>序号</th>";
+        var td = "";
+
+        //生成table
+        $("#spec-table-btn").click(function(){
+            $("input:checkbox[name='spec_class_ids']:checked").each(function(){
+                spec_class_ids[$(this).val()] = $(this).attr('title');
+            });
+
+            console.log(spec_class_ids);
+            if($.isEmptyObject(spec_class_ids)){
+                alert("请选择一个规格后再生成表单");
+                return false;
+            }
+            $.ajax({
+                type: "post",
+                url: "/Admin/GoodsSpec/spec_table",
+                data: {
+                    'spec_class_ids':spec_class_ids
+                },
+                dataType: 'json',
+                success: function (ret) {
+                    console.log(ret);
+                    if(ret.code != '200'){
+                        alert("生成失败");
+                        return false;
+                    }
+
+                    res = ret.data;
+                    //生成表格头部  th
+                    $.each(res.spec_class_name, function(i, val)
+                    {
+                        th += ' <th>' + val +'</th>';
+                    });
+
+                    $('#spec-table').html("<tr id=\"spec-th\"></tr>");
+                    $('#spec-th').html(th);
+                    th = "<th>序号</th>";
+                    td = "";
+                    _td = new Array();
+                    table_line = 1;
+
+                    //生成表格原型
+                    $.each(res.spec_class_id, function(i, val)
+                    {
+                        _td[i] = val+'" value=""></td>';
+                    });
+                    addOneRow();
+
+                }
+            });
+            return false;
+        });
+
+        //添加一行
+        $('#addOneRow').click(function(){
+            addOneRow()
+        });
+
+        function addOneRow(){
+            $.each(_td,function(i,val){
+                td = td + '<td><input class="spec-table-item layui-input" name="' + table_line +'.' + _td[i];
+            });
+
+            td = '<tr><td>'+table_line+'</td>' + td + '</tr>';
+            $('#spec-table').append(td);
+            td = "";
+
+            table_line = table_line+1;
+        }
+
+        //添加一行新商品
+        $("#addNewGoodsItem").click(function(){
+            layer.open({
+                type: 2,
+                title: '添加新商品',
+                area: ['720px', '540px'],
+                shade: 0,
+                maxmin: true,
+                offset: 'auto', //[50,200],
+                content: '/Admin/Goods/addNewGoodsItem?gc_id={$res.goods_common_id}'
+            });
+        });
+
+
+        //商品上下架
+        $(".online").click(function () {
+            var goods_id = $(this).attr('data-goods-id');
+            var gc_id = $(this).attr("data-common");
+            $.ajax({
+                type : 'post',
+                url  :  '/Admin/Goods/goods_online',
+                data : {
+                    goods_id     : goods_id
+                },
+                dataType : 'json',
+                success : function (res) {
+                    if(res.code == "200"){
+                        layer.msg("上架成功",{time:1500});
+                        window.location.href = "/Admin/Goods/goods_detail?goods_id="+gc_id+"&tab=spec";
+                    }
+                }
+            })
+        })
+
+        //商品上下架
+        $(".offline").click(function () {
+            var goods_id = $(this).attr('data-goods-id');
+            var gc_id = $(this).attr("data-common");
+            $.ajax({
+                type : 'post',
+                url  :  '/Admin/Goods/goods_offline',
+                data : {
+                    goods_id     : goods_id
+                },
+                dataType : 'json',
+                success : function (res) {
+                    if(res.code == "200"){
+                        layer.msg("下架成功",{time:1500});
+                        window.location.href = "/Admin/Goods/goods_detail?goods_id="+gc_id+"&tab=spec";
+                    }
+                }
+            })
+        })
+    })
+</script>
+
+
+
+
+

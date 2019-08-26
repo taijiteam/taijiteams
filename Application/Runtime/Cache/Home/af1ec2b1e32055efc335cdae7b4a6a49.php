@@ -1,0 +1,96 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		body{
+			background-size: contain;
+			background: url(/Public/Estate/images/shangyefangchan.png) no-repeat;
+			background-size: 100% 100%;
+			background-attachment: fixed;
+		}
+		.Housekeeper{
+			width: 100%;
+		}
+		.header{
+			width: 8.75rem;
+			height: 8.75rem;
+			margin: 5% auto;
+		}
+		.header_img{
+			width: 100%;
+			height: 100%;
+		}
+		.Mask{
+			position: absolute;
+    		left:50%;
+    		top:50%;
+    		transform: translate(-50%, -50%);
+			width: 18.75rem;
+			height: 18.75rem;
+			background: #000;
+			opacity:0.6;
+		}
+		.title{
+			font-size: 1.875rem;
+			line-height: 2.5rem;
+			color: #fbebb5;
+			text-align: center;
+		}
+		.Side{
+			width: 2.125rem;
+			height: 1.25rem;
+		}
+		.Side_img{
+			width: 100%;
+			height: 100%;
+		}
+		.heading{
+			text-align: center;
+			color: #fbebb5;
+			font-size: 1.125rem;
+			line-height: 2rem;
+		}
+		.footer{
+			text-align: center;
+		}
+		.footer>a>button{
+			width: 7.5rem;
+			height: 2.5rem;
+			border: 0.125rem solid #fff;
+			background: none;
+			color: #fff;
+			text-align: center;
+			margin: 1.35rem 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="Housekeeper">
+		<div class="header">
+			<img src="/Public/Estate/images/logo.png" class="header_img">
+		</div>
+		<div class="Mask">
+			<div class="title">房产.租赁.买卖</div>
+			<div class="Side">
+				<img src="/Public/Estate/images/path.png" alt="" class="Side_img">
+			</div>
+			<div class="heading">开放“中介”边界</div>
+			<div class="heading">建立私密性房产资源</div>
+			<div class="heading">一手信息池，专业态度</div>
+			<div class="heading">发 布 房 源 信 息 审 核</div>
+			<div class="heading">实地陪同看房，一站式服务</div>
+			<div class="footer">
+				<a href=""><button>立即进入</button></a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

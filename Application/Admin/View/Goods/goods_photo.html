@@ -1,0 +1,201 @@
+<div class="up" style="width: 100%;border: none;">
+    <div class="layui-form-item" style="margin: 8px 80px 0 0;display: inline-block;">
+        <label for="goods-main-image-url" class="layui-form-label">商品主图</label>
+        <div class="layui-input-inline" style="width: 375px;text-align: center;">
+            <button type="button" class="layui-btn" id="goods-main-image">
+                <i class="layui-icon">&#xe67c;</i>上传图片
+            </button>
+            <div style="width:375px;height:250px;border: 1px #7c7c7c dashed;margin: 20px 0 0 10px;overflow: hidden;">
+                <img id="goods-main-image-show" src="{$res.main_img}"  width="100%" />
+                <input type="hidden" id="goods-main-image-url" name="goods-main-image-url" value="{$res.main_img}">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item" style="margin: 8px 80px 0 0;display: inline-block;">
+        <div class="layui-input-inline" style="width: 375px;text-align: center;margin-top: 39px;">
+            <button type="button" class="layui-btn" id="goods-main-image2">
+                <i class="layui-icon">&#xe67c;</i>上传图片
+            </button>
+            <div style="width:375px;height:250px;border: 1px #7c7c7c dashed;margin: 20px 0 0 10px;overflow: hidden;">
+                <img id="goods-main-image-show2" src="{$res.main2_img}"  width="100%"/>
+                <input type="hidden" id="goods-main-image-url2" name="goods-main-image-url2" value="{$res.main2_img}">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item" style="margin: 8px 80px 0 0;display: inline-block;">
+        <div class="layui-input-inline" style="width: 375px;text-align: center;margin-top: 39px;">
+            <button type="button" class="layui-btn" id="goods-main-image3">
+                <i class="layui-icon">&#xe67c;</i>上传图片
+            </button>
+            <div style="width:375px;height:250px;border: 1px #7c7c7c dashed;margin: 20px 0 0 10px;overflow: hidden;">
+                <img id="goods-main-image-show3" src="{$res.main3_img}"  width="100%" />
+                <input type="hidden" id="goods-main-image-url3" name="goods-main-image-url3" value="{$res.main3_img}">
+            </div>
+        </div>
+    </div>
+    <div class="up-a" style="width: 86%;border: none;margin: 0 auto;">
+        <div class="layui-form-item" style="margin: 8px 80px 0 0;display: inline-block;">
+            <div class="layui-input-inline" style="width: 375px;text-align: center;margin-top: 39px;">
+                <button type="button" class="layui-btn" id="goods-main-image4">
+                    <i class="layui-icon">&#xe67c;</i>上传图片
+                </button>
+                <div style="width:375px;height:250px;border: 1px #7c7c7c dashed;margin: 20px 0 0 10px;overflow: hidden;">
+                    <img id="goods-main-image-show4" src="{$res.main4_img}"  width="100%" />
+                    <input type="hidden" id="goods-main-image-url4" name="goods-main-image-url4" value="{$res.main4_img}">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item" style="margin: 8px 80px 0 0;display: inline-block;">
+            <div class="layui-input-inline" style="width: 375px;text-align: center;margin-top: 39px;">
+                <button type="button" class="layui-btn" id="goods-main-image5">
+                    <i class="layui-icon">&#xe67c;</i>上传图片
+                </button>
+                <div style="width:375px;height:250px;border: 1px #7c7c7c dashed;margin: 20px 0 0 10px;overflow: hidden;">
+                    <img id="goods-main-image-show5" src="{$res.main5_img}"  width="100%" />
+                    <input type="hidden" id="goods-main-image-url5" name="goods-main-image-url5" value="{$res.main5_img}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="layui-form-item" style="margin-left: 0;margin-top: 15%" >
+    <label for="goods-desc-image-url" class="layui-form-label" style="margin-left: 100px">商品详情图</label>
+    <div class="layui-input-inline">
+        <button type="button" class="layui-btn" id="goods-desc-image">
+            <i class="layui-icon">&#xe67c;</i>上传图片
+        </button>
+        <div style="width:375px;min-height:500px;border: 1px #7c7c7c dashed;margin-top: 20px">
+            <img id="goods-desc-image-show" src="{$res.desc_img}"  width="100%" />
+            <input type="hidden" id="goods-desc-image-url" name="goods-desc-image-url" value="{$res.desc_img}">
+        </div>
+    </div>
+</div>
+
+<!--   广告图    -->
+<div class="layui-form-item" style="margin-left: 100px">
+    <label for="goods-adve-image-url" class="layui-form-label">广告图</label>
+    <div class="layui-input-inline">
+        <button type="button" class="layui-btn" id="goods-adve-image">
+            <i class="layui-icon">&#xe67c;</i>上传图片
+        </button>
+        <div style="width:375px;height:375px;border: 1px #7c7c7c dashed;margin-top: 20px; overflow: hidden">
+            <img id="goods-adve-image-show" src="{$res.adve_img}"  width="100%" />
+            <input type="hidden" id="goods-adve-image-url" name="goods-adve-image-url" value="{$res.adve_img}">
+        </div>
+    </div>
+</div>
+
+
+
+
+<empty name="res">
+    <div class="layui-form-item">
+        <button class="layui-btn layui-btn-fluid" id="addGoods" style="width:70% ;height: 50px">提 交</button>
+    </div>
+    <else />
+    <div class="layui-form-item">
+        <button class="layui-btn layui-btn-fluid" id="saveGoodsImg" data-goods-id="{$res.goods_common_id}" style="width:70% ;height: 50px">上传图片</button>
+    </div>
+</empty>
+<script type="text/javascript">
+    $(function(){
+        //图片上传
+        layui.use('upload', function(){
+            var upload = layui.upload;
+            //商品主图
+            var uploadMainImage = upload.render({
+                elem: '#goods-main-image',
+                url: "/Admin/Upload/image",
+                done: function(res){
+                    console.log(res);
+                    if(res.code == "200"){
+                        $("#goods-main-image-show").attr("src",res.data.photo);
+                    }else{
+                        layer.msg("上传失败");
+                    }
+                }
+            });
+            var uploadMainImage = upload.render({
+                elem: '#goods-main-image2',
+                url: "/Admin/Upload/image",
+                done: function(res){
+                    console.log(res);
+                    if(res.code == "200"){
+                        $("#goods-main-image-show2").attr("src",res.data.photo);
+                    }else{
+                        layer.msg("上传失败");
+                    }
+                }
+            });
+            var uploadMainImage = upload.render({
+                elem: '#goods-main-image3',
+                url: "/Admin/Upload/image",
+                done: function(res){
+                    console.log(res);
+                    if(res.code == "200"){
+                        $("#goods-main-image-show3").attr("src",res.data.photo);
+                    }else{
+                        layer.msg("上传失败");
+                    }
+                }
+            });
+            var uploadMainImage = upload.render({
+                elem: '#goods-main-image4',
+                url: "/Admin/Upload/image",
+                done: function(res){
+                    console.log(res);
+                    if(res.code == "200"){
+                        $("#goods-main-image-show4").attr("src",res.data.photo);
+                    }else{
+                        layer.msg("上传失败");
+                    }
+                }
+            });
+            var uploadMainImage = upload.render({
+                elem: '#goods-main-image5',
+                url: "/Admin/Upload/image",
+                done: function(res){
+                    console.log(res);
+                    if(res.code == "200"){
+                        $("#goods-main-image-show5").attr("src",res.data.photo);
+                    }else{
+                        layer.msg("上传失败");
+                    }
+                }
+            });
+
+            //商品描述图
+            var uploadDesc = upload.render({
+                elem: '#goods-desc-image',
+                url: "/Admin/Upload/image",
+                done: function(res){
+                    console.log(res);
+                    if(res.code == "200"){
+                        $("#goods-desc-image-show").attr("src",res.data.photo);
+                    }else{
+                        layer.msg("上传失败");
+                    }
+                }
+            });
+
+            /**  广告图 **/
+            var uploadadveImage = upload.render({
+                elem: '#goods-adve-image',
+                url: "/Admin/Upload/image",
+                done: function(res){
+                    console.log(res);
+                    if(res.code == "200"){
+                        $("#goods-adve-image-show").attr("src",res.data.photo);
+                    }else{
+                        layer.msg("上传失败");
+                    }
+                }
+            });
+        });
+    })
+</script>

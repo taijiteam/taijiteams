@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 防止手机点击放大问题 -->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+    <!-- the end -->
+    <title>支付订单</title>
+    <script type="text/javascript">
+        //调用微信JS api 支付
+        var order_number = '<?php echo $order_number ?>';
+        var wechat = '<?php echo $jsApiParameters;?>';
+        // groupName = '<?php echo $groupName ?>';
+        //调用微信JS api 支付
+        function jsApiCall(){
+            WeixinJSBridge.invoke(
+                'getBrandWCPayRequest',
+                {$jsApiParameters},
+                function(res){
+                    WeixinJSBridge.log(res.err_msg);
+                    if(res.err_msg == "get_brand_wcpay_request:ok"){
+                        window.location.href="http://www.qudaoplus.cn/merber_all_show/index.php/Home/Wxpay/activityorder?o_number=<?php echo $order_number ?>";
+
+                    }else if(res.err_msg == "get_brand_wcpay_request:cancel"){
+                        alert("已取消微信支付");
+                    }else{
+                        // window.location.href="http://www.qudaoplus.cn/merber_all_show/index.php/Home/Wxpay/my_order?order_number=<?php echo $order_number ?>";
+                        alert("系统繁忙稍后再试……");
+                    }
+                }
+            );
+        }
+        function callpay()
+        {
+            if (typeof WeixinJSBridge == "undefined"){
+                if( document.addEventListener ){
+                    document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
+                }else if (document.attachEvent){
+                    document.attachEvent('WeixinJSBridgeReady', jsApiCall);
+                    document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
+                }
+            }else{
+                jsApiCall();
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        //获取共享地址
+        function editAddress()
+        {
+            WeixinJSBridge.invoke(
+                'editAddress',
+            <?php echo $editAddress; ?>,
+            function(res){
+                var value1 = res.proviceFirstStageName;
+                var value2 = res.addressCitySecondStageName;
+                var value3 = res.addressCountiesThirdStageName;
+                var value4 = res.addressDetailInfo;
+                var tel = res.telNumber;
+
+                alert(value1 + value2 + value3 + value4 + ":" + tel);
+            }
+        );
+        }
+
+        window.onload = function(){
+            if (typeof WeixinJSBridge == "undefined"){
+                if( document.addEventListener ){
+                    document.addEventListener('WeixinJSBridgeReady', editAddress, false);
+                }else if (document.attachEvent){
+                    document.attachEvent('WeixinJSBridgeReady', editAddress);
+                    document.attachEvent('onWeixinJSBridgeReady', editAddress);
+                }
+            }else{
+                editAddress();
+            }
+        };
+    </script>
+    <style type="text/css">
+        body{
+            background: #000;
+        }
+        .binguan{
+            color: #fff;
+            background: rgb(53,53,53);
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .binguan>span{
+            width: 25%;
+            height: 21vw;
+            display: inline-block;
+            overflow: hidden;
+            border-radius: 15px;
+            float: left;
+        }
+        .binguan>span>img {
+            height: 100%;
+            word-wrap: break-word;
+            margin-left: -25px;
+        }
+        .binguan>div{
+            width: 73%;
+            margin-left: 2%;
+            float: left;
+        }
+        .binguan>div>p{
+            margin: 0;
+            line-height: 25px;
+        }
+        .binguan>div>p>span{
+            color: #ffa700;
+        }
+        .lvyou{
+            color: #fff;
+            background: rgb(53,53,53);
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .lvyou>span{
+            width: 30%;
+            height: 21vw;
+            display: inline-block;
+            overflow: hidden;
+            border-radius: 15px;
+            float: left;
+        }
+        .lvyou>span>img {
+            height: 100%;
+            word-wrap: break-word;
+        }
+        .lvyou>div{
+            width: 68%;
+            margin-left: 2%;
+            float: left;
+        }
+        .lvyou>div>p{
+            margin: 5px;
+            font-size: 14px;
+        }
+        .lvyou>div>span{
+            background: rgb(73,114,27);
+            display: inline-block;
+            margin-right: 5px;
+            padding: 1px 5px;
+            font-size: 12px;
+            border-radius: 1px;
+        }
+        .lyerji{
+            color: #fff;
+            font-size: 13px;
+            width: 85%;
+            margin: 25px auto;
+            border: 1px solid #777;
+            padding: 10px;
+        }
+        .lyerji>p{
+            margin: 0;
+            line-height: 25px;
+        }
+        .lyerji>span{
+            font-size: 15px;
+            display: block;
+            color: #ffa700;
+        }
+        .order_content>p{
+            text-align: center;
+            color: #fff;
+            font-size: 14px;
+        }
+        .order_content>p>span{
+            color: #64d600;
+            font-size: 16px;
+        }
+        .order_content>a{
+            color: #fff;
+            display: block;
+            width: 208px;
+            height: 40px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 40px;
+            border-radius:25px;/*边框圆角*/
+            background:-webkit-linear-gradient(left,#57ABF6,#11CDD5);/*渐变颜色*/
+            box-shadow: 0px 2px 13px #B4DCEA;/*阴影*/
+        }
+    </style>
+</head>
+<body>
+<div class="binguan">
+    <span><img src="__PUBLIC__/Uploads/Activity/{$actorder.a_img}" alt=""/></span>
+    <div>
+        <p>{$actorder.a_title|htmlspecialchars_decode|strip_tags|mb_substr=0,30,'utf-8'}</p>
+        <p>{$actorder.a_address|htmlspecialchars_decode|strip_tags|mb_substr=0,4,'utf-8'}</p>
+        <p>￥<span>{$actorder.a_price}</span></p>
+    </div>
+</div>
+<div class="order_content">
+    <p>订单总价：￥<span>{$order_price}</span></p>
+    <a onclick="callpay()">立即支付</a>
+</div>
+</body>
+</html>

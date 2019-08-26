@@ -1,0 +1,581 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>提交订单</title>
+</head>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Project/css/style.css">
+<style type="text/css">
+.happoint>footer{
+	height: 45px;
+}
+.happoint>footer>div{
+	overflow: hidden;
+	margin-top: 5px;
+}
+.happoint>footer>div>.tell{
+	display: inline-block;
+	overflow: hidden;
+}
+.happoint>footer>div>.tell>img{
+	width: 35px;
+	display: block;
+	float: left;
+	margin-left: 20px;
+}
+.happoint>footer>div>.tell>div{
+	overflow: hidden;
+	display: block;
+	float: left;
+}
+.happoint>footer>div>.tell>div>p{
+	color: rgb(248,194,84);
+	font-size: 12px;
+	margin: 0;
+}
+.happoint>footer>div>.aa{
+	display: block;
+	float: right;
+	width: 115px;
+	margin-right: 20px;
+}
+.happoint>footer>div>.aa>img{
+	width: 100%;
+}
+</style>
+<style type="text/css">
+.happoint>.div_1{
+	overflow: hidden;
+	border-radius: 5px;
+	width: 90%;
+	margin: 18px auto;
+	background: rgb(53,53,53);
+}
+.happoint>.div_1>p{
+	width: 30%;
+	height: 100px;
+	display: block;
+	float: left;
+	margin: 0;
+	overflow: hidden;
+	border-radius: 5px;
+}
+.happoint>.div_1>p>img{
+	height: 100%;
+}
+.happoint>.div_1>div{
+	display: block;
+	float: left;
+	width: 70%;
+}
+.happoint>.div_1>div>h4{
+	color: rgb(248,194,84);
+	height: 60px;
+	font-size: 14px;
+	margin: 0;
+	margin-left: 5px;
+}
+.happoint>.div_1>div>p{
+	color: rgb(248,194,84);
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-size: 12px;
+	margin-left: 5px;
+}
+.happoint>.div_1>div>p>img{
+	width: 11px;
+	margin-top: 4px;
+	display: block;
+	float: left;
+}
+.happoint>.div_1>div>p>span{
+	color: rgb(237,122,40);
+}
+.happoint>.div_1>div>p>.span1{
+	font-size: 20px;
+}
+.happoint>.div_2,
+.happoint>.div_3{
+	background: rgb(53,53,53);
+	width: 100%;
+	overflow: hidden;
+	margin-top: 18px;
+	margin-bottom: 18px;
+}
+.happoint>.div_2>p>span,
+.happoint>.div_3>p>span{
+	color: rgb(243,194,84);
+	width: 30%;
+	display: block;
+	float: left;
+	text-align: right;
+	font-size: 14px;
+	margin-right: 5px;
+}
+.happoint>.div_2>p>input{
+	background: none;
+	width: 35%;
+	margin-left: 5%;
+	border: 1px solid rgb(65,117,5);
+	color: #fff;
+	border-radius: 3px;
+	line-height: 25px;
+	padding-left: 7px;
+}
+.happoint>.div_3>p>input{
+	background: none;
+	width: 35%;
+	margin-left: 5%;
+	border: 1px solid rgb(65,117,5);
+	color: #fff;
+	border-radius: 3px;
+	line-height: 25px;
+	padding-left: 7px;
+}
+.happoint>.div_3>p{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	overflow: hidden;
+	border-bottom: 0.5px solid #555;
+}
+.happoint>.div_4{
+	overflow: hidden;
+	margin: 18px auto;
+	width: 90%;
+}
+.happoint>.div_4>h5{
+	color: rgb(243,194,84);
+	font-size: 15px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.happoint>.div_4>textarea{
+	width: 100%;
+	line-height: 20px;
+	border-radius: 2px;
+	border: 1px solid rgb(65,117,5);
+	color: #000;
+}
+.happoint>a>.p{
+	background: rgb(53,53,53);
+	padding-top: 10px;
+	padding-bottom: 10px;
+	overflow: hidden;
+	color: rgb(231,230,229);
+}
+.happoint>a>.p>span{
+	color: rgb(248,194,84);
+	display: block;
+	float: left;
+	width: 25%;
+	text-align: right;
+}
+</style>
+<body class="happoint">
+<div class="div_1">
+	<p><img src="__PUBLIC__/Uploads/Project/{$room.i_image}"></p>
+	<div>
+		<h4>{$room.r_title}</h4>
+		<p><img src="__PUBLIC__/Project/images/icon/rmb.png">&nbsp;<span class="span1">{$room.r_price}</span>元 原价<span>{$room.r_oprice}</span>元</p>
+		<input type="hidden" name="r_oprice" value="{$room.r_price}">
+	</div>
+</div>
+<div class="div_2">
+	<p><span>入住日期</span><input type="text" name="o_start" id="USER_AGE" style="width: 130px" readonly class="input" placeholder="入住日期" /></p>
+	<p><span>离店日期</span><input type="text" name="o_end" id="USER_AGA" style="width: 130px" readonly class="input" placeholder="入住日期" /></p>
+</div>
+<div class="div_3">
+	<!-- <p><span>房间数</span><input type="text" name="" placeholder="请输入"></p> -->
+	<p><span>联系人</span><input type="text" name="o_user" value="{$_SESSION['infor']['data'][0]['TrueName']}" placeholder="请输入"></p>
+	<p><span>联系手机</span><input type="text" name="o_phone" value="{$_SESSION['infor']['data'][0]['Mobile']}" placeholder="请输入"></p>
+	<p><span>预计到店</span><input type="time" name="o_atime" placeholder="请输入" /></p>
+</div>
+<div class="div_4">
+	<h5>更多需求(选填)</h5>
+	<textarea rows="8" id="text" cols="20" placeholder="请输入"></textarea>
+</div>
+<input type="hidden" name="o_rid" value="{$room.r_id}">
+<input type="hidden" name="o_pid" value="{$room.r_pid}">
+<input type="hidden" name="openid" value="{$_SESSION['openid']}">
+<input type="hidden" name="phone" value="{$_SESSION['infor']['data'][0]['Mobile']}">
+<a href="javascript:;" onclick="onclick_open()" id="fapiao">
+	<p class="p">
+		<span>发票&nbsp;&nbsp;&nbsp;&nbsp;</span>
+		不需要发票&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;
+	</p><input type="hidden" name="fapiao_zt" value="未选择">
+</a>
+
+
+<style type="text/css">
+.HuiTab{
+	width: 100%;
+	height: 100%;
+	background: rgb(21,22,27);
+	position: fixed;
+	top: 0px;
+	z-index: 1050;
+	display: none;
+}
+.HuiTab>.tabCon>form>div{
+	width: 100%;
+	margin-top: 10px;
+	overflow: hidden;
+	background: rgb(53,53,53);
+	padding: 0 5px;
+}
+.HuiTab>.tabCon>form>div>p{
+	width: 90%;
+	margin: 0 auto;
+	line-height: 40px;
+	border-bottom: 0.5px solid rgb(151,151,151);
+	color: #fff;
+	font-size: 14px;
+	overflow: hidden;
+}
+.HuiTab>.tabCon>form>div>p>span{
+	color: rgb(243,194,84);
+	font-size: 14px;
+	width: 23%;
+	/*display: block;
+	float: left;*/
+	text-align: left;
+}
+.HuiTab>.tabCon>form>div>p>input{
+	outline: none;
+	-webkit-appearance: none;
+	border-radius: 0;
+	background: none;
+	width: 60%;
+	/*display: block;
+	float: left;*/
+	padding-left: 5%;
+	border: none;
+	color: #fff;
+}
+.HuiTab>.tabCon>form>div>a{
+	display: block;
+	float: right;
+	margin: 25px 5% 10px 10px;
+	color: rgb(7,192,173);
+}
+.HuiTab>.tabCon>form>p{
+	width: 205px;
+	line-height: 30px;
+	display: block;
+	margin: 20px auto;
+}
+.HuiTab>.tabCon>form>p>.close_qx{
+	width: 100px;
+	color: #fff;
+	font-size: 20px;
+	line-height: 30px;
+	border: none;
+	border-radius: 2px;
+	background: -webkit-linear-gradient(top,#ff9d9d,#ff9d9d);
+}
+.HuiTab>.tabCon>form>p>.sub{
+	width: 100px;
+	color: #fff;
+	font-size: 20px;
+	line-height: 30px;
+	border: none;
+	border-radius: 2px;
+	background: -webkit-linear-gradient(top,rgb(238,162,13),rgb(238,162,13));
+}
+
+.HuiTab>.tabCon>div{
+	width: 90%;
+	color: #fff;
+	font-size: 12px;
+	margin: 10px auto;
+}
+.HuiTab>.tabCon>div>p{
+	margin: 0;
+	width: 100%;
+	line-height: 20px;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Project/css/H-ui.min.css" />
+<div id="HuiTab-demo1" class="HuiTab">
+	<div class="tabBar cl">
+		<span>个人</span>
+		<span>企业</span>
+	</div>
+	<div class="tabCon">
+		<form>
+			<div>
+				<p><span>发票类型&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;个人<input type="hidden" name="invoice_1" value="个人"></p>
+				<p><span>个人姓名&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="text" name="invoiceh_1" placeholder="请输入姓名"></p>
+				<p><span>收票人手机</span><input type="text" name="phone_1" placeholder="填写收票人手机"></p>
+				<p><span>收票人邮箱</span><input type="text" name="email_1" placeholder="用来接收电子发票"></p>
+				<a href="fapiao.html">发票须知</a>
+			</div>
+			<p>
+				<input class="sub" type="button" onclick="fapiao_gr()" value="提交">
+				<input class="close_qx" type="button" onclick="onclick_close()" value="取消">
+			</p>
+		</form>
+		<div>
+			<p><b>·</b>&nbsp;&nbsp;&nbsp;发票金额：888（房费：888-优惠  32）</p>
+			<p><b>·</b>&nbsp;&nbsp;&nbsp;电子发票将在离店后四个工作日内，由代理商开具并发送至您的邮箱。您还可以在订单详情页中查看开具状态等信息</p>
+			<p><b>·</b>&nbsp;&nbsp;&nbsp;电子发票开具后，不支持修改成其他发票类型</p>
+			<p><b>·</b>&nbsp;&nbsp;&nbsp;国家规定2017年7月1日起，申请企业增值税普通发票，需要提供公司税号，否则不能作为税收凭证。</p>
+		</div>
+	</div>
+	<div class="tabCon">
+		<form>
+			<div>
+				<p><span>发票抬头&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="text" name="invoiceh" placeholder="请填写企业名称"></p>
+				<p><span>公司税号&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="text" name="ein" placeholder="企业开票请填写纳税人识别号"></p>
+				<p><span>收票人手机</span><input type="text" name="phone_2" placeholder="填写收票人手机"></p>
+				<p><span>收票人邮箱</span><input type="text" name="email_2" placeholder="用来接收电子发票"></p>
+				<a href="fapiao.html">发票须知</a>
+			</div>
+			<p>
+				<input class="sub" type="button" onclick="fapiao_qy()" value="提交">
+				<input class="close_qx" type="button" onclick="onclick_close()" value="取消">
+			</p>
+		</form>
+		<div>
+			<p><b>·</b>&nbsp;&nbsp;&nbsp;发票金额：888（房费：888-优惠  32）</p>
+			<p><b>·</b>&nbsp;&nbsp;&nbsp;电子发票将在离店后四个工作日内，由代理商开具并发送至您的邮箱。您还可以在订单详情页中查看开具状态等信息</p>
+			<p><b>·</b>&nbsp;&nbsp;&nbsp;电子发票开具后，不支持修改成其他发票类型</p>
+			<p><b>·</b>&nbsp;&nbsp;&nbsp;国家规定2017年7月1日起，申请企业增值税普通发票，需要提供公司税号，否则不能作为税收凭证。</p>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+/*添加发票*/
+function fapiao_gr(){
+	var invoiceh_1 = $('input[name="invoiceh_1"]').val();			//发票抬头
+	var phone_1 = $('input[name="phone_1"]').val();		//联系电话
+	var email_1 = $('input[name="email_1"]').val();			//联系邮箱
+	if(invoiceh_1 == ''){
+		$.Huimodalalert('警告：请填写姓名！！',2000);
+	}else if(phone_1 == ''){
+		$.Huimodalalert('警告：请填写联系电话！！',2000);
+	}else if(email_1 == ''){
+		$.Huimodalalert('警告：请填写联系邮箱！！',2000);
+	}else{
+		var html ='';
+			html += '<p class="p"><span>发票&nbsp;&nbsp;&nbsp;&nbsp;</span>已选择个人发票&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;</p><input type="hidden" name="fapiao_zt" value="个人">';
+		$('#fapiao').html(html);
+		var shade_content = $("#HuiTab-demo1");
+		shade_content.hide();
+	}
+}
+/*添加发票*/
+function fapiao_qy(){
+	var invoiceh = $('input[name="invoiceh"]').val();			//发票抬头
+	var ein = $('input[name="ein"]').val();			//企业纳税号
+	var phone_2 = $('input[name="phone_2"]').val();		//联系电话
+	var email_2 = $('input[name="email_2"]').val();			//联系邮箱
+	if(invoiceh == ''){
+		$.Huimodalalert('警告：请填写公司名称！！',2000);
+	}else if(ein == ''){
+		$.Huimodalalert('警告：请填写企业纳税号！！',2000);
+	}else if(phone_2 == ''){
+		$.Huimodalalert('警告：请填写联系电话！！',2000);
+	}else if(email_2 == ''){
+		$.Huimodalalert('警告：请填写联系邮箱！！',2000);
+	}else{
+		var html ='';
+			html += '<p class="p"><span>发票&nbsp;&nbsp;&nbsp;&nbsp;</span>已选择企业发票&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;</p><input type="hidden" name="fapiao_zt" value="企业">';
+		$('#fapiao').html(html);
+		var shade_content = $("#HuiTab-demo1");
+		shade_content.hide();
+	}
+}
+
+/*浮动框 更换人员*/
+function onclick_open() {
+	$("#HuiTab-demo1").show();
+	// $(".shade").show();
+	// var input_out = $(".input_style");
+	// for (var i = 0; i <= input_out.length; i++) {
+	// 	if ($(input_out[i]).val() != "") {
+	// 		$(input_out[i]).val("");
+	// 	}
+	// }
+}
+function onclick_close() {
+	var shade_content = $("#HuiTab-demo1");
+		shade_content.hide();
+}
+</script>
+<p style="width: 100%; height: 60px; margin: 0; overflow: hidden;"></p>
+<!-- 这里是底部 -->
+<footer>
+	<div>
+		<a href="tel:021-53069999" class="tell">
+			<img src="__PUBLIC__/Activity/images/icon/tellme.png">
+			<div>
+				<p>联系我们</p>
+				<p>Tell me</p>
+			</div>
+		</a>
+		<a href="javascript:;" onclick="hotelappoint()" class="aa"><img src="__PUBLIC__/Project/image/zxyd1.png"></a>
+	</div>
+</footer>
+</body>
+<script type="text/javascript">
+function hotelappoint(){
+	var o_start = $('input[name="o_start"]').val();	//入住时间
+	var o_end = $('input[name="o_end"]').val();	//离店时间
+	var o_user = $('input[name="o_user"]').val();			//联系人
+	var o_phone = $('input[name="o_phone"]').val();		//联系电话
+	var o_atime = $('input[name="o_atime"]').val();		//联系电话
+	var o_aprace = $('input[name="r_oprice"]').val();		//联系电话
+
+	var o_content = $("#text").val();					//特殊需求
+	var o_openid = $('input[name="openid"]').val();		//openid
+	var o_pid = $('input[name="o_pid"]').val();			//o_pid
+	var o_rid = $('input[name="o_rid"]').val();			//o_rid
+	var fapiao_zt = $('input[name="fapiao_zt"]').val();			//发票状态
+	if (fapiao_zt == '企业') {
+		var o_invoice = $('input[name="fapiao_zt"]').val();			//发票类型
+		var o_invoiceh = $('input[name="invoiceh"]').val();			//发票抬头
+		var o_ein = $('input[name="ein"]').val();			//公司税号
+		var o_fphone = $('input[name="phone_2"]').val();			//联系人
+		var o_invemail = $('input[name="email_2"]').val();			//邮箱
+	}else if (fapiao_zt == '个人') {
+		var o_invoice = $('input[name="fapiao_zt"]').val();			//发票类型
+		var o_invoiceh = $('input[name="invoiceh_1"]').val();			//发票抬头
+		var o_fphone = $('input[name="phone_1"]').val();			//联系人
+		var o_invemail = $('input[name="email_1"]').val();			//邮箱
+	}
+	
+	if(o_start == ''){
+		$.Huimodalalert('警告：请填写入住时间！！',2000);
+	}else if(o_end == ''){
+		$.Huimodalalert('警告：请填写离店时间！！',2000);
+	}else if(o_user == ''){
+		$.Huimodalalert('警告：请填写联系人！！',2000);
+	}else if (o_phone == ''){
+		$.Huimodalalert('警告：请填写联系电话！！',2000);
+	}else if (o_atime == ''){
+		$.Huimodalalert('警告：请填写预计到店时间！！',2000);
+	}else{
+		$.ajax({
+			type:"post",
+			url:'{:U('Project/hotelorder')}',//根据自己项目的需要写请求地址
+			data:{
+				'o_start':o_start,
+				'o_end':o_end,
+				'o_user':o_user,
+				'o_phone':o_phone,
+				'o_atime':o_atime,
+				'o_content':o_content,
+				'o_openid':o_openid,
+				'o_pid':o_pid,
+				'o_rid':o_rid,
+				'o_invoice':o_invoice,
+				'o_invoiceh':o_invoiceh,
+				'o_ein':o_ein,
+				'o_fphone':o_fphone,
+				'o_invemail':o_invemail,
+				'o_aprace':o_aprace,
+			},
+			dataType:'json',
+			success:function(data){
+				//alert(JSON.stringify(data));
+				if (data == 1){
+					layer.confirm('订单提交成功！',function(index){
+						location.href="http://www.qudaoplus.cn/merber_all_show/index.php/Home/Project/"
+						//window.parent.location.reload();
+						// var index = parent.layer.getFrameIndex(window.name);
+						// parent.layer.close(index);
+					});
+				// }else if (data == 2) {
+				// 	layer.msg('角色名称还没填来！！！',function(){});
+				}else{
+					layer.msg('哎呦，运气不好哦，添加失败咯！',function(){});
+				}
+			},
+			error:function(data) {
+				console.log(data.msg);
+			},
+		})
+	}
+}
+</script>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/hui/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/hui/static/h-ui.admin/js/H-ui.admin.js"></script>
+<!--/_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/jquery.validation/1.14.0/jquery.validate.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/jquery.validation/1.14.0/messages_zh.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/webuploader/0.1.5/webuploader.min.js"></script> 
+<!-- 请在上方写此页面业务相关的脚本 -->
+<!-- 日期选择控件 -->
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Project/css/mobiscroll_date.css">
+<script src="__PUBLIC__/Project/js/mobiscroll_date.js" charset="gb2312"></script> 
+<script src="__PUBLIC__/Project/js/mobiscroll.js"></script> 
+<script type="text/javascript">
+/*时间控件*/
+$(function () {
+	var currYear = (new Date()).getFullYear();	
+	var opt={};
+
+	opt.date = {preset : 'date'};
+	opt.datetime = {preset : 'datetime'};
+	opt.time = {preset : 'time'};
+	opt.default = {
+		theme: 'android-ics light', //皮肤样式
+		display: 'modal', //显示方式 
+		mode: 'scroller', //日期选择模式
+		dateFormat: 'yyyy-mm-dd',
+		lang: 'zh',
+		showNow: true,
+		nowText: "今天",
+		startYear: currYear - 50, //开始年份
+		endYear: currYear + 10 //结束年份
+	};
+	$("#USER_AGE").mobiscroll($.extend(opt['date'], opt['default']));
+});
+/*时间控件*/
+$(function () {
+	var currYear = (new Date()).getFullYear();	
+	var opt={};
+
+	opt.date = {preset : 'date'};
+	opt.datetime = {preset : 'datetime'};
+	opt.time = {preset : 'time'};
+	opt.default = {
+		theme: 'android-ics light', //皮肤样式
+		display: 'modal', //显示方式 
+		mode: 'scroller', //日期选择模式
+		dateFormat: 'yyyy-mm-dd',
+		lang: 'zh',
+		showNow: true,
+		nowText: "今天",
+		startYear: currYear - 50, //开始年份
+		endYear: currYear + 10 //结束年份
+	};
+	$("#USER_AGA").mobiscroll($.extend(opt['date'], opt['default']));
+});
+</script>
+<script type="text/javascript" src="__PUBLIC__/Project/js/ertao/H-ui.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/js/ertao/jquery.SuperSlide.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/js/ertao/jquery.validate.min.js"></script>
+<script>
+$(function(){
+	//选项卡
+	$("#HuiTab-demo1").Huitab({
+		index:0
+	});
+	//返回顶部
+	//$.Huitotop();
+
+});
+</script>
+</html>

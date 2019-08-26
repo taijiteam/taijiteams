@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 防止手机点击放大问题 -->
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+	<!-- the end -->
+	<title>名院详情</title>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Doctor/css/style.css">
+</head>
+<body>
+<include file="DoctorPublic/cheader" />
+<div class="hospital">
+	<h3><img src="__PUBLIC__/Doctor/images/yuan1.png">名院详情</h3>
+	<div class="hospital_cdiv">
+		<img src="__PUBLIC__/img/{$h.h_photo}">
+		<h4>{$h.h_hospital}</h4>
+		<p>简介：{$h.h_introduction|htmlspecialchars_decode|strip_tags|mb_substr=0,40,'utf-8'}</p>
+		<p style="color: rgb(250,196,84)">擅长：癌症、肿瘤治疗</p>
+	</div>
+	<h3><img src="__PUBLIC__/Doctor/images/jianjie.png">名院简介</h3>
+	<p class="hospital_cp">{$h.h_introduction}</p>
+	<h3><img src="__PUBLIC__/Doctor/images/keshi.png">名院科室</h3>
+	<p class="hospital_cp">医院设有<volist name="h_list" id="h_list">{$h_list.de_department}</volist></p>
+	<h3><img src="__PUBLIC__/Doctor/images/shebei.png">医疗设备</h3>
+	<p class="hospital_cp">{$h.h_facilities}</p>
+	<h3><img src="__PUBLIC__/Doctor/images/dizhi.png">医院地址 </h3>
+	<p class="hospital_cp">{$h.h_address}</p>
+</div>
+<div class="doctor">
+	<h3><img src="__PUBLIC__/Doctor/images/minigyi1.png">名医详情</h3>
+	<foreach name="doctor_list" item="do">
+		<div class="doctor_cdiv">
+			<img src="__PUBLIC__/img/{$do.do_photo}">
+			<div>
+				<object><a href="{:U('Doctor/doctor_content')}?do_id={$do.do_Id}">详情</a></object>
+				<h4>{$do.do_doctor}</h4>
+				<p>{$do_list.do_position|htmlspecialchars_decode|strip_tags|mb_substr=0,4,'utf-8'}</p>
+				<p>科室：{$do.de_department}</p>
+				<p>擅长：{$do.do_adept}</p>
+				<foreach name="label" item="vo">
+					<span>{$vo.la_label}</span>
+				</foreach>
+				<!-- <span>肺癌</span>
+                <span>食道癌</span> -->
+			</div>
+		</div>
+	</foreach>
+</div>
+<include file="DoctorPublic/footer" />
+</body>
+</html>

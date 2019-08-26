@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>评价管理</title>
+	<link rel="stylesheet" type="text/css" href="../../../../Public/Admin/layui-v2.5.4/layui/css/layui.css">
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.header_top{
+			width: 95%;
+			margin: 50px auto;
+			margin-bottom: 20px;
+		}
+		.header_top>input{
+			width: 180px;
+			height: 40px;
+			border: 1px solid #707070;
+			display: inline-block;
+			margin: 0 5px;
+		}
+		.header_top>button{
+			width: 40px;
+			height: 40px;
+			border: 1px solid #707070;
+			display: inline-block;
+			margin: 0 5px;
+			background: #019588;
+			color: #fff;
+		}
+		.layui-input-block{
+			display: inline-block;
+			margin: 0 10px;
+		}
+		.drop_down{
+			width: 180px;
+			height: 40px;
+			border: 1px solid #707070;
+			margin: 0;
+			display: block;
+    		padding-left: 10px;
+    		color: #999999;
+		}
+		.nav_btn{
+			width: 98%;
+			height: 50px;
+			background: #f2f2f2;
+			display: flex;
+			margin: 0 auto;
+		}
+		.btn_one{
+			flex: 3;
+		}
+		.btn_one>button{
+			width: 100px;
+			background: #e34747;
+			color: #fff;
+			margin: 12px 0 12px 50px;
+		}
+		.btn_two{
+			flex: 3;
+		}
+		.btn_two>button{
+			width: 100px;
+			background: #019588;
+			color: #fff;
+			margin: 12px 0 12px 80%;
+		}
+		.consent_from{
+			width: 98%;
+			margin: 0 auto;
+		}
+		.title>th{
+			font-size: 12px;
+			text-align: center;
+		}
+		tbody>tr{
+			font-size: 12px;
+			text-align: center;
+		}
+		.iof{
+			display: flex;
+		}
+		.ifont{
+			margin: 10px 8px;
+			text-align: center;
+		}
+		.ifont>i{
+			font-size: 20px;
+		}
+		.ifont>p{
+			font-size: 10px;
+		}
+		.layui-table[lay-size=lg] td{
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="consent">
+		<!-- 头部搜索列表 -->
+		<div class="header_top">
+			<input type="text" class="layui-input" id="test1" placeholder="开始时间">
+			<input type="text" class="layui-input" id="test2" placeholder="截至时间">
+			<div class="layui-input-block">
+	      		<select name="city" lay-verify="required" class="drop_down">
+			        <option value="">订单状态</option>
+			        <option value="0">未评价</option>
+			        <option value="1">已评价</option>
+	      		</select>
+	    	</div>
+	    	<input type="text" name="title" required lay-verify="required" placeholder="请输入订单号" autocomplete="off" class="layui-input">
+	    	<button><i class="layui-icon layui-icon-search"></i></button>
+		</div>
+		<!-- nav按钮 -->
+		<div class="nav_btn">
+			<div class="btn_one">
+				<button><i class="layui-icon layui-icon-delete">批量删除</i></button>
+			</div>
+			<div class="btn_two">
+				<button><i class="layui-icon layui-icon-file">导出</i></button>
+			</div>
+		</div>
+		<!-- 表格表头 -->
+		<div class="consent_from">
+			<table class="layui-table" lay-size="lg">
+			 	<colgroup>
+				    <col width="100">
+				    <col width="120">
+				    <col width="130">
+				    <col width="130">
+				    <col width="130">
+				    <col width="500">
+				    <col width="130">
+				    <col width="130">
+				    <col width="130">
+				    <col width="130">
+				    <col width="130">
+				</colgroup>
+				  <thead>
+				    <tr class="title">
+				      <th>序号</th>
+				      <th>产品编号</th>
+				      <th>产品名称</th>
+				      <th>支付金额</th>
+				      <th>订单状态</th>
+				      <th>用户评价</th>
+				      <th>联系人</th>
+				      <th>联系电话</th>
+				      <th>配送方式</th>
+				      <th>下单时间</th>
+				      <th>操作</th>
+				    </tr> 
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <td>1</td>
+				      <td>KF1001</td>
+				      <td>如意算盘</td>
+				      <td>385</td>
+				      <td>待评价</td>
+				      <td id="t3">
+				      	<ul class="layui-rate">
+				      		<!-- 点亮星星更换Class类名：layui-icon-rate 变成 layui-icon-rate-solid -->
+				      		<li class="layui-inline"><i class="layui-icon layui-icon-rate"></i></li>
+				      		<li class="layui-inline"><i class="layui-icon layui-icon-rate"></i></li>
+				      		<li class="layui-inline"><i class="layui-icon layui-icon-rate"></i></li>
+				      		<li class="layui-inline"><i class="layui-icon layui-icon-rate"></i></li>
+				      		<li class="layui-inline"><i class="layui-icon layui-icon-rate"></i></li>
+				      	</ul>
+					    宝贝收到了，很实用，很漂亮
+					  </td>
+				      <td>张三</td>
+				      <td>13112345678</td>
+				      <td>2019-05-22 14：00</td>
+				      <td>1234.00</td>
+				      <td class="iof">
+				      	<div class="ifont">
+				      		<i class="layui-icon layui-icon-form"></i> 
+				      		<p>查看</p>
+				      	</div>
+				      	<div class="ifont" style="color: red;">
+				      		<i class="layui-icon layui-icon-edit"></i>  
+				      		<p>评价</p>
+				      	</div>
+				      	<div class="ifont">
+				      		<i class="layui-icon layui-icon-delete"></i>   
+				      		<p>删除</p>  
+				      	</div>
+				      </td>
+				    </tr>
+				    <tr>
+				      <td>2</td>
+				      <td>KF1002</td>
+				      <td>如意算盘</td>
+				      <td>385</td>
+				      <td>待评价</td>
+				      <td>
+				      	<ul class="layui-rate">
+				      		<li class="layui-inline">
+				      			<i class="layui-icon layui-icon-rate"></i>
+					      		<i class="layui-icon layui-icon-rate"></i>
+					      		<i class="layui-icon layui-icon-rate"></i>
+					      		<i class="layui-icon layui-icon-rate"></i>
+					      		<i class="layui-icon layui-icon-rate"></i>
+					      	</li>
+				      	</ul>
+				      	宝贝收到了，很实用，很漂亮
+				      </td>
+				      <td>张三</td>
+				      <td>13112345678</td>
+				      <td>2019-05-22 14：00</td>
+				      <td>1234.00</td>
+				      <td class="iof">
+				      	<div class="ifont">
+				      		<i class="layui-icon layui-icon-form"></i> 
+				      		<p>查看</p>
+				      	</div>
+				      	<div class="ifont" style="color: red;">
+				      		<i class="layui-icon layui-icon-edit"></i>  
+				      		<p>评价</p>
+				      	</div>
+				      	<div class="ifont">
+				      		<i class="layui-icon layui-icon-delete"></i>   
+				      		<p>删除</p>  
+				      	</div>
+				      </td>
+				    </tr>
+				  </tbody>
+			</table>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="../../../../Public/Admin/layui-v2.5.4/layui/layui.js"></script>
+<script type="text/javascript">
+	layui.use('laydate', function(){
+  		var laydate = layui.laydate;
+  		//执行一个laydate实例
+  		laydate.render({
+    		elem: '#test1' //指定元素
+  		});
+  		laydate.render({
+    		elem: '#test2' //指定元素
+  		});
+	});
+</script>
+</script>
+</html>

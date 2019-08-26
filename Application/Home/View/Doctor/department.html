@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 防止手机点击放大问题 -->
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+	<!-- the end -->
+	<title>科目分类</title>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Doctor/css/style.css">
+</head>
+<body>
+<include file="DoctorPublic/iheader" />
+<div class="depa">
+	<h3><img src="__PUBLIC__/Doctor/images/qita.png">科室分类</h3>
+	<ul class="nav">
+		<a href="{:U('Doctor/department_list')}?de_department=ICU">
+			<li>
+				<span><img src="__PUBLIC__/Doctor/images/ICU.png"></span>
+				<p>ICU</p>
+			</li>
+		</a>
+		<a href="{:U('Doctor/department_list')}?de_department=内科">
+			<li>
+				<span><img src="__PUBLIC__/Doctor/images/neike.png"></span>
+				<p>内科</p>
+			</li>
+		</a>
+		<a href="{:U('Doctor/department_list')}?de_department=外科">
+			<li>
+				<span><img src="__PUBLIC__/Doctor/images/waike.png"></span>
+				<p>外科</p>
+			</li>
+		</a>
+		<a href="{:U('Doctor/department_list')}?de_department=肿瘤科">
+			<li>
+				<span><img src="__PUBLIC__/Doctor/images/zhongliu.png"></span>
+				<p>肿瘤科</p>
+			</li>
+		</a>
+		<!--<a href="{:U('Doctor/department_list')}?de_department=消化科">-->
+		<a href="{:U('Doctor/department_list')}?de_department=手术">
+			<li>
+				<span><img src="__PUBLIC__/Doctor/images/gangchangke.png"></span>
+				<p>消化科</p>
+			</li>
+		</a>
+		<a href="{:U('Doctor/department_list')}?de_department=妇产科">
+			<li>
+				<span><img src="__PUBLIC__/Doctor/images/fuchan.png"></span>
+				<p>妇产科</p>
+			</li>
+		</a>
+		<a href="{:U('Doctor/department_list')}?de_department=手术s">
+			<li>
+				<span><img src="__PUBLIC__/Doctor/images/shoushu.png"></span>
+				<p>手术</p>
+			</li>
+		</a>
+		<a href="{:U('Doctor/department')}">
+			<li>
+				<span><img src="__PUBLIC__/Doctor/images/qita.png"></span>
+				<p>全部</p>
+			</li>
+		</a>
+	</ul>
+	<ul class="list">
+		<volist name="do_list" id="do_list">
+			<a href="{:U('Doctor/doctor_content')}?do_id={$do_list.do_Id}">
+				<li>
+					<img src="__PUBLIC__/img/{$do_list.do_photo}">
+					<div>
+						<object><a href="{:U('Doctor/appoint')}?do_id={$do_list.do_Id}">预约</a></object>
+						<h4>{$do_list.do_doctor}</h4>
+						<p>{$do_list.do_position|htmlspecialchars_decode|strip_tags|mb_substr=0,4,'utf-8'}</p>
+						<p>医院：{$do_list.h_hospital}</p>
+						<p>科室：{$do_list.de_department}</p>
+						<p>擅长：{$do_list.do_adept|htmlspecialchars_decode|strip_tags|mb_substr=0,14,'utf-8'}...</p>
+					</div>
+					<volist name="do_list.erji" id="do_list_1">
+						<span>{$do_list_1.la_label}</span>
+					</volist>
+					<!-- <span>肺部结节</span>
+					<span>肺癌</span>
+					<span>食道癌</span> -->
+				</li>
+			</a>
+		</volist>
+		<!-- <a href="">
+            <li>
+                <img src="__PUBLIC__/Doctor/images/cao.png">
+                <div>
+                    <h4>曹子昂</h4>
+                    <p>主任医师</p>
+                    <p>医院：仁济医院</p>
+                    <p>科室：外科</p>
+                    <p>擅长：胸部恶性肿瘤的外科</p>
+                </div>
+                <object><a href="">预约</a></object>
+                <span>肺部结节</span>
+                <span>肺癌</span>
+                <span>食道癌</span>
+            </li>
+        </a> -->
+	</ul>
+</div>
+<include file="DoctorPublic/footer" />
+</body>
+</html>

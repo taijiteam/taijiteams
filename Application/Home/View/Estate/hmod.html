@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>发布房源</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Estate/css/style.css">
+<script src="__PUBLIC__/Estate/js/jquery-1.8.3.min.js"></script>
+<style type="text/css">
+.rental>form>p{
+	width: 90%;
+	margin: 0 auto;
+	border-bottom: 1px solid #4c4c4c;
+	line-height: 45px;
+	overflow: hidden;
+	font-size: 14px;
+}
+.rental>form>p>b{
+	color: #f00;
+	display: block;
+	float: left;
+}
+.rental>form>.p_1>span{
+	width: 25%;
+	display: block;
+	float: left;
+	font-size: 14px;
+}
+.rental>form>.p_1>input{
+	width: 50%;
+	display: block;
+	float: left;
+	font-size: 14px;
+	margin-top: 12.5px;
+	border: none;
+	background: none;
+	color: #fff;
+}
+.rental>form>.p_1>select{
+	width: 50%;
+	display: block;
+	float: left;
+	font-size: 14px;
+	margin-top: 12.5px;
+	border: none;
+	background: none;
+	color: #fff;
+}
+.rental>form>.p_1>select>option{
+	color: #000;
+}
+.rental>form>.p_2>span{
+	width: 15%;
+	display: block;
+	float: left;
+	font-size: 14px;
+	line-height: 45px;
+}
+.rental>form>.p_2>input{
+	width: 35%;
+	display: block;
+	float: left;
+	font-size: 14px;
+	line-height: 45px;
+	border: none;
+	background: none;
+	color: #fff;
+}
+.rental>form>div{
+	width: 90%;
+	margin: auto;
+	overflow: hidden;
+}
+.rental>form>div>h4{
+	font-size: 14px;
+}
+.rental>form>div>span{
+	width: 25%;
+	display: block;
+	float: left;
+	font-size: 14px;
+	padding-top: 5px;
+}
+.rental>form>input{
+	width: 160px;
+	margin: 20px auto;
+	background:-webkit-linear-gradient(top,rgb(248,176,83),rgb(176,113,20));/*渐变颜色*/
+	border-radius: 3px;
+	border: none;
+	color: #fff;
+	display: block;
+	line-height: 25px;
+}
+.rental>form>.img>{
+	overflow: hidden;
+
+}
+.rental>form>.img>p{
+	width: 33%;
+	display: block;
+	float: left;
+	overflow: hidden;
+}
+.rental>form>.img>p>img{
+	width: 80%;
+	height: 23vw;
+	display: block;
+	float: left;
+}
+.rental>form>.img>p>a{
+	display: block;
+	float: left;
+	width: 20%;
+	text-align: center;
+}
+#images{
+	min-height:7em;
+	max-height:21em;
+	text-align:left;
+	overflow-y:auto;
+	border: 1px solid;
+}
+#images img{
+    width: 5.5em;
+    height: 5.5em;
+    margin:0.5em;
+}
+.inputFiles{
+	display:none;
+}
+#save{
+	width: 145px;
+    background: #FF9800;
+    border: none;
+    border-radius: 5px;
+    line-height: 25px;
+}
+#ps{
+	text-align: center;
+}
+.btn_submit>button{
+	width: 80px;
+}
+.btn_submit>b{
+	color: #f00;
+}
+</style>
+</head>
+<body class="rental">
+	<form enctype="multipart/form-data" method="post" id="uploadForm" target="saveTo">
+		<p class="p_1"><b>*</b><span>标题</span><input type="text" name="e_title" value="{$estate.e_title}" placeholder="简述一下房子的概况15个字以下" id="input1" class="bor" onfocus="clearerr(this);"></p>
+		<!-- <p class="p_1"><b>*</b><span>所在区域</span><input type="text" name="e_regional" placeholder="例如：黄浦区"></p> -->
+
+		<p class="p_1"><b>*</b><span>所在区域</span>
+			<select name="e_regional">
+				<volist name="regional" id="regional">
+					<option value="{$regional.r_id}" {$estate['e_regional']==$regional['r_id']?'selected':''}>{$regional.r_regional}</option>
+				</volist>
+			</select>
+		</p>
+
+
+		<p class="p_1"><b>*</b><span>小区名称</span><input type="text" name="e_community" value="{$estate.e_community}"  placeholder="小区名称" id="input2" class="bor" onfocus="clearerr(this);"></p>
+		<p class="p_1"><b>*</b><span>小区地址</span><input type="text" name="e_address" value="{$estate.e_address}"  placeholder="小区所在位置" id="input3" class="bor" onfocus="clearerr(this);"></p>
+		<p class="p_1"><b>*</b><span>面积</span><input type="text" name="e_area" value="{$estate.e_area}"  placeholder="如：100" id="input4" class="bor" onfocus="clearerr(this);">㎡</p>
+		<p class="p_1"><b>*</b><span>租金</span><input type="text" name="e_rent" value="{$estate.e_rent}"  placeholder="租金" id="input5" class="bor" onfocus="clearerr(this);">元/月</p>
+		<p class="p_1"><b>*</b><span>付款方式</span><input type="text" name="e_payment" value="{$estate.e_payment}"  placeholder="例如：付三押一" id="input6" class="bor" onfocus="clearerr(this);"></p>
+		<p class="p_1"><b>*</b><span>类型</span>*目前仅支持个人发布住宅房源
+			<!-- <select name="e_category">
+				<option value="商铺">商铺</option>
+				<option value="写字楼">写字楼</option>
+				<option value="住宅">住宅</option>
+				<option value="厂房">厂房</option>
+				<option value="仓库">仓库</option>
+			</select> -->
+		</p>
+		<p class="p_1"><span>装修</span><input type="text" name="e_conditions" value="{$estate.e_conditions}"  placeholder="如：精装"></p>
+		<p class="p_1"><span>楼层</span><input type="text" name="e_floor" value="{$estate.e_floor}"  placeholder="如：8/20"></p>
+		<p class="p_1"><span>户型</span><input type="text" name="e_hosetype" value="{$estate.e_housetype}"  placeholder="如：三室一厅"></p>
+		<p class="p_1"><span>朝向</span><input type="text" name="e_toward" value="{$estate.e_toward}"  placeholder="如：朝南"></p>
+		<p class="p_1"><b>*</b><span>描述</span><input type="text" name="e_describe" value="{$estate.e_describe}"  placeholder="请输入" id="input7" class="bor" onfocus="clearerr(this);"></p>
+		<div class="img">
+			<volist name="photo1" id="photo1">
+				<p><img src="__PUBLIC__/Uploads/Estate/{$photo1.p_photo}"><a onclick="pdel(this,'{$photo1.p_id}')" href="javascript:;">x</a></p>
+			</volist>
+		</div>
+		<!-- <P class="p_1"><input type="file" name="photo[]" multiple="multiple" />&nbsp;&nbsp;<b>*</b></P> -->
+		<div class="content" >
+			<div id="images"></div>
+			<div class="inputFiles"></div>
+			<div class="btn_submit">
+				<button  type="button" class="btn btn-success btn_upImg" onClick="addinputFile()">选择图片</button><b>*</b><span>上传多张请继续选择图片</span>
+			</div> 
+		</div>
+		<div>
+			<h4>配套设施</h4>
+			<span><input type="checkbox" name="e_bed" value="1" {$estate['e_bed']==1?'checked':''}>床</span>
+			<span><input type="checkbox" name="e_tv" value="1" {$estate['e_tv']==1?'checked':''}>电视</span>
+			<span><input type="checkbox" name="e_kongtiao" value="1" {$estate['e_kongtiao']==1?'checked':''}>空调</span>
+			<span><input type="checkbox" name="e_washer" value="1" {$estate['e_washer']==1?'checked':''}>洗衣机</span>
+			<span><input type="checkbox" name="e_heating" value="1" {$estate['e_heating']==1?'checked':''}>暖气</span>
+			<span><input type="checkbox" name="e_balcony" value="1" {$estate['e_balcony']==1?'checked':''}>阳台</span>
+			<span><input type="checkbox" name="e_wardrobe" value="1" {$estate['e_wardrobe']==1?'checked':''}>衣柜</span>
+			<span><input type="checkbox" name="e_calorifier" value="1" {$estate['e_calorifier']==1?'checked':''}>热水器</span>
+			<span><input type="checkbox" name="e_microwave" value="1" {$estate['e_microwave']==1?'checked':''}>微波炉</span>
+			<span><input type="checkbox" name="e_refrigerator" value="1" {$estate['e_refrigerator']==1?'checked':''}>冰箱</span>
+			<span><input type="checkbox" name="e_kitchen" value="1" {$estate['e_kitchen']==1?'checked':''}>厨房</span>
+			<span><input type="checkbox" name="e_gas" value="1" {$estate['e_gas']==1?'checked':''}>煤气</span>
+			<span><input type="checkbox" name="e_furniture" value="1" {$estate['e_furniture']==1?'checked':''}>桌椅</span>
+			<span><input type="checkbox" name="e_toilet" value="1" {$estate['e_toilet']==1?'checked':''}>卫生间</span>
+			<span><input type="checkbox" name="e_parking" value="1" {$estate['e_parking']==1?'checked':''}>车位</span>
+			<input type="hidden" name="e_id" value="{$estate.e_id}">
+			<input type="hidden" name="e_openid" value="{$_SESSION['openid']}">
+			<input type="hidden" name="e_uphone" value="{$_SESSION['infor']['data'][0]['Mobile']}">
+			<input type="hidden" name="e_release" value="{$_SESSION['infor']['data'][0]['TrueName']}">
+			<!-- <span><input type="checkbox" id="hxy" name="hxy">全选</span> -->
+		</div>
+		<p id="ps"><button  id="save"  type="button" class="btn btn-success" onClick="uploadFile()">提交</button></p>
+		<!-- <input type="submit" name="" value="提交"> -->
+	</form>
+
+
+<script type="text/javascript">
+$(document).ready(function(e) {
+$("#hxy").click(function(){
+if(this.checked){
+    $("[name=hxy]").attr("checked",true);}
+else{ $("[name=hxy]").attr("checked",false);}
+});
+});
+</script>
+	<p id="margin-bottom"></p>
+	<include file="EstatePublic/footer" />
+</body>
+</html>
+<script type="text/javascript">
+function pdel(obj,p_id){
+	if(confirm('确认删除吗?')){
+		$.ajax({
+			type: 'POST',
+			url: '{:U('Estate/hmodajax')}',
+			data:{p_id:p_id},
+			success: function(data){
+				$(obj).parents("p").remove();
+				layer.msg('已删除!',{icon:1,time:1000});
+			},
+			error:function(data) {
+				console.log(data.msg);
+			},
+		});	
+	}
+}
+</script>
+
+<script type="text/javascript">
+	//选择图片，马上预览  
+    function xmTanUploadImg(obj) {  
+
+        var fl=obj.files.length;  
+        for(var i=0;i<fl;i++){  
+            var file=obj.files[i];  
+            var reader = new FileReader();  
+
+            //读取文件过程方法  
+            reader.onload = function (e) {  
+                var imgstr='<img  src="'+e.target.result+'"/>';  
+                var oimgbox=$("#images");  
+                oimgbox.append(imgstr);  
+
+            }  
+
+            reader.readAsDataURL(file);   
+        }  
+
+    }  
+//检查input
+function checkInput(obj) {
+	var val = obj.value;
+	//这个地方需要处理一下空格，具体的方法不写了。
+	if(val == "") {
+		obj.className = "errstyle";
+		return false;
+	} else {
+		return true;
+	}
+}
+//获取焦点时清除错误
+function clearerr(obj) {
+	if(obj.className = "errstyle") {
+		obj.className = "bor";
+	}
+}
+    // 提交 
+    function uploadFile() {
+    	var input1 = checkInput(document.getElementById('input1'));
+		var input2 = checkInput(document.getElementById('input2'));
+		var input3 = checkInput(document.getElementById('input3'));
+		var input4 = checkInput(document.getElementById('input4'));
+		var input5 = checkInput(document.getElementById('input5'));
+		var input6 = checkInput(document.getElementById('input6'));
+		var input7 = checkInput(document.getElementById('input7'));
+    	if (input1 && input2 && input3 && input4 && input5 && input6 && input7) {
+	        //看最后一个file类型的input是否有文件，没有则移除
+	        if($("input[type='file']:last").prop('files')){
+	            if($(":file").prop('files').length==0){
+	                $("input[type='file']:last").remove();
+	                if($("input[type='file']").length==0){
+	                    alert("请选择图片");
+	                }
+	            }
+
+	            var form = new FormData($("#uploadForm")[0]);
+	            $.ajax({
+	                type:"post",
+	                url:'{:U('Estate/hmodend')}',//根据自己项目的需要写请求地址
+	                data:form,
+	                processData: false,
+	                contentType: false,
+	                success: function(data){
+						//alert(data);
+						//$(obj).parents("tr").remove();
+						layer.msg('已发布，待审核！',{icon:1,time:1000});
+						//window.location.reload();
+						window.location.href='{:U('Estate/center')}';
+					},
+					error:function(data) {
+						//alert("收藏失败");
+						console.log(data.msg);
+					},
+	            })
+	        }else{
+	            alert("请选择图片");
+	        }
+	    }else{
+	    	alert("信息填写不完整或未填写");
+	    }
+    }  
+//新增type="file"
+function addinputFile(){
+    //检查最后一个type="file"有没有选择图片，没有则去使用，不再建新的
+    var lastObj=$("input[type='file']:last");
+    if(lastObj.prop('files')){
+        if(lastObj.prop('files').length==0){
+            lastObj.click();
+        }else{
+            $(".inputFiles").append("<input type='file' name='photo[]'  multiple='multiple' accept='image/*' onChange='xmTanUploadImg(this);' />");
+            $("input[type='file']:last").click();  
+            }
+    }else{
+        //第一个
+        $(".inputFiles").append("<input type='file' name='photo[]'  multiple='multiple' accept='image/*' onChange='xmTanUploadImg(this);' />");
+        $("input[type='file']:last").click();
+        }
+}
+</script>

@@ -1,0 +1,81 @@
+<footer>
+	<ul>
+		<!--<a href="{:U('Activity/index')}?phone={$_SESSION['infor']['data'][0]['Mobile']}"><li><img src="__PUBLIC__/Activity/images/icon/index.svg"><span>首页</span></li></a>-->
+		<a href="/Home/Home/home"><li><img src="__PUBLIC__/Activity/images/icon/index.svg"><span>首页</span></li></a>
+		<a href="javascript:;" onclick="modaldemo()"><li><img src="__PUBLIC__/Activity/images/icon/sousuo.svg"><span>搜索</span></li></a>
+		<a href="{:U('Activity/center')}?phone={$_SESSION['infor']['data'][0]['Mobile']}"><li><img src="__PUBLIC__/Activity/images/icon/my.svg"><span>我的</span></li></a>
+	</ul>
+</footer>
+<style type="text/css">
+.modal-body{
+	overflow: hidden;
+}
+.modal-body>input{
+	-webkit-appearance: none;/*兼容苹果手机*/
+	line-height: 30px;
+	display: block;
+	margin: auto;
+	font-size: 14px;
+}
+.suuure{
+	-webkit-appearance: none;/*兼容苹果手机*/
+	font-size: 15px;
+	color: #fff;
+	background-color: #009688;
+	border-color: #009688;
+	display: inline-block;
+	box-sizing: border-box;
+	cursor: pointer;
+	text-align: center;
+	font-weight: 400;
+	white-space: nowrap;
+	vertical-align: middle;
+	border: solid 1px #ddd;
+	width: auto;
+	-webkit-transition: background-color .1s linear;
+	-moz-transition: background-color .1s linear;
+	-o-transition: background-color .1s linear;
+	transition: background-color .1s linear;
+}
+.modal-header .close {
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	padding: 0 5px;
+	background: #f95c5c;
+}
+.btn{
+	font-size: 15px;
+}
+</style>
+<!--普通弹出层-->
+<form action="{:U('Activity/search')}" method="post" style="overflow: hidden;" class="search">
+<div id="modal-demo" class="modal fade middle" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content radius">
+			<div class="modal-header">
+				<h3 class="modal-title">搜索</h3>
+				<a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void();">×</a>
+			</div>
+			<div class="modal-body">
+
+					<input type="text" class="sousuo" name="keywords" class="text" placeholder="请输入"/>
+
+			</div>
+			<div class="modal-footer">
+				<input type="submit" value="确定" class="suuure" />
+				<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+			</div>
+		</div>
+	</div>
+</div>
+</form>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Project/css/H-ui.min.css" />
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/hui/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript">
+function modaldemo(){
+	$("#modal-demo").modal("show");
+}
+</script>

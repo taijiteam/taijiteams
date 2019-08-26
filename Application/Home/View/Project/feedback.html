@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>意见反馈</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Project/css/style.css">
+<style type="text/css">
+.feedback>.body>form{
+	width: 90%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.feedback>.body>form>p{
+	margin: 0;
+	color: #fff;
+	font-size: 14px;
+	line-height: 20px;
+}
+.feedback>.body>form>textarea{
+	display: block;
+	width: 99%;
+	font-size: 14px;
+	padding: 5px;
+	border: 1px solid rgb(65,117,5);
+	margin: 20px 0;
+}
+.feedback>.body>form>input{
+	border: none;
+	width: 160px;
+	color: #fff;
+	line-height: 28px;
+	border-radius: 16px;
+	background: -webkit-linear-gradient(top,rgb(243,203,105),rgb(238,162,13));
+	display: block;
+	margin: 10px auto;
+}
+</style>
+<body class="feedback">
+<!-- 这里是头部 -->
+<header class="cheader">
+	<div>
+		<p><img src="{$_SESSION['information']['headimgurl']}"></p>
+	</div>
+	<p><span class="span1"><img src="__PUBLIC__/Project/images/icon/fkyj.png">意见反馈</span><img class="dao" src="__PUBLIC__/Project/image/dao.png"><!-- <span class="span2"></span> --></p>
+</header>
+<!-- 这里是身体 -->
+<div class="body">
+	<p style="margin-top: 10px;"></p>
+	<form>
+		<p>如果您对我们的平台有建议，欢迎您反馈给我们。</p>
+		<p>不胜感谢！我们一直在努力打造一个优秀的平台！</p>
+		<textarea rows="8" cols="20" id="text" placeholder="请输入"></textarea>
+		<input type="hidden" name="name" value="{$_SESSION['infor']['data'][0]['TrueName']}"/>
+		<input type="hidden" name="phone" value="{$_SESSION['infor']['data'][0]['Mobile']}"/>
+		<input type="hidden" name="cardid" value="{$_SESSION['cardId']}"/>
+		<input type="button" onclick="feedback1()" name="" value="提交反馈">
+	</form>
+</div>
+<!-- 这里是底部 -->
+<include file="ProjectPublic/footer" />
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Project/css/H-ui.min.css" />
+<script type="text/javascript">
+	function feedback1(){
+		var name = $('input[name="name"]').val();	//名字
+		var phone = $('input[name="phone"]').val();	//手机号
+		var cardid = $('input[name="cardid"]').val();	//cardid
+		var text = $("#text").val();					//反馈内容
+		if(name == ''){
+			$.Huimodalalert('警告：操作超时，请重新登陆！！',2000);
+		}else if(phone == ''){
+			$.Huimodalalert('警告：操作超时，请重新登陆！！',2000);
+		}else if(cardid == ''){
+			$.Huimodalalert('警告：操作超时，请重新登陆！！',2000);
+		}else if(text == ''){
+			$.Huimodalalert('警告：请填写意见内容！！',2000);
+		}else{
+			$.ajax({
+				type:"post",
+				url:"{:U('Project/feedback1')}",//根据自己项目的需要写请求地址
+				data:{
+						'name':name,
+						'phone':phone,
+						'cardid':cardid,
+						'text':text,
+				},
+				dataType:'json',
+				success:function(data){
+					//alert(JSON.stringify(data));
+					if (data == 1){
+						layer.confirm('意见反馈提交成功！我们会认真考虑您的建议或意见，谢谢您的支持！',function(index){
+							window.history.back();
+						});
+					}else{
+						layer.msg('哎呦，运气不好哦，提交失败咯！',function(){});
+					}
+				},
+				error:function(data) {
+					console.log(data.msg);
+				},
+			})
+		}
+	}
+</script>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/hui/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/hui/static/h-ui.admin/js/H-ui.admin.js"></script>
+</body>
+</html>

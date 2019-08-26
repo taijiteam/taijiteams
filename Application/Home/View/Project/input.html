@@ -1,0 +1,103 @@
+<!-- <!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+input[type=checkbox]{ visibility:hidden;}
+.div1{
+    width:40px;
+	height:40px;
+	background-color:#CCC;
+	margin:20px 90px;
+	
+	border-radius:20px;
+	position:relative;
+	-webkit-box-shadow:0px 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow:0px 1px 3px rgba(0,0,0,0.5);
+	box-shadow:0px 1px 3px rgba(0,0,0,0.5);
+}
+.div1 label{
+    display:block;
+	width:30px;
+	height:30px;
+	border-radius:15px;
+	
+	-webkit-transition:all 0.5s ease;
+	-moz-transition:all 0.5s ease;
+	-o-transition:all 0.5s ease;
+	-ms-transition:all 0.5s ease;
+	transition:all 0.5s ease;
+	cursor:pointer;
+	position:absolute;
+	top:5px;
+	left:5px;
+	z-index:1;
+	
+	background-color:#333;
+	
+	-webkit-box-shadow: inset 0px 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+	box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+	
+}
+.div1 input[type=checkbox]:checked + label{
+	background-color:#26ca28;
+}
+</style>
+</head>
+
+<body>
+<div class="div1">
+    <input type="checkbox" name="cb" id="specialInput"/>
+    <label for="specialInput">
+</div>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>纯Css改变复选框样式-----</title>
+<style type="text/css">
+input{
+
+}
+#check[type="checkbox"]{
+-webkit-appearance: none;
+vertical-align:middle;
+background: #3190e8;
+margin-top:0;
+border-radius: 3px;
+min-height: 20px;
+min-width: 20px;
+}
+#check[type="checkbox"]:checked {
+background: #3190e8;
+}
+#check[type=checkbox]:checked::after{
+content: '';
+top: 12px;
+left: 16px;
+position: absolute;
+background: transparent;
+border: #fff solid 2px;
+border-top: none;
+border-right: none;
+height: 6px;
+width: 10px;
+-moz-transform: rotate(-45deg);
+-ms-transform: rotate(-45deg);
+-webkit-transform: rotate(-45deg); 
+transform: rotate(-45deg);
+}
+    </style>
+</head>
+<body style="background: #000">
+    <input type="checkbox" id="check" class="regular-checkbox" />132132
+</body>
+</html>

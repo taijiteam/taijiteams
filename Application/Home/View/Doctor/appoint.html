@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>在线预约</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Doctor/css/mobiscroll_date.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Doctor/css/appoint.css">
+</head>
+<body>
+	<p><img src="__PUBLIC__/Doctor/images/yhead.png"></p>
+	<form action="{:U('Doctor/feed')}" method="post">
+		<h4><img src="__PUBLIC__/Doctor/images/yuyue.png"><span>在线预约</span></h4>
+		<p>
+			<span class="span1">姓名：</span>
+			<span class="span2">{$_SESSION['infor']['data'][0]['TrueName']}</span>
+			<input type="hidden" name="order_user" value="{$_SESSION['infor']['data'][0]['TrueName']}">
+		</p>
+		<p>
+			<span class="span1">性别：</span>
+			<span class="span2">
+				<if condition="$_SESSION['infor']['data']['0']['Sex'] eq 1">男<elseif condition="$_SESSION['infor']['data']['0']['Sex'] eq 2"/>女<else/>其他</if>
+			</span>
+			<input style="display: none;" type="radio" class="sex" name="order_usex" value="1" {$_SESSION['infor']['data']['0']['Sex'] == "1"?'checked':''}>
+			<input style="display: none;" type="radio" class="sex" name="order_usex" value="0" {$_SESSION['infor']['data']['0']['Sex'] == "2"?'checked':''}>
+		</p>
+		<p>
+			<span class="span1">年龄：</span><span class="span2">{$age}</span>
+			<input type="hidden" name="order_uage" value="{$age}">
+		</p>
+		<p>
+			<span class="span1">电话：</span><span class="span2">{$_SESSION['infor']['data'][0]['Mobile']}</span>
+			<input type="hidden" name="order_uphone" value="{$_SESSION['infor']['data'][0]['Mobile']}">
+		</p>
+		<p>
+			<span class="span1">医院：</span><span class="span2">{$do.h_hospital}</span>
+			<input type="hidden" name="order_dohospital" value="{$do.h_hospital}">
+		</p>
+		<p>
+			<span class="span1">医师：</span><span class="span2">{$do.do_doctor}</span>
+			<input type="hidden" name="order_doctor" value="{$do.do_doctor}">
+		</p>
+		<p>
+			<span class="span1">科室：</span><span class="span2">{$do.de_department}</span>
+			<input type="hidden" name="order_dodepar" value="{$do.de_department}">
+		</p>
+		<p>
+			<span class="span1">预约时间：</span>
+			<input type="text" name="order_ustart" id="USER_AGE" style="width: 130px" readonly class="input" placeholder="预约起始日期" />
+		</p>
+		<p>
+			<span class="span1">截止时间：</span>
+			<input type="text" name="order_uend" id="USER_AGA" style="width: 130px" readonly class="input" placeholder="预约截止日期" />
+		</p>
+		<p>
+			<span class="span1">服务选择：</span>
+			<input type="radio" name="order_choose" value="1" checked="checked">看病			
+			<input type="radio" name="order_choose" value="2">手术
+			<input type="radio" name="order_choose" value="3">住院
+		</p>
+		<p class="p_text">病史描述：<br>
+			<textarea name= "order_describe" rows="4" warp="virtual" style="width: 100%" value="" placeholder="请输入"></textarea>
+		</p>
+		<input type="hidden" name="openid" value="{$_SESSION['openid']}" />
+		<span>注：稍后会有医疗顾问联系您，确定具体时间</span>
+		<input type="submit" name="" value="提交预约" id="sub" onclick="checkform()">
+		<span>我已经预约过了？<a href="{:U('Doctor/index')}">返回主页</a></span>
+	</form>
+	<div>
+		<h4>上海泰基企业集团</h4>
+		<p>Copyright © 1991-2018 dai-i-chi.com</p>
+	</div>
+<!-- 日期选择控件 -->
+<script src="__PUBLIC__/Doctor/js/jquery.min.js"></script> 
+<script src="__PUBLIC__/Doctor/js/mobiscroll_date.js" charset="gb2312"></script> 
+<script src="__PUBLIC__/Doctor/js/mobiscroll.js"></script> 
+<script type="text/javascript">
+$(function () {
+	var currYear = (new Date()).getFullYear();	
+	var opt={};
+
+	opt.date = {preset : 'date'};
+	opt.datetime = {preset : 'datetime'};
+	opt.time = {preset : 'time'};
+	opt.default = {
+		theme: 'android-ics light', //皮肤样式
+		display: 'modal', //显示方式 
+		mode: 'scroller', //日期选择模式
+		dateFormat: 'yyyy-mm-dd',
+		lang: 'zh',
+		showNow: true,
+		nowText: "今天",
+		startYear: currYear - 50, //开始年份
+		endYear: currYear + 10 //结束年份
+	};
+	$("#USER_AGE").mobiscroll($.extend(opt['date'], opt['default']));
+});
+</script>
+<script type="text/javascript">
+$(function () {
+	var currYear = (new Date()).getFullYear();	
+	var opt={};
+	opt.date = {preset : 'date'};
+	opt.datetime = {preset : 'datetime'};
+	opt.time = {preset : 'time'};
+	opt.default = {
+		theme: 'android-ics light', //皮肤样式
+		display: 'modal', //显示方式 
+		mode: 'scroller', //日期选择模式
+		dateFormat: 'yyyy-mm-dd',
+		lang: 'zh',
+		showNow: true,
+		nowText: "今天",
+		startYear: currYear - 50, //开始年份
+		endYear: currYear + 10 //结束年份
+	};
+	$("#USER_AGA").mobiscroll($.extend(opt['date'], opt['default']));
+});
+</script>
+<!-- the end -->
+</body>
+</html>

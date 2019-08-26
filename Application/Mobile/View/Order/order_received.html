@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<include file="Components/header" />
+</head>
+<body>
+
+<!--  <div class="pb_tp_a">
+   <h1>已关闭 </h1>
+     <a href="#" class="pbjta"><img src="/Public/Mobile/images/01322.png"></a>
+ </div> -->
+
+<div class="jyzttops container-fluid">
+	<div class="container">
+		<dbo><a href="/Mobile/Member/index"><img src="/Public/Mobile/images/sss.png"></a></dbo>
+		<span><a href="/Mobile/Order/order_list">全部订单</a></span>
+		<span><a href="/Mobile/Order/order_obligation">待付款</a></span>
+		<span><a href="/Mobile/Order/order_paid">待收货</a></span>
+		<!--<span><a href="/Mobile/Order/order_list/?id=9">退款订单</a></span>-->
+		<span class="active"><a href="/Mobile/Order/order_received">待评价</a></span>
+		<span><a href="/Mobile/Order/order_closed">已关闭</a></span>
+	</div>
+</div>
+
+<foreach name="res" item="vo">
+	<div class="rysplists container-fluid order-item" data-order-sn="{$vo.order_sn}">
+		<div class="ry_aa">
+			<div class="container">
+				<div class="ovh fl">
+					<a href="/Mobile/Goods/detail?gc_id={$vo.goods_common_id}">
+						<img src="{$vo.main_img}" style="width: 120px;height: 80px">
+					</a>
+				</div>
+				<div class="rynrr fl">
+					<div class="rynrr_a">
+						<span>{$vo.goods_name}</span>
+						<a href="/Mobile/Order/comments?gc_id={$vo.goods_common_id}&order_sn={$vo.order_sn}" class="nmir_b">去评价</a>
+					</div>
+					<div class="rynrr_b">
+						<div class="ys_nr_b  mt10">
+							<span><img src="/Public/Mobile/images/rs1.png"></span>
+							<span class="ice_b">{$vo.goods_price}.00</span>
+						</div>
+						<p>
+							{$vo.goods_remark}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</foreach>
+
+
+<script src="/Public/Mobile/js/jquery-1.11.0.min.js"></script>
+<script src="/Public/Mobile/js/swiper.min.js"></script>
+<script src="/Public/Mobile/js/all.js"></script>
+</body>
+</html>
+<script>
+	$(function(){
+		$(document).on("click",".order-item",function(){
+			var order_sn = $(this).attr("data-order-sn");
+			if(order_sn){
+				window.location.href = "/Mobile/Order/order_detail?order_sn="+order_sn;
+			}else{
+				return false;
+			}
+		});
+	})
+</script>

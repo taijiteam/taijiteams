@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>登录</title>
+    <meta name="keywords" content="渠道PLUS" />
+    <meta name="description" content="渠道PLUS" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <link rel="shortcut icon" href="http://www.qudaoplus.cn/images/favicon.ico?v=1" type="image/x-icon"/>
+    <link href="/Public/Club/regStatics/css/register.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="alert-prompt prompt">
+        <div class="alert-content">
+            <h2>您输入的手机号码有误，请重新输入</h2>
+            <div class="alert-btn">
+                <div class="close">确认</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="alert-prompt wait">
+        <div class="alert-content">
+            <h2>您输入的手机号码有误，请重新输入</h2>
+        </div>
+    </div>
+
+    <b class="logo"></b>
+
+    <div class="content login">
+        <div class="mobile">
+            <input type="number" placeholder="请输入手机号">
+            <b></b>
+        </div>
+        <div class="password">
+            <input type="password" placeholder="请输入密码">
+            <b></b>
+        </div>
+        <div class="verification">
+            <input type="number" placeholder="请输入结果">
+            <i></i>
+        </div>
+        <div class="content-a">
+            <a href="/Home/Admin/merberRegister" class="line">立刻注册</a>
+            <a href="/Home/Admin/mobileLogin" class="a-right">短信登录</a>
+        </div>
+        <div class="btn">
+            <button>登 &nbsp; 录</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script type="text/javascript" src="/Public/Club/regStatics/js/jquery.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        //撑满背景
+        if($('body').height() < $(window).height()){
+            $('body').height($(window).height());
+        }
+
+        //定义对象
+        var $content = $('.content'),
+            $mobile = $content.find('.mobile'),
+            $password = $content.find('.password'),
+            $verification = $content.find('.verification'),
+            $sum = $verification.find('i'),
+            $btn = $content.find('.btn button'),
+            $prompt = $('.prompt'),
+            $close = $prompt.find('.close'),
+            $wait = $('.wait');
+
+        //定义变量
+        var addendOne, addendTwo,sum;
+        var openId = "<?php echo $_GET['identity']; ?>";        //一卡易接口获取微信openid
+        var openId = '<?php echo $id; ?>';        //微信接口获取openid
+        //生成验证
+        function changeVerification(){
+            addendOne = parseInt(10*Math.random());
+            addendTwo = parseInt(10*Math.random());
+            $sum.text(addendOne+'+'+addendTwo+'=?');
+            sum = addendOne + addendTwo;
+        }
+
+        //错误标红
+        function errorMsgg(txt, $alert, $this){
+            if($this){
+                $this.addClass('error').siblings().removeClass('error');
+            }
+            $alert.find('h2').text(txt);
+            $alert.fadeIn();
+        }
+
+        //点击切换验证与初始化生成
+        $sum.click(function(){
+            changeVerification();
+            $verification.find('input').val('');
+        }).click();
+
+        //关闭提示框
+        $close.click(function(){
+            $prompt.fadeOut();
+        });
+
+        //登录
+        $btn.click(function(){
+            $this = $(this);
+            if(!(/^1\d{10}$/.test($mobile.find('input').val()))){
+                console.log();
+                errorMsgg('您输入的手机号码有误，请重新输入', $prompt, $mobile);
+            }
+            else if($password.find('input').val().length < 6 || $password.find('input').val().length > 14){
+                console.log();
+                errorMsgg('请输入正确的密码（6-14位的数字或字母）', $prompt, $password);
+            }
+            else{
+                if($verification.find('input').val() == sum){
+                    //验证正确之后调后台接口
+                    $content.find('div').removeClass('error');
+                    errorMsgg('登录中，请稍候...', $wait);
+
+                    $.ajax({
+                        type: "POST",
+                        url:"/Home/Admin/merberLogin",      //会员登录接口
+                        data:{
+                            thirdOpenId:openId,
+                            cardId:$mobile.find('input').val(),
+                            password:$password.find('input').val()
+                        },
+                        success: function (data) {
+                          data = eval( '(' +data+ ')' );
+                          if( data.code == '0' ){
+                            window.location.href = data.url;
+                          }else{
+                            $wait.hide();
+                            if(data.message == '输入的密码有误!'){
+                                  errorMsgg('请输入正确的密码（6-14位的数字或字母）', $prompt, $password);
+                            }
+                            else if(data.message == '卡号不存在！'){
+                              errorMsgg('您输入的手机号码未注册，请重新输入', $prompt, $mobile);
+                            }
+                            else {
+                              errorMsgg('连接服务器超时，请重新登录', $prompt);
+                            }
+                          }
+                        },
+                        error: function(request) {
+                          errorMsgg('连接服务器超时，请重新登录', $prompt);
+                        }
+                    });
+
+                    // setTimeout(function(){
+                    //     $wait.fadeOut();
+                    //     //错误的时候写if判断返回的值，确定显示方式
+                    //     errorMsgg('请输入正确的密码（6-14位的数字或字母）', $prompt, $password);
+                    // },1000);
+                }
+                else if($verification.find('input').val() === ''){
+                    //未填计算结果
+                    errorMsgg('请输出上方计算结果', $prompt, $verification);
+                }
+                else{
+                    //计算结果错误
+                    errorMsgg('计算结果错误，请重新计算', $prompt, $verification);
+                    $sum.click();
+                }
+            }
+        });
+    });
+
+
+</script>

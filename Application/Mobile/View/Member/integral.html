@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <include file="Components/header" />
+</head>
+<body>
+
+<include file="Components/intggral" />
+
+<div class="jfbanner container">
+    <img src="/Public/Mobile/images/55.png">
+</div>
+<div class="jyzttops jyztt container-fluid">
+    <div class="container">
+        <switch name="memberInfo['m_groupname']">
+            <case value="内部测试">
+                <span class="pocket_0"><a href="/Mobile/Member/integral">总积分</a></span>
+                <span class="pocket_1"><a href="/Mobile/Member/integral?integral_type=1">消费积分</a></span>
+                <span class="pocket_201"><a href="/Mobile/Member/integral?integral_type=201">尊享积分</a></span>
+            </case>
+            <case value="尊享大咖">
+                <span class="pocket_0"><a href="/Mobile/Member/integral">总积分</a></span>
+                <span class="pocket_1"><a href="/Mobile/Member/integral?integral_type=1">消费积分</a></span>
+                <span class="pocket_201"><a href="/Mobile/Member/integral?integral_type=201">尊享积分</a></span>
+            </case>
+            <case value="悦享成员">
+                <span class="pocket_0"><a href="/Mobile/Member/integral">总积分</a></span>
+                <span class="pocket_1"><a href="/Mobile/Member/integral?integral_type=1">消费积分</a></span>
+            </case>
+        </switch>
+        <if condition="$memberInfo['m_recognize'] eq 1">
+            <span class="pocket_4"><a href="/Mobile/Member/integral?integral_type=4">奖励积分</a></span>
+        </if>
+    </div>
+</div>
+<div class="jifenxs container">
+    <h3>积分情况</h3>
+    <switch name="integral_type">
+        <case value="1">
+            <p><span class="fl">消费积分</span><span class="fr">{$info['a_consume_sort']}积分</span></p>
+        </case>
+        <case value="201">
+            <p><span class="fl">尊享积分</span><span class="fr">{$info['a_jiu_sort']}积分</span></p>
+        </case>
+        <case value="4">
+            <p><span class="fl">奖励积分</span><span class="fr">{$info['a_winning_sort']}积分</span></p>
+        </case>
+        <default />
+            <p><span class="fl">消费积分</span><span class="fr">{$info['a_consume_sort']}积分</span></p>
+            <p><span class="fl">尊享积分</span><span class="fr">{$info['a_jiu_sort']}积分</span></p>
+            <if condition="$memberInfo['m_recognize'] eq 1">
+                <p><span class="fl">奖励积分</span><span class="fr">{$info['a_winning_sort']}积分</span></p>
+            </if>
+    </switch>
+    <if condition="$integral_type eq 0">
+
+    <elseif condition="$integral_type eq 1" />
+        <p><span class="fl">消费积分</span><span class="fr">{$info['a_consume_sort']}积分</span></p>
+    </if>
+
+</div>
+<div class="jifenxs container">
+    <include file="Components/consumption" />
+</div>
+
+<!-- 导航栏 -->
+<include file="Components/nav" title="Member" />
+
+<include file="Components/footer" />
+
+</body>
+<script>
+    $(function(){
+        var pocket_type = '{$integral_type}';
+
+        init();
+
+
+        function init(){
+            $('.pocket_'+pocket_type).addClass("active");
+        }
+    })
+</script>
+</html>

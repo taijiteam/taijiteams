@@ -1,0 +1,166 @@
+<html class="x-admin-sm">
+<head>
+    <include file="Components/header" />
+</head>
+<style>
+    .layui-row-search input{
+        margin-bottom: 30px;
+        width: 300px;
+        height: 40px;
+    }
+    .layui-input-inline{
+        width: 200px;
+        margin-right: 30px;
+    }
+</style>
+<body>
+<div class="x-nav">
+      <span class="layui-breadcrumb">
+        <a href="">首页</a>
+        <a>
+          <cite>导航元素</cite></a>
+      </span>
+    <button class="layui-btn" id="export" style="float: right"><i class="layui-icon"></i>导出</button>
+</div>
+<div class="x-body">
+    <div class="layui-collapse" lay-filter="test">
+        <div class="layui-colla-item">
+            <h2 class="layui-colla-title">展开搜索框</h2>
+            <div class="layui-colla-content">
+                <form method="post" action="/Admin/Order/search?source=机场" class="layui-form layui-col-md12 x-so" >
+                    <div class="layui-row">
+                            <input type="text" name="mobile" placeholder="请输入收货人手机号" autocomplete="off" class="layui-input">
+                            <input type="text" name="order_sn" placeholder="请输入收货人订单号" autocomplete="off" class="layui-input">
+
+                        <!--<div class="layui-input-inline">
+                            <select id="pay" name="pay" autocomplete="off" class="layui-input">
+                                <option value="">请选择支付方式</option>
+                                <option value="微信支付">微信支付</option>
+                                <option value="支付宝支付">支付宝支付</option>
+                                <option value="POS机支付">POS机支付</option>
+                                <option value="银行卡转账">银行卡转账</option>
+                            </select>
+                        </div>-->
+                        <div class="layui-input-inline">
+                            <select id="audit" name="audit" autocomplete="off" class="layui-input">
+                                <!--<option value=" ">请选择订单状态</option>-->
+                                <option value="交易完成">交易完成</option>
+                                <option value="驳回审核">驳回审核</option>
+                            </select>
+                        </div>
+                        <input   type="submit" class="layui-btn layui-btn-lg " lay-filter="add" lay-submit="" value="查找">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <table class="layui-table x-admin">
+        <thead>
+        <tr>
+            <th></th>
+            <th>订单编号</th>
+            <th>付款人</th>
+            <th>预约机场</th>
+            <th>支付金额</th>
+            <th>支付状态</th>
+            <th>审核状态</th>
+            <th>支付方式</th>
+            <th>下单时间</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <volist name="orderList" key="k" id="vo">
+            <tr>
+                <td>
+                    <input type="checkbox" name="" lay-skin="primary"></td>
+                <td>{$vo.order_sn}</td>
+                <td>{$vo.member_name}:{$vo.member_mobile}</td>
+                <td>{$vo.order_type}</td>
+                <td>{$vo.member_payment}.00</td>
+                <if condition="$vo.order_status eq 7"><td style="background-color: 	rgba(64,155,49,0.71)">已支付</td>
+                    <elseif condition="$vo.order_status eq 4"/><td style="background-color: rgba(174,24,34,0.42)">交易完成</td>
+                    <elseif condition="$vo.order_status eq 3"/><td style="background-color: rgba(4,174,115,0.42)">待确认</td>
+                    <elseif condition="$vo.order_status eq 1"/><td style="background-color: rgba(174,169,74,0.42)">待支付</td>
+                    <elseif condition="$vo.order_status eq 2"/><td style="background-color: rgba(7,255,160,0.42)">已支付</td>
+                    <elseif condition="$vo.order_status eq 6"/><td style="background-color: rgba(7,255,160,0.42)">已支付</td>
+                    <else /><td></td>
+                </if>
+                <if condition="$vo.order_status eq 7"><td style="background-color: 	#C3C3C3">未通过审核</td>
+                    <elseif condition="$vo.order_status eq 6"/><td style="background-color: rgba(174,158,89,0.42)">已通过审核</td>
+                    <else /><td>审核中</td>
+                </if>
+                <!--<if condition="$vo.order_status eq 2"><td style="background-color: #FFA54F">待发货</td>
+                    <elseif condition="$vo.order_status eq 3"/><td style="background-color: #CCCCCC">待发货</td>
+                    <elseif condition="$vo.order_status eq 4"/><td style="background-color: #7FFFD4">已收货</td>
+                    <elseif condition="$vo.order_status eq 9"/><td>已取消</td>
+                    <elseif condition="$vo.order_status eq 1"/><td></td>
+                    <else /><td></td>
+                </if>-->
+                <td style="color: #1aad19">微信支付</td>
+                <!--<td title="{$vo.deliver_address}">{$vo.deliver_address|subtext=10}</td>-->
+                <td>{$vo.pay_time|date="Y-m-d H:i:s",###}</td>
+                <td class="td-manage" style="font-size: 14px;">
+                    <!--<a title="审核" href="/Admin/Order/detail/?order_id={$vo.order_id}">-->
+                    <a title="查看" href="/Admin/Operation/airportDetail?order_sn={$vo.order_sn}"> 查看 </a>
+                    <!--<span>&nbsp;&nbsp;&nbsp;  |  &nbsp;&nbsp;&nbsp;</span>
+                    <a title="发货" href="javascript:;"> 发货 </a>-->
+                </td>
+            </tr>
+        </volist>
+        </tbody>
+    </table>
+    <div class="page">
+        <div>
+            {$page}
+        </div>
+    </div>
+
+</div>
+<script>
+    $("#btn").click(function () {
+        //var pay         = $("#pay option:checked").val();		//支付方式
+        var audit       = $("#audit option:checked").val();		//订单状态
+        var mobile      = $('input[name="mobile"]').val();		//服务经理
+        var order_sn    = $('input[name="order_sn"]').val();	//服务经理
+        console.log(order_sn);
+        $.ajax({
+            url : "/Admin/Order/search?source=医疗",
+            type: "post",
+            data:{
+                //pay         : pay,
+                audit       : audit,
+                mobile      : mobile,
+                order_sn    : order_sn,
+            },
+            dataType: "json",
+            success:function (res) {
+                if (res.code == "200"){
+                    alert('11');
+                }else{
+                    alert(res.message);
+                }
+            }
+        })
+    })
+</script>
+<script>
+    $(function () {
+        $('#export').click(function () {
+            window.location.href = "/Admin/Order/export";
+        })
+    })
+</script>
+
+
+<script>var _hmt = _hmt || []; (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+
+</html>

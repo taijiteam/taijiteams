@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <include file="Components/header" />
+</head>
+<body>
+<form action="" id="form1">
+<div  class="screenht" style="margin-bottom: 0px;">
+
+    <include file="Components/padding" title="添加地址" redirect_url="javascript:history.go(-1);" />
+
+    <div class="addresss container-fluid">
+        <div class="addreslist">
+            <label>
+                <span>收货人姓名</span>
+                <input type="text" id="name" placeholder="请输入姓名">
+            </label>
+        </div>
+        <div class="addreslist">
+            <label>
+                <span>手机号码</span>
+                <input type="text" id="mobile" placeholder="请输入手机号码">
+            </label>
+        </div>
+        <div class="addreslist">
+            <label>
+                <span>详细地址</span>
+                <input type="text" id="address" placeholder="请输入街道">
+            </label>
+        </div>
+        <div class="addreslist2 checkbox">
+            <label><input type="checkbox" name="is_default" value="1"  ></label>设为默认地址
+        </div>
+
+
+    </div>
+
+    <div class="screenft_a" style="position: fixed; z-index:9999;bottom: 30px">
+        <a href="javascript:;" id="add">保&nbsp;&nbsp;存</a>
+    </div>
+</div>
+</form>
+<include file="Components/footer" />
+<!--三级城市联动-->
+<!--<script src="/Public/Mobile/js/LAreaData1.js"></script>-->
+<!--<script src="/Public/Mobile/js/LAreaData2.js"></script>-->
+<!--<script src="/Public/Mobile/js/LArea.js"></script>-->
+<!--三级城市联动-->
+
+
+
+<script>
+    $(function () {
+        var redirect_url = "{$frm|urldecode}";
+
+        $('#add').click(function () {
+            var name        = $('#name').val();         //姓名
+            var mobile      = $('#mobile').val();       //手机号
+            var address     = $('#address').val();      //详细地址
+            var is_default  = $("input:checkbox[name='is_default']:checked").val();       //是否默认
+            $.ajax({
+                type:'post',
+                url :"/Mobile/Address/add",
+                data:{
+                    name        : name,
+                    mobile      : mobile,
+                    address     : address,
+                    is_default  : is_default,
+                },
+                dataType:'json',
+                success:function (res) {
+                    if (res.code == 200){
+                        alert("添加成功");
+                        if(redirect_url){
+                            window.location.href = redirect_url;
+                        }else{
+                            window.location.href = "/Mobile/Address/index";
+                        }
+                    }else{
+                        alert(res.message);
+                    }
+                }
+            })
+        })
+    })
+
+    // var cityStr = getCityStr([26,306,4362]);
+    // console.log(cityStr);
+    //
+    // //三级城市联动
+    // var area1 = new LArea();
+    // area1.init({
+    //     'trigger': '#demo1', //触发选择控件的文本框，同时选择完毕后name属性输出到该位置
+    //     'valueTo': '#value1', //选择完毕后id属性输出到该位置
+    //     'keys': {
+    //         id: 'id',
+    //         name: 'name'
+    //     }, //绑定数据源相关字段 id对应valueTo的value属性输出 name对应trigger的value属性输出
+    //     'type': 1, //数据源类型
+    //     'data': LAreaData //数据源
+    // });
+    // area1.value=[1,13,3];//控制初始位置，注意：该方法并不会影响到input的value
+    //
+    //
+    // var area2 = new LArea();
+    // area2.init({
+    //     'trigger': '#demo2',
+    //     'valueTo': '#value2',
+    //     'keys': {
+    //         id: 'value',
+    //         name: 'text'
+    //     },
+    //     'type': 2,
+    //     'data': [provs_data, citys_data, dists_data]
+    // });
+
+    function getCityStr($cityids)
+    {
+        var str = "";
+        var cnt = $cityids.length;
+        $.each(LAreaData,function(index,value){
+            if(value.id == $cityids[0])
+            {
+                str = str + value.name;
+                if(cnt == 1){
+                    return false;
+                }
+                $.each(value.child,function(k,v){
+                    if($cityids[1] == v.id)
+                    {
+                        str = str +' '+ v.name;
+                        if(cnt == 2) {
+                            return false;
+                        }
+                        $.each(v.child,function(m,n){
+                            if(n.id == $cityids[2])
+                            {
+                                str = str + ' '+ n.name;
+                                return false;
+                            }
+                        })
+                    }
+                })
+            }
+        });
+        return str;
+    }
+
+
+
+</script>
+</body>
+</html>

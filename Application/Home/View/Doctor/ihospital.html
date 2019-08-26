@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>住院</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Doctor/css/style.css">
+</head>
+<body>
+	<include file="DoctorPublic/iheader" />
+	<div class="hospital">
+		<h3><img src="__PUBLIC__/Doctor/images/yuan1.png">住院</h3>
+		<ul class="list">
+			<volist name="ih_list" id="ih_list">
+			<a href="{:U('Doctor/ihospital_list')}?h_id={$ih_list.h_id}">
+				<li>
+					<img src="__PUBLIC__/img/{$ih_list.h_photo}">
+					<div>
+						<h4>{$ih_list.h_hospital}</h4>
+						<p>简介：{$ih_list.h_introduction|htmlspecialchars_decode|strip_tags|mb_substr=0,30,'utf-8'}...</p>
+					</div>
+					<object><a href="{:U('Doctor/ihospital_list')}?h_id={$ih_list.h_id}">详情&gt;&gt;</a></object>
+				</li>
+			</a>
+			</volist>
+			<!-- <a href="">
+				<li>
+					<img src="__PUBLIC__/Doctor/images/diliu.png">
+					<div>
+						<h4>第六人民医院</h4>
+						<p>简介：三甲医院三甲医院三甲医院三甲医院三甲医院</p>
+					</div>
+					<object><a href="">详情&gt;&gt;</a></object>
+				</li>
+			</a>
+			<a href="">
+				<li>
+					<img src="__PUBLIC__/Doctor/images/diliu.png">
+					<div>
+						<h4>第六人民医院</h4>
+						<p>简介：三甲医院</p>
+					</div>
+					<object><a href="">详情&gt;&gt;</a></object>
+				</li>
+			</a> -->
+		</ul>
+	</div>
+	<include file="DoctorPublic/footer" />
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- 防止手机点击放大问题 -->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+    <!-- the end -->
+    <title>订单提交</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="/Public/Airport/css/style.css">
+<style type="text/css">
+    .widow{
+        width: 335px;
+        height: 310px;
+        margin: 48% auto;
+        background: #101010;
+    }
+    .widow h2{
+        padding-top: 20px;
+        color: #f8e2c4;
+        text-align: center;
+    }
+    .menu-list-label{
+        position: absolute;
+        padding-left: 1.5em;
+        color: #efc694;
+        padding-top: 3px;
+    }
+    .menu-div select{
+        -webkit-appearance: none;
+        position: relative;
+        left: 35%;
+        width: 170px;
+        height: 30px;
+        color: #999999;
+        border: 1px solid #ffffff;
+        border-radius: 10px;
+        background-color: #101010;
+        font-size: 12px;
+    }
+    .operation{
+        margin: 18% 40% 4% 37%;
+        border: 1px solid #ffffff;
+        border-radius: 13px;
+        width: 90px;
+        height: 30px;
+    }
+    .operation div{
+
+    }
+    .jian{
+        position: absolute;
+        display: inline-block;
+        margin: 2px 62px;
+    }
+    .jia{
+        position: absolute;
+        display: inline-block;
+        margin: 2px
+    }
+    .jia img{
+         width: 26px;
+         line-height: 26px;
+     }
+    .jian img{
+        width: 26px;
+        float: right;
+    }
+    .operation span{
+        position: absolute;
+        display: inline-block;
+        margin: 4px 40px;
+        color: #ffffff;
+    }
+    .money{
+        color: #f9cf81;
+        text-align: center;
+    }
+    .submit{
+        padding-bottom: 2em;
+    }
+    .submit input{
+        -webkit-appearance: none;
+        width: 136px;
+        height: 40px;
+        border-radius: 20px;
+        color: #8b572a;
+        background: #efc694;
+        margin: 6% 30%;
+    }
+</style>
+<body class="center">
+    <div class="widow">
+        <h2>您信息提交成功</h2>
+        <div class="menu-list">
+            <label class="menu-list-label">请选择套餐</label>
+            <div class="menu-div">
+                <select name="category" id="category">
+                    <option value="260">VIP套餐国内服务    260元</option>
+                    <option value="2000">VVIP套餐国内航空  2000元</option>
+                    <option value="500">国际VIP服务        500元</option>
+                    <option value="1000">国际VVIP服务      1000元</option>
+                    <option value="1">测试专用  1元</option>
+                </select>
+            </div>
+        </div>
+        <div class="operation">
+            <div class="jian">
+                <img src="/Public/Airport/images/icon/jia.png" alt="">
+            </div>
+            <span id="money-num"> 1 </span>
+            <div class="jia">
+                <img src="/Public/Airport/images/icon/jian.png" alt="">
+            </div>
+        </div>
+        <div class="money">
+            总金额：<span id="total-price">260</span>元
+        </div>
+        <div class="submit">
+            <input type="submit" id="submit" value="结 算">
+            <input type="hidden" id="order_sn" value="{$res}">
+            <input type="hidden" id="type" value="{$type}">
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="/Public/Airport/js/jquery.js"></script>
+<script type="text/javascript" src="/Public/Airport/js/superslide.2.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+        //减 运算
+        $('.jian').click(function () {
+                //var money_num  = $("#money-num").text();
+                //var total_price  = $("#total-price").text();
+                var category  = $("#category option:selected").val();
+                /*//数量减
+                var cut_num = money_num - 1;
+                 console.log(cut_num);
+                //运算所得总价格
+                var cut_cart = cut_num * total_price;
+                console.log(cut_cart);*/
+            $("#total-price").html(category);
+            alert('暂时未开通两人以上的功能');
+        });
+        //初始化调用select选中的值
+        $("#category").change(function () {
+            var category  = $("#category option:selected").val();
+            $("#total-price").html(category);
+        });
+        //加 运算
+        $('.jia').click(function () {
+                //var money_num  = $("#money-num").text();
+                //var total_price  = $("#total-price").text();
+                var category  = $("#category option:selected").val();
+                //数量减
+                //var cut_num = money_num - 1 ;
+
+                //console.log(cut_num);
+                //运算所得总价格
+                //var cut_cart = cut_num * total_price;
+                //console.log(cut_cart);
+                $("#total-price").html(category);
+                 alert('再减就没有了哦！')
+
+        });
+        $("#submit").click(function () {
+            var  type       = $("#type").val();
+            var  price      = $("#total-price").text();
+            var  order_sn   = $("#order_sn").val();
+            //提交数据
+            $.ajax({
+                type : 'post',
+                url : '/Home/Airport/create_order?order_sn='+ order_sn,
+                data :{
+                    type    : type,
+                    price   : price,
+                    order_sn: order_sn,
+                },
+                dataType:'json',
+                success:function (res) {
+                    if (res.code == "200"){
+                        //alert('信息提交成功 唤起微信支付');
+                        handlePayInfo(res.data.order_sn);
+                    }else{
+                        alert('航程正在查询，请稍后再试');
+                    }
+                }
+            })
+        });
+        /********** 微信支付  **************************/
+        function handlePayInfo(order_sn) {
+            $.ajax({
+                type:'get',
+                url:'/Home/Airport/payInfo',
+                data:{
+                    order_sn:order_sn
+                },
+                dataType:'json',
+                success:function (res) {
+                    if (res.code == 200)
+                    {
+                        var data = res.data;
+                        var success_url = "/Home/Airport/order?openid={$_SESSION['openid']}&order_sn=" + order_sn;
+                        if(data.need_pay)
+                        {
+                            callWxpay(data.param,success_url);
+                        }else{
+                            window.location.href = success_url;
+                        }
+                    }
+                    else
+                    {
+                        alert(res.msg);
+                    }
+                }
+            });
+            return false;
+        }
+
+        function callWxpay(param,success_url) {
+            if(isWeixin())
+            {
+                // alert('恭喜您提交成功\n'+'温馨提示：\n'+'因微信交易限额\n'+'推荐使用对公转账方式支付\n'+'公司名:上海渠道商务咨询有限公司\n'+'账号：32494708010140751\n'+'开户行：农商银行康桥支行\n'+'转账成功后三个工作日内，\n'+'会开放正式会员权益及功能\n'+'如有疑问或无法对公转账，\n'+'可以联系客户经理\n'+'或拨打客服热线：\n'+'021-53829777。');die;
+                if (typeof WeixinJSBridge == "undefined"){
+                    if( document.addEventListener ){
+                        document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
+                    }else if (document.attachEvent){
+                        document.attachEvent('WeixinJSBridgeReady', jsApiCall);
+                        document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
+                    }
+                }else{
+                    jsApiCall(param,success_url);
+                }
+            }else{
+                alert("请在微信浏览器中支付");
+            }
+        }
+
+        function jsApiCall(param,success_url) {
+            WeixinJSBridge.invoke(
+                'getBrandWCPayRequest',
+                {
+                    "appId": param.appId,                   //公众号名称，由商户传入
+                    "timeStamp": param.timeStamp,         //时间戳，自1970年以来的秒数
+                    "nonceStr": param.nonceStr,    //随机串
+                    "package": param.package,
+                    "signType": param.signType,         //微信签名方式：
+                    "paySign": param.paySign    //微信签名
+                },
+                function(res){
+                    if (res.err_msg == "get_brand_wcpay_request:ok") {
+                        alert("支付成功");
+                        window.location.href = success_url;
+                    }else if (res.err_msg == "get_brand_wcpay_request:cancel") {
+                        alert("已取消微信支付!");
+                    } else {
+                        alert("系统繁忙稍后再试……");
+                    };
+                }
+            );
+        }
+
+        function isWeixin() {
+            var ua = window.navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        /********** 微信支付  **************************/
+
+    })
+</script>
+</html>

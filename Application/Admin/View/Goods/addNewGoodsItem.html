@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html class="x-admin-sm">
+
+<head>
+    <include file="Components/header" />
+</head>
+<body>
+<div class="x-body">
+    <div class="layui-tab">
+        <ul class="layui-tab-title">
+            <li class="layui-this">商品规格信息</li>
+        </ul>
+        <div class="layui-tab-content">
+            <form class="layui-form" id="goods-item-add-form">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">商品名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="goods_name" value="{$goods_common.goods_name}" readonly class="layui-input">
+                    </div>
+                </div>
+
+                <foreach name="spec_name" item="spec" key="k">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">{$spec}</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="{$k}" required  lay-verify="required" placeholder="请出入规格值" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                </foreach>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">价格</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="goods_price" required  lay-verify="required" placeholder="请出入价格" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">库存</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="goods_storage" required  lay-verify="required" placeholder="请出入本批次库存" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">A积分</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="goods_pocket_a" required  placeholder="请输入允许使用的A积分上限" value="" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">类型积分</label>
+                    <div class="layui-input-block">
+                        <if condition="$goods_common['goods_pocket_type'] eq 0">
+                            <input type="text" name="goods_pocket" disabled  placeholder="无须填写" value="" autocomplete="off" class="layui-input">
+                        <else/>
+                            <input type="text" name="goods_pocket" value="" placeholder="请输入对应积分规则的值" autocomplete="off" class="layui-input">
+                        </if>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <span class="layui-btn" id="add-goods-item-btn">立即提交</span>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+    $(function() {
+        var gc_id = '{$goods_common.goods_common_id}';
+
+        $("#add-goods-item-btn").click(function () {
+            var f = $('#goods-item-add-form').serializeArray();
+            $.ajax({
+                type:'post',
+                url :"/Admin/Goods/addNewGoodsItem",
+                data:{
+                    gc_id:gc_id,
+                    form_data: f
+                },
+                dataType: 'json',
+                success : function (res) {
+                    if (res.code == 200) {
+                        layer.msg("添加成功");
+                        setTimeout(function () {
+                            x_admin_close();
+                        }, 1000);
+                    } else {
+                        layer.msg(res.message,{
+                            icon:2,
+                            time:2000,
+                            shade:[0.6,'#000000']
+                        });
+                    }
+                }
+            });
+        });
+    });
+
+</script>

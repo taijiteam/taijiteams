@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html class="x-admin-sm">
+  
+  <head>
+    <meta charset="UTF-8">
+    <title>欢迎页面-X-admin2.1</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css/font.css">
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css/xadmin.css">
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Admin/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="__PUBLIC__/Admin/js/xadmin.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Admin/js/cookie.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Admin/js/kindeditor/kindeditor-all.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Admin/js/webuploader/webuploader.js"></script>
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+  </head>
+  
+  <body>
+    <div class="x-body">
+        <div class="layui-form-item">
+            <label for="shopid" class="layui-form-label"><span class="x-red">*</span>商家账号</label>
+            <div class="layui-input-inline">
+                <input type="text" id="shopid" name="shopid" required="" lay-verify="required" autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux"><span class="x-red">*</span>上传成功后，不可更改</div>
+        </div>
+        <form class="layui-form">
+          <div class="layui-form-item">
+              <label for="user" class="layui-form-label"><span class="x-red">*</span>商家名称</label>
+              <div class="layui-input-inline">
+                  <input type="text" id="user" name="user" required="" lay-verify="nikename" autocomplete="off" class="layui-input">
+              </div>
+          </div>
+
+            <div class="layui-form-item">
+                <label for="L_pass" class="layui-form-label">
+                    <span class="x-red">*</span>密码
+                </label>
+                <div class="layui-input-inline">
+                    <input type="password" id="L_pass" name="pass" required="" lay-verify="pass"
+                           autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">
+                    6到16个字符
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="L_repass" class="layui-form-label">
+                    <span class="x-red">*</span>确认密码
+                </label>
+                <div class="layui-input-inline">
+                    <input type="password" id="L_repass" name="repass" required="" lay-verify="repass"
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label for="groupname" class="layui-form-label"><span class="x-red">*</span>商铺类型</label>
+                <div class="layui-input-inline">
+                    <!--<input type="text" id="m_groupname" name="m_groupname" required="" lay-verify="nikename"autocomplete="off" class="layui-input">-->
+                    <select id="groupname" name="groupname" autocomplete="off" class="layui-input">
+                        <option value="美食">美食</option>
+                        <option value="旅游">旅游</option>
+                        <option value="宾馆">宾馆</option>
+                    </select>
+                </div>
+            </div>
+
+            <!--后面未编辑name值-->
+
+            <div class="layui-form-item">
+              <label for="linkman" class="layui-form-label"><span class="x-red">*</span>联系人</label>
+              <div class="layui-input-inline">
+                  <input type="text" id="linkman" name="linkman" required=""  autocomplete="off" class="layui-input">
+              </div>
+          </div>
+            <div class="layui-form-item">
+              <label for="phone" class="layui-form-label"><span class="x-red">*</span>联系电话</label>
+              <div class="layui-input-inline">
+                  <input type="text" id="phone" name="phone" required="" lay-verify="phone" autocomplete="off" class="layui-input">
+              </div>
+          </div>
+            <div class="layui-form-item">
+              <label for="telephone" class="layui-form-label"><span class="x-red">*</span>商铺电话</label>
+              <div class="layui-input-inline">
+                  <input type="text" id="telephone" name="telephone" required="" lay-verify="required" autocomplete="off" class="layui-input">
+              </div>
+          </div>
+            <div class="layui-form-item">
+              <label for="address" class="layui-form-label"><span class="x-red">*</span>商铺地址</label>
+              <div class="layui-input-inline">
+                  <input type="text" id="address" name="address" required="" lay-verify="required" autocomplete="off" class="layui-input">
+              </div>
+          </div>
+
+
+            <div class="layui-form-item">
+                <label for="active" class="layui-form-label"><span class="x-red">*</span>启用状态</label>
+                <div class="layui-input-inline">
+                    <!--<input type="text" id="m_groupname" name="m_groupname" required="" lay-verify="nikename"autocomplete="off" class="layui-input">-->
+                    <select id="active" name="active" autocomplete="off" class="layui-input">
+                        <option value="0">展示</option>
+                        <option value="1">禁用</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+              <label for="time" class="layui-form-label"><span class="x-red">*</span>开户时间</label>
+              <div class="layui-input-inline">
+                  <input type="text" id="time" name="time" required="" lay-verify="required" autocomplete="off" class="layui-input">
+              </div>
+          </div>
+          <div class="layui-form-item">
+              <label for="L_repass" class="layui-form-label">
+              </label>
+              <input type="button" class="layui-btn" lay-filter="add" lay-submit="" value="增加">
+          </div>
+      </form>
+    </div>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Admin/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Admin/ueditor/ueditor.all.min.js"> </script>
+<!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+<!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Admin/ueditor/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript" >
+layui.use('upload', function(){
+    var upload = layui.upload;
+    //执行实例
+    var uploadInst = upload.render({
+        elem: '#doc' //绑定元素
+        ,url: "{:U('Business/memberPhoto')}" //上传接口
+        ,done: function(data){
+            //上传完毕回调
+            layer.msg(''+data.msg+'',function(){
+                /*var html ='';
+                html += '<img src="__PUBLIC__/Uploads/Member/'+data.photo+'" height="200px" /><input type="hidden"id="photo" name="photo" value='+data.photo+'>';
+                $('#photo').html(html);*/
+            });
+        }
+        ,error: function(){
+            //请求异常回调
+        }
+    });
+});
+//提交
+layui.use(['form','layer'], function(){
+    $ = layui.jquery;
+    var form = layui.form,layer = layui.layer;
+    //自定义验证规则
+    form.verify({
+        nikename: function(value){
+            if(value.length < 2){
+                return '昵称至少得2个字符啊';
+            }
+        }
+        ,pass: [/(.+){6,12}$/, '密码必须6到12位']
+        ,phone: [/^1([38]\d|5[0-35-9]|7[3678])\d{8}$/, '手机号码格式不正确']
+        ,repass: function(value){
+            if($('#L_pass').val()!=$('#L_repass').val()){
+                return '两次密码不一致';
+            }
+        }
+    });
+
+
+    //监听提交
+    form.on('submit(add)', function(data){
+        // alert(JSON.stringify(data));
+        //发异步，把数据提交给php
+        var groupname  = $("#groupname option:checked").val();		//商铺类型
+        var user  = $('input[name="user"]').val();			        //商铺名字
+        var shopid  = $('input[name="shopid"]').val();			    //商铺id
+        var linkman  = $('input[name="linkman"]').val();			//联系人
+        var pass  = $('input[name="pass"]').val();			        //密码
+        var repass  = $('input[name="repass"]').val();			    //确认密码
+        var phone  = $('input[name="phone"]').val();			        //手机
+        var telephone  = $('input[name="telephone"]').val();		//商铺电话
+        var address  = $('input[name="address"]').val();			//商铺地址
+        //var active  = $('input[name="active"]').val();
+        var active  = $("#active option:checked").val();      //状态
+        var time  = $('input[name="time"]').val();			        //开户时间
+
+
+        //接收
+        //alert(JSON.stringify(introduce));
+        //alert(time);
+         //return false;
+        $.ajax({
+            type:"post",
+            url:"{:U('Business/BusinessSave')}",//根据自己项目的需要写请求地址
+            data:{
+                'groupname':groupname,          //商铺类型
+                'user':user,                    //商铺名字
+                'shopid':shopid,                //商铺id
+                'pass':pass,                    //商铺密码
+                'repass':repass,                //商铺确认密码
+                'linkman':linkman,              //联系人
+                'phone':phone,                  //联系人电话
+                'telephone':telephone,          //商铺电话
+                'address':address,              //商铺电话
+                'active':active,                //启用状态
+                'time':time,                    //添加时间
+            },
+            dataType:'json',
+            success:function(data){
+                // alert(JSON.stringify(data));
+                if (data.error == 1){
+                    layer.confirm('信息添加成功！',function(index){
+                        //关闭当前frame
+                        x_admin_close();
+                        // 可以对父窗口进行刷新
+                        x_admin_father_reload();
+                    });
+                }else{
+                    layer.msg('哎呦，运气不好哦，添加失败咯！',function(){});
+                }
+            },
+            error:function(data) {
+                console.log(data.msg);
+            },
+        })
+    });
+});
+</script>
+<script>
+    var _hmt = _hmt || []; (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+<script>
+    //餐厅简介富文本编辑器
+    $(document).ready(function(e) {
+        //加载富文本编辑器
+        KindEditor.ready(function(K){
+            K.create('#content', {
+                allowFileManager : true,
+                filterMode:true,
+                afterBlur:function(){
+                    this.sync("#content");
+                }
+            });
+        });
+    });
+    //美食推荐富文本编辑器
+    $(document).ready(function(e) {
+        //加载富文本编辑器
+        KindEditor.ready(function(K){
+            K.create('#content1', {
+                allowFileManager : true,
+                filterMode:true,
+                afterBlur:function(){
+                    this.sync("#content1");
+                }
+            });
+        });
+    });
+    //成员专享富文本编辑器
+    $(document).ready(function(e) {
+        //加载富文本编辑器
+        KindEditor.ready(function(K){
+            K.create('#content2', {
+                allowFileManager : true,
+                filterMode:true,
+                afterBlur:function(){
+                    this.sync("#content2");
+                }
+            });
+        });
+    });
+</script>
+<script>
+layui.use('laydate', function(){
+    var laydate = layui.laydate;
+    //日期时间选择器
+    laydate.render({
+        elem: '#time'
+        ,type: 'datetime'
+    });
+    laydate.render({
+        elem: '#indate'
+        ,type: 'datetime'
+    });
+    laydate.render({
+        elem: '#birthday'
+    });
+});
+</script>
+<!--<script type="text/javascript">
+    //下面用于多图片上传预览功能
+    function setImagePreviews(avalue) {
+        var docObj = document.getElementById("doc");
+        var dd = document.getElementById("photo");
+        dd.innerHTML = "";
+        var fileList = docObj.files;
+        for (var i = 0; i < fileList.length; i++) {
+            dd.innerHTML += "<div style='float:left' > <img id='img" + i + "' /> </div>";
+            var imgObjPreview = document.getElementById("img"+i);
+            if (docObj.files && docObj.files[i]) {
+            //火狐下，直接设img属性
+                imgObjPreview.style.display = 'block';
+                imgObjPreview.style.width = '150px';
+                imgObjPreview.style.height = '180px';
+            //imgObjPreview.src = docObj.files[0].getAsDataURL();
+            //火狐7以上版本不能用上面的getAsDataURL()方式获取，需要一下方式
+                imgObjPreview.src = window.URL.createObjectURL(docObj.files[i]);
+            } else {
+            //IE下，使用滤镜
+                docObj.select();
+                var imgSrc = document.selection.createRange().text;
+                alert(imgSrc)
+                var localImagId = document.getElementById("img" + i);
+                //必须设置初始大小
+                localImagId.style.width = "150px";
+                localImagId.style.height = "180px";
+                //图片异常的捕捉，防止用户修改后缀来伪造图片
+                try {
+                    localImagId.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+                    localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+                }
+                catch (e) {
+                    alert("您上传的图片格式不正确，请重新选择!");
+                    return false;
+                }
+                imgObjPreview.style.display = 'none';
+                document.selection.empty();
+            }
+        }
+        return true;
+    }
+</script>-->
+</body>
+
+</html>

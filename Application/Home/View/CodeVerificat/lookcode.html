@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>4月份500个优惠码</title>
+</head>
+<style type="text/css">
+  table.tftable {font-size:12px;color:#333333;width:30%;border-width: 1px;border-color: #729ea5;border-collapse: collapse;}
+  table.tftable th {font-size:12px;background-color:#acc8cc;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;text-align:left;}
+  table.tftable tr {background-color:#d4e3e5;}
+  table.tftable td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}
+</style>
+<body>
+  <div>
+    <table id="tfhover" class="tftable" border="1">
+      <tr>
+        <th>编号</th>
+        <th>优惠码</th>
+      </tr>
+      <volist name='code_arr' key='k' id='cd'>
+        <tr>
+          <td>{$k-1}</td>
+          <td>{$cd}</td>
+        </tr>
+      </volist>
+    </table>
+  </div>
+
+
+</body>
+</html>

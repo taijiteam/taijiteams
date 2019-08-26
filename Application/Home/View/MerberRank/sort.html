@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>积分记录</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="full-screen" content="yes">
+    <meta http-equiv="Cache-Control" content="no-cache,no-store,max-age=0,s-maxage=0,must-revalidate">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+</head>
+<style type="text/css">
+    html, body {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        color: #333;
+        width: 100%;
+        font-family: PingFang-SC-Normal sans-serif;
+    }
+
+    body {
+        background-color: #f7f7f7;
+    }
+
+    .between {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+    .point-record header[data-v-10b199aa] {
+        height: 70px;
+        background-color: #4080E8;
+        color: #fff;
+    }
+
+    .point-record header > div[data-v-10b199aa]:not(.line) {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        text-align: center;
+    }
+
+    .point-record header .line[data-v-10b199aa] {
+        width: 1px;
+        background-color: #fff;
+        height: 1.466667rem;
+    }
+
+    .point-record header > div:not(.line) .title[data-v-10b199aa] {
+        font-size: 12px;
+    }
+
+
+
+    * {
+        box-sizing: border-box;
+        line-height: 1;
+    }
+
+    .img {
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .banner img {
+        width: 100%;
+    }
+
+    .img img, .banner img, .logo img {
+        vertical-align: middle;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    ul, ol, dl, li {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    i, b {
+        font-style: normal;
+    }
+
+    a, a:link {
+        color: #333;
+        text-decoration: none;
+    }
+
+    a > * {
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: #333;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #333;
+        text-decoration: none;
+    }
+
+    a:active {
+        color: #333;
+        text-decoration: none;
+    }
+
+    button, input, select, [type="radio"], [type="checkbox"] {
+        -webkit-appearance: none;
+        appearance: none;
+        outline: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    select {
+        padding-left: 0;
+        text-indent: 0;
+    }
+
+    .infinite {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /*鍏辩敤绫�*/
+    .ellipsis {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+
+
+    .ex_click {
+        position: relative;
+    }
+
+    .description {
+        padding: 20px 0;
+    }
+
+    .description img {
+        width: 100%;
+        line-height: 0;
+        vertical-align: middle
+    }
+
+    .description a {
+        text-decoration: underline;
+        color: #00c;
+    }
+
+    .description * {
+        line-height: 1.5;
+        font-size: inherit;
+    }
+
+    [data-dpr="1"] .description {
+        font-size: 14px;
+    }
+
+    [data-dpr="2"] .description {
+        font-size: 28px;
+    }
+
+    [data-dpr="3"] .description {
+        font-size: 42px;
+    }
+
+    .ex_click:after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        right: -10px;
+        left: -10px;
+        top: -10px;
+    }
+
+    button {
+        border: none;
+        background-color: #fff;
+        outline: none;
+    }
+
+    [type="text"], [type="number"], [type="tel"] {
+        width: 80%;
+    }
+
+    .com-rich-text img {
+        vertical-align: middle;
+    }
+
+    img {
+        vertical-align: middle;
+    }
+</style>
+<body>
+<div data-v-10b199aa="" class="point-record">
+    <header data-v-10b199aa="" class="between">
+        <div data-v-10b199aa="" class="left">
+            <p data-v-10b199aa="" class="title">兑换积分</p>
+            <p data-v-10b199aa="" class="num">0</p>
+        </div>
+        <div data-v-10b199aa="" class="line"></div>
+        <div data-v-10b199aa="" class="left">
+            <p data-v-10b199aa="" class="title">优惠积分</p>
+            <p data-v-10b199aa="" class="num">0</p>
+        </div>
+        <div data-v-10b199aa="" class="line"></div>
+
+        <div data-v-10b199aa="" class="right">
+            <p data-v-10b199aa="" class="title">金币</p>
+            <p data-v-10b199aa="" class="num">0</p>
+        </div>
+    </header>
+    <div data-v-10b199aa="" class="content">
+        <div data-v-10b199aa="" class="list-wrapper" gap="100">
+            <div class="scroll-content" style="transition-property: transform; transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);">
+                <ul data-v-10b199aa="" class="point-list" style="pointer-events: auto;">
+                    <li data-v-10b199aa="" class="point-item between">
+                        <div data-v-10b199aa="" class="left">
+                            <p data-v-10b199aa="" class="type">接口增加积分</p>
+                            <p data-v-10b199aa="" class="time">2019-04-22 17:11</p>
+                        </div>
+                        <div data-v-10b199aa="" class="right">+1</div>
+                    </li>
+                    <li data-v-10b199aa="" class="point-item between">
+                        <div data-v-10b199aa="" class="left">
+                            <p data-v-10b199aa="" class="type">接口增加积分</p>
+                            <p data-v-10b199aa="" class="time">2019-04-19 10:11</p>
+                        </div>
+                        <div data-v-10b199aa="" class="right">+1
+                        </div>
+                    </li>
+                    <li data-v-10b199aa="" class="point-item between">
+                        <div data-v-10b199aa="" class="left">
+                            <p data-v-10b199aa="" class="type">接口增加积分</p>
+                            <p data-v-10b199aa="" class="time">2019-04-18 10:24</p>
+                        </div>
+                        <div data-v-10b199aa="" class="right">+1</div>
+                    </li>
+                    <li data-v-10b199aa="" class="point-item between">
+                        <div data-v-10b199aa="" class="left">
+                            <p data-v-10b199aa="" class="type">接口增加积分</p>
+                            <p data-v-10b199aa="" class="time">2019-04-16 09:47</p>
+                        </div>
+                        <div data-v-10b199aa="" class="right">+1</div>
+                    </li>
+                    <li data-v-10b199aa="" class="point-item between">
+                        <div data-v-10b199aa="" class="left">
+                            <p data-v-10b199aa="" class="type">接口增加积分</p>
+                            <p data-v-10b199aa="" class="time">2019-04-15 09:28</p>
+                        </div>
+                        <div data-v-10b199aa="" class="right">+1</div>
+                    </li>
+                    <li data-v-10b199aa="" class="point-item between">
+                        <div data-v-10b199aa="" class="left">
+                            <p data-v-10b199aa="" class="type">接口增加积分</p>
+                            <p data-v-10b199aa="" class="time">2019-04-12 16:11</p>
+                        </div>
+                        <div data-v-10b199aa="" class="right">+1</div>
+                    </li>
+                    <li data-v-10b199aa="" class="point-item between">
+                        <div data-v-10b199aa="" class="left">
+                            <p data-v-10b199aa="" class="type">接口增加积分</p>
+                            <p data-v-10b199aa="" class="time">2019-04-11 09:14</p>
+                        </div>
+                        <div data-v-10b199aa="" class="right">+1</div>
+                    </li><li data-v-10b199aa="" class="point-item between">
+                    <div data-v-10b199aa="" class="left">
+                        <p data-v-10b199aa="" class="type">接口增加积分</p>
+                        <p data-v-10b199aa="" class="time">2019-04-10 18:38</p>
+                    </div>
+                    <div data-v-10b199aa="" class="right">+1</div>
+                </li>
+                    <li data-v-10b199aa="" class="point-item between">
+                        <div data-v-10b199aa="" class="left">
+                            <p data-v-10b199aa="" class="type">接口增加积分</p>
+                            <p data-v-10b199aa="" class="time">2019-04-08 18:18</p>
+                        </div> <div data-v-10b199aa="" class="right">+1</div>
+                    </li>
+                </ul>
+                <div class="pullup-wrapper" style="pointer-events: auto;">
+                    <p class="no-more double-line" style="text-align: center;">再拉也没有啦!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

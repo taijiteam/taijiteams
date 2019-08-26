@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>成员分类</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <link rel="shortcut icon" href="http://www.qudaoclub.com/images/favicon.ico?v=1" type="image/x-icon"/>
+    <link rel="stylesheet" href="__css__merberRank.css?v=2">
+</head>
+
+<body>
+  <layout name="layout" />
+    <ul class="card-list">
+        <?php
+          $datajson = json_encode($data,JSON_UNESCAPED_UNICODE);
+        ?>
+        <!-- <li>
+            <a href="{U:('MerberRank/detail')}">
+                <img src="https://files.1card1.cn/g1/M02/F3/A9/CgoMA1mT2jWAWk6cAACEdh_ZGmQ715.png" alt="">
+                <div>
+                    <h2>亦享会员</h2>
+                    <h3>售价<span>1990009.00</span></h3>
+                    <h4>有效期：1 年</h4>
+                </div>
+            </a>
+        </li> -->
+    </ul>
+</body>
+
+</html>
+
+<script type="text/javascript" src="__Club__statics/css/vendor/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.core').addClass('on').parent('a').siblings('a').find('li').removeClass('on');
+  })
+</script>
+<script type="text/javascript">
+
+    var imgJson = {'亦享成员': 'https://files.1card1.cn/g1/M02/84/B8/CgoMA1pDAQOAGXryAACCa0SXK9w157.png', '致享成员': 'https://files.1card1.cn/g1/M02/76/09/CgoMA1pDALWASKFSAADaYOHInSw624.png', '悦享成员': 'https://files.1card1.cn/g1/M02/E7/4B/CgoMA1mT2r6ALqUjAACMWuISPsQ315.png', '真享成员': 'https://files.1card1.cn/g1/M02/87/F5/CgoMA1mT22uAfPkgAACbrQdNdeg308.png', '君享成员': 'https://files.1card1.cn/g1/M02/63/93/CgoMA1obtbOAawEuAADsCAi6_QU845.png'};
+
+    $(document).ready(function(){
+        var $list = $('.card-list');
+
+        var html = '';
+
+        var json = <?php echo $datajson; ?>;    //会员级别json格式
+        var cardid = <?php echo $CardId; ?>;
+
+        $list.html('');
+
+        for(var i = 0; i < json.length; i++){
+            var needUrl = encodeURI("http://www.qudaoplus.cn/merber_all_show/index.php/home/WechatPay/index?guid="+json[i].Guid+'&id='+cardid+'&groupName='+i);
+            html += '<li><a href='+needUrl+'><img src='+imgJson[json[i].GroupName]+'><div><h2>'+json[i].GroupName+'</h2><h3>售价<span>'+json[i].CardPrice+'</span></h3><h4>有效期：1 年</h4></div></a></li>'
+        }
+
+        $list.html(html);
+    })
+</script>

@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 防止手机点击放大问题 -->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+    <!-- the end -->
+    <title>支付订单</title>
+    <style type="text/css">
+        a{
+            text-decoration: none;
+        }
+        #footer{
+            width: 100%;
+            position: fixed;
+            bottom: 0px;
+            z-index: 1;
+            overflow: hidden;
+        }
+        #footer>.left{
+            display: block;
+            width: 50%;
+            background: #6b6b6b;
+            text-align: center;
+            float: left;
+            line-height: 35px;
+        }
+        #footer>.right{
+            display: block;
+            width: 50%;
+            background: #417505;
+            text-align: center;
+            float: right;
+            line-height: 35px;
+        }
+    </style>
+<body>
+    <h4>请确认输入金额</h4>
+    <p id="aaa">￥{$order_price}</p>
+    <p>
+        <input type="checkbox" name="jifen" onclick="jifen()" value="{$_SESSION['infor']['data'][0]['EnablePoint']}"/>
+        您共有{$_SESSION['infor']['data'][0]['EnablePoint']}积分，可抵扣{$_SESSION['jfrmb']}元
+    </p>
+    <input type="hidden" name="o_id" value="{$fo_id}">
+    <input type="hidden" name="aprace" value="{$order_price}">
+    <!-- 这里是底部 -->
+    <div id="footer">
+        <a href="javascript:;" onclick="back()" class="left">返回</a>
+        <a href="{:U('Wxpay/projectapi')}?id={$fo_id}&o_price={$order_price}&cate=美食" class="right">确认支付</a>
+    </div>
+    <script type="text/javascript" src="__PUBLIC__/Project/hui/lib/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Project/hui/static/h-ui/js/H-ui.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Project/hui/lib/layer/2.4/layer.js"></script>
+    <script type="text/javascript">
+        function modaldemo(){
+            $("#modal-demo").modal("show");
+        }
+        function jifen() {
+            var id = $('input[name="o_id"]').val();	//出行时间
+            var jifen = $('input[name="jifen"]:checked').val();//积分
+            var aprace = $('input[name="aprace"]').val();	//价格
+            if (jifen == undefined) {
+                $.ajax({
+                    type:"post",
+                    url:"{:U('Project/jifen')}",//根据自己项目的需要写请求地址
+                    data:{
+                        'allrmb':aprace,
+                        'id':id,
+                        'aprace':aprace,
+                    },
+                    dataType:'json',
+                    success:function(data){
+                        //alert(JSON.stringify(data));
+                        if (data == 0) {
+                            alert("系统超时！");
+                        }else {
+                            var html ='';
+                            html += '￥ '+data.o_allrmb+'';
+                            $('#aaa').html(html);
+                        }
+                    },
+                    error:function(data) {
+                        console.log(data.msg);
+                    },
+                })
+            }else{
+                var jifen2 = (jifen/100);
+                if (jifen2 < aprace){
+                    var allrmb = (aprace - jifen2);
+                }else{
+                    var allrmb = 0.01;
+                }
+                $.ajax({
+                    type:"post",
+                    url:"{:U('Project/jifen')}",//根据自己项目的需要写请求地址
+                    data:{
+                        'allrmb':allrmb,
+                        'id':id,
+                        'aprace':aprace,
+                    },
+                    dataType:'json',
+                    success:function(data){
+                        //alert(JSON.stringify(data));
+                        if (data == 0) {
+                            alert("系统超时！");
+                        }else {
+                            var html ='';
+                            html += '￥ '+data.o_allrmb+'';
+                            $('#aaa').html(html);
+                        }
+                    },
+                    error:function(data) {
+                        console.log(data.msg);
+                    },
+                })
+            }
+
+        }
+    </script>
+    <script language=javascript>
+        function back()
+        {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

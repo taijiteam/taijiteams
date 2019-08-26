@@ -1,0 +1,26 @@
+	<footer>
+		<ul>
+			<a href="{:U('Doctor/index')}">
+				<li>
+					<img src="__PUBLIC__/Doctor/images/home.png">
+					<p>首页</p>
+				</li>
+			</a>
+			<a href="{:U('Doctor/message')}?m_merber={$_SESSION['infor']['data'][0]['TrueName']}">
+				<li>
+					<if condition="$_SESSION['message_state'] eq 1">
+						<span style="width: 10px;height: 10px;background: #f00;display: block;border-radius: 5px;float: left;position: fixed;left: 43%;"></span>
+						<else />
+					</if>
+					<img src="__PUBLIC__/Doctor/images/xiaoxi.png">
+					<p>系统消息</p>
+				</li>
+			</a>
+			<a href="{:U('Doctor/center')}">
+				<li>
+					<img src="__PUBLIC__/Doctor/images/merber.png">
+					<p>个人中心</p>
+				</li> 
+			</a>
+		</ul>
+	</footer>

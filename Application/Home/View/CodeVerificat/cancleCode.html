@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>HOPY GOGOGO 优惠码核销</title>
+    <meta name="keywords" content="HOPY GOGOGO" />
+    <meta name="description" content="HOPY GOGOGO" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="x-ua-compatible" content="IE=edge, chorme=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="__css__coupon.css">
+</head>
+<body>
+  <section>
+      <div class="coupon-top">
+          <figure>
+              <img src="__img__cancle/hopy.png" alt="">
+          </figure>
+      </div>
+      <div class="coupon-content">
+          <h2 style="margin: 20px 0;">HOPY GOGOGO 优惠码核销</h2>
+          <h2>渠道plus 与 HOPY GOGOGO 合作计划</h2>
+          <div class="code"><input  class="canCode"  type="text" placeholder="请输入优惠码"></div>
+          <div class="btn"><button>立即核销</button></div>
+      </div>
+  </section>
+
+</body>
+
+</html>
+<script type="text/javascript" src="__JS__jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+      $('.btn').click(function(){
+        var canCode = $('.canCode').val();
+
+        $.ajax({
+          type: "POST",
+          url: "{:U('CodeVerificat/cancleCode')}",
+          data:{
+            canCode: canCode
+          },
+          error: function(request) {
+              alert('连接服务器超时，请重新注册');
+          },
+          success: function(data) {
+            data = eval( '(' +data+ ')' );
+            if (data.code=='1') {
+              alert(data.message);
+            }else if (data.code=='0') {
+              alert(data.message);
+            }else {
+              alert('服务器出错，请稍后再试');
+            }
+            console.log(data);
+          }
+        })
+      })
+    })
+</script>
+
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+    var url=encodeURIComponent(location.href.split('#')[0]);
+    var title ="HOPY GOGOGO 优惠码核销";            //标题
+    var description ="HOPY GOGOGO 优惠码核销";     //摘要
+    var thisUrl = location.href.split('#')[0];         //跳转的连接
+    var imgUrl ="http://www.qudaoplus.cn/merber_all_show/Public/Club/images/cancle/hopylogo.jpeg";             // 图片
+    $.ajax({
+        type : "get",
+        url : "http://www.qudaoplus.cn/php/jssdk.php?url="+url,
+        dataType : "jsonp",
+        jsonp: "callback",
+        jsonpCallback:"success_jsonpCallback",
+        success : function(data){
+            wx.config({
+                appId: data.appId,
+                timestamp: data.timestamp,
+                nonceStr: data.nonceStr,
+                signature: data.signature,
+                url: data.url,
+                jsApiList: [
+                   "onMenuShareTimeline", //分享给好友
+                   "onMenuShareAppMessage", //分享到朋友圈
+                   "onMenuShareQQ",  //分享到QQ
+                   "onMenuShareWeibo" //分享到微博
+                ]
+            });
+        },
+        error:function(data){
+            alert("连接失败！");
+        }
+    });
+    wx.ready(function (){
+        var shareData = {
+            title: title,                                    //标题
+            desc: description,                               //内容
+            link: thisUrl,                                   //链接
+            imgUrl: imgUrl                                   //图片
+        };
+        wx.onMenuShareAppMessage(shareData);
+        wx.onMenuShareTimeline(shareData);
+        wx.onMenuShareQQ(shareData);
+        wx.onMenuShareWeibo(shareData);
+    });
+</script>
+<script type=text/javascript>
+  var browser = {
+  ua: navigator.userAgent.toLowerCase(),
+  msie: function() {
+    return /msie/.test(this.ua);
+  },
+  ie6: function() {
+    var self = this;
+    return self.msie() && /msie 6./.test(self.ua);
+  },
+  ie7: function() {
+    var self = this;
+    return self.msie() && /msie 7.0/.test(self.ua);
+  },
+  ie8: function() {
+    var self = this;
+    return self.msie() && /msie 8.0/.test(self.ua);
+  }
+  };
+  if (!browser.ie6() && !browser.ie7()) {} else {
+  window.location.href = 'update.html';
+  }
+  $(document).ready(function(){
+      //	点击menu中的li改变banner中的图片
+          $(".menu li").click(function(){
+              var num=$(this).index();
+              $('.banner li').eq(num).fadeIn(500).siblings().fadeOut(500);
+              $(this).addClass('active').siblings().removeClass('active');
+          });
+      //给banner中的img加遮罩
+          $(".banner li .img-box").hover(function(){
+              $(this).addClass('active').find('a').fadeIn(300);
+          },function(){
+              $(this).removeClass('active').find('a').fadeOut(300);
+          });
+  });
+</script>

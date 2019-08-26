@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>订单信息查询</title>
+    <meta name="keywords" content="渠道PLUS丨天朝上品贵人酒代理销售查询" />
+    <meta name="description" content="您可以查询您每月销售单量" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+    <link rel="shortcut icon" href="http://www.qudaoclub.com/images/favicon.ico" type="image/x-icon"/>
+    <script src="__JS__jquery.min.js"></script>
+    <link rel="stylesheet" href="__css__agent.css?v=1">
+    <style>
+      body, html{
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      table {
+        height: 80%;
+        width: 80%;         /*  必须设置一个宽度， margin: 0 auto才能使之居于父组件中央*/
+        margin: 100px auto;  /*  通过设置外边距（margin）中的左右外边距属性为auto使之居于父组件（body）中间*/
+        font-size: 14px;
+      }
+      table tr{
+        height: 40px;
+        width: 100%;
+      }
+      table td{
+        border: 1px solid #fff;
+        text-align: center;
+      }
+      table>tr>td{
+        height: 100%;
+        width: 33.3%;
+      }
+    </style>
+</head>
+
+<body>
+  <section>
+    <div>
+      <div><table cellspacing="0" cellpadding="5">
+          <tr>
+              <td>姓名</td>
+              <td>客户订单号</td>
+              <td>商品名称</td>
+              <td>总金额</td>
+              <td>下单时间</td>
+              <td>收货人</td>
+              <td>收货人联系方式</td>
+              <td>地址</td>
+              <td>订单状态</td>
+          </tr>
+          <volist name="data" id="vo">
+            <tr>
+                <td>{$vo['TrueName']}</td>
+                <td>{$vo['BillNumber']}</td>
+                <td>{$vo['ItemList']['0']['Name']}</td>
+                <td>{$vo['TotalMoney']}元</td>
+                <td>{$vo['SubmitTime']}</td>
+                <td>{$vo['Receiver']}</td>
+                <td>{$vo['ReceiverMobile']}</td>
+                <td>{$vo['Province']}{$vo['City']}{$vo['County']}{$vo['Address']}</td>
+                <td>{$vo['StatusName']}</td>
+            </tr>
+          </volist>
+      </table></div>
+    </div>
+  </section>
+
+</body>
+</html>

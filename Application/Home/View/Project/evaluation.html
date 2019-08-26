@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>订单评价</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Project/css/style.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Project/css/font-awesome.min.css">
+<link rel="stylesheet" href="__PUBLIC__/Activity/css/jquery-labelauty.css">
+<style type="text/css">
+.feedback>.body>form{
+	width: 90%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.feedback>.body>form>p{
+	margin: 0;
+	color: #fff;
+	font-size: 14px;
+	line-height: 20px;
+}
+.feedback>.body>form>textarea{
+	display: block;
+	width: 99%;
+	font-size: 14px;
+	padding: 5px;
+	border: 1px solid rgb(65,117,5);
+	margin: 20px 0;
+}
+.feedback>.body>form>input{
+	border: none;
+	width: 160px;
+	color: #fff;
+	line-height: 28px;
+	border-radius: 16px;
+	background: #eea20d;
+	display: block;
+	margin: 10px auto;
+}
+/*星星评价效果*/
+.star-rating {
+font-family: 'FontAwesome';
+margin: 0px auto;
+text-align: center;
+}
+.star-rating>h4{
+	margin: 0;
+	color: #fff;
+}
+.star-rating > fieldset {
+border: none;
+display: inline-block;
+}
+.star-rating > fieldset:not(:checked) > input {
+position: absolute;
+top: -9999px;
+clip: rect(0, 0, 0, 0);
+}
+.star-rating > fieldset:not(:checked) > label {
+float: right;
+width: 1em;
+padding: 0 .05em;
+overflow: hidden;
+white-space: nowrap;
+cursor: pointer;
+font-size: 200%;
+color: #eea20d;
+}
+.star-rating > fieldset:not(:checked) > label:before {
+content: '\f006  ';
+}
+.star-rating > fieldset:not(:checked) > label:hover,
+.star-rating > fieldset:not(:checked) > label:hover ~ label {
+color: #eea20d;
+text-shadow: 0 0 3px #eea20d;
+}
+.star-rating > fieldset:not(:checked) > label:hover:before,
+.star-rating > fieldset:not(:checked) > label:hover ~ label:before {
+content: '\f005  ';
+}
+.star-rating > fieldset > input:checked ~ label:before {
+content: '\f005  ';
+}
+.star-rating > fieldset > label:active {
+position: relative;
+top: 2px;
+}
+.check{
+	float: right;
+    width: 1em;
+    padding: 0 .05em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 200%;
+    color: #16a085;
+}
+/*lable标签的大小、位置、背景颜色更改，在css选择时，“+”代表相邻元素，即当前元素的下一元素*/
+.input_labe{
+	display: none;
+}
+.input_labe +label{
+	display: block;
+	float: left;
+	width: 23.77%;
+	line-height: 30px;
+	margin-left: 8%;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 10px;
+	border: 1px solid #fff;
+	color: rgb(247,193,83);
+	margin-bottom: 9px;
+}
+/*当input框为选中状态时，lable标签的样式，其中在css选择时，“：”表示当前input框的值，即checked；
+  该部分主要对显示的“对号”的大限居中方式，显示颜色进行了设置*/
+.input_labe:checked +label::before{
+	display: block;
+	/* content: "\2714"; */
+	content: "";
+	text-align: center;
+	font-size: 12px;
+	color: #fff;
+	border: 1px solid rgb(248,194,84);
+	height: 30px;
+	position: absolute;
+	width: 21.394%;
+	border-radius: 10px;
+}
+.dowebok>li>input.labelauty:checked + label{
+	background: #eea20d;
+}
+</style>
+<body class="feedback">
+<!-- 这里是头部 -->
+<header class="cheader">
+	<div>
+		<p><img src="{$_SESSION['information']['headimgurl']}"></p>
+	</div>
+	<p><span class="span1"><img src="__PUBLIC__/Project/images/icon/dianzan.png">订单评价</span><img class="dao" src="__PUBLIC__/Project/image/dao.png"><!-- <span class="span2"></span> --></p>
+</header>
+<!-- 这里是身体 -->
+<div class="body">
+	<p style="margin-top: 10px;"></p>
+	<form>
+
+		<div class="star-rating">
+			<h4>商家评价</h4>
+			<fieldset>
+				<input type="radio" id="star5" name="rating" value="5" checked="checked" /><label for="star5" title="Outstanding">5 stars</label>
+				<input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Very Good">4 stars</label>
+				<input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Good">3 stars</label>
+				<input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Poor">2 stars</label>
+				<input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Very Poor">1 star</label>
+			</fieldset>
+		</div>
+		<div class="pinlun">
+			<ul class="dowebok">
+				<volist name="orderevalu" id="orderevalu">
+					<li><input class="xinput" type="checkbox" name="checkbox" value="{$orderevalu}" checked data-labelauty="{$orderevalu}"></li>
+				</volist>
+				<!--<li><input class="xinput" type="checkbox" name="checkbox" checked data-labelauty="服务好"></li>-->
+				<!--<li><input class="xinput" type="checkbox" name="checkbox" checked data-labelauty="服务好"></li>-->
+				<!--<li><input class="xinput" type="checkbox" name="checkbox" checked data-labelauty="服务好"></li>-->
+				<!--<li><input class="xinput" type="checkbox" name="checkbox" checked data-labelauty="服务好"></li>-->
+				<!--<li><input class="xinput" type="checkbox" name="checkbox" checked data-labelauty="服务好"></li>-->
+			</ul>
+		</div>
+		<textarea id="text" rows="8" cols="20" placeholder="请输入"></textarea>
+		<input type="hidden" name="name" value="{$_SESSION['infor']['data'][0]['TrueName']}">
+		<input type="hidden" name="cardid" value="{$_SESSION['cardId']}">
+		<input type="hidden" name="userimg" value="{$_SESSION['information']['headimgurl']}">
+		<input type="hidden" name="pid" value="{$order.o_pid}">
+		<input type="hidden" name="oid" value="{$order.o_id}">
+		<input type="button" name="" onclick="modalalertdemo()" value="提交评价">
+	</form>
+</div>
+
+<!-- 这里是底部 -->
+<include file="ProjectPublic/footer" />
+<!-- the end -->
+
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript">
+function modalalertdemo(){
+	var label = Lond_text('checkbox');					//游玩人id
+	var level = $('input[name="rating"]:checked').val();	//条约
+	var content = $("#text").val();					//特殊需求
+	var name = $('input[name="name"]').val();		//openid
+	var cardid = $('input[name="cardid"]').val();		//openid
+	var userimg = $('input[name="userimg"]').val();		//openid
+	var pid = $('input[name="pid"]').val();		//openid
+	var oid = $('input[name="oid"]').val();		//openid
+	//alert(o_member);
+	$.ajax({
+		type:"post",
+		url:"{:U('Project/evalusub')}",//根据自己项目的需要写请求地址
+		data:{
+			'label':label,
+			'level':level,
+			'content':content,
+			'name':name,
+			'cardid':cardid,
+			'userimg':userimg,
+			'pid':pid,
+			'oid':oid,
+		},
+		dataType:'json',
+		success:function(data){
+			//alert(JSON.stringify(data));
+			if (data == 1){
+				layer.confirm('评价成功！',function(index){
+					// location.href="http://www.qudaoplus.cn/merber_all_show/index.php/Home/Project/order"
+					window.history.back();
+				});
+			}else{
+				layer.msg('哎呦，运气不好哦，评价失败咯！',function(){});
+			}
+		},
+		error:function(data) {
+			console.log(data.msg);
+		},
+	})
+}
+function Lond_text(objname){
+    obj = document.getElementsByName(objname);
+    checkval = [];
+    for (var i=0;i<obj.length;i++) {
+    	checkval.push(obj[i].value);
+    }
+    return checkval;
+}
+
+</script>
+<!-- 请在上方写相关业务代码 -->
+<!-- 请在上方写相关业务代码 -->
+<script src="__PUBLIC__/Merber/js/jquery-labelauty.js"></script>
+<script>
+	$(function(){
+		$('.xinput').labelauty();
+	});
+</script>
+</body>
+</html>

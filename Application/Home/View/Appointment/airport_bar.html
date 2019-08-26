@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+   	<title>机场特享</title>
+    <meta name="keywords" content="{$SEO['keyword']}" />
+		<meta name="description" content="{$SEO['description']}" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0,user-scalable=yes">
+    <link rel="stylesheet" href="http://www.qudaoplus.cn/statics/css/common.css" />
+    <link rel="stylesheet" href="http://www.qudaoplus.cn/statics/css/business.master.css" />
+    <link rel="stylesheet" href="http://www.qudaoplus.cn/statics/css/business.css" />
+    <link rel="shortcut icon" href="http://www.qudaoplus.cn/images/favicon.ico?v=1" type="image/x-icon"/>
+    <script type="text/javascript" src="http://www.qudaoplus.cn/statics/css/vendor/jquery-1.10.2.min.js" ></script>
+    <script type="text/javascript" src="http://www.qudaoplus.cn/statics/css/vendor/jquery.backstretch.js" ></script>
+    <script type="text/javascript" src="http://www.qudaoplus.cn/statics/css/vendor/jquery.cookie.js" ></script>
+    <script type="text/javascript" src="http://www.qudaoplus.cn/statics/css/vendor/slick/slick.min.js" ></script>
+    <script type="text/javascript" src="http://www.qudaoplus.cn/statics/css/vendor/jquery.bpopup.min.js" ></script>
+    <script type="text/javascript" src="http://www.qudaoplus.cn/statics/css/vendor/velocity.min.js" ></script>
+    <script type="text/javascript" src="http://www.qudaoplus.cn/statics/css/vendor/velocity.ui.min.js" ></script>
+    <script type="text/javascript" src="http://www.qudaoplus.cn/statics/css/vendor/preloadjs-0.6.1.min.js" ></script>
+    <script type="text/javascript" src="http://www.qudaoplus.cn/statics/css/vendor/rem.min.js" ></script>
+    <script type="text/javascript" src=".http://www.qudaoplus.cn/statics/css/vendor/iscroll.js" ></script>
+    <script type="text/javascript" src="http://www.qudaoplus.cn/statics/js/public.js" ></script>
+    <script type="text/javascript" src="http://www.qudaoplus.cn/statics/js/move.js" ></script>
+    <script type="text/javascript" src="http://www.qudaoplus.cn/statics/js/business.js" ></script>
+    <!--[if lte IE 9]>
+    <script type="text/javascript" src="../vendor/respond.min.js" ></script>
+    <script type="text/javascript" src="../vendor/html5shiv.min.js" ></script>
+    <![endif]-->
+    <!-- 加载更多插件 -->
+    <script type="text/javascript" src="http://www.qudaoplus.cn/statics/js/jquery.scroll.loading.js"></script>
+  </head>
+
+  <style>
+  .main{
+    padding-top: 0 !important;
+  }
+  body{
+    background-color: #fff;
+  }
+  </style>
+
+<body>
+  <layout name="layout" />
+
+  <div class="main"><!--组织架构-->
+    <div class="business-section"><!--        <div class="grid"></div>-->
+      <div class="structure-wrap"><!--            <div class="s-bg2 s-bg-3-1"></div>-->
+        <div class="content">
+          <div class="business-title animated fadeInLefts">
+            <h2 class="en"><em>机场特享</em></h2>
+            <p>私密贵宾室</p>
+            <p>现场办票</p>
+            <p>贵宾室安检</p>
+            <p>直接进出机坪</p>
+            <p>机坪内专用车辆摆渡</p>
+            <div class="show-choose">预约</div>
+          </div>
+          <div class="structure-charm animated fadeInRight"><img src="http://www.qudaoplus.cn/statics/images/business/airport.jpg" /></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="alert-choose">
+    <div class="ac-content">
+      <div class="ac-top"><em><img src="http://www.qudaoplus.cn/statics/images/business/airport.jpg" /></em>
+        <div class="title">
+          <h2>机场尊享</h2>
+          <p>请选择服务项，点击确认后进入预约页，提交预约信息后，渠道管家会及时与您取得联系。</p>
+        </div>
+      </div>
+      <div class="choose-list"><span>项目</span>
+        <ul>
+          <li class="choose" name="1">VVIP</li>
+          <li name="2">VIP</li>
+        </ul>
+      </div>
+      <div class="confirm">确认</div>
+      <div class="close">取消</div>
+    </div>
+  </div>
+
+
+  <div class="alert-prompt">
+    <div class="alert-content">
+        <h2></h2>
+        <div class="alert-btn">
+            <div class="ap=confirm"><a href="">确认</a></div>
+            <div class="ap-close">取消</div>
+        </div>
+    </div>
+  </div>
+
+  <script>
+  // alert('hello');
+    $(document).ready(function(){
+        var openId = '<?php echo $openid; ?>';         //微信openid
+        console.log(openId);
+        var $btn = $('.show-choose'),
+            $choose = $('.alert-choose'),
+            $money = $choose.find('.title span'),
+            $list = $choose.find('li'),
+            $confirm = $choose.find('.confirm'),
+            $close = $choose.find('.close'),
+            $prompt = $('.alert-prompt'),
+            $h2 = $prompt.find('h2'),
+            $href = $prompt.find('a'),
+            $apClose = $prompt.find('.ap-close');
+
+        $(document).on('click touchstart', function(e){
+            var e = e || window.event;
+
+            if(!$choose.find('.ac-content').is(e.target) && $choose.find('.ac-content').has(e.target).length === 0 && !$prompt.is(e.target) && $prompt.has(e.target).length === 0 && !$btn.is(e.target) && $btn.has(e.target).length === 0){
+                $choose.fadeOut();
+            }
+        });
+
+        function promptShow(txt, src){
+            $h2.text(txt);
+            $href.attr('href', src);
+            $prompt.fadeIn();
+        }
+
+        $list.click(function(){
+            $(this).addClass('choose').siblings().removeClass('choose');
+        });
+
+        $confirm.click(function(){
+            // console.log($list.siblings('.choose').attr('name'));
+            $.ajax({
+                type: "POST",
+                url: "{:U('Appointment/airport')}",
+                data:{
+                    id : openId,
+                    type : $list.siblings('.choose').attr('name')
+                },
+                error: function(request) {
+                    alert("Connection error");
+                },
+                success: function(data) {
+                    data = eval('(' +data+ ')');
+                    // console.log(data);
+                    if ( data.code=='0' ) {
+                      window.location.href=data.src;
+                    }else {
+                      promptShow(data.message, data.src);
+                    }
+                }
+            });
+
+        });
+
+        $btn.click(function(){
+            $choose.fadeIn();
+        });
+
+        $close.click(function(){
+            $choose.fadeOut();
+        });
+
+        $apClose.click(function(){
+            $prompt.fadeOut();
+        });
+
+
+    })
+  </script>

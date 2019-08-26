@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>我的房源</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Estate/css/style.css">
+<script src="__PUBLIC__/Estate/js/jquery-1.8.3.min.js"></script>
+<style type="text/css">
+
+</style>
+</head>
+<body class="center">
+	<header>
+		<img src="__PUBLIC__/Estate/images/banner1.png">
+		<div class="div_1">
+			<include file="EstatePublic/cheader" />
+			<span>我的房源</span>
+		</div>
+	</header>
+	<ul class="house">
+		<volist name="house" id="house">
+			<a href="{:U('Estate/content')}?e_id={$house.e_id}&openid={$_SESSION['openid']}">
+				<li>
+					<img src="__PUBLIC__/Uploads/Estate/{$house.p_photo}">
+					<div>
+						<h4>{$house.e_title|htmlspecialchars_decode|strip_tags|mb_substr=0,13,'utf-8'}...</h4>
+						<object><a class="a_1" onclick="del(this,'{$house.e_id}')" href="javascript:;">删除</a><!-- <a onClick="h_del('{$house.e_id}')" href="javascript:;" title="删除">删除</a> --></object>
+						<p>{$house.e_describe|htmlspecialchars_decode|strip_tags|mb_substr=0,13,'utf-8'}...</p>
+						<object><a class="a_2" href="{:U('Estate/hmod')}?e_id={$house.e_id}">编辑</a></object>
+						<span class="span_1">{$house.e_rent}元/月</span><if condition="$house.e_state eq 1"><span class="span_2">已发布</span><else/><span class="span_2">待审核</span></if>
+					</div>
+				</li>
+			</a>
+		</volist>
+		<!-- <a href="content.html">
+			<li>
+				<img src="__PUBLIC__/Estate/images/hhzlsp.png">
+				<div>
+					<h4>淮海中路附近商铺出租</h4>
+					<p>商铺位于淮海中路809号西首是小租户型最佳选择。地铁1、10陕西南路站，13号线淮海中路站</p>
+					<span class="span_1">2.5万/月</span><span class="span_2">已发布</span>
+				</div>
+			</li>
+		</a>
+		<a href="content.html">
+			<li>
+				<img src="__PUBLIC__/Estate/images/hhzlsp.png">
+				<div>
+					<h4>淮海中路附近商铺出租</h4>
+					<p>商铺位于淮海中路809号西首是小租户型最佳选择。地铁1、10陕西南路站，13号线淮海中路站</p>
+					<span class="span_1">2.5万/月</span><span class="span_2">已发布</span>
+				</div>
+			</li>
+		</a> -->
+	</ul>
+
+	<p id="margin-bottom"></p>
+	<include file="EstatePublic/footer" />
+</body>
+</html>
+
+<script type="text/javascript">
+	/*房源-删除*/
+function del(obj,e_id){
+	if(confirm('确认删除吗?')){
+		$.ajax({
+			type: 'POST',
+			url: '{:U('Estate/h_del')}',
+			data:{e_id:e_id},
+			success: function(data){
+				$(obj).parents("li").remove();
+				layer.msg('已删除!',{icon:1,time:1000});
+			},
+			error:function(data) {
+				console.log(data.msg);
+			},
+		});	
+	}
+}
+</script>

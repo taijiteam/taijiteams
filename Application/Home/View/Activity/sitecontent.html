@@ -1,0 +1,498 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>活动场地</title>
+<link rel="stylesheet" href="__PUBLIC__/Activity/css/jflex.min.css" type="text/css" media="all">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Activity/css/ertaostyle.css">
+<link rel="stylesheet" href="__PUBLIC__/Activity/css/jquery-labelauty.css">
+</head>
+<style type="text/css">
+.site>.body{
+	color: #fff;
+	margin-bottom: 60px;
+}
+.site>.body>div>div{
+	width: 90%;
+	margin: 10px auto;
+}
+.site>.body>div>h4{
+	color: rgb(248,194,84);
+	font-size: 16px;
+	background: rgb(53,53,53);
+	padding-left: 5%;
+	line-height: 25px;
+	margin-bottom: 5px;
+}
+.site>.body>div>.infor>p{
+	margin: 0;
+	line-height: 25px;
+	font-size: 14px;
+	overflow: hidden;
+}
+.site>.body>div>.infor>p>a>.adre{
+	display: block;
+	float: left;
+}
+.site>.body>div>.infor>p>a>.left{
+	display: block;
+	float: left;
+	margin-left: 35%;
+}
+.site>.body>div>.infor>p>a>.right{
+	display: block;
+	float: right;
+}
+.site>.body>div>div{
+	font-size: 14px;
+}
+.site>.body>div>div>p{
+	margin: 7px;
+}
+.site>.body>div>ul{
+	width: 90%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.site>.body>div>ul>a>li{
+	width: 29.63%;
+	height: 30vw;
+	display: block;
+	float: left;
+	/*background: rgb(216,216,216);*/
+	border-radius: 5px;
+	margin-left: 2.7%;
+	margin-bottom: 10px;
+}
+.site>footer{
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	height: 45px;
+}
+.site>footer>.sc{
+	width: 50%;
+	color: #fff;
+	background: rgb(62,62,62);
+	display: block;
+	float: left;
+	text-align: center;
+	line-height: 45px;
+}
+.site>footer>.sc>p>a{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: inline-block;
+}
+.site>footer>.sc>p{
+	margin: 0px;
+	overflow: hidden;
+}
+.site>footer>.sc>p>a>img{
+	width: 20px;
+	display: block;
+	float: left;
+	margin-top: 11px;
+	margin-left: 32%;
+}
+.site>footer>.sc>p>a>span{
+	display: block;
+	float: left;
+}
+.site>footer>a{
+	width: 50%;
+	margin: 0;
+	color: #fff;
+	background: rgb(65,117,5);
+	display: block;
+	float: left;
+	text-align: center;
+	line-height: 45px;
+}
+.pinglun>div>ul{
+	width: 90%;
+	margin: 0 auto;
+}
+.pinglun>div>ul>li>img{
+	width: 10%;
+	display: block;
+	float: left;
+	border-radius: 50%;
+}
+.pinglun>div>ul>li>div{
+	width: 85%;
+	margin: 0;
+	display: block;
+	float: left;
+	margin-left: 2%;
+	color: #fff;
+}
+.pinglun>div>ul>li>div>h5{
+	margin: 0;
+	line-height: 200%;
+    font-size: 16px;
+
+}
+.pinglun>div>ul>li>div>p{
+	margin: 0;
+	font-size: 13px;
+}
+.pinglun>div>ul>li>div>p>img{
+	width: 15px;
+}
+.pinglun>div>ul>li>div>p>span{
+	color: rgb(153,123,62);
+	font-size: 12px;
+}
+.pinglun>div>ul>li>div>span{
+	display: block;
+	color: rgb(193,192,191);
+	text-align: right;
+	font-size: 12px;
+}
+.pinglun>div{
+	width: 90%;
+	margin: 10px auto;
+	background: rgb(53,53,53);
+	border-radius: 10px;
+	overflow: hidden;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.pinglun>div>button{
+	border: 0.5px solid rgb(248,194,84);
+	color: rgb(248,194,84);
+	width: 27%;
+	display: block;
+	float: left;
+	margin-left: 3%;
+	margin-right: 3%;
+	background: none;
+	border-radius: 10px;
+	line-height: 25px;
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+.pinglun>div>button>span{
+	color: rgb(195,195,195);
+}
+.dowebok>li>input.labelauty + label{
+	background: none;
+	text-align: center;
+	border: 0.5px solid rgb(248,194,84);
+	color: rgb(248,194,84);
+}
+.dowebok>li>input.labelauty:checked + label{
+	background: rgb(248,194,84);
+}
+.dowebok>li>input.labelauty + label{
+	width: 65px;
+}
+.dowebok>li>input.labelauty:checked + label{
+	width: 65px;
+}
+/*the end*/
+</style>
+<body class="site">
+<div class="banner">
+	<ul class="slides">
+		<li>
+			<img alt="" src="__PUBLIC__/Uploads/Activity/{$content.a_img}">
+		</li>
+		<li>
+			<img alt="" src="__PUBLIC__/Activity/images/beasts_feature.jpg">
+		</li>
+		<li>
+			<img alt="" src="__PUBLIC__/Activity/images/element-taiwan-thmb.jpg">
+		</li>
+		<li>
+			<img alt="" src="__PUBLIC__/Activity/images/streets-newyork.jpg">
+		</li>
+	</ul>
+</div>
+<div class="body">
+	<div>
+		<h4>场地介绍</h4>
+		<div>
+			<p>上海国际会议中心地处陆家嘴金融贸易中心，毗邻东方明珠电视塔，与外滩万国建筑群隔江相望，交通设施方便快捷，地理位置得天独厚，于1999年8月落成并正式对外营业。总建筑面积11万平方米，作为上海标志性新景观，被评为建国五十年十大经典建筑之一。 </p>
+		</div>
+	</div>
+	<div>
+		<h4>适合活动类型</h4>
+		<div>
+			<p>上海国际会议中心素以举办大型国际会议、商务论坛而蜚声海内外。位于酒店7楼的上海厅可同时容纳3000人会议，是目前国内最大的无柱型多功能厅，28个大小不等、风格迥异的多功能会议厅，均备有最先进的高科技影音系统及同声传译设备。 内设五星级的，拥有273间景观豪华客房、风格迥异的餐厅设施以及丰富多样的娱乐与健身设施。</p>
+		</div>
+	</div>
+	<div>
+		<h4>容纳人数</h4>
+		<div>
+			<p>位于酒店7楼的上海厅可同时容纳3000人会议，是目前国内最大的无柱型多功能厅，28个大小不等、风格迥异的多功能会议厅，均备有最先进的高科技影音系统及同声传译设备。</p>
+		</div>
+	</div>
+	<div>
+		<h4>场地音响设备</h4>
+		<div>
+			<p>28个大小不等、风格迥异的多功能会议厅，均备有最先进的高科技影音系统及同声传译设备。 内设五星级的，拥有273间景观豪华客房、风格迥异的餐厅设施以及丰富多样的娱乐与健身设施。</p>
+		</div>
+	</div>
+	<div>
+		<h4>场地服务特色</h4>
+		<div>
+			<p>上海国际会议中心地处陆家嘴金融贸易中心，毗邻东方明珠电视塔，与外滩万国建筑群隔江相望，交通设施方便快捷，地理位置得天独厚，于1999年8月落成并正式对外营业。总建筑面积11万平方米，作为上海标志性新景观，被评为建国五十年十大经典建筑之一。 上海国际会议中心素以举办大型国际会议、商务论坛而蜚声海内外。位于酒店7楼的上海厅可同时容纳3000人会议，是目前国内最大的无柱型多功能厅，28个大小不等、风格迥异的多功能会议厅，均备有最先进的高科技影音系统及同声传译设备。 内设五星级的，拥有273间景观豪华客房、风格迥异的餐厅设施以及丰富多样的娱乐与健身设施。</p>
+		</div>
+	</div>
+	<div>
+		<h4>场地特殊设施，场地优势</h4>
+		<div>
+			<p>交通便利地铁二号线陆家嘴站、外滩观光隧道、583、621、623、776、778、870、872路、申高线、旅游江园线(滨江大道终点站)、82、85、581B、795路、陆家嘴环线（陆家嘴地铁站终点站）、81、797、983、旅游3号线、锦江观光巴士到东方明珠后步行5分钟即到。</p>
+		</div>
+	</div>
+	<div>
+		<h4>曾经举办过的活动</h4>
+		<ul>
+			<volist name="alist" id="alist">
+				<a href=""><li><img src="__PUBLIC__/Uploads/Activity/{$alist.a_img}" width="100%"><span style="display: inline-block;font-size: 12px;">{$alist.a_title|htmlspecialchars_decode|strip_tags|mb_substr=0,30,'utf-8'}</span></li></a>
+			</volist>
+		</ul>
+	</div>
+	<div>
+		<h4>多功能厅配置</h4>
+		<ul>
+			<volist name="siteimg1" id="siteimg1">
+				<a href=""><li><img src="__PUBLIC__/Uploads/Activity/{$siteimg1.si_image}" width="100%"></li></a>
+			</volist>
+		</ul>
+	</div>
+	<div>
+		<h4>场地展示</h4>
+		<ul>
+			<volist name="siteimg" id="siteimg">
+			<a href=""><li><img src="__PUBLIC__/Uploads/Activity/{$siteimg.si_image}" width="100%"></li></a>
+			</volist>
+			<!--<a href=""><li><img src=""></li></a>-->
+			<!--<a href=""><li><img src=""></li></a>-->
+			<!--<a href=""><li><img src=""></li></a>-->
+			<!--<a href=""><li><img src=""></li></a>-->
+			<!--<a href=""><li><img src=""></li></a>-->
+		</ul>
+	</div>
+	<div>
+		<h4>场地地址</h4>
+		<div>
+			<p>{$content.a_address}</p>
+			<p>点击下面的地图查看详情，更可“导航”前往</p>
+			<a href='http://api.map.baidu.com/geocoder?address={$content.a_address}&output=html' target='_blank'>
+				<!--<img style="margin:2px" width="350" height="200" src="http://api.map.baidu.com/staticimage?width=350&height=200&zoom=11&center=上海市{$content.e_address}"/>-->
+				<img src="__PUBLIC__/Activity/images/dizhiditu.png" width="100%">
+			</a>
+			<!--<div><img src="__PUBLIC__/Activity/images/dizhiditu.png" width="100%"></div>-->
+		</div>
+	</div>
+	<!-- 第五栏 -->
+	<div class="pinglun">
+		<h4>用户评价</h4>
+		<div class="pinlun">
+			<input type="hidden" name="a_id" value="{$content.a_id}"/>
+			<ul class="dowebok">
+				<li><input class="xinput" type="radio" onclick="pinglun()" name="pinglun" value="非常满意" data-labelauty="非常满意[{$ev1}]"></li>
+				<li><input class="xinput" type="radio" onclick="pinglun()" name="pinglun" value="服务很好" data-labelauty="服务很好[{$ev2}]"></li>
+				<li><input class="xinput" type="radio" onclick="pinglun()" name="pinglun" value="印象不错" data-labelauty="印象不错[{$ev3}]"></li>
+				<li><input class="xinput" type="radio" onclick="pinglun()" name="pinglun" value="描述相符" data-labelauty="描述相符[{$ev4}]"></li>
+				<li><input class="xinput" type="radio" onclick="pinglun()" name="pinglun" value="性价比高" data-labelauty="性价比高[{$ev5}]"></li>
+				<li><input class="xinput" type="radio" onclick="pinglun()" name="pinglun" value="行程合理" data-labelauty="行程合理[{$ev6}]"></li>
+				<!--<li><input class="xinput" type="radio" name="radio" disabled data-labelauty="不可用"></li>-->
+			</ul>
+		</div>
+		<div class="list" id="divdiv">
+			<ul id="ulul">
+				<volist name="evalist" id="evalist">
+					<li>
+						<!--<img src="__PUBLIC__/Activity/images/kai.png">-->
+						<img src="{$evalist.e_headimg}"/>
+						<div>
+							<h5>{$evalist.e_name}</h5>
+							<p>打分&nbsp;&nbsp;
+								<if condition="$evalist.e_star eq 1">
+									<img src="__PUBLIC__/Activity/images/icon/colle2.svg">
+									<elseif condition="$evalist.e_star eq 2"/>
+									<img src="__PUBLIC__/Activity/images/icon/colle2.svg"><img src="__PUBLIC__/Activity/images/icon/colle2.svg">
+									<elseif condition="$evalist.e_star eq 3"/><img src="__PUBLIC__/Activity/images/icon/colle2.svg"><img src="__PUBLIC__/Activity/images/icon/colle2.svg">
+									<img src="__PUBLIC__/Activity/images/icon/colle2.svg">
+									<elseif condition="$evalist.e_star eq 4"/>
+									<img src="__PUBLIC__/Activity/images/icon/colle2.svg"><img src="__PUBLIC__/Activity/images/icon/colle2.svg"><img src="__PUBLIC__/Activity/images/icon/colle2.svg"><img src="__PUBLIC__/Activity/images/icon/colle2.svg">
+									<elseif condition="$evalist.e_star eq 5"/>
+									<img src="__PUBLIC__/Activity/images/icon/colle2.svg"><img src="__PUBLIC__/Activity/images/icon/colle2.svg"><img src="__PUBLIC__/Activity/images/icon/colle2.svg"><img src="__PUBLIC__/Activity/images/icon/colle2.svg"><img src="__PUBLIC__/Activity/images/icon/colle2.svg">
+								</if>
+							</p>
+							<p>{$evalist.e_text}</p>
+							<p>
+								<span>{$evalist.e_keywords}</span>
+								<!-- <img src=""> -->
+								<!--<volist name="evalist.second" id="second">-->
+									<!--<span>{$second}</span>-->
+								<!--</volist>-->
+							</p>
+							<span>{$evalist.e_time} 发表</span>
+						</div>
+					</li>
+				</volist>
+			</ul>
+		</div>
+	</div>
+</div>
+<footer>
+	<if condition="$collect.c_id eq ''">
+		<div class="sc">
+			<p>
+				<a href="javascript:;" onclick="admin_start(this,{$content.a_id},{$_SESSION['cardId']})">
+					<img src="__PUBLIC__/Activity/images/icon/colle1.svg">
+					<span>收藏</span>
+				</a>
+			</p>
+		</div>
+	<else/>
+		<div class="sc">
+			<p>
+				<a href="javascript:;" onclick="admin_stop(this,{$collect.c_id},{$content.a_id},{$_SESSION['cardId']})">
+					<img src="__PUBLIC__/Activity/images/icon/colle2.svg">
+					<span>取消收藏</span>
+				</a>
+			</p>
+		</div>
+	</if>
+	<a href="{:U('Activity/siteappoint')}?id={$content.a_id}">提交需求</a>
+</footer>
+
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript">
+function pinglun() {
+	var pinglun = $('input[name="pinglun"]:checked').val();//
+	var id = $('input[name="a_id"]').val();//
+	//alert(pinglun);
+	$.ajax({
+		type: 'POST',
+		url: "{:U('Activity/pinglun')}",
+		data: {
+			id:id,
+			pinglun:pinglun,
+		},
+		dataType: 'json',
+		success: function(data){
+			//alert(JSON.stringify(data));
+			if (data != '' || data !=0) {
+				var star = ''
+				var html = '';
+				for (var i = 0; i < data.length; i++) {
+					if (data[i].e_star == 5) {
+						html += '<li><img src="' + data[i].e_headimg + '"/><div><h5>' + data[i].e_name + '</h5><p>打分&nbsp;&nbsp;<img src="__PUBLIC__/Activity/images/icon/colle2.svg"><img src="__PUBLIC__/Activity/images/icon/colle2.svg"><img src="__PUBLIC__/Activity/images/icon/colle2.svg"><img src="__PUBLIC__/Activity/images/icon/colle2.svg"><img src="__PUBLIC__/Activity/images/icon/colle2.svg"></p><p>' + data[i].e_text + '</p><p><span>' + data[i].e_keywords + '</span></p><span>' + data[i].e_time + ' 发表</span></div></li>';
+					} else if (data[i].e_star == 4) {
+						html += '<li><img src="' + data[i].e_headimg + '"/><div><h5>' + data[i].e_name + '</h5><p>打分&nbsp;&nbsp;<img src="__PUBLIC__/Activity/images/icon/colle2.svg"><img src="__PUBLIC__/Activity/images/icon/colle2.svg"><img src="__PUBLIC__/Activity/images/icon/colle2.svg"><img src="__PUBLIC__/Activity/images/icon/colle2.svg"></p><p>' + data[i].e_text + '</p><p><span>' + data[i].e_keywords + '</span></p><span>' + data[i].e_time + ' 发表</span></div></li>';
+					} else if (data[i].e_star == 3) {
+						html += '<li><img src="' + data[i].e_headimg + '"/><div><h5>' + data[i].e_name + '</h5><p>打分&nbsp;&nbsp;<img src="__PUBLIC__/Activity/images/icon/colle2.svg"><img src="__PUBLIC__/Activity/images/icon/colle2.svg"><img src="__PUBLIC__/Activity/images/icon/colle2.svg"></p><p>' + data[i].e_text + '</p><p><span>' + data[i].e_keywords + '</span></p><span>' + data[i].e_time + ' 发表</span></div></li>';
+					} else if (data[i].e_star == 2) {
+						html += '<li><img src="' + data[i].e_headimg + '"/><div><h5>' + data[i].e_name + '</h5><p>打分&nbsp;&nbsp;<img src="__PUBLIC__/Activity/images/icon/colle2.svg"><img src="__PUBLIC__/Activity/images/icon/colle2.svg"></p><p>' + data[i].e_text + '</p><p><span>' + data[i].e_keywords + '</span></p><span>' + data[i].e_time + ' 发表</span></div></li>';
+					} else if (data[i].e_star == 1) {
+						html += '<li><img src="' + data[i].e_headimg + '"/><div><h5>' + data[i].e_name + '</h5><p>打分&nbsp;&nbsp;<img src="__PUBLIC__/Activity/images/icon/colle2.svg"></p><p>' + data[i].e_text + '</p><p><span>' + data[i].e_keywords + '</span></p><span>' + data[i].e_time + ' 发表</span></div></li>';
+					}
+
+				}
+				$('#ulul').html(html);
+				$("#divdiv").show();
+			}else {
+				$("#divdiv").hide();
+			}
+		},
+		error:function(data) {
+			console.log(data.msg);
+		},
+	});
+}
+/*管理员-停用*/
+function admin_stop(obj,cid,aid,cardid){
+	layer.confirm('确认要取消收藏吗？',function(index){
+		$.ajax({
+			type: 'POST',
+			url: '{:U('Activity/collecadd')}',
+			data: {
+				cid:cid,
+				a_id:aid,
+				cardid:cardid,
+			},
+			dataType: 'json',
+			success: function(data){
+				if (data.state == 1){
+					//此处请求后台程序，下方是成功后的前台处理……
+		
+					$(obj).parents(".sc").find("p").prepend('<a onclick="admin_start(this,'+data.a_id+','+data.cardid+')" href="javascript:;"><img src="__PUBLIC__/Activity/images/icon/colle1.svg"><span>收藏</span></a>');
+					// $(obj).parents("tr").find(".td-status").html('<span class="label label-default radius">已禁用</span>');
+					$(obj).remove();
+					layer.msg('已取消!',{icon: 5,time:1000});
+				}else{
+					layer.msg('哎呦，运气不好哦，取消失败咯！',function(){});
+				}
+			},
+			error:function(data) {
+				console.log(data.msg);
+			},
+		});
+		
+	});
+}
+
+/*管理员-启用*/
+function admin_start(obj,id,cardid){
+	layer.confirm('确认要收藏吗？',function(index){
+		//alert(JSON.stringify(cardid));
+		$.ajax({
+			type: 'POST',
+			url: '{:U('Activity/collecadd')}',
+			data: {
+				a_id:id,
+				cardid:cardid,
+			},
+			dataType: 'json',
+			success: function(data){
+				//alert(JSON.stringify(data));
+				if (data.state == 1){
+					//此处请求后台程序，下方是成功后的前台处理……
+		
+					$(obj).parents(".sc").find("p").prepend('<a onclick="admin_stop(this,'+data.c_id+','+data.a_id+','+data.cardid+')" href="javascript:;"><img src="__PUBLIC__/Activity/images/icon/colle2.svg"><span>取消收藏</span></a>');
+					// $(obj).parents("tr").find(".td-status").html('<span class="label label-default radius">已禁用</span>');
+					$(obj).remove();
+					layer.msg('已收藏!', {icon: 6,time:1000});
+				}else{
+					layer.msg('哎呦，运气不好哦，收藏失败咯！',function(){});
+				}
+			},
+			error:function(data) {
+				console.log(data.msg);
+			},
+		});
+	});
+}
+</script>
+<!-- the end -->
+<!-- 请在上方写相关业务脚本 -->
+<script type="text/javascript" src="__PUBLIC__/Activity/js/jquery-1.10.1.min.js"></script> 
+<!-- 轮播 -->
+<script type="text/javascript" src="__PUBLIC__/Activity/js/jflex.min.js"></script>
+<script type="text/javascript">
+$('.banner').jFlex({
+	autoplay: true
+});
+</script>
+<!-- 请在上方写相关业务代码 -->
+<script src="__PUBLIC__/Activity/js/jquery-labelauty.js"></script>
+<script>
+	$(function(){
+		$('.xinput').labelauty();
+	});
+</script>
+</body>
+</html>

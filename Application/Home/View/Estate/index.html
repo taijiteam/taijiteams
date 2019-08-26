@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>房产首页</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Estate/css/style.css">
+</head>
+<body class="index">
+	<header>
+		<img src="__PUBLIC__/Estate/images/banner.png">
+
+
+
+		
+		<form action="{:U('Estate/sousuo')}" method="post">
+			<input type="text" name="keywords" class="text" placeholder="请输入"><input type="submit" class="sub" name="查询">
+		</form>
+
+
+
+	</header>
+	<ul class="nav">
+		<a href="{:U('Estate/shops')}?e_category=商铺"><li><img src="__PUBLIC__/Estate/images/shangpu.png"><span>商铺</span></li></a>
+		<a href="{:U('Estate/office')}?e_category=写字楼"><li><img src="__PUBLIC__/Estate/images/xiezilou.png"><span>写字楼</span></li></a>
+		<a href="{:U('Estate/residence')}?e_category=住宅"><li><img src="__PUBLIC__/Estate/images/zhuzhai.png"><span>住宅</span></li></a>
+		<a href="{:U('Estate/factory')}?e_category1=厂房&e_category2=仓库"><li><img src="__PUBLIC__/Estate/images/cangku.png"><span>厂房仓库</span></li></a>
+	</ul>
+	<div>
+		<h4><span>精品商铺</span></h4>
+		<ul class="ul_1">
+			<volist id="shops" name="shops">
+				<a href="{:U('Estate/content')}?e_id={$shops.e_id}&openid={$_SESSION['openid']}"><li><img src="__PUBLIC__/Uploads/Estate/{$shops.p_photo}"><span>{$shops.e_title|htmlspecialchars_decode|strip_tags|mb_substr=0,6,'utf-8'}...</span></li></a>
+			</volist>
+		</ul>
+	</div>
+	<div>
+		<h4><span>精品住宅</span></h4>
+		<ul class="ul_1">
+			<volist id="residence" name="residence">
+				<a href="{:U('Estate/content')}?e_id={$residence.e_id}&openid={$_SESSION['openid']}"><li><img src="__PUBLIC__/Uploads/Estate/{$residence.p_photo}"><span>{$residence.e_title|htmlspecialchars_decode|strip_tags|mb_substr=0,6,'utf-8'}...</span></li></a>
+			</volist>
+		</ul>
+	</div>
+	<div>
+		<h4><span>精品写字楼</span></h4>
+		<ul class="ul_2">
+			<volist id="office" name="office">
+				<a href="{:U('Estate/content')}?e_id={$office.e_id}&openid={$_SESSION['openid']}"><li><img src="__PUBLIC__/Uploads/Estate/{$office.p_photo}"><span>{$office.e_title|htmlspecialchars_decode|strip_tags|mb_substr=0,6,'utf-8'}...</span></li></a>
+			</volist>
+		</ul>
+	</div>
+	<div>
+		<h4><span>区域房源</span></h4>
+		<ul class="ul_3">
+			<a href="{:U('Estate/regional')}?e_regional=徐汇区">
+				<li style="background:url(__PUBLIC__/Estate/images/xuhui.png) center 0 no-repeat; background-size: 100%;"><span>徐汇区</span></li>
+			</a>
+			<a href="{:U('Estate/regional')}?e_regional=静安区">
+				<li style="background:url(__PUBLIC__/Estate/images/jingan.png) center 0 no-repeat; background-size: 100%;"><span>静安区</span></li>
+			</a>
+			<a href="{:U('Estate/regional')}?e_regional=松江区">
+				<li style="background:url(__PUBLIC__/Estate/images/songjiang.png) center 0 no-repeat; background-size: 100%;"><span>松江区</span></li>
+			</a>
+			<a href="{:U('Estate/regional')}?e_regional=虹口区">
+				<li style="background:url(__PUBLIC__/Estate/images/hongkou.png) center 0 no-repeat; background-size: 100%;"><span>虹口区</span></li>
+			</a>
+			<a href="{:U('Estate/regional')}?e_regional=嘉定区">
+				<li style="background:url(__PUBLIC__/Estate/images/jiading.png) center 0 no-repeat; background-size: 100%;"><span>嘉定区</span></li>
+			</a>
+			<a href="{:U('Estate/regional')}?e_regional=黄浦区">
+				<li style="background:url(__PUBLIC__/Estate/images/huangpu.png) center 0 no-repeat; background-size: 100%;"><span>黄浦区</span></li>
+			</a>
+			<a href="{:U('Estate/regional')}?e_regional=宝山区">
+				<li style="background:url(__PUBLIC__/Estate/images/baoshan.png) center 0 no-repeat; background-size: 100%;"><span>宝山区</span></li>
+			</a>
+			<a href="{:U('Estate/regional')}?e_regional=浦东新区">
+				<li style="background:url(__PUBLIC__/Estate/images/pudong.png) center 0 no-repeat; background-size: 100%;"><span>浦东新区</span></li>
+			</a>
+			<a href="{:U('Estate/regional')}?e_regional=长宁区">
+				<li style="background:url(__PUBLIC__/Estate/images/changning.png) center 0 no-repeat; background-size: 100%;"><span>长宁区</span></li>
+			</a>
+		</ul>
+	</div>
+	<p id="margin-bottom"></p>
+	<include file="Allfooter/allfooter" />
+	
+</body>
+</html>

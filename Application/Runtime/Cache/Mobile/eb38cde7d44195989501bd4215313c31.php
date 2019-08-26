@@ -1,0 +1,195 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+<link href="/favicon.ico" rel="shortcut icon">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=375px, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>渠道Plus - 商城</title>
+<meta name="keywords" content="关键词">
+<meta name="description" content="描述">
+<link rel="stylesheet" href="/Public/Mobile/css/swiper.min.css" />
+<link rel="stylesheet" href="/Public/Mobile/css/common.css?v=<?php echo ($versions); ?>" />
+<link rel="stylesheet" href="/Public/Mobile/css/style.css?v=<?php echo ($versions); ?>" />
+</head>
+<body>
+	
+   <!--  <div class="pb_tp_a"> 
+      <h1>已关闭 </h1>
+        <a href="#" class="pbjta"><img src="/Public/Mobile/images/01322.png"></a>
+    </div> -->
+
+ <div class="jyzttops container-fluid">
+ 	<div class="container">
+		<dbo><a href="/Mobile/Order/order_received"><img src="/Public/Mobile/images/sss.png"></a></dbo>
+	 	
+	 	<span style="margin-left:130px;"><a href="javascript:void(0);">发表评价</a></span>
+ 	</div>
+ </div>
+<!--状态-->	
+
+<div class="pingfen container">
+	<div  class="ovh fl">
+		<img src="<?php echo ($info['main_img']); ?>" >
+	</div>
+	<div class="sssh_2 fl">
+		<p>描述相符</p>
+	</div>
+	<div class=" fl">
+		<div class="stars">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<div class="info">优秀</div>
+	</div>
+</div>
+
+<div class="container-fluid baobmzs">
+	<div  class="container">
+		<div class="baob_a">
+			<textarea id="commment-text" placeholder="宝贝满足您的期待吗？说说您的使用心得，分享给想买它的人吧"></textarea>
+		</div>
+		<div class="baob_b">
+			<div  class="fl" style="width: 80px;height: 80px;overflow-y: hidden;">
+				<lable for="photo" id="goods-main-image">
+					<input type="hidden" name="photo" value=" ">
+					<img style="width: 100%;"  title="点击添加图片" alt="点击添加图片" src="/Public/Mobile/images/82.png">
+				</lable>
+			</div>
+			<div class="bbmlist fl">
+				<ul>
+					<li style="width: 80px;height: 80px;overflow-y: hidden;"><img id="goods-main-image-show" src="" style="display: none;width:100%;" ></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="niming container">
+	<!--<div  class="nim_a fl">
+		<label><input type="checkbox">匿名</label>
+	</div>-->
+	<div class="nim_b fl">
+		<p>你的评价 能帮助其他小伙伴哦</p>
+	</div>
+</div>
+
+<div class="sjpfs container">
+	<!--<div class="sjpsss">
+		<img src="/Public/Mobile/images/dssd.png">商家评分
+	</div>
+	<div class="revinp">
+		<div class="fl fs">
+			物流服务
+		</div>
+		<span class="level ">
+			<i class="level_solid" cjmark="" data-star-item="star1"></i>
+			<i class="level_solid" cjmark="" data-star-item="star2"></i>
+			<i class="level_solid" cjmark="" data-star-item="star3"></i>
+			<i class="level_solid" cjmark="" data-star-item="star4"></i>
+			<i class="level_solid" cjmark="" data-star-item="star5"></i>
+		</span>
+	</div>
+	<div class="revinp">
+		<div class="fl fs">
+			服务态度
+		</div>
+		<span class="level">
+			<i class="level_solid" cjmark="" data-star-item="star"></i>
+			<i class="level_solid" cjmark="" data-star-item="star"></i>
+			<i class="level_solid" cjmark="" data-star-item="star"></i>
+			<i class="level_solid" cjmark="" data-star-item="star"></i>
+			<i class="level_solid" cjmark="" data-star-item="star"></i>
+		</span>
+	</div>
+	<div style="clear:both;"></div>-->
+	<input class="fabu" type="submit" data-order-sn="<?php echo ($order_sn); ?>" data-goods-id="<?php echo ($info['goods_common_id']); ?>"  value="发布">
+
+</div>
+
+   <script src="/Public/Mobile/js/jquery-1.11.0.min.js"></script>
+<script src="/Public/Mobile/js/swiper.min.js"></script>
+<script src="/Public/Mobile/js/jquery.SuperSlide.2.1.3.js"></script>
+<script src="/Public/Mobile/js/all.js?v=<?php echo ($versions); ?>"></script>
+
+   <script type="text/javascript" src="/Public/Admin/lib/layui/layui.js" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function () {
+		var stars=document.querySelectorAll('.stars span');
+		var info=document.querySelector('.info');
+		var grades = ["非常差","差","一般","好","非常好"];
+		var active=-1;   //记录当前点击的是哪颗星星
+
+		for(var i=0;i<stars.length;i++){
+			stars[i].index=i;
+			stars[i].onmouseover=function(){setStar(this.index);};
+			stars[i].onmouseout=function(){setStar(active);};
+			stars[i].onclick=setClick;
+		}
+
+		function setStar(nub){
+			var name='show2';
+			/*name= nub<2?'show':'show2';*/
+			for(var i=0;i<stars.length;i++){
+				stars[i].className= i<=nub?name:'';
+			}
+			info.style.display= nub<0? 'none':'block';
+			info.innerHTML=grades[nub];
+		}
+
+		function setClick(){
+			active=this.index;
+		}
+		//图片上传
+		layui.use('upload', function(){
+				var upload = layui.upload;
+				//商品主图
+				var uploadMainImage = upload.render({
+					elem: '#goods-main-image',
+					url: "/Admin/Upload/image",
+					done: function(res){
+						console.log(res);
+						if(res.code == "200"){
+							$("#goods-main-image-show").attr("src",res.data.photo);
+							$("#goods-main-image-show").show();
+						}else{
+							layer.msg("上传失败");
+						}
+					}
+				});
+		});
+
+		$('.fabu').click(function () {
+			var star = $('.show2').length;
+			var e_text =$('#commment-text').val();
+			var main_img = $("#goods-main-image-show").attr("src");
+			var gc_id = $(this).attr('data-goods-id');
+			var order_sn = $(this).attr('data-order-sn');
+			$.ajax({
+				type:'post',
+				url :"/Mobile/Order/add_comments",
+				data:{
+					star        : star,
+					e_text      : e_text,
+					main_img    : main_img,
+					gc_id   	: gc_id,
+					order_sn   	: order_sn,
+				},
+				dataType:'json',
+				success:function (res) {
+					console.log(res);
+					if (res.code == 200){
+						alert("添加成功");
+					}else{
+						alert(res.message);
+					}
+				}
+			})
+		})
+
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<html class="x-admin-sm">
+<head>
+    <include file="Components/header" />
+</head>
+<style>
+    .layui-row-search input{
+        margin-bottom: 30px;
+        width: 256px;
+        height: 40px;
+    }
+    .layui-input-inline{
+        width: 200px;
+        margin-right: 30px;
+    }
+</style>
+<body>
+<div class="x-nav">
+      <span class="layui-breadcrumb">
+        <a href="">首页</a>
+        <a>
+          <cite>导航元素</cite></a>
+      </span>
+
+    <button class="layui-btn" id="export" style="float: right"><i class="layui-icon"></i>导出全部积分</button>
+    <button class="layui-btn" id="export1" style="float: right;background: red;margin-right: 15px"><i class="layui-icon"></i>导出返利积分</button>
+    <button class="layui-btn" id="export2" style="float: right;background: #e1b571"><i class="layui-icon"></i>导出消费积分</button>
+</div>
+<div class="x-body">
+    <div class="layui-collapse" lay-filter="test">
+        <div class="layui-colla-item">
+            <h2 class="layui-colla-title">展开搜索框</h2>
+            <div class="layui-colla-content">
+                <form method="post" action="/Admin/Order/search?source=商城" class="layui-form layui-col-md12 x-so" >
+                    <div class="layui-row">
+                            <input type="text" name="mobile" placeholder="请输入收货人手机号" autocomplete="off" class="layui-input">
+
+                            <input type="text" name="order_sn" placeholder="请输入收货人订单号" autocomplete="off" class="layui-input">
+
+                        <!--<div class="layui-input-inline">
+                            <select id="pay" name="pay" autocomplete="off" class="layui-input">
+                                <option value="">请选择支付方式</option>
+                                <option value="微信支付">微信支付</option>
+                                <option value="支付宝支付">支付宝支付</option>
+                                <option value="POS机支付">POS机支付</option>
+                                <option value="银行卡转账">银行卡转账</option>
+                            </select>
+                        </div>-->
+                        <div class="layui-input-inline">
+                            <select id="audit" name="audit" autocomplete="off" class="layui-input">
+                                <!--<option value=" ">请选择订单状态</option>-->
+                                <option value="消费积分">消费积分</option>
+                                <option value="返利积分">返利积分</option>
+                            </select>
+                        </div>
+                        <input  type="submit" class="layui-btn layui-btn-lg " lay-filter="add" lay-submit="" value="查找">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    <!--<xblock>
+        <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
+        <button class="layui-btn" onclick="x_admin_show('添加用户','{:U('Index/memberAdd')}',700,600)"><i class="layui-icon"></i>添加</button>
+        <span class="x-right" style="line-height:40px">共有数据：<span style="color: red">{$count}</span> 条</span>
+    </xblock>-->
+    <table class="layui-table x-admin">
+        <thead>
+        <tr>
+            <th>订单编号</th>
+            <th>付款人</th>
+            <th>商品名称</th>
+            <th>消费积分</th>
+            <th>下单返利积分</th>
+            <th>支付方式</th>
+            <th>下单时间</th>
+        </tr>
+        </thead>
+        <tbody>
+        <volist name="consumption" key="k" id="vo">
+            <tr>
+                <td id="order_sn">{$vo.order_sn}</td>
+                <td id="member_name">{$vo.member_name}:{$vo.member_mobile}</td>
+                <td id="goods_name">{$vo.goods_name}</td>
+                <if condition="$vo.pocket_act eq '1'">
+                    <if condition="$vo.pocket_type eq '1'">
+                        <td>尊享积分-{$vo.pocket_value}</td>
+                        <elseif condition="$vo.pocket_type eq '201'" />
+                        <td>消费积分-{$vo.pocket_value}</td>
+                        <elseif condition="$vo.pocket_type eq '202'" />
+                        <td>消费积分-{$vo.pocket_value}</td>
+                        <elseif condition="$vo.pocket_type eq '3'" />
+                        <td>金币积分-{$vo.pocket_value}</td>
+                        <elseif condition="$vo.pocket_type eq '4'" />
+                        <td>奖励积分-{$vo.pocket_value}</td>
+                        <else />
+                        <td></td>
+                    </if>
+                    <else />
+                    <td></td>
+                </if>
+                <if condition="$vo.pocket_act eq '0'">
+                    <td>消费积分返利+{$vo.pocket_value}</td>
+                    <else />
+                    <td></td>
+                </if>
+                <td style="color: #1aad19">微信支付</td>
+                <td id="addtime">{$vo.addtime|date = "Y-m-d H:i:s",###}</td>
+            </tr>
+        </volist>
+        </tbody>
+    </table>
+    <div class="page">
+        <div>
+            {$page}
+        </div>
+    </div>
+
+</div>
+    <script>
+        $(function () {
+            $('#export').click(function () {
+                window.location.href = "/Admin/Sort/export?order_type=3";
+            });
+            $('#export1').click(function () {
+                window.location.href = "/Admin/Sort/export?order_type=1";
+            });
+            $('#export2').click(function () {
+                window.location.href = "/Admin/Sort/export?order_type=2";
+            })
+        })
+    </script>
+<script>
+    var _hmt = _hmt || []; (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<h3>积分消费记录</h3>
+<foreach name="consumption" item="vo">
+    <p>
+        <if condition="$vo.pocket_frm eq 'dsign'">
+            <span class="fl">签到积分</span>
+            <elseif condition="$vo.pocket_frm eq 'order'" />
+            <span class="fl">购买消费</span>
+            <elseif condition="$vo.pocket_frm eq 'bonus'" />
+            <span class="fl">下单返利</span>
+            <elseif condition="$vo.pocket_frm eq 'admin'" />
+            <span class="fl">商城赠送</span>
+            <elseif condition="$vo.pocket_frm eq 'order_cancel'" />
+            <span class="fl">订单返还</span>
+        </if>
+        <span class="fr">
+                <if condition="$vo.pocket_frm eq 'dsign'">
+                    +
+            <elseif condition="$vo.pocket_frm eq 'order'" />
+                    -
+            <elseif condition="$vo.pocket_frm eq 'bonus'" />
+                    +
+            <elseif condition="$vo.pocket_frm eq 'admin'" />
+                    +
+            <elseif condition="$vo.pocket_frm eq 'order_cancel'" />
+                    +
+            </if>
+                {$vo.pocket_value}</span></p>
+</foreach>

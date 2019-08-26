@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>名医特约</title>
+	<meta name="keywords" content="名医特约" />
+	<meta name="description" content="名医特约" />
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="x-ua-compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+	<script type="text/javascript" src="__JS__jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="__css__doctor.css?v=2">
+	<script>
+		$(document).ready(function(){
+			pushHistory();
+			setTimeout(function(){
+				window.addEventListener("popstate", function(e){
+					setTimeout(function(){
+						location.href="http://www.qudaoplus.cn/index.php?m=content&c=index&a=lists&catid=22"
+					},40000)
+				}, false)
+			},4000);
+			function pushHistory() {
+				var state = {
+					title: "title",
+					url: "#"
+				};
+				window.history.pushState(state, "title", "#");
+			}
+		})
+	</script>
+</head>
+<style>
+	.top div a span.right{
+		position: absolute;
+		right: 10px;
+		top: 10px;
+    color: #c09a73;
+	}
+</style>
+<body>
+	<layout name="layout" />
+	<div class="fix">
+		<a href="tel:021-53829777" style="text-decoration:none;"><i class="iconfont lable">&#xe64b;</i></a>
+	</div>
+	<div class="top">
+		<div>
+			<span class="left">渠道名医</span>
+			<a href="{:U('Appointment/medical')}"><span class="right">上海著名医疗机构排行榜>></span></a>
+		</div>
+		<div class="top-content">
+			<section class="section2">
+				<span class="str2" name='1'><i class="iconfont lable">&#xe602;</i><br>检查</span>
+			</section>
+			<section class="section3">
+				<span class="str3" name='3'><i class="iconfont lable">&#xe614;</i><br>住院</span>
+			</section>
+	    <section class="section1">
+          <span class="str1"><i class="iconfont lable">&#xe60c;</i><br>内科</span>
+      </section>
+			<section class="section5" onclick="alert('正在上架中……'); return false;">
+          <span><i class="iconfont lable">&#xe662;</i><br>外科</span>
+      </section>
+    </div><!-- top-content end -->
+		<div class="top-content" style="border:0px;">
+      <section class="section6" onclick="alert('正在上架中……'); return false;">
+          <span class="str2" name='1'><i class="iconfont lable">&#xe605;</i><br>口腔科</span>
+      </section>
+      <section class="section7" onclick="alert('正在上架中……'); return false;">
+          <span class="str3" name='3'><i class="iconfont lable">&#xe604;</i><br>骨科</span>
+      </section>
+      <section class="section8" onclick="alert('正在上架中……'); return false;">
+          <span class="str1"><i class="iconfont lable">&#xe603;</i><br>消化科</span>
+      </section>
+			<section class="section4">
+				<span><i class="iconfont lable">&#xe65b;</i><br>其他科室</span>
+			</section>
+			<!-- <section class="section4">
+				<span><i class="iconfont lable">&#xe656;</i><br>预约挂号</span>
+			</section> -->
+    </div><!-- top-content end -->
+
+	</div><!-- top end -->
+  <div class="content">
+			<div class="person-info">
+        <volist name="getpers" id="p">
+  				<section class="info">
+  					<div class="perinfo">
+  						<img src="{$p.ImagePath}" alt="{$p.TrueName}" class="perhead" />
+  						<div class="intro">
+  							<a href="http://www.qudaoplus.cn/merber_all_show/index.php/home/Appointment/doctorDetil?cardid={$p.CardId}">
+  								<h1>{$p.TrueName}</h1>
+  								<h3>{$p.ExtValue8}</h3>
+  								<h3>{$p.ExtValue3}</h3>
+  								<h3>擅长：{$p.ExtValue42}</h3>
+  							</a>
+  						</div>
+  					</div>
+  					<div class="perlable">
+              <?php
+                $ble = explode('|',$p[ExtValue7]);
+                foreach($ble as $k=>$b){
+              ?>
+  							<div><span>{$b}</span></div>
+              <?php } ?>
+  					</div>
+  				</section>
+        </volist>
+			</div>
+		</div><!-- content end -->
+</body>
+  <script>
+  	$(document).ready(function(){
+			var openId = "<?php echo $openid; ?>";
+
+			var type2 = $('span.str2').attr('name'),
+			 		type3 = $('span.str3').attr('name');
+
+
+			// 检查预约
+			$('.section2').click(function(){
+				$.ajax({
+						type: "POST",
+						url: "{:U('Appointment/dorctor')}",
+						data:{
+							id : openId,
+							type : type2  // (检查：1；就诊：2；住院：3；)
+						},
+						error: function(request) {
+							alert("Connection error");
+						},
+						success: function(data) {
+							data = eval( '(' +data+ ')' );
+							// console.log(data);
+							// return false;
+							if ( data.code=='1' ) {
+								window.location.href=data.url;
+							}else if( data.code=='-1' ) {
+								alert(data.message);
+                window.location.href=data.url;
+                return false;
+							}
+						}
+				})
+			});
+
+			// 住院预约
+			$('.section3').click(function(){
+				$.ajax({
+						type: "POST",
+						url: "{:U('Appointment/dorctor')}",
+						data:{
+							id : openId,
+							type : type3  // (检查：1；就诊：2；住院：3；)
+						},
+						error: function(request) {
+							alert("Connection error");
+						},
+						success: function(data) {
+							data = eval( '(' +data+ ')' );
+							// console.log(data);
+							// return false;
+							if ( data.code=='1' ) {
+								window.location.href=data.url;
+							}else if( data.code=='-1' ) {
+								alert(data.message);
+                window.location.href=data.url;
+                return false;
+							}
+						}
+				})
+			});
+
+			// 住院预约
+			$('.section4').click(function(){
+				alert('正在上架中……');
+				return false;
+				// $.ajax({
+				// 		type: "POST",
+				// 		url: "{:U('Appointment/dorctor')}",
+				// 		data:{
+				// 			id : openId,
+				// 			type : type3  // (检查：1；就诊：2；住院：3；)
+				// 		},
+				// 		error: function(request) {
+				// 			alert("Connection error");
+				// 		},
+				// 		success: function(data) {
+				// 			data = eval( '(' +data+ ')' );
+				// 			// console.log(data);
+				// 			// return false;
+				// 			if ( data.code=='1' ) {
+				// 				window.location.href=data.url;
+				// 			}else if( data.code=='-1' ) {
+				// 				alert(data.message);
+        //         window.location.href=data.url;
+        //         return false;
+				// 			}
+				// 		}
+				// })
+			});
+
+
+  	})
+  </script>
+</html>

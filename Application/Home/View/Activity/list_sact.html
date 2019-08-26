@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>精彩活动</title>
+<!--<title><if condition="$cate==''">{$catetime}<else/>{$cate}</if></title>-->
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Activity/css/default.css">
+<link rel="stylesheet" href="__PUBLIC__/Activity/css/jflex.min.css" type="text/css" media="all">
+<link href="http://fonts.useso.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="__PUBLIC__/Activity/css/idangerous.swiper.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Activity/css/ertaostyle.css">
+<script src="__PUBLIC__/Activity/js/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="__PUBLIC__/Activity/js/comm.js"></script>
+</head>
+<style type="text/css">
+
+</style>
+<body class="list">
+<div class="banner">
+	<ul class="slides">
+		<li>
+			<img alt="" src="__PUBLIC__/Activity/images/shouyebanner.jpg">
+		</li>
+		<li>
+			<img alt="" src="__PUBLIC__/Activity/images/beasts_feature.jpg">
+		</li>
+		<li>
+			<img alt="" src="__PUBLIC__/Activity/images/element-taiwan-thmb.jpg">
+		</li>
+		<li>
+			<img alt="" src="__PUBLIC__/Activity/images/streets-newyork.jpg">
+		</li>
+	</ul>
+</div>
+<div class="body">
+	<div class="title">
+		<h4>精彩活动</h4>
+		<ul id="starlist">
+			<li><a href="{:U('Activity/list_sact')}?category=活动&catetime=最新活动">全部</a></li>
+			<li><a href="{:U('Activity/list_sact')}?category=活动&catetime=最新活动&cate=酒会">酒会</a></li>
+			<li><a href="{:U('Activity/list_sact')}?category=活动&catetime=最新活动&cate=论坛">论坛</a></li>
+			<li><a href="{:U('Activity/list_sact')}?category=活动&catetime=最新活动&cate=沙龙">沙龙</a></li>
+		</ul>
+	</div>
+	<!--<p><a class="week">最近一周</a><a class="month">最近一月</a></p>-->
+	<ul class="liebiao">
+		<volist name="list" id="list">
+			<a href="{:U('Activity/content')}?id={$list.a_id}&category={$list.a_category}&cardid={$_SESSION['cardId']}">
+				<li>
+					<span><img src="__PUBLIC__/Uploads/Activity/{$list.a_img}"></span>
+					<div>
+						<p class="title">{$list.a_title|htmlspecialchars_decode|strip_tags|mb_substr=0,30,'utf-8'}</p>
+						<p><span class="time">{$list.a_start|htmlspecialchars_decode|strip_tags|mb_substr=0,10,'utf-8'}~{$list.a_end|htmlspecialchars_decode|strip_tags|mb_substr=0,10,'utf-8'}</span></p>
+						<p>
+							<span class="address">{$list.a_address|htmlspecialchars_decode|strip_tags|mb_substr=0,4,'utf-8'}</span>
+							<if condition="$list.a_price eq ''"><span class="rmb">免费</span><else/>
+								<span class="rmb">￥{$list.a_price}起</span>
+							</if>
+							<if condition="$catetime eq 最新活动">
+								<object><a href="{:U('Activity/actappoint')}?id={$list.a_id}">立即报名</a></object>
+								<else/>
+							</if>
+						</p>
+					</div>
+				</li>
+			</a>
+		</volist>
+	</ul>
+</div>
+<include file="ActivityPublic/footer" />
+<!-- 请在上方写相关业务脚本 -->
+<!-- 轮播 -->
+<script type="text/javascript" src="__PUBLIC__/Activity/js/jflex.min.js"></script>
+<script type="text/javascript">
+$('.banner').jFlex({
+	autoplay: true
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>上海市常青藤学校（美高）开放日报名申请</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Chang/css/demoradio.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Chang/css/pretty.min.css">
+<!-- 单选 -->
+<link rel="stylesheet" href="__PUBLIC__/Chang/css/ydui.css?rev=@@hash">
+<link rel="stylesheet" href="__PUBLIC__/Chang/css/demo.css">
+<!-- 地址 -->
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Chang/css/icon/iconfont.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Chang/css/ertaostyle.css">
+<style type="text/css">
+
+</style>
+</head>
+<body class="index">
+	<div class="divt">
+		<form class="tbody" action="{:U('Changqing/sub')}" method="post" autocomplete="off" data-form="ajax">
+			<div>
+				<h4>上海市常青藤学校（美高）在线报名</h4>
+				<img src="__PUBLIC__/Chang/images/icon/logo.png">
+				<p>上海民办常青藤学校位于上海市浦东新区康桥秀沿路800号，紧邻浦东高端别墅绿宝园，校区前身为上海长宁国际外籍人员子女学校，学校下设幼儿园、小学、高中部,欢迎家长带着孩子来学校参观。</p>
+				<p>电话咨询：<a href="tel:021-53829777" style="color: cornflowerblue">021-53829777</a></p>
+				<hr class="hr">
+			</div>
+			<div class="formcon">
+				<h5>申请年级：<span>*</span></h5>
+				<div class="container">
+					<div class="pretty circle primary">
+						<input type="radio" name="grade" value="幼儿园" checked="checked">
+						<label><i class="default"></i> 幼儿园</label>
+					</div>
+					<div class="pretty circle primary">
+						<input type="radio" name="grade" value="小学">
+						<label><i class="default"></i> 小学</label>
+					</div>
+					<div class="pretty circle primary">
+						<input type="radio" name="grade" value="高中">
+						<label><i class="default"></i> 高中</label>
+					</div>
+				</div>
+			</div>
+			<div class="formcon" id="sudentname">
+				<h5>学生姓名：<span>*</span></h5>
+				<div class="input-text"><input type="text" name="sudentname" placeholder="请输入"></div>
+				<!-- 警告 -->
+				<span class="warn sudentname"></span>
+			</div>
+			<div class="formcon" id="sudentbrith">
+				<h5>出生日期：<span>*</span></h5>
+				<div class="input-text"><input type="date" name="sudentbrith" value="2000-01-01"></div>
+				<!-- 警告 -->
+				<span class="warn sudentbrith"></span>
+			</div>
+			<div class="formcon" id="patriarch">
+				<h5>家长姓名：<span>*</span></h5>
+				<div class="input-text"><input type="text" name="patriarch" placeholder="请输入"></div>
+				<!-- 警告 -->
+				<span class="warn patriarch"></span>
+			</div>
+			<div class="formcon" id="phone">
+				<h5>联系电话：<span>*</span></h5>
+				<div class="input-text"><input type="text" name="phone" placeholder="请输入"></div>
+				<!-- 警告 -->
+				<span class="warn phone"></span>
+			</div>
+			<div class="formcon" id="city">
+				<h5>所在城市：<span>*</span></h5>
+				<div class="input-text"><input type="text" name="city" placeholder="请输入"></div>
+				<!-- 警告 -->
+				<span class="warn city"></span>
+			</div>
+			<div class="formcon" id="address">
+				<h5>地址：<span>*</span></h5>
+				<section class="g-flexview">
+					<section class="g-scrollview">
+						<div class="m-cell">
+							<div class="cell-item">
+								<div class="cell-right cell-arrow">
+									<input type="text" class="cell-input" name="address1" readonly id="J_Address" placeholder="-省/自治区/直辖市-市-区/县-">
+								</div>
+							</div>
+						</div>
+					</section>
+				</section>
+				<div class="input-text"><input type="text" name="address2" placeholder="请输入详细地址"></div>
+				<!-- 警告 -->
+				<span class="warn address"></span>
+			</div>
+			<!--<div class="formcon">-->
+				<!--<h5>参加人数：<span>*</span></h5>-->
+				<!--<div class="input-text">-->
+					<!--<select name="number">-->
+						<!--<option value="1人">1人</option><option value="2人">2人</option><option value="3人">3人</option>-->
+						<!--<option value="4人">4人</option><option value="5人">5人</option><option value="6人">6人</option>-->
+						<!--<option value="7人">7人</option><option value="8人">8人</option><option value="9人">9人</option>-->
+						<!--<option value="10人">10人</option><option value="11人">11人</option><option value="12人">12人</option>-->
+					<!--</select>-->
+				<!--</div>-->
+			<!--</div>-->
+			<div class="formcon">
+				<h5>其他补充情况：</h5>
+				<div class="input-text"><input type="text" name="text" placeholder="请输入"></div>
+			</div>
+			<div class="formcon">
+				<h5>是否参加入学考试<span>*</span></h5>
+				<div class="container">
+					<div class="pretty circle primary">
+						<input type="radio" name="exam" value="是" checked="checked"> 
+						<label><i class="default"></i> 是</label>
+					</div>
+					<div class="pretty circle primary">
+						<input type="radio" name="exam" value="否"> 
+						<label><i class="default"></i> 否</label>
+					</div>
+					<div class="pretty circle primary">
+						<input type="radio" name="exam" value="视情况而定"> 
+						<label><i class="default"></i> 视情况而定</label>
+					</div>
+				</div>
+			</div>
+			<button class="sub">提交</button>
+			<!-- <input class="sub" type="" onclick="verify1()" name="" value="提交"> -->
+		</form>
+	</div>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Project/css/H-ui.min.css" />
+<script type="text/javascript" src="__PUBLIC__/Chang/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/hui/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/layer/2.4/layer.js"></script>
+<script src="__PUBLIC__/Chang/asset/verJs.js"></script>
+<script>
+var form = new VerJs();
+    form.init({
+        form:"form",//验证的表单
+        //验证数据集，也可以在标记中以data-XXX的形式加入验证
+        data:{
+			sudentname:{
+				required:true,
+			},
+			patriarch:{
+				required:true,
+			},
+			city:{
+				required:true,
+			},
+			address2:{
+				required:true,
+			},
+			min_number:{
+			    min:2,
+			},
+			max_number:{
+			    max:12,
+			},
+			eq:{
+			    equal:"#eq",
+			},
+			min_length:{
+			    minlength:6
+			},
+			max_length:{
+			    maxlength:6
+			},
+			rule:{
+			    rule:"^\\d{6}$",
+			    required:true
+			},
+			phone:{
+			    mobile:true
+			}
+        },
+        //验证提示消息
+		message:{
+            sudentname:{
+				required:"学生姓名不得为空",
+			},
+			patriarch:{
+				required:"家长姓名不得为空",
+			},
+			city:{
+				required:"所在城市不得为空",
+			},
+			address2:{
+				required:"详细地址不得为空",
+			}
+		},
+		success:function (data) {
+			//alert(data);
+			if (data == 1){
+				alert('恭喜您提交成功!');
+				// window.location.replace("http://www.qudaoplus.cn/merber_all_show/index.php/Home/changqing");
+				window.location.replace("http://www.qudaoplus.cn/merber_all_show/index.php/Home/Consult/study.html");
+				// layer.confirm('恭喜您提交成功!',function(index){
+				// 	window.history.back();location.reload();
+				// 	// window.parent.location.reload();
+				// });
+			}else{
+				alert('提交失败，请刷新页面重试!');
+				//layer.msg('提交失败，请刷新页面重试！',function(){});
+			}
+		},
+		fail:function (data) {
+			//ajax提交失败后的回调函数
+			console.log(data.msg);
+		}
+    });
+</script>
+<script type="text/javascript" src="__PUBLIC__/Chang/js/ydui.citys.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Chang/js/ydui.js"></script>
+<script type="text/javascript">
+/**
+ * 默认调用
+ */
+!function () {
+	var $target = $('#J_Address');
+
+	$target.citySelect();
+
+	$target.on('click', function (event) {
+		event.stopPropagation();
+		$target.citySelect('open');
+	});
+
+	$target.on('done.ydui.cityselect', function (ret) {
+		$(this).val(ret.provance + ' ' + ret.city + ' ' + ret.area);
+	});
+}();
+/**
+ * 设置默认值
+ */
+!function () {
+	var $target = $('#J_Address2');
+
+	$target.citySelect({
+		provance: '新疆',
+		city: '乌鲁木齐市',
+		area: '天山区'
+	});
+
+	$target.on('click', function (event) {
+		event.stopPropagation();
+		$target.citySelect('open');
+	});
+
+	$target.on('done.ydui.cityselect', function (ret) {
+		$(this).val(ret.provance + ' ' + ret.city + ' ' + ret.area);
+	});
+}();
+</script>
+</body>
+</html>

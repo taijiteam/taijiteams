@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>订单页</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="/Public/Airport/css/style.css">
+<style type="text/css">
+.order>.body>.nav{
+	overflow: hidden;
+}
+.order>.body>.nav>ul>a>li{
+	width: 33%;
+	display:  block;
+	float: left;
+	color: #efc694;
+	text-align: center;
+}
+.order>.body>.nav>ul>a>li>img{
+	width: 33%;
+	display: block;
+	margin: 0 auto;
+}
+.order>.body>.list>h4{
+	margin: 0;
+	margin-left: 20px;
+	color: #efc694;
+}
+.order>.body>.list>ul>a>li{
+	overflow: hidden;
+	background: rgba(53, 53, 53, 0.81);
+	margin: 0 auto;
+}
+.order>.body>.list>ul>a>li>h5{
+	border-bottom: 1px solid #5c5c5c;
+	padding-left: 20px;
+	margin: 0;
+	overflow: hidden;
+}
+.order>.body>.list>ul>a>li>h5>span{
+	color: #efc694;
+	display: block;
+	float: left;
+	line-height: 40px;
+}
+.order>.body>.list>ul>a>li>h5>object>a{
+	display: block;
+	float: right;
+	width: 70px;
+	color: #fff;
+	text-align: center;
+	margin-top: 5px;
+	margin-right: 20px;
+	line-height: 20px;
+	border-radius: 5px;
+}
+.order>.body>.list>ul>a>li>div{
+	overflow: hidden;
+	border-bottom: 1px solid #5c5c5c;
+}
+.order>.body>.list>ul>a>li>div>div{
+	display: block;
+	margin-left: 20px;
+	width: 70%;
+	margin-top: 10px;
+}
+.order>.body>.list>ul>a>li>div>div>p{
+	margin: 0;
+	font-size: 12px;
+	line-height: 20px;
+}
+.order>.body>.list>ul>a>li>div>span{
+	color: #efc694;
+	display: block;
+	float: right;
+	margin-right: 20px;
+}
+.order>.body>.list>ul>.zwdd{
+	color: #fff;
+	background: rgb(53,53,53);
+	text-align: center;
+	line-height: 70px;
+	margin: 0;
+}
+</style>
+<body class="order">
+<!-- 这里是头部 -->
+<header class="cheader">
+	<div>
+		<p><img src="{$_SESSION['information']['headimgurl']}"></p>
+	</div>
+	<p>
+		<span class="span1">
+			<img src="/Public/Airport/images/icon/order-write.png">
+				<if condition="$o_state eq 2">
+						待确认订单
+					<elseif condition="$o_state eq 1"/>
+						待支付订单
+					<elseif condition="$o_state eq ''"/>
+						全部订单
+					<else/>
+
+				</if>
+		</span>
+		<img class="dao" src="/Public/Airport/images/icon/dao.png">
+	</p>
+</header>
+
+<!-- <p><a href="input.html">input</a></p> -->
+<!-- 这里是身体 -->
+<div class="body">
+	<!-- 栏目1 -->
+	<div class="nav">
+		<ul>
+			<a href="/Home/Airport/order?o_state=2&openid={$_SESSION['openid']}"><li><img src="/Public/Airport/images/icon/daiqueren.png"><span>待确认</span></li></a>
+			<a href="/Home/Airport/order?o_state=1&openid={$_SESSION['openid']}"><li><img src="/Public/Airport/images/icon/pay.png"><span>待支付</span></li></a>
+			<a href="/Home/Airport/order?o_state&openid={$_SESSION['openid']}"><li><img src="/Public/Airport/images/icon/order-copy.png"><span>全部订单</span></li></a>
+		</ul>
+	</div>
+
+	<!-- 栏目2 -->
+	<div class="list">
+		<h4>机场订单</h4>
+		<ul>
+			<if condition="$countfood eq 0">
+				<p class="zwdd">暂无订单</p>
+				<else />
+				<volist name="orderfood" id="orderfood">
+					<a href="/Home/Airport/orderDetail?order_sn={$orderfood['order_sn']}">
+					<li style="margin: 4px auto">
+						<h5><span>订单号：{$orderfood['order_sn']}</span>
+
+							<if condition="$orderfood['order_status'] eq 2">
+								<object><a href="javascript:;" style="background: #E6602E;;">待确认</a></object>
+								<elseif condition="$orderfood['order_status'] eq 1"/>
+								<object><a href="javascript:;" style="background: #8D0415;">待支付</a></object>
+								<elseif condition="$orderfood['order_status'] eq 4"/>
+								<object><a href="javascript:;" style="background: #1D9A74;">已完成</a></object>
+								<else/>
+								<!--<object><a href="javascript:;" style="background: #838383;">已取消</a></object>-->
+							</if>
+						</h5>
+						<div>
+							<div>
+								<p>
+									<if condition="$orderfood['member_payment'] eq '260' ">
+										<elseif	condition="$orderfood['member_payment'] eq '260' " />
+										<span  style="color: #efc694;">VIP套餐 国内服务</span>
+										<elseif	condition="$orderfood['member_payment'] eq '2000' " />
+										<span style="color: #efc694;">VVIP套餐 国内航空</span>
+										<elseif	condition="$orderfood['member_payment'] eq '500' " />
+										<span style="color: #efc694;">VIP套餐 国际服务</span>
+										<elseif	condition="$orderfood['member_payment'] eq '1000' " />
+										<span style="color: #efc694;">VVIP套餐 国际服务</span>
+										<else />
+										<span style="color: #efc694;">测试使用</span>
+									</if>
+									{$orderfood['type']}
+								</p>
+								<p>预约人: {$orderfood['member_name']} 数量：{$orderfood['order_number']}人</p>
+								<p>航班日期：{$orderfood['flight_time']}<br/>
+									<span>订单日期：{$orderfood['addtime']|date="Y-m-d H:i:s",###}</span>
+								</p>
+							</div>
+							<span>￥{$orderfood['member_payment']}</span>
+						</div>
+					</li>
+					</a>
+				</volist>
+			</if>
+		</ul>
+	</div>
+</div>
+<!-- 这里是底部 -->
+<include file="AirportPublic/footer" />
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>提交订单</title>
+</head>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Project/css/style.css">
+<style type="text/css">
+.fappoint>footer{
+	height: 45px;
+}
+.fappoint>footer>div{
+	overflow: hidden;
+	margin-top: 5px;
+}
+.fappoint>footer>div>.tell{
+	display: inline-block;
+	overflow: hidden;
+}
+.fappoint>footer>div>.tell>img{
+	width: 35px;
+	display: block;
+	float: left;
+	margin-left: 20px;
+}
+.fappoint>footer>div>.tell>div{
+	overflow: hidden;
+	display: block;
+	float: left;
+}
+.fappoint>footer>div>.tell>div>p{
+	color: rgb(248,194,84);
+	font-size: 12px;
+	margin: 0;
+}
+.fappoint>footer>div>.aa{
+	display: block;
+	float: right;
+	width: 115px;
+	margin-right: 20px;
+}
+.fappoint>footer>div>.aa>img{
+	width: 100%;
+}
+</style>
+<style type="text/css">
+.fappoint>form{
+	overflow: hidden;
+	width: 95%;
+	margin: 25px auto;
+}
+.fappoint>form>p{
+	width: 100%;
+	margin: 0 10px;
+	margin-bottom: 10px;
+	overflow: hidden;
+	color: #fff;
+}
+.fappoint>form>p>span{
+	width: 25%;
+	color: rgb(248,194,84);
+	display: block;
+	float: left;
+	text-align: right;
+}
+.fappoint>form>p>input{
+	background: none;
+	width: 35%;
+	margin-left: 5%;
+	border: 1px solid rgb(65,117,5);
+	color: #fff;
+	border-radius: 3px;
+	line-height: 25px;
+	padding-left: 7px;
+	/*height: 25px;*/
+}
+.fappoint>form>div{
+	margin: 0 auto;
+	width: 95%;
+}
+.fappoint>form>div>p{
+	color: rgb(248,194,84);
+}
+.fappoint>form>div>textarea{
+	width: 90%;
+	line-height: 20px;
+	border-radius: 2px;
+	border: 1px solid rgb(65,117,5);
+	color: #000;
+	display: block;
+	margin: auto;
+}
+.fappoint>form>p>.radio{
+	display: inline;
+	width: 15px;
+}
+</style>
+<body class="fappoint">
+<!-- 这里是头部 -->
+<header>
+	<!-- banner statr -->
+	<img src="__PUBLIC__/Uploads/Project/{$project.p_image}" style="width: 100%">
+	<!--fullSlide end-->
+</header>
+<form>
+<p><span>就餐日期</span><input type="text" name="or_utime" id="USER_AGE" readonly class="input" placeholder="就餐日期" /></p>
+<p><span>到店时间</span><input style="height: 25px;" type="time" name="o_atime" value="请输入到店时间"></p>
+<p><span>就餐人数</span><input type="text" name="o_nop" placeholder="请输入就餐人数"></p>
+<p><span>&nbsp;&nbsp;&nbsp;联系人</span><input type="text" name="name" value="{$_SESSION['infor']['data'][0]['TrueName']}" placeholder="请输入联系人"></p>
+<p><span>联系手机</span><input type="text" name="phone" value="{$_SESSION['infor']['data'][0]['Mobile']}" placeholder="请输入联系手机"></p>
+<!--<p><span>&nbsp;&nbsp;&nbsp;请选择</span><input class="radio" type="radio" name="o_around" value="大厅">大厅 <input class="radio" type="radio" name="o_around" value="包房">包房</p>-->
+<div>
+	<p>特殊要求（选填）</p>
+	<textarea rows="5" id="text" cols="20" placeholder="请输入"></textarea>
+</div>
+<input type="hidden" name="openid" value="{$_SESSION['openid']}">
+<input type="hidden" name="p_id" value="{$project.p_id}">
+	<input type="hidden" name="p_shopid" value="{$project.p_shopid}">
+</form>
+<p style="width: 100%; height: 60px; margin: 0; overflow: hidden;"></p>
+<!-- 这里是底部 -->
+<footer>
+	<div>
+		<a href="tel:021-53069999" class="tell">
+			<img src="__PUBLIC__/Activity/images/icon/tellme.png">
+			<div>
+				<p>联系我们</p>
+				<p>Tell me</p>
+			</div>
+		</a>
+		<!--<a href="javascript:;" onclick="foodorder()" class="aa"><img src="__PUBLIC__/Project/image/zxyd1.png"></a>-->
+		<a href="javascript:;" onclick="foodorder()" class="aa" style="    background: rgb(185, 135, 34);
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 2px;
+    font-size: 14px;
+    margin-top: 3px;">提交订单</a>
+	</div>
+</footer>
+</body>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Project/css/H-ui.min.css" />
+<script type="text/javascript">
+function foodorder(){
+	var o_start = $('input[name="or_utime"]').val();	//出行时间
+	var o_atime = $('input[name="o_atime"]').val();	//请输入到店时间
+	var o_nop = $('input[name="o_nop"]').val();	//请输入就餐人数
+	var o_user = $('input[name="name"]').val();			//联系人
+	var o_phone = $('input[name="phone"]').val();		//联系电话
+	var o_hopinion = $('input[name="o_around"]:checked').val();//就餐环境
+	var o_content = $("#text").val();					//特殊需求
+	var o_openid = $('input[name="openid"]').val();		//openid
+	var o_pid = $('input[name="p_id"]').val();			//p_id
+	var o_shopid = $('input[name="p_shopid"]').val();			//p_id
+	if(o_start == ''){
+		$.Huimodalalert('警告：请选择就餐日期！！',2000);
+	}else if(o_atime == ''){
+		$.Huimodalalert('警告：请输入到店时间！！',2000);
+	}else if(o_nop == ''){
+		$.Huimodalalert('警告：请填写就餐人数！！',2000);
+	}else if(o_user == ''){
+		$.Huimodalalert('警告：请填写联系人！！',2000);
+	/*}else if (o_phone == ''){
+		$.Huimodalalert('警告：请填写联系电话！！',2000);*/
+	}else{
+		$.ajax({
+			type:"post",
+			url:"{:U('Project/foodorder')}",//根据自己项目的需要写请求地址
+			data:{
+				'o_start':o_start,
+				'o_atime':o_atime,
+				'o_nop':o_nop,
+				'o_user':o_user,
+				'o_phone':o_phone,
+				'o_hopinion':o_hopinion,
+				'o_content':o_content,
+				'o_openid':o_openid,
+				'o_pid':o_pid,
+				'o_shopid':o_shopid,
+			},
+			dataType:'json',
+			success:function(data){
+				//alert(JSON.stringify(data));
+				if (data == 1){
+					layer.confirm('订单提交成功！',function(index){
+						location.href="http://www.qudaoplus.cn/merber_all_show/index.php/Home/Project/foodlist"
+						//window.parent.location.reload();
+						// var index = parent.layer.getFrameIndex(window.name);
+						// parent.layer.close(index);
+					});
+				// }else if (data == 2) {
+				// 	layer.msg('角色名称还没填来！！！',function(){});
+				}else{
+					layer.msg('哎呦，运气不好哦，添加失败咯！',function(){});
+				}
+			},
+			error:function(data) {
+				console.log(data.msg);
+			},
+		})
+	}
+}
+</script>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/hui/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/hui/static/h-ui.admin/js/H-ui.admin.js"></script>
+<!--/_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/jquery.validation/1.14.0/jquery.validate.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/jquery.validation/1.14.0/messages_zh.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/webuploader/0.1.5/webuploader.min.js"></script> 
+<!-- 请在上方写此页面业务相关的脚本 -->
+<!-- 日期选择控件 -->
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Project/css/mobiscroll_date.css">
+<script src="__PUBLIC__/Project/js/mobiscroll_date.js" charset="gb2312"></script> 
+<script src="__PUBLIC__/Project/js/mobiscroll.js"></script> 
+<script type="text/javascript">
+/*时间控件*/
+$(function () {
+	var currYear = (new Date()).getFullYear();	
+	var opt={};
+
+	opt.date = {preset : 'date'};
+	opt.datetime = {preset : 'datetime'};
+	opt.time = {preset : 'time'};
+	opt.default = {
+		theme: 'android-ics light', //皮肤样式
+		display: 'modal', //显示方式 
+		mode: 'scroller', //日期选择模式
+		dateFormat: 'yyyy-mm-dd',
+		lang: 'zh',
+		showNow: true,
+		nowText: "今天",
+		startYear: currYear - 50, //开始年份
+		endYear: currYear + 10 //结束年份
+	};
+	$("#USER_AGE").mobiscroll($.extend(opt['date'], opt['default']));
+});
+</script>
+<script type="text/javascript" src="__PUBLIC__/Project/js/ertao/H-ui.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/js/ertao/jquery.SuperSlide.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/js/ertao/jquery.validate.min.js"></script>
+<script>
+$(function(){
+	//选项卡
+	$("#HuiTab-demo1").Huitab({
+		index:0
+	});
+	//返回顶部
+	//$.Huitotop();
+
+});
+</script>
+<!-- banner js -->
+<script type="text/javascript" src="__PUBLIC__/Project/js/superslide.2.1.js"></script>
+<script type="text/javascript">
+$(".fullSlide").hover(function(){
+    $(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
+},
+function(){
+    $(this).find(".prev,.next").fadeOut()
+});
+$(".fullSlide").slide({
+    titCell: ".hd ul",
+    mainCell: ".bd ul",
+    effect: "fold",
+    autoPlay: true,
+    autoPage: true,
+    trigger: "click",
+    startFun: function(i) {
+        var curLi = jQuery(".fullSlide .bd li").eq(i);
+        if ( !! curLi.attr("_src")) {
+            curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+        }
+    }
+});
+</script>
+<!-- the end -->
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>特别权益</title>
+    <meta name="keywords" content="{$SEO['keyword']}" />
+    <meta name="description" content="{$SEO['description']}" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+    <link rel="shortcut icon" href="http://www.qudaoclub.com/images/favicon.ico" type="image/x-icon"/>
+    <script src="__JS__jquery.min.js"></script>
+    <script src="__JS__mobiscroll.jquery.min.js"></script>
+    <link href="__css__mobiscroll.jquery.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="__css__rights.css?v=1">
+    <script type="text/javascript">
+      function pushHistory() {
+        var state = {
+          title: "title",
+          url: "#"
+        };
+        window.history.pushState(state, "title", "#");
+      }
+      pushHistory();
+
+      setTimeout(function(){
+            window.addEventListener("popstate", function(e){
+                setTimeout(function(){
+                    location.href="http://www.qudaoplus.cn/merber_all_show/index.php/home/personnal/central"
+                },1000)
+            }, false)
+        },1000);
+
+    </script>
+</head>
+
+<body>
+  <layout name="layout" />
+  <p class="top">特别权益</p>
+  <if condition="$lists eq null ">
+      <if condition="$start eq 1">
+          <div style="margin-bottom: 80px;">
+          <h3 style="color: #555;margin-top: 20px; margin-left: 5%;font-size: 15px;font-weight: bold;">一、平台奖励</h3>
+          <p style="color: #555;font-size: 14px;width: 90%;margin: 10px auto;line-height: 25px;">
+              1、成员推荐奖励<br>
+              若您推荐您的朋友成为渠道PLUS平台成员，根据所收取成员费用，平台返10%。<br>
+              <br>
+              2、合作推荐奖励<br>
+              若您推荐您的朋友和企业，和平台进行项目合作有盈利的，平台返盈利部分的10%。<br>
+          </p>
+          <h3 style="color: #555;margin-top: 20px; margin-left: 5%;font-size: 15px;font-weight: bold;">二、杂志合作权益</h3>
+          <p style="color: #555;font-size: 14px;width: 90%;margin: 10px auto;line-height: 25px;">
+              《名流PERSONAGE》杂志部分<br>
+              1、刊例价2折及以下销售的，由您定价，但需要报备平台确认。平台给予您20%的回报。<br>
+              <br>
+              2、刊例价2折以上销售的，2折以上部分的区间，平台给予您50%的回报。
+          </p>
+          <h3 style="color: #555;margin-top: 20px; margin-left: 5%;font-size: 15px;font-weight: bold;">三、金融推荐奖励</h3>
+          <p style="color: #555;font-size: 14px;width: 90%;margin: 10px auto;line-height: 25px;">
+              若您推荐企业向平台进行300万以下免抵押贷款，平台成功完成服务并收取费用后，向您返5000元/企业。
+          </p>
+          <h3 style="color: #555;margin-top: 20px; margin-left: 5%;font-size: 15px;font-weight: bold;">四、酒销售奖励</h3>
+          <p style="color: #555;font-size: 14px;width: 90%;margin: 10px auto;line-height: 25px;">
+              1、天朝上品贵人酒，您享特价1788元/箱，每箱6瓶。<br>
+              <br>
+              2、若您销售天朝上品贵人酒享受单月销量返利权益：<br>
+              <img src="__PUBLIC__/Club/images/jiujiujiu.png" width="100%">
+              注意事项：箱数以自然月为结算周期；每月所有销量，以当月到账金额为准。<br>
+              物流说明：江浙沪地区包邮，其它地区邮寄费用需另行支付(默认发圆通速递,参考价格外地30-70元/箱)<br>
+              <br>
+              3、推荐销售奖励办法：<br>
+              若您推荐您的朋友销售酒的，您的朋友可享受单月销量返利权益外，平台还给予您奖励50/箱<br>
+              <br>
+              注意事项：关于特别权益内约定的回报及奖励金额，本平台应在收到您提供的相应发票后三个工作日内支付给您。<br>
+              如您对特别权益有疑问或意见，可以致电平台服务热线:<a href="tel:021-53829777">021-53829777</a><br>
+          </p>
+          </div>
+          <else/>
+    <div style="color: #000;text-align: center;font-size: 18px;margin-top: 20px;"><span>无任何权益</span></div>
+      </if>
+  <else />
+    <volist name="lists" id="vo">
+    <if condition="$vo['Count'] eq '0' ">
+      <section class="overdue">
+        <div>
+            <img src="__img__rights/list_bg.jpg" alt="">
+            <h2>{$vo.GoodsItemName}</h2>
+            <h4>权益×{$vo.Count}</h4>
+            <h5>仅一人可用</h5>
+            <img class="overdue-img" src="__img__rights/overdue.png?v=1" alt="">
+        </div>
+        <p>使用期限至：{$vo.DurationTime} </p>
+      </section>
+    <else />
+      <section>
+        <?php
+          $allString = $vo['GoodsItemName'];
+          $searchString = "-";
+          $newString = strstr($allString, $searchString);
+          $length = strlen($searchString);
+          $typeName = substr($newString, $length);
+          if($typeName=='检查'){
+            $type='1';
+          }elseif($typeName=='就诊'){
+            $type='2';
+          }elseif($typeName=='住院'){
+            $type='3';
+          }
+        ?>
+          <a href="http://www.qudaoplus.cn/merber_all_show/index.php/home/reserve/hospital?guid={$vo.Guid}&itemguid={$vo.GoodsItemGuid}&type={$type}">
+              <div>
+                  <img src="__img__rights/list_bg.jpg" alt="">
+                  <h2>{$vo.GoodsItemName}</h2>
+                  <h4>权益×{$vo.Count}</h4>
+                  <h5>仅一人可用</h5>
+                  <img class="overdue-img" src="__img__rights/overdue.png?v=1" alt="">
+              </div>
+              <p>使用期限至：{$vo.DurationTime} <span>未使用</span></p>
+          </a>
+      </section>
+    </if>
+    </volist>
+  </if>
+</body>
+<script>
+  $(document).ready(function(){
+    $('.core').addClass('on').parent('a').siblings('a').find('li').removeClass('on');
+  })
+</script>
+</html>

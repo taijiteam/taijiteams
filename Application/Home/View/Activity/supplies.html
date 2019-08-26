@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>活动用品</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Activity/css/ertaostyle.css">
+</head>
+<style type="text/css">
+.supplies>.body{
+	width: 90%;
+	margin: 0 auto;
+	color: #fff;
+	margin-bottom: 60px;
+	overflow: hidden;
+}
+.supplies>.body>h4{
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+.supplies>.body>p{
+	font-size: 14px;
+	margin: 0;
+	margin-left: 20px;
+}
+.supplies>.body>ul{
+	border-top: 1px solid #fff;
+	margin-top: 20px;
+}
+.supplies>.body>ul>li{
+	width: 100%;
+	border-bottom: 1px solid #fff;
+	overflow: hidden;
+}
+.supplies>.body>ul>li>p{
+	text-align: center;
+}
+.supplies>.body>ul>li>div>h5{
+	font-size: 14px;
+	margin-bottom: 5px;
+	overflow: hidden;
+}
+.supplies>.body>ul>li>div>h5>.left{
+	display: block;
+	float: left;
+}
+.supplies>.body>ul>li>div>h5>.right{
+	display: block;
+	float: right;
+	color: #a57f32;
+	font-size: 12px;
+}
+.supplies>.body>ul>li>div>p{
+	font-size: 12px;
+	margin: 0;
+}
+.supplies>.body>ul>li>a{
+	display: block;
+	float: right;
+	border: 1px solid #a57f32;
+	border-radius: 10px;
+	line-height: 17px;
+	width: 65px;
+	font-size: 12px;
+	text-align: center;
+	margin-bottom: 5px;
+}
+.supplies>.body>a{
+	color: #fff;
+	background: #a57f32;
+	width: 150px;
+	line-height: 35px;
+	text-align: center;
+	display: block;
+	border-radius: 2px;
+	margin: 45px auto;
+
+}
+</style>
+<body class="supplies">
+<div class="body">
+	<h4>活动用品</h4>
+	<!--<p>百度在线网络技术（北京）有限公司</p>-->
+	<!--<p>中汇信息技术（上海）有限公司</p>-->
+	<!--<p>中移信息技术有限公司</p>-->
+	<ul>
+		<volist name="suplist" id="suplist">
+			<li>
+				<p><img src="__PUBLIC__/Uploads/Activity/{$suplist.a_img}" width="90%"></p>
+				<div>
+					<h5><span class="left">{$suplist.a_title}</span><span class="right">￥{$suplist.a_price}</span></h5>
+					<p>{$suplist.a_cate}</p>
+					<p>{$suplist.a_ziying}</p>
+				</div>
+				<div>
+					<h5>产品详情</h5>
+					{$suplist.a_ycon}
+				</div>
+				<div>
+					<h5>产品参数</h5>
+					{$suplist.a_parameter}
+				</div>
+				<if condition="$suplist.a_link eq ''">
+					<a href="{:U('Activity/content')}?id={$suplist.a_id}&category={$suplist.a_category}&cardid={$_SESSION['cardId']}">更多详情</a>
+					<else/>
+					<a href="{$suplist.a_link}">更多详情</a>
+				</if>
+			</li>
+		</volist>
+	</ul>
+	<a href="javascript:;" onclick="back()">返回活动详情页</a>
+</div>
+<include file="ActivityPublic/footer" />
+<!-- 请在上方写相关业务脚本 -->
+<script type="text/javascript">
+function back()
+{
+	window.history.back();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>渠道plus 天朝上品微代理</title>
+    <meta name="keywords" content="渠道PLUS丨天朝上品贵人酒代理销售查询" />
+    <meta name="description" content="您可以查询您每月销售单量" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+    <link rel="shortcut icon" href="http://www.qudaoclub.com/images/favicon.ico" type="image/x-icon"/>
+    <script src="__JS__jquery.min.js"></script>
+    <script src="__JS__mobiscroll.jquery.min.js"></script>
+    <link href="__css__mobiscroll.jquery.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="__css__agent.css?v=1">
+    <script>
+      var str = '<?php echo $json ?>';
+      if ( str ) {
+        var obj = eval('(' + str + ')');
+        if ( obj.code=='1' ) {
+          if (obj.message) {
+            alert(obj.message);
+          }
+          $('body').html('');
+          window.location.href = obj.url;
+        }
+      }
+    </script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript">
+        var url=encodeURIComponent(location.href.split('#')[0]);
+        var title ="渠道plus 天朝上品微代理";            //标题
+        var description ="签署协议即可成为渠道plus天朝上品微代理";     //摘要
+        var thisUrl = location.href.split('#')[0];         //跳转的连接
+        var imgUrl ="http://www.qudaoplus.cn/merber_all_show/Public/Club/images/coupon/share.jpg";             // 图片
+        $.ajax({
+            type : "get",
+            url : "http://www.qudaoplus.cn/php/jssdk.php?url="+url,
+            dataType : "jsonp",
+            jsonp: "callback",
+            jsonpCallback:"success_jsonpCallback",
+            success : function(data){
+                wx.config({
+                    appId: data.appId,
+                    timestamp: data.timestamp,
+                    nonceStr: data.nonceStr,
+                    signature: data.signature,
+                    url: data.url,
+                    jsApiList: [
+                       "onMenuShareTimeline", //分享给好友
+                       "onMenuShareAppMessage", //分享到朋友圈
+                       "onMenuShareQQ",  //分享到QQ
+                       "onMenuShareWeibo" //分享到微博
+                    ]
+                });
+            },
+            error:function(data){
+                alert("连接失败！");
+            }
+        });
+        wx.ready(function (){
+            var shareData = {
+                title: title,                                    //标题
+                desc: description,                               //内容
+                link: thisUrl,                                   //链接
+                imgUrl: imgUrl                                   //图片
+            };
+            wx.onMenuShareAppMessage(shareData);
+            wx.onMenuShareTimeline(shareData);
+            wx.onMenuShareQQ(shareData);
+            wx.onMenuShareWeibo(shareData);
+        });
+    </script>
+    <script type=text/javascript>
+      var browser = {
+      ua: navigator.userAgent.toLowerCase(),
+      msie: function() {
+        return /msie/.test(this.ua);
+      },
+      ie6: function() {
+        var self = this;
+        return self.msie() && /msie 6./.test(self.ua);
+      },
+      ie7: function() {
+        var self = this;
+        return self.msie() && /msie 7.0/.test(self.ua);
+      },
+      ie8: function() {
+        var self = this;
+        return self.msie() && /msie 8.0/.test(self.ua);
+      }
+      };
+      if (!browser.ie6() && !browser.ie7()) {} else {
+      window.location.href = 'update.html';
+      }
+      $(document).ready(function(){
+          //	点击menu中的li改变banner中的图片
+              $(".menu li").click(function(){
+                  var num=$(this).index();
+                  $('.banner li').eq(num).fadeIn(500).siblings().fadeOut(500);
+                  $(this).addClass('active').siblings().removeClass('active');
+              });
+          //给banner中的img加遮罩
+              $(".banner li .img-box").hover(function(){
+                  $(this).addClass('active').find('a').fadeIn(300);
+              },function(){
+                  $(this).removeClass('active').find('a').fadeOut(300);
+              });
+      });
+    </script>
+    <style>
+      body, html{
+          height: 100%;
+          width: 100%;
+          margin: 0; padding: 0;
+      }
+      h2.port{
+        font-size: 20px;
+        text-align: center;
+        margin: 10px 0px;
+      }
+      p.cont{
+        margin:15px 20px;
+        font-size: 14px;
+        line-height: 20px;
+      }
+      p.marb{
+        margin-bottom: 30%;
+      }
+      div.fix{
+        position: fixed;
+        display: block;
+        bottom: 12px;
+        width: 100%;
+      }
+      div.btn{
+        text-align: center;
+        margin-top: -2px;
+        height: 40px;
+      }
+      div.btn button{
+        bottom: 0;
+        width: 100%;
+        line-height: 50px;
+        border: none;
+        outline: none;
+        background-color: #BF9A56;
+        color: #fff;
+        font-size: 20px;
+        border-radius: 5px;
+      }
+      table {
+          height: 80%;
+          width: 80%;         /*  必须设置一个宽度， margin: 0 auto才能使之居于父组件中央*/
+          margin: 10px auto;  /*  通过设置外边距（margin）中的左右外边距属性为auto使之居于父组件（body）中间*/
+
+      }
+      table tr{
+          height: 40px;
+          width: 100%;
+      }
+      table td{
+        border: 1px solid #fff;
+        text-align: center;
+      }
+      table>tr>td{
+          height: 100%;
+          width: 33.3%;
+      }
+      div a{
+          color: #918987;
+          text-decoration: none;
+          font-size: 14px;
+          font-weight: bold;
+      }
+      .agreement{
+        background-color: #000;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+      }
+    </style>
+</head>
+
+<body>
+
+  <section>
+    <div>
+      <h2 class="port">《微代理规则》</h2>
+      <p class="cont">1.申请资格：<br>&nbsp;&nbsp;①渠道PLUS“致享成员（9999元/年）”以上级别。<br>&nbsp;&nbsp;②签订微代理合作协议。</p>
+      <p class="cont">2.代理特权：<br>&nbsp;&nbsp;①付费成员加入平台，签订微代理协议后即可获赠价值1788元/箱（298元/瓶-渠道成员特享价）天朝上品贵人酒两箱。<br>&nbsp;&nbsp;②付费成员，全年销售总量达到500箱以上，返还当年“致享成员（9999元/年）”会籍费用，并赠送次年“致享成员（9999元/年）”成员资格。（“致享成员”以上级别付费成员，皆以“致享成员”标准执行）<br>&nbsp;&nbsp;※天朝上品贵人酒市场价：3594元/箱（599元/瓶，且2018年将执行699元/瓶）。</p>
+      <p class="cont">3.代理奖励条件：<br></p>
+      <div><table cellspacing="0" cellpadding="5">
+          <tr>
+              <td>单月销量/箱（6瓶）</td>
+              <td>成员特享价/箱</td>
+              <td>奖励/箱</td>
+          </tr>
+          <tr>
+              <td>10-19箱</td>
+              <td rowspan="5">1788元</td>
+              <td>300元</td>
+          </tr>
+          <tr>
+              <td>20-29箱</td>
+              <td>350元</td>
+          </tr>
+          <tr>
+              <td>30-39箱</td>
+              <td>400元</td>
+          </tr>
+          <tr>
+              <td>40-49箱</td>
+              <td>450元</td>
+          </tr>
+          <tr>
+              <td>50箱以上</td>
+              <td>600元</td>
+          </tr>
+      </table></div>
+      <p class="cont marb">4.返佣结算规则：详见财务相关规定。<br>&nbsp;&nbsp;※备注：微代理不享受成功推荐他人加入平台获赠1瓶福利。</p>
+    </div>
+    <div class="fix">
+      <div class="agreement">
+        <label><input type="checkbox" checked><span>同意</span></label>
+        <a href="{:U('Order/clause')}">《渠道PLUS 天朝上品服务条款和条件》</a>
+      </div>
+      <div class="btn"><button>同&nbsp;&nbsp;意</button></div>
+    </div>
+  </section>
+
+</body>
+</html>
+<script type="text/javascript">
+
+    $(document).ready(function(){
+      var cardId = <?php echo $cardId; ?>;
+      var $btn = $('.btn'),
+          $agreement = $('.agreement'),
+          $val = $btn.find('button');
+      $btn.click(function(){
+        var agreement = $agreement.find('input').attr('checked');
+        if(!agreement){
+            alert('请阅读服务条款后确认勾选');
+            return false;
+        }
+        // alert('hello word');
+        // return false;
+        $.ajax({
+            type: "POST",
+            url:  "{:U('Order/protocol')}",
+            data:{
+              cardId:cardId
+            },
+            error: function(request) {
+              console.log(request);
+            },
+            success: function(data) {
+                data = eval( '(' +data+ ')' );
+                console.log(data);
+                if (data.code=='1') {
+                  window.location.href = data.url;
+                }else if (data.code=='-1') {
+                  alert(data.message);
+                }
+            }
+        });
+      });
+    })
+
+</script>

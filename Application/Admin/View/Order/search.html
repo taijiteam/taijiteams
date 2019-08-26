@@ -1,0 +1,155 @@
+<html class="x-admin-sm">
+<head>
+    <include file="Components/header" />
+</head>
+<style>
+    .layui-row-search input{
+        margin-bottom: 30px;
+        width: 256px;
+        height: 40px;
+    }
+    .layui-input-inline{
+        width: 200px;
+        margin-right: 30px;
+    }
+</style>
+<body>
+<div class="x-nav">
+      <span class="layui-breadcrumb">
+        <a href="">首页</a>
+        <a>
+          <cite>导航元素</cite></a>
+      </span>
+</div>
+<div class="x-body">
+    <div class="layui-collapse" lay-filter="test">
+        <div class="layui-colla-item">
+            <h2 class="layui-colla-title">展开搜索框</h2>
+            <div class="layui-colla-content">
+                <form method="post" action="/Admin/Order/search?source=商城" class="layui-form layui-col-md12 x-so" >
+                    <div class="layui-row">
+                        <input type="text" name="mobile" placeholder="请输入收货人手机号" autocomplete="off" class="layui-input">
+
+                        <input type="text" name="order_sn" placeholder="请输入收货人订单号" autocomplete="off" class="layui-input">
+
+                        <!--<div class="layui-input-inline">
+                            <select id="pay" name="pay" autocomplete="off" class="layui-input">
+                                <option value="">请选择支付方式</option>
+                                <option value="微信支付">微信支付</option>
+                                <option value="支付宝支付">支付宝支付</option>
+                                <option value="POS机支付">POS机支付</option>
+                                <option value="银行卡转账">银行卡转账</option>
+                            </select>
+                        </div>-->
+                        <div class="layui-input-inline">
+                            <select id="audit" name="audit" autocomplete="off" class="layui-input">
+                                <!--<option value=" ">请选择订单状态</option>-->
+                                <option value="交易完成">交易完成</option>
+                                <option value="驳回审核">驳回审核</option>
+                            </select>
+                        </div>
+                        <input  type="submit" class="layui-btn layui-btn-lg " lay-filter="add" lay-submit="" value="查找">
+                    </div>
+                </form>
+            </div>
+        </div>
+    <table class="layui-table x-admin">
+        <thead>
+        <tr>
+            <th></th>
+            <th>订单编号</th>
+            <th>付款人</th>
+            <th>商品名称</th>
+            <th>订单金额</th>
+            <th>支付金额</th>
+            <th>消费积分</th>
+            <th>下单返利积分</th>
+            <th>支付方式</th>
+            <th>支付状态</th>
+            <th>下单时间</th>
+            <th style="text-align: center">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <volist name="orderList" key="k" id="vo">
+            <tr>
+                <td>
+                    <input type="checkbox" name="" lay-skin="primary"></td>
+                <td>{$vo.order_sn}</td>
+                <td>{$vo.member_name}:{$vo.member_mobile}</td>
+                <td>{$vo.goods_name}</td>
+                <td>{$vo.goods_price}</td>
+                <td>{$vo.member_payment}</td>
+                <!--<if condition="$vo.order_status eq 2"><td style="background-color: #FFA54F">待发货</td>
+                    <elseif condition="$vo.order_status eq 3"/><td style="background-color: #CCCCCC">待发货</td>
+                    <elseif condition="$vo.order_status eq 4"/><td style="background-color: #7FFFD4">已收货</td>
+                    <elseif condition="$vo.order_status eq 9"/><td>已取消</td>
+                    <elseif condition="$vo.order_status eq 1"/><td></td>
+                    <else /><td></td>
+                </if>-->
+                <td style="color: #1aad19">
+                    <if condition="$vo.pocket_type eq 1">
+                        尊享积分
+                        <elseif condition="$vo.pocket_type eq 201" />
+                        消费积分
+                        <elseif condition="$vo.pocket_type eq 202" />
+                        消费积分
+                        <elseif condition="$vo.pocket_type eq 3" />
+                        优惠积分
+                        <elseif condition="$vo.pocket_type eq 4" />
+                        金币积分
+                        <else />
+                        无
+                    </if>
+                    <br/>
+                    <if condition="$vo.pocket_value neq 0 ">
+                        -{$vo.pocket_value}
+                        <else />
+
+                    </if>
+                </td>
+                <if condition="$vo.pocket_frm == 'bonus'">
+                        <td>+{$vo.pocket_value}</td>
+                    <else />
+                        <td></td>
+                 </if>
+
+                <td style="color: #1aad19">微信支付</td>
+                <if condition="$vo.order_status eq 13"><td style="background-color: 	#C3C3C3">驳回审核</td>
+                    <elseif condition="$vo.order_status eq 4"/><td style="background-color: rgba(4,174,115,0.42)">交易完成</td>
+                    <else /><td></td>
+                </if>
+                <!--<td title="{$vo.deliver_address}">{$vo.deliver_address|subtext=10}</td>-->
+                <td>{$vo.addtime|date = "Y-m-d H:i:s",###}</td>
+                <td class="td-manage" style="font-size: 14px;">
+                    <!--<a title="审核" href="/Admin/Order/detail/?order_id={$vo.order_id}">-->
+                    <a title="审核" href="javascript:;" onclick="x_admin_show('审核','/Admin/Order/audit?order_id={$vo.order_id}&source=商城',450,350)">
+                        <img src="/Public/Admin/images/audit.png" alt="" style="width: 40px">
+                        <!--<span style="display:block;position: absolute;font-size: 10px;">审核</span>-->
+                    </a>
+<!--                    <span>&nbsp;&nbsp;&nbsp;  |  &nbsp;&nbsp;&nbsp;</span>-->
+<!--                    <a title="反审核" onclick="order_del(this,'{$vo.order_id}')" href="javascript:;">-->
+<!--                        <img src="/Public/Admin/images/backtrack.png" alt="" style="width: 31px">-->
+<!--                    </a>-->
+                </td>
+            </tr>
+        </volist>
+        </tbody>
+    </table>
+    <div class="page">
+        <div>
+            {$page}
+        </div>
+    </div>
+</div>
+
+<script>var _hmt = _hmt || []; (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+
+</html>

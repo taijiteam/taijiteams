@@ -1,0 +1,46 @@
+<!doctype html>
+<html class="x-admin-sm">
+<head>
+    <include file="Components/header" />
+</head>
+
+<body>
+<div class="x-nav">
+      <span class="layui-breadcrumb">
+        <a href="">首页</a>
+        <a>
+          <cite>规格列表</cite></a>
+      </span>
+</div>
+
+<div class="x-body">
+    <table class="layui-table x-admin">
+        <thead>
+        <tr>
+            <th>序号</th>
+            <th>规格名称</th>
+            <th>所属规格属性</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <volist name="list" id="vo" key="k">
+            <tr>
+                <td>{$k}</td>
+                <td>{$vo.spec_value}</td>
+                <td>{$vo.spec_class_name}</td>
+                <td class="td-manage">
+                    <a title="查看" onclick="" href="javascript:;">
+                        <i class="layui-icon">查看</i>
+                    </a>
+                </td>
+            </tr>
+        </volist>
+        </tbody>
+    </table>
+</div>
+<script>
+</script>
+</body>
+
+</html>

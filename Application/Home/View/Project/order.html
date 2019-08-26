@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>订单页</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Project/css/style.css">
+<style type="text/css">
+.order>.body>.nav{
+	overflow: hidden;
+}
+.order>.body>.nav>ul>a>li{
+	width: 25%;
+	display:  block;
+	float: left;
+	color: rgb(248,194,84);
+	text-align: center;
+}
+.order>.body>.nav>ul>a>li>img{
+	width: 40%;
+	display: block;
+	margin: 0 auto;
+}
+.order>.body>.list>h4{
+	margin: 0;
+	margin-left: 20px;
+	color: rgb(248,194,84);
+}
+.order>.body>.list>ul>a>li{
+	overflow: hidden;
+	background: rgba(53, 53, 53, 0.81);
+	margin: 0 auto;
+}
+.order>.body>.list>ul>a>li>h5{
+	border-bottom: 1px solid rgb(250,196,84);
+	padding-left: 20px;
+	margin: 0;
+	overflow: hidden;
+}
+.order>.body>.list>ul>a>li>h5>span{
+	color: rgb(248,194,84);
+	display: block;
+	float: left;
+	line-height: 40px;
+}
+.order>.body>.list>ul>a>li>h5>object>a{
+	display: block;
+	float: right;
+	width: 70px;
+	color: #fff;
+	text-align: center;
+	margin-top: 5px;
+	margin-right: 20px;
+	line-height: 20px;
+	border-radius: 5px;
+}
+.order>.body>.list>ul>a>li>div{
+	overflow: hidden;
+	border-bottom: 1px solid rgb(250,196,84);
+}
+.order>.body>.list>ul>a>li>div>div{
+	display: block;
+	margin-left: 20px;
+	width: 70%;
+	margin-top: 10px;
+}
+.order>.body>.list>ul>a>li>div>div>p{
+	margin: 0;
+	font-size: 12px;
+	line-height: 20px;
+}
+.order>.body>.list>ul>a>li>div>span{
+	color: rgb(248,194,84);
+	display: block;
+	float: right;
+	margin-right: 20px;
+}
+.order>.body>.list>ul>.zwdd{
+	color: #fff;
+	background: rgb(53,53,53);
+	text-align: center;
+	line-height: 70px;
+	margin: 0px;
+}
+</style>
+<body class="order">
+<!-- 这里是头部 -->
+<header class="cheader">
+	<div>
+		<p><img src="{$_SESSION['information']['headimgurl']}"></p>
+	</div>
+	<p>
+		<span class="span1">
+			<img src="__PUBLIC__/Activity/images/icon/quanbudingdan.svg">
+			<if condition="$o_state eq 1">
+				待确认订单
+			<elseif condition="$o_state eq 2"/>
+				待支付订单
+			<elseif condition="$o_state eq 3"/>
+				待评价订单
+			<else/>
+				全部订单
+			</if>
+		</span>
+		<img class="dao" src="__PUBLIC__/Project/images/icon/dao.png"><!-- <span class="span2"></span> -->
+	</p>
+</header>
+
+<!-- <p><a href="input.html">input</a></p> -->
+<!-- 这里是身体 -->
+<div class="body">
+	<!-- 栏目1 -->
+	<div class="nav">
+		<ul>
+			<a href="{:U('Project/order')}?o_state=1&phone={$_SESSION['infor']['data'][0]['Mobile']}"><li><img src="__PUBLIC__/Project/images/icon/daiqueren.svg"><span>待确认</span></li></a>
+			<a href="{:U('Project/order')}?o_state=2&phone={$_SESSION['infor']['data'][0]['Mobile']}"><li><img src="__PUBLIC__/Project/images/icon/daizhifu.svg"><span>待支付</span></li></a>
+			<a href="{:U('Project/order')}?o_state=3&phone={$_SESSION['infor']['data'][0]['Mobile']}"><li><img src="__PUBLIC__/Project/images/icon/daipingjia.svg"><span>待评价</span></li></a>
+			<a href="{:U('Project/order')}?o_state&phone={$_SESSION['infor']['data'][0]['Mobile']}"><li><img src="__PUBLIC__/Project/images/icon/quanbudingdan.svg"><span>全部订单</span></li></a>
+		</ul>
+	</div>
+	<!-- 栏目2 -->
+	<!--<div class="list">
+		<h4>宾馆订单</h4>
+		<ul>
+			<if condition="$counthotel eq 0">
+				<p class="zwdd">暂无订单</p>
+			<else />
+				<volist name="orderhotel" id="orderhotel">
+					<a href="{:U('Project/ordercont')}?o_id={$orderhotel.o_id}&cate=宾馆">
+						<li>
+							<h5><span>订单号：{$orderhotel.o_number}</span>
+									<if condition="$orderhotel.o_state eq 1">
+										<object><a href="" style="background: #E6602E;">待确认</a></object>
+									<elseif condition="$orderhotel.o_state eq 2"/>
+										<object><a href="" style="background: #8D0415;">待支付</a></object>
+									<elseif condition="$orderhotel.o_state eq 3"/>
+										<object><a href="{:U('Project/evaluation')}?o_id={$orderhotel.o_id}" style="background: #FAC454;">待评价</a></object>
+									<elseif condition="$orderhotel.o_state eq 4"/>
+										<object><a href="" style="background: #1D9A74;">已完成</a></object>
+									<else/>
+										<object><a href="" style="background: #838383;">已取消</a></object>
+									</if>
+							</h5>
+							<div>
+								<div>
+									<p>{$orderhotel.p_little}</p>
+									<p>数量：1间 {$orderhotel.r_title}</p>
+									<p>订单日期：{$orderhotel.o_time}</p>
+								</div>
+								<span>￥{$orderhotel.o_aprace}</span>
+							</div>
+						</li>
+					</a>
+				</volist>
+			</if>
+			&lt;!&ndash; <a href="">
+				<li>
+					<h5><span>订单号：1806259402181988</span><object><a href="">待确认</a></object></h5>
+					<div>
+						<div>
+							<p>上海世贸皇家艾美酒店</p>
+							<p>数量：1间 豪华双床房</p>
+							<p>订单日期：2018-07-08  10:10</p>
+						</div>
+						<span>￥2417</span>
+					</div>
+				</li>
+			</a> &ndash;&gt;
+		</ul>
+	</div>-->
+	<!-- 栏目2 -->
+	<!--<div class="list">
+		<h4>旅游订单</h4>
+		<ul>
+			<if condition="$counttour eq 0">
+				<p class="zwdd">暂无订单</p>
+			<else />
+				<volist name="ordertour" id="ordertour">
+					<a href="{:U('Project/ordercont')}?o_id={$ordertour.o_id}&cate=旅游">
+						<li>
+							<h5><span>订单号：{$ordertour.o_number}</span>
+								
+									<if condition="$ordertour.o_state eq 1">
+										<object><a href="" style="background: #E6602E;">待确认</a></object>
+									<elseif condition="$ordertour.o_state eq 2"/>
+										<object><a href="" style="background: #8D0415;">待支付</a></object>
+									<elseif condition="$ordertour.o_state eq 3"/>
+										<object><a href="{:U('Project/evaluation')}?o_id={$ordertour.o_id}" style="background: #FAC454;">待评价</a></object>
+									<elseif condition="$ordertour.o_state eq 4"/>
+										<object><a href="" style="background: #1D9A74;">已完成</a></object>
+										<else/>
+										<object><a href="" style="background: #838383;">已取消</a></object>
+									</if>
+							</h5>
+							<div>
+								<div>
+									<p>{$ordertour.p_title|htmlspecialchars_decode|strip_tags|mb_substr=0,40,'utf-8'}</p>
+									<p>人数：{$ordertour.o_nop}人</p>
+									<p>订单日期：{$ordertour.o_time}</p>
+								</div>
+								<span>￥{$ordertour.o_aprace}</span>
+							</div>
+						</li>
+					</a>
+				</volist>
+			</if>
+			&lt;!&ndash; <a href="">
+				<li>
+					<h5><span>订单号：1806259402181988</span><object><a href="">待确认</a></object></h5>
+					<div>
+						<div>
+							<p>上海世贸皇家艾美酒店</p>
+							<p>数量：1间 豪华双床房</p>
+							<p>订单日期：2018-07-08  10:10</p>
+						</div>
+						<span>￥2417</span>
+					</div>
+				</li>
+			</a> &ndash;&gt;
+		</ul>
+	</div>-->
+	<!-- 栏目2 -->
+	<div class="list">
+		<h4>餐饮订单 </h4>
+		<ul>
+			<if condition="$countfood eq 0">
+				<p class="zwdd">暂无订单</p>
+			<else />
+				<volist name="orderfood" id="orderfood">
+					<a href="{:U('Project/ordercont')}?o_id={$orderfood.o_id}&cate=美食">
+						<li>
+							<h5><span>订单号：{$orderfood.o_number}</span>
+
+								<if condition="$orderfood.o_state eq 1">
+									<object><a href="" style="background: #E6602E;;">待确认</a></object>
+									<elseif condition="$orderfood.o_state eq 2"/>
+									<object><a href="" style="background: #8D0415;">待享用</a></object>
+									<elseif condition="$orderfood.o_state eq 3"/>
+									<object><a href="{:U('Project/evaluation')}?o_id={$orderfood.o_id}" style="background: #FAC454;">待评价</a></object>
+									<elseif condition="$orderfood.o_state eq 4"/>
+									<object><a href="" style="background: #1D9A74;">已完成</a></object>
+									<else/>
+									<object><a href="" style="background: #838383;">已取消</a></object>
+								</if>
+							</h5>
+							<div>
+								<div>
+									<p>{$orderfood.p_little}</p>
+									<p>{$orderfood.o_around} {$orderfood.o_nop}人</p>
+									<p>订单日期：{$orderfood.o_time}</p>
+								</div>
+								<span><!-- ￥2417 --></span>
+							</div>
+						</li>
+					</a>
+				</volist>
+			</if>
+		</ul>
+	</div>
+</div>
+<!-- 这里是底部 -->
+<include file="ProjectPublic/footer" />
+</body>
+</html>

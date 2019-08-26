@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<include file="Components/header" />
+</head>
+<body>
+	
+
+
+ <div class="jyzttops container-fluid">
+ 	<div class="container">
+		<dbo><a href="/Mobile/Member/index"><img src="/Public/Mobile/images/sss.png"></a></dbo>
+	 	
+	 	<span style="margin-left:130px;"><a href="javascript:void(0);">我的收藏</a></span>
+ 	</div>
+ </div>
+<!--状态-->		
+
+<volist name="collect" id="vo">
+	<div class="rysplists container-fluid">
+		<div class="ry_aa">
+			<div class="container">
+				<div class="ovh fl">
+					<a href="/Mobile/Goods/detail?gc_id={$vo.goods_common_id}"><img src="{$vo.main_img}"></a>
+				</div>
+				<div class="rynrr fl">
+					<div class="rynrr_a mt0">
+						<span>{$vo.goods_name}</span>
+						<a href="javascript:;" class="data-collect-btn" data-goods-id="{$vo.goods_common_id}" class="nmir_x"><img src="/Public/Mobile/images/scx.png"></a>
+					</div>
+					<div class="rynrr_b">
+						<div class="ys_nr_b w100">
+							<span><img src="/Public/Mobile/images/rs1.png"></span>
+							<span class="ice_b">{$vo.goods_price}.00</span>
+						 </div>
+						<p>
+							{$vo.goods_remark}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</volist>
+
+
+
+<script src="/Public/Mobile/js/jquery-1.11.0.min.js"></script>
+<script src="/Public/Mobile/js/swiper.min.js"></script>
+<script src="/Public/Mobile/js/all.js"></script>
+
+ <script>
+	 //收藏商品
+	 $(document).on('click','.data-collect-btn',function () {
+		 var gc_id = $(this).attr('data-goods-id');
+		 $.ajax({
+			 type: 'post',
+			 url : '/Mobile/Member/setCollect',
+			 data:{
+				 gc_id : gc_id
+			 },
+			 dataType :'json',
+			 success:function (res) {
+				 if (res.code == "200"){
+					 alert('已取消收藏');
+					 window.location.reload();
+				 }
+			 }
+		 })
+	 });
+
+ </script>
+</body>
+</html>

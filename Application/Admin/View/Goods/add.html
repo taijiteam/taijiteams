@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html class="x-admin-sm">
+
+<head>
+    <include file="Components/header" />
+</head>
+
+<style type="text/css">
+    .layui-tab-content  .layui-form-item {
+        margin-top: 60px;
+        margin-left: 40px;
+}
+    .layui-textarea{
+        width: 600px;
+    }
+</style>
+
+<body>
+<div class="x-body">
+    <div class="layui-tab">
+        <ul class="layui-tab-title">
+            <li id="goods-common-li">商品基本信息</li>
+            <li id="goods-spec-li">商品详情信息</li>
+            <li id="goods-image-li">图片详细信息</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item" id="goods-common-page">
+                <include file="Goods/goods_common_form" />
+             </div>
+            <div class="layui-tab-item" id="goods-spec-page">
+                <include file="Goods/goods_detail_table" />
+            </div>
+            <div class="layui-tab-item" id="goods-image-page">
+                <include file="Goods/goods_photo" />
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Admin/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Admin/ueditor/ueditor.all.min.js"> </script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Admin/ueditor/lang/zh-cn/zh-cn.js"></script>
+
+
+
+<script type="text/javascript" >
+
+    $(function(){
+        var show_page = '{$show_page}';
+
+        init();
+        function init() {
+            $.ajax ({
+                type:'get',
+                url:'/Admin/Goods/goodsInfo/?gc_id={$res.goods_common_id}',
+                success: function(res){
+                    var main_img ='';
+                    main_img += '<img src="__PUBLIC__/Uploads/Goods/' + res.data.main_img + ' "  width="375px" height="250px" />'
+                    $('#photo').html(main_img);
+                    var desc_img ='';
+                    desc_img += '<img src="__PUBLIC__/Uploads/Goods/' + res.data.desc_img + ' "  width="375px" />'
+                    $('#photo2').html(desc_img);
+                }
+                ,error: function(){
+                        //请求异常回调
+                    }
+                });
+
+            if(show_page == 'spec'){
+                $("#goods-spec-li").addClass("layui-this");
+                $("#goods-spec-page").addClass("layui-show");
+            } else{
+                $("#goods-common-li").addClass("layui-this");
+                $("#goods-common-page").addClass("layui-show");
+            }
+        }
+
+        layui.use(['form','layer','element','upload'], function(){
+            $ = layui.jquery;
+            var form = layui.form,layer = layui.layer;
+            //自定义验证规则
+            form.verify({
+                nikenames: function(value){
+                    if(value.length < 2){
+                        return '编码格式不正确';
+                    }
+                }
+
+            });
+            //监听提交
+        });
+
+        //提交
+        $(document).on("click","#addGoods",function () {
+            var goods_category          =   $("#goods_category option:checked").val();		//商品类别
+            var goods_code              =   $('input[name="goods_code"]').val();		    //商品编号
+            var goods_name              =   $('input[name="goods_name"]').val();		    //商品名称
+            var main_img                =   $('#goods-main-image-show').attr("src");		//商品主图
+            var main2_img               =   $('#goods-main-image-show2').attr("src");		//商品主图2
+            var main3_img               =   $('#goods-main-image-show3').attr("src");		//商品主图3
+            var main4_img               =   $('#goods-main-image-show4').attr("src");		//商品主图4
+            var main5_img               =   $('#goods-main-image-show5').attr("src");		//商品主图5
+            var desc_img                =   $('#goods-desc-image-show').attr("src");		//商品详情图
+            var adve_img                =   $('#goods-adve-image-show').attr("src");		//商品详情图
+            var goods_unit              =   $('input[name="goods_unit"]').val();	    	//商品单位
+            var goods_pocket_type       =   $("#goods_pocket_type option:checked").val();	//商品积分
+            var goods_remark            =   $('#goods_remark').val();	                    //商品详情
+            var is_hidden               =   $('#is_hidden option:checked').val();		    //是否隐藏
+            $.ajax({
+                type:'post',
+                url :"/Admin/Goods/add",
+                data:{
+
+                    'goods_category': goods_category,
+                    'goods_code'    : goods_code,
+                    'goods_name'    : goods_name,
+                    'goods_unit'    : goods_unit,
+                    'goods_pocket_type'  : goods_pocket_type,
+                    'goods_remark'  : goods_remark,
+                    'is_hidden'     : is_hidden,
+                    'spec_info'     : getSpecTableData(),
+                    'main_img'      : main_img,
+                    'main2_img'     : main2_img,
+                    'main3_img'     : main3_img,
+                    'main4_img'     : main4_img,
+                    'main5_img'     : main5_img,
+                    'desc_img'      : desc_img,
+                    'adve_img'      : adve_img
+                },
+                dataType: 'json',
+                success : function (res) {
+                    console.log(res);
+                    if (res.code == 200) {
+                        layer.msg("添加成功",{
+                            icon:1,
+                            time:2000,
+                            shade:[0.6,'#000000']
+                        },function(){
+                            window.location.href = "/Admin/Goods/goodsList"
+                        });
+                    } else {
+                        layer.msg(res.data.message,{
+                            icon:2,
+                            time:2000,
+                            shade:[0.6,'#000000']
+                        });
+                    }
+                }
+            });
+            return false;
+        });
+
+        //提交
+        $(document).on("click","#saveGoods",function () {
+            var goods_categorys          =   $("#goods_categorys option:checked").val();	//商品类别
+            var goods_codes              =   $('input[name="goods_codes"]').val();		    //商品编号
+            var goods_names              =   $('input[name="goods_names"]').val();		    //商品名称
+            //var main_img                 =   $('#goods-main-image-show').attr("src");		//商品主图
+            //var desc_img                 =   $('#goods-desc-image-show').attr("src");		//商品详情图
+            //var adve_img                 =   $('#goods-adve-image-show').attr("src");		//商品详情图
+            var goods_units              =   $('input[name="goods_units"]').val();	    	//商品单位
+            var goods_pocket_types       =    $("#goods_pocket_types option:checked").val();		//商品积分
+            var goods_remarks            =   $('#goods_remarks').val();	                    //商品详情
+            var is_hiddens               =   $('#is_hiddens option:checked').val();		    //是否隐藏
+            console.log(main2_img);
+            $.ajax({
+                type:'post',
+                url :"/Admin/Goods/saveGoods/?gc_id={$res.goods_common_id}",
+                data:{
+                    'goods_category': goods_categorys,
+                    'goods_code'    : goods_codes,
+                    'goods_name'    : goods_names,
+                    'goods_unit'    : goods_units,
+                    'goods_pocket_type'  : goods_pocket_types,
+                    'goods_remark'  : goods_remarks,
+                    'is_hidden'     : is_hiddens,
+                    //'main_img'      : main_img,
+                    //'desc_img'      : desc_img,
+                    //'adve_img'      : adve_img
+                },
+                dataType: 'json',
+                success : function (res) {
+                    console.log(res);
+                    if (res.code == 200) {
+                        layer.msg("编辑成功", {icon: 1,shade:[0.6,'#000000'],time:2000},function(){
+                            window.location.href = "/Admin/Goods/goodsList";
+                        });
+                    } else {
+                        layer.msg(res.message,{
+                            icon:2,
+                            time:2000,
+                            shade:[0.6,'#000000']
+                        });
+                    }
+                }
+            });
+            return false;
+        });
+
+        //提交
+        $(document).on("click","#saveGoodsImg",function () {
+            //var gc_id                    =   $(this).attr('data-goods-id');                 //商品id
+            var main_img                 =   $('#goods-main-image-show').attr("src");		//商品主图
+            var main2_img                 =   $('#goods-main-image-show2').attr("src");		//商品主图
+            var main3_img                 =   $('#goods-main-image-show3').attr("src");		//商品主图
+            var main4_img                 =   $('#goods-main-image-show4').attr("src");		//商品主图
+            var main5_img                 =   $('#goods-main-image-show5').attr("src");		//商品主图
+            var desc_img                 =   $('#goods-desc-image-show').attr("src");		//商品详情图
+            var adve_img                 =   $('#goods-adve-image-show').attr("src");		//商品详情图
+            $.ajax({
+                type:'post',
+                url :"/Admin/Goods/save_img/?gc_id={$res.goods_common_id}",
+                data:{
+                    'main_img'      : main_img,
+                    'main2_img'     : main2_img,
+                    'main3_img'     : main3_img,
+                    'main4_img'     : main4_img,
+                    'main5_img'     : main5_img,
+                    'desc_img'      : desc_img,
+                    'adve_img'      : adve_img
+                },
+                dataType: 'json',
+                success : function (res) {
+                    console.log(res);
+                    if (res.code == 200) {
+                        layer.msg("上传成功", {icon: 1,shade:[0.6,'#000000'],time:2000},function(){
+                            window.location.href = "/Admin/Goods/goodsList";
+                        });
+                    } else {
+                        layer.msg(res.message,{
+                            icon:2,
+                            time:2000,
+                            shade:[0.6,'#000000']
+                        });
+                    }
+                }
+            });
+            return false;
+        });
+
+
+
+        //获取规格表里的商品信息 spec_table
+        function getSpecTableData()
+        {
+            var t = $('.spec-table-item').serializeArray();
+            var d = {};
+            console.log(t);
+            $.each(t, function () {
+                d[this.name] = this.value;
+            });
+            console.log(d);
+
+            return d;
+        }
+    })
+</script>
+</body>
+
+</html>

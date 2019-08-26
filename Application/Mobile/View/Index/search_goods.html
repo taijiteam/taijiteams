@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<include file="Components/header" />
+</head>
+<body>
+    <div class="container-fluid index_a">
+        <div class="container top_sh">
+			<a href="/Mobile/Index/home">
+				<div class="back fl">
+				<img src="/Public/Mobile/images/back.png">
+			</div>
+			</a>
+	         <div class="top_sch fl">
+	           <span><img src="/Public/Mobile/images/copy.png"></span>
+	            <input type="text" id="search_goods" placeholder="稀世之珍，至臻品质！" style="border-left: none;">
+	         </div>
+	         <div  class="sch_b fr" style="width: 50px">
+	         	<input type="submit" id="search" value="搜索" style="width: 100%;">
+	         </div>
+        </div>
+		<!--<div class="container-fluid rmsdd">
+			<div class="bf pd_m  qdao">
+				<a href="#">热门搜索</a>
+			</div>
+		</div>
+		<div class="container scarch_yun">
+			<ul>
+				<li><a href="#">如意算盘</a></li>
+				<li><a href="#">搜索</a></li>
+				<li><a href="#">吊坠</a></li>
+				<li><a href="#">搜索</a></li>
+				<li><a href="#">搜索1</a></li>
+				<li><a href="#">搜索1</a></li>
+				<li><a href="#">搜索1</a></li>
+				<li><a href="#">搜索1</a></li>
+				<li><a href="#">搜索1</a></li>
+				<li><a href="#">搜索1</a></li>
+			</ul>
+		</div>
+    </div>-->
+
+	<!--all list-->
+	<div class="allpro container" style="margin-top: 40px;">
+		<ul id="cateList">
+
+		</ul>
+	</div>
+	<!--line-->
+	<div  class="line_a container-fluid"></div>
+
+<script src="/Public/Mobile/js/jquery-1.11.0.min.js"></script>
+<script src="/Public/Mobile/js/swiper.min.js"></script>
+<script src="/Public/Mobile/js/all.js"></script>
+</body>
+
+<script type="text/javascript">
+	$("#search").click(function () {
+		var goods_name = $('#search_goods').val();
+		$.ajax({
+			type : 'get',
+			url	 : "/Mobile/Index/search_goodsList",
+			data :{
+				goods_name :goods_name
+			},
+			dataType: "json",
+			success:function (res) {
+				console.log(res);
+				if (res.code == 200)
+				{
+					var goods_html = search_goods_list(res.data);
+					console.log(goods_html);
+					$('#cateList').empty();
+					$('#cateList').append(goods_html);
+				}
+			},
+			error:function(data){
+				console.log(data.message)
+			}
+		})
+
+		function search_goods_list(goods_list) {
+			var html = '';
+			for (i=0;i<goods_list.length;i++)
+			{
+				html = html + '<li>\n' +
+						'<div class="ovh">\n' +
+						'<a  href="/Mobile/Goods/detail?gc_id='+ goods_list[i].goods_common_id +'">\n' +
+						'<img src="'+ goods_list[i].main_img +'" style="height: 104px">\n' +
+						'</a>\n' +
+						'</div>\n' +
+						'<div class="pr_text">\n' +
+						'<h1>'+ goods_list[i].goods_name +'</h1>\n' +
+						'<p>' + goods_list[i].goods_remark +'</p>\n' +
+						'<div  class="pr_txt_a">\n' +
+						'<div class="pr_ice fl">\n' +
+						'<span><img src="/Public/Mobile/images/rw.png"></span>\n' +
+						'<span class="ice_b">'+ goods_list[i].goods_price +'.00</span>\n' +
+						'<span class="ice_c">元</span>\n' +
+						'</div>\n' +
+						'<div class="pr_gwc fr">\n' +
+						'<a href="#"><img src="/Public/Mobile/images/gwc.png"></a>\n' +
+						'</div>\n' +
+						'</div>\n' +
+						'</div>\n' +
+						'</li>'
+
+			}
+
+			return html;
+		}
+
+	})
+
+
+</script>
+</html>

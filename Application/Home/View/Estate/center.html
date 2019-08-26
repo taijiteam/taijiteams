@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 防止手机点击放大问题 -->
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+	<!-- the end -->
+	<title>个人中心</title>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Estate/css/style.css">
+</head>
+<body class="center">
+<header>
+	<img src="__PUBLIC__/Estate/images/banner1.png">
+	<div class="div_1">
+		<include file="EstatePublic/cheader" />
+		<span>个人中心</span>
+	</div>
+	<div class="div_2">
+		<a href="{:U('Estate/rental')}?openid={$_SESSION['openid']}">发布房源</a>
+		<p style="background:url(__PUBLIC__/Estate/images/dibutu.png) center 0 no-repeat; background-size: 100%;overflow: hidden;margin: auto;padding-top: 24px;"><span><a href="{:U('Estate/house')}?phone={$_SESSION['infor']['data'][0]['Mobile']}" style="color:#f5d55f;">查看全部&gt;</a></span></p>
+	</div>
+</header>
+<div class="cen">
+	<a href="{:U('Estate/collect')}?openid={$_SESSION['openid']}"><p class="border"><img src="__PUBLIC__/Estate/images/shouc.png">我的收藏</p></a>
+	<a href="{:U('Estate/information')}?openid={$_SESSION['openid']}"><p><img src="__PUBLIC__/Estate/images/huiyuan.png">成员信息</p></a>
+	<a href="{:U('Estate/order')}?openid={$_SESSION['openid']}"><p><img src="__PUBLIC__/Estate/images/yuyue.png">我的预约</p></a>
+	<a href="{:U('Estate/house')}?phone={$_SESSION['infor']['data'][0]['Mobile']}"><p><img src="__PUBLIC__/Estate/images/fangyuan.png">我的房源</p></a>
+</div>
+<div class="cen">
+	<a href="{:U('Estate/feedback')}?openid={$_SESSION['openid']}&user={$_SESSION['infor']['data'][0]['TrueName']}&uphone={$_SESSION['infor']['data'][0]['Mobile']}"><p class="border"><img src="__PUBLIC__/Estate/images/fankiu.png">意见反馈</p></a>
+	<a href="aboutme.html"><p><img src="__PUBLIC__/Estate/images/guanyu.png">关于我们</p></a>
+</div>
+
+<p id="margin-bottom"></p>
+<include file="EstatePublic/footer" />
+</body>
+</html>

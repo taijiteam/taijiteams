@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <include file="Components/header" />
+</head>
+<body>
+
+<div  class="screenht">
+
+    <include file="Components/padding" title="收货地址" redirect_url="{$frm|urldecode}" />
+
+    <div class="shouhads container-fluid" style="margin-bottom: 120px">
+        <empty name="address">
+            <!-- 没有地址情况 -->
+            <else />
+            <volist name="address" key="k" id="vo">
+                <if condition="$vo.is_default eq 1">
+                    <div  class="shadlist  shadliston">
+                        <div class="fl  shad_a checkbox">
+                            <label><input type="radio" checked name="地址选择" value="{$vo.id}"></label>
+                        </div>
+                        <div  class="fl shad_b">
+                            <h1>{$vo.consignee}<span>默认</span></h1>
+                            <p>{$vo.address}</p>
+                        </div>
+                        <div class="fr shad_c">
+                            <p>{$vo.mobile}</p>
+                            <a href="/Mobile/Address/edit?id={$vo.id}"><img src="/Public/Mobile/images/3315.png"></a>
+                        </div>
+                    </div>
+                    <else />
+                    <div  class="shadlist ">
+                        <div class="fl  shad_a checkbox">
+                            <label><input type="radio" name="地址选择" value="{$vo.id}"></label>
+                        </div>
+                        <div  class="fl shad_b">
+                            <h1>{$vo.consignee}<span>默认</span></h1>
+                            <p>{$vo.address}</p>
+                        </div>
+                        <div class="fr shad_c">
+                            <p>{$vo.mobile}</p>
+                            <a href="/Mobile/Address/edit?id={$vo.id}"><img src="/Public/Mobile/images/3315.png"></a>
+                        </div>
+                    </div>
+                </if>
+            </volist>
+        </empty>
+    </div>
+
+    <div class="screenft_a" style="position: fixed; z-index:9999;bottom: 30px">
+        <a href="/Mobile/Address/add?redirect_url={$frm}"><img src="/Public/Mobile/images/jia.png">&nbsp;&nbsp;添加地址</a>
+    </div>
+</div>
+
+<include file="Components/footer" />
+</body>
+</html>
+
+<script>
+    $(function(){
+        var redirect_url = "{$frm | urldecode}";
+
+        $('input[type="radio"]').click(function(){
+            var address_id = $(this).val();
+            $.ajax
+            ({
+                type:'get',
+                url:'/Mobile/Address/set_default',
+                data:{
+                    address_id:address_id
+                },
+                dataType:'json',
+                success:function (res) {
+                    if (res.code == 200)
+                    {
+                        window.location.href = redirect_url;
+                    }else{
+                        alert(res.message);
+                    }
+                }
+            });
+        });
+    });
+</script>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+	<title>Document</title>
+	<style type="text/css">
+		body{
+			background: black;
+			padding-bottom: 10rem;
+		}
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.Member{
+			width: 100%;
+			background: black;
+		}
+		.header{
+			width: 100%;
+			margin: 1px 0;
+			display: flex;
+			color: #fff;
+		}
+		.header_left,.header_right{
+			flex: 1;
+			text-align: center;
+			line-height: 3.125rem;
+		}
+		.header_center{
+			flex: 4;
+			text-align: center;
+			line-height: 3.125rem;
+		}
+		.nav{
+			width: 100%;
+			color: #f8e2c4;
+			text-align: center;
+			line-height: 3rem;
+			font-size: 1.125rem;
+			font-weight: bold;
+		}
+		.nav_list{
+			width: 80%;
+			font-size: 1rem;
+			color: #f8e2c4;
+			text-align: left;
+			line-height: 2rem;
+			margin: 0 auto;
+		}
+		.section_vip{
+			color: #f8e2c4;
+			margin-left: 15%;
+			margin-top: 1rem;
+		}
+		.sum_cont{
+			width: 7rem;
+			height: 2rem;
+			border: 1px solid #d6b372;
+			display: flex;
+			margin-left: 5%;
+			margin-top: 1rem;
+			font-size: 1rem;
+			border-radius: 0.8rem;
+		}
+		.single{
+			margin: 1rem 0;
+			font-size: 0.87rem;
+		}
+		.single>span{
+			color: #999;
+		}
+		.minute{
+			width: 1rem;
+			height: 1.3rem;
+			flex: 2;
+			text-align: center;
+			border: 1px solid;
+			border-radius: 50%;
+			line-height: 1.3rem;
+			margin-top: 0.3rem;
+			margin-left: 0.2rem;
+			margin-right: 0.2rem;
+		}
+		.input{
+			flex: 2;
+			text-align: center;
+			font-size: 0.75rem;
+			color: #fff;
+			line-height: 2rem;
+		}
+		.add{
+			width: 1rem;
+			height: 1.3rem;
+			flex: 2;
+			text-align: center;
+			border: 1px solid;
+			border-radius: 50%;
+			line-height: 1.3rem;
+			margin-top: 0.3rem;
+			margin-left: 0.2rem;
+			margin-right: 0.2rem;
+		}
+		.section_vvip{
+			color: #f8e2c4;
+			margin-left: 15%;
+			margin-top: 1rem;
+		}
+		.cont_flex{
+			display: flex;
+		}
+		.vvip_p{
+			color: #999;
+			padding: 1.3rem 0 0 1rem;
+		}
+		.single_footer{
+			margin: 1rem 0;
+			font-size: 0.87rem;
+		}
+		.single_footer>span{
+			color: #999;
+		}
+		.footer{
+			width: 100%;
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			z-index: 99999999;
+			background: black;overflow: auto;
+		}
+		.footer_flex{
+			width: 5rem;
+			height: 1.56rem;
+			border: 1px solid #464646;
+			text-align: center;
+			line-height: 1.56rem;
+			color: #999999;
+			margin-left: 35%;
+			display: inline-block;
+		}
+		.footer_amount{
+			width: 100%;
+			font-size: 1.25rem;
+			font-weight: bold;
+			text-align: center;
+			color: #efc694;
+			margin: 1.25rem 0;
+		}
+		.footer_Settlement{
+			width: 100%;
+			text-align: center;
+			margin-bottom: 2rem;
+		}
+		.footer_btn{
+			width: 8.5rem;
+			height: 2.5rem;
+			border: 1px solid #efc694;
+			background: #efc694;
+			color: #8b572a;
+			font-size: 1rem;
+			font-weight: bold;
+			border-radius: 1.25rem;
+		}
+	</style>
+</head>
+<body>
+	<div class="Member">
+		<div class="header">
+			<div class="header_left">
+				 < 返回
+			</div>
+			<div class="header_center">
+				支付页面
+			</div>
+			<div class="header_right">
+				 Edit 
+			</div>
+		</div>
+		<div class="nav">
+			您信息提交成功
+		</div>
+		<div class="nav_list">
+			请选择套餐
+		</div>
+		<!-- VIP -->
+		<div class="section_vip">
+			<div class="single">
+				<input type="radio" name="sex" value="male" checked/> <span>VIP套餐国内服务 &nbsp;&nbsp;&nbsp;210元/人</span>
+				<div class="sum_cont">
+					<label class="minute" id="num-jian">-</label>
+					<div class="input" id="input-num">0</div>
+					<label class="add" id="num-jia">+</label>
+				</div>
+			</div>
+			<div class="single">
+				<input type="radio" name="sex" value="male" /> <span>VIP套餐国际服务 &nbsp;&nbsp;&nbsp;420元/人</span>
+				<div class="sum_cont">
+					<label class="minute">-</label>
+					<div class="input">0</div>
+					<label class="add">+</label>
+				</div>
+			</div>
+		</div>
+		<!-- VVIP -->
+		<div class="section_vvip">
+			<div class="single">
+				<input type="radio" name="sex" value="male" checked/> <span>VVIP套餐国内服务(主贵宾厅) &nbsp;&nbsp;&nbsp;2800元/厅</span>
+				<div class="cont_flex">
+					<div class="sum_cont">
+						<label class="minute">-</label>
+						<div class="input">0</div>
+						<label class="add">+</label>
+					</div>
+					<div class="vvip_p">
+						添加同厅人数量(280/人)
+					</div>
+				</div>
+			</div>
+			<div class="single">
+				<input type="radio" name="sex" value="male" /> <span>VVIP套餐国内服务(其他贵宾厅) &nbsp;&nbsp;&nbsp;1400元/厅</span>
+				<div class="cont_flex">
+					<div class="sum_cont">
+						<label class="minute">-</label>
+						<div class="input">0</div>
+						<label class="add">+</label>
+					</div>
+					<div class="vvip_p">
+						添加同厅人数量(280/人)
+					</div>
+				</div>
+			</div>
+			<div class="single">
+				<input type="radio" name="sex" value="male" /> <span>VVIP套餐国际服务(每批次二小时) &nbsp;&nbsp;&nbsp;7000元/厅</span>
+				<div class="cont_flex">
+					<div class="sum_cont">
+						<label class="minute">-</label>
+						<div class="input">0</div>
+						<label class="add">+</label>
+					</div>
+					<div class="vvip_p">
+						添加乘机人数量(2100/人)
+					</div>
+				</div>
+				<div class="cont_flex">
+					<div class="sum_cont">
+						<label class="minute">-</label>
+						<div class="input">0</div>
+						<label class="add">+</label>
+					</div>
+					<div class="vvip_p">
+						添加迎送人数量(480/人)
+					</div>
+				</div>
+			</div>
+			<div class="single_footer">
+				<input type="checkbox" name="sex" value="male" class="footer_int" /> <span>积分抵扣</span>
+				<div class="footer_flex">
+					2600积分
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="footer_amount">
+				总金额：4000
+			</div>
+			<div class="footer_Settlement">
+				<button class="footer_btn">结 算</button>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+<script type="text/javascript">
+	$(".minute").on("click",function (m) {
+           var obj = $(this).closest("div").find(".input");
+           if (obj.html() <= 0) {
+                obj.html(0);
+           } else {
+				obj.html(parseInt(obj.html()) - 1);
+           }
+           obj.change();
+     });
+     $(".add").on("click",function (m) {
+           var obj = $(this).closest("div").find(".input");
+           if (obj.html() <= 9) {
+                obj.html(parseInt(obj.html()) + 1);
+           } else {
+				obj.html(parseInt(obj.html()) + 1);
+           }
+           obj.change();
+     });
+</script>
+</html>

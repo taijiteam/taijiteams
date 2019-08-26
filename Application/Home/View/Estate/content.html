@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>详情页</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Estate/css/style.css">
+<script src="__PUBLIC__/Estate/js/jquery-1.8.3.min.js"></script>
+	<style type="text/css">
+		.layui-layer-content{
+			color: #555;
+		}
+		.scsc{
+			display: inline-block;
+			float: right;
+		}
+		.scsc>p{
+			display: inline-block;
+			margin: 0;
+		}
+		.scsc>p>a>img{
+			width: 22px;
+		}
+	</style>
+</head>
+<body class="content">
+	<!--大图轮播-->
+	<div class="container">
+		<div id="slide" class="slide" class="index-slide" alt="star">
+			<!-- 轮播图片数量可自行增减 -->
+			<volist name="photo" id="photo">
+				<div class="img"><img src="__PUBLIC__/Uploads/Estate/{$photo.p_photo}"/></div>
+			</volist>
+			<!-- <div class="img"><img src="__PUBLIC__/Estate/images/photo.png"/></div>
+			<div class="img"><img src="__PUBLIC__/Estate/images/photo.png"/></div>
+			<div class="img"><img src="__PUBLIC__/Estate/images/photo.png"/></div>
+			<div class="img"><img src="__PUBLIC__/Estate/images/photo.png"/></div> -->
+
+			<div class="slide-bt"></div>
+		</div>
+		<!-- <button onclick="left()">上一页</button>
+		<button onclick="right()">下一页</button> -->
+	</div>
+	<!--大图轮播-->
+	<div class="div_1">
+		<h4>{$content.e_category}详情</h4>
+		<div>
+			<h4>{$content.e_title}</h4>
+			<!-- <h4>虹梅南路附近</h4> -->
+			<p>
+				<span class="span_1">{$content.e_rent}元/月</span>
+				<span class="span_2">{$content.e_payment}</span>
+				<!-- 收藏按钮 -->
+				<if condition="$collect.c_id eq ''">
+					<div class="scsc" style="display: inline-block;float: right"><p class="shoucang" style="display: inline-block;margin: 0;"><a onClick="admin_start(this,{$content.e_id},{$_SESSION['cardId']})" href="javascript:;"><img src="__PUBLIC__/Project/images/icon/shoucang1.svg" style="width: 22px;"></a></p></div>
+				<else/>
+					<div class="scsc" style="display: inline-block;float: right"><p class="shoucang" style="display: inline-block;margin: 0;"><a onClick="admin_stop(this,{$collect.c_id},{$content.e_id},{$_SESSION['cardId']})" href="javascript:;"><img src="__PUBLIC__/Project/images/icon/shoucang2.svg" style="width: 22px;"></a></p></div>
+				</if>
+				
+			</p>
+		</div>
+	</div>
+	<div class="div_2">
+		<div>
+			<h4>基本信息</h4>
+			<span>装修：{$content.e_conditions}</span><span>面积：{$content.e_area}㎡</span>
+			<span>楼层：{$content.e_floor}层</span><span>类别：{$content.e_category}</span>
+			<if condition="$content.e_category eq '住宅'"><span>户型：{$content.e_housetype}</span><else /><span>层高：{$content.e_height}m</span></if>
+			<span>付款方式：{$content.e_payment}</span><if condition="$content.e_category eq '住宅'"><span>小区地址：{$content.e_community}</span><else /></if>
+		</div>
+		<if condition="$content.e_category eq '住宅'">
+		<div>
+			<h4>配套设施</h4>
+			<ul>
+				<li><if condition="$content.e_bed eq 1"><img src="__PUBLIC__/Estate/images/chuang.png"><else/><img src="__PUBLIC__/Estate/images/chuang1.png"></if>床</li>
+				<li><if condition="$content.e_tv eq 1"><img src="__PUBLIC__/Estate/images/dianshi.png"><else/><img src="__PUBLIC__/Estate/images/dianshi1.png"></if>电视</li>
+				<li><if condition="$content.e_kongtiao eq 1"><img src="__PUBLIC__/Estate/images/kongtiao.png"><else/><img src="__PUBLIC__/Estate/images/kongtiao1.png"></if>空调</li>
+				<li><if condition="$content.e_washer eq 1"><img src="__PUBLIC__/Estate/images/xiyiji.png"><else/><img src="__PUBLIC__/Estate/images/xiyiji1.png"></if>洗衣机</li>
+				<li><if condition="$content.e_heating eq 1"><img src="__PUBLIC__/Estate/images/nuanqi.png"><else/><img src="__PUBLIC__/Estate/images/nuanqi1.png"></if>暖气</li>
+				<li><if condition="$content.e_balcony eq 1"><img src="__PUBLIC__/Estate/images/yangtai.png"><else/><img src="__PUBLIC__/Estate/images/yangtai1.png"></if>阳台</li>
+				<li><if condition="$content.e_wardrobe eq 1"><img src="__PUBLIC__/Estate/images/yigui.png"><else/><img src="__PUBLIC__/Estate/images/yigui1.png"></if>衣柜</li>
+				<li><if condition="$content.e_calorifier eq 1"><img src="__PUBLIC__/Estate/images/reshuiqi.png"><else/><img src="__PUBLIC__/Estate/images/reshuiqi1.png"></if>热水器</li>
+				<li><if condition="$content.e_microwave eq 1"><img src="__PUBLIC__/Estate/images/weibolu.png"><else/><img src="__PUBLIC__/Estate/images/weibolu1.png"></if>微波炉</li>
+				<li><if condition="$content.e_refrigerator eq 1"><img src="__PUBLIC__/Estate/images/bingxiang.png"><else/><img src="__PUBLIC__/Estate/images/bingxiang1.png"></if>冰箱</li>
+				<li><if condition="$content.e_kitchen eq 1"><img src="__PUBLIC__/Estate/images/chufang.png"><else/><img src="__PUBLIC__/Estate/images/chufang1.png"></if>厨房</li>
+				<li><if condition="$content.e_gas eq 1"><img src="__PUBLIC__/Estate/images/meiqi.png"><else/><img src="__PUBLIC__/Estate/images/meiqi1.png"></if>煤气</li>
+				<li><if condition="$content.e_furniture eq 1"><img src="__PUBLIC__/Estate/images/zhuoyi.png"><else/><img src="__PUBLIC__/Estate/images/zhuoyi1.png"></if>桌椅</li>
+				<li><if condition="$content.e_toilet eq 1"><img src="__PUBLIC__/Estate/images/weishengjian.png"><else/><img src="__PUBLIC__/Estate/images/weishengjian1.png"></if>卫生间</li>
+				<li><if condition="$content.e_parking eq 1"><img src="__PUBLIC__/Estate/images/chewei.png"><else/><img src="__PUBLIC__/Estate/images/chewei1.png"></if>车位</li>
+			</ul>
+		</div>
+		<else/></if>
+		<br>
+		<br>
+		<div>
+			<volist name="photo1" id="photo1">
+				<img src="__PUBLIC__/Uploads/Estate/{$photo1.p_photo}"/><br><br>
+			</volist>
+		</div>
+		<div>
+			<h4>地址</h4>
+			<p>{$content.e_address}</p>
+			<!--<p>{$content.e_describe}</p>-->
+		</div>
+
+		<div>
+			<h4>周边交通</h4>
+			<p>{$content.e_describe}</p>
+			<!-- <img src="__PUBLIC__/Estate/images/map.png"> -->
+			<br>
+			<p>点击下面的地图查看详情，更可“导航”前往</p>
+			<a href='http://api.map.baidu.com/geocoder?address=上海市{$content.e_address}&output=html' target='_blank'>
+				<img style="margin:2px" width="350" height="200" src="http://api.map.baidu.com/staticimage?width=350&height=200&zoom=11&center=上海市{$content.e_address}"/>  
+			</a>
+		</div>
+	</div>
+	<p id="margin-bottom"></p>
+	<footer>
+		<img src="__PUBLIC__/Estate/images/kai.png">
+		<div>
+			<p>黄经理</p>
+			<p><img src="">服务经理</p>
+		</div>
+		<a href="{:U('Estate/appoint')}?e_id={$content.e_id}&openid={$_SESSION['openid']}" class="a_2"><img src="__PUBLIC__/Estate/images/yu.png">预约看房</a>
+		<a href="tel:18918199599" class="a_1"><img src="__PUBLIC__/Estate/images/tell.svg"><span>电话联系</span></a>
+	</footer>
+
+	<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/layer/2.4/layer.js"></script>
+	<script type="text/javascript">
+		/*管理员-停用*/
+		function admin_stop(obj,cid,pid,cardid){
+			layer.confirm('确认要取消收藏吗？',function(index){
+				$.ajax({
+					type: 'POST',
+					url: "{:U('Estate/collecadd')}",
+					data: {
+						cid:cid,
+						p_id:pid,
+						cardid:cardid,
+					},
+					dataType: 'json',
+					success: function(data){
+						if (data.state == 1){
+							//此处请求后台程序，下方是成功后的前台处理……
+
+							$(obj).parents("div").find(".shoucang").prepend('<a onClick="admin_start(this,'+data.p_id+','+data.cardid+')" href="javascript:;" class="shoucang"><img src="__PUBLIC__/Project/images/icon/shoucang1.svg" style="width: 22px"></a>');
+							// $(obj).parents("tr").find(".td-status").html('<span class="label label-default radius">已禁用</span>');
+							$(obj).remove();
+							layer.msg('已取消!',{icon: 5,time:1000});
+						}else{
+							layer.msg('哎呦，运气不好哦，取消失败咯！',function(){});
+						}
+					},
+					error:function(data) {
+						console.log(data.msg);
+					},
+				});
+
+			});
+		}
+
+		/*管理员-启用*/
+		function admin_start(obj,id,cardid){
+			layer.confirm('确认要收藏吗？',function(index){
+				//alert(JSON.stringify(cardid));
+				$.ajax({
+					type: 'POST',
+					url: "{:U('Estate/collecadd')}",
+					data: {
+						p_id:id,
+						cardid:cardid,
+					},
+					dataType: 'json',
+					success: function(data){
+						//alert(JSON.stringify(data));
+						if (data.state == 1){
+							//此处请求后台程序，下方是成功后的前台处理……
+							$(obj).parents("div").find(".shoucang").prepend('<a onClick="admin_stop(this,'+data.c_id+','+data.p_id+','+data.cardid+')" href="javascript:;" class="shoucang"><img src="__PUBLIC__/Project/images/icon/shoucang2.svg" style="width: 22px"></a>');
+							// $(obj).parents("tr").find(".td-status").html('<span class="label label-default radius">已禁用</span>');
+							$(obj).remove();
+							layer.msg('已收藏!', {icon: 6,time:1000});
+						}else{
+							layer.msg('哎呦，运气不好哦，收藏失败咯！',function(){});
+						}
+					},
+					error:function(data) {
+						console.log(data.msg);
+					},
+				});
+			});
+		}
+	</script>
+	<!-- the end -->
+<script>
+var autoLb = false;          //autoLb=true为开启自动轮播
+var autoLbtime = 1;         //autoLbtime为轮播间隔时间（单位秒）
+var touch = true;           //touch=true为开启触摸滑动
+var slideBt = true;         //slideBt=true为开启滚动按钮
+var slideNub;               //轮播图片数量
+
+//窗口大小改变时改变轮播图宽高
+$(window).resize(function(){
+$(".slide").height($(".slide").width()*0.56);
+});
+$(function(){
+$(".slide").height($(".slide").width()*0.56);
+slideNub = $(".slide .img").size();             //获取轮播图片数量
+for(i=0;i<slideNub;i++){
+	$(".slide .img:eq("+i+")").attr("data-slide-imgId",i);
+}
+
+//根据轮播图片数量设定图片位置对应的class
+if(slideNub==1){
+	for(i=0;i<slideNub;i++){
+		$(".slide .img:eq("+i+")").addClass("img3");
+	}
+}
+if(slideNub==2){
+	for(i=0;i<slideNub;i++){
+		$(".slide .img:eq("+i+")").addClass("img"+(i+3));
+	}
+}
+if(slideNub==3){
+	for(i=0;i<slideNub;i++){
+		$(".slide .img:eq("+i+")").addClass("img"+(i+2));
+	}
+}
+if(slideNub>3&&slideNub<6){
+	for(i=0;i<slideNub;i++){
+		$(".slide .img:eq("+i+")").addClass("img"+(i+1));
+	}
+}
+if(slideNub>=6){
+	for(i=0;i<slideNub;i++){
+		if(i<5){
+		   $(".slide .img:eq("+i+")").addClass("img"+(i+1)); 
+		}else{
+			$(".slide .img:eq("+i+")").addClass("img5"); 
+		}
+	}
+}
+
+//根据轮播图片数量设定轮播图按钮数量
+if(slideBt){
+	for(i=1;i<=slideNub;i++){
+		$(".slide-bt").append("<span data-slide-bt='"+i+"' onclick='tz("+i+")'></span>");
+	}
+	$(".slide-bt").width(slideNub*34);
+	$(".slide-bt").css("margin-left","-"+slideNub*17+"px");
+}
+
+//自动轮播
+if(autoLb){
+	setInterval(function(){
+	right();
+}, autoLbtime*1000);
+}
+
+
+if(touch){
+	k_touch();
+}
+slideLi();
+imgClickFy();
+})
+
+//右滑动
+function right(){
+var fy = new Array();
+for(i=0;i<slideNub;i++){
+	fy[i]=$(".slide .img[data-slide-imgId="+i+"]").attr("class");
+}
+for(i=0;i<slideNub;i++){
+	if(i==0){
+		$(".slide .img[data-slide-imgId="+i+"]").attr("class",fy[slideNub-1]);
+	}else{
+	   $(".slide .img[data-slide-imgId="+i+"]").attr("class",fy[i-1]); 
+	}
+}
+imgClickFy();
+slideLi();
+}
+
+//左滑动
+function left(){
+var fy = new Array();
+for(i=0;i<slideNub;i++){
+	fy[i]=$(".slide .img[data-slide-imgId="+i+"]").attr("class");
+}
+for(i=0;i<slideNub;i++){
+	if(i==(slideNub-1)){
+		$(".slide .img[data-slide-imgId="+i+"]").attr("class",fy[0]);
+	}else{
+	   $(".slide .img[data-slide-imgId="+i+"]").attr("class",fy[i+1]); 
+	}
+}
+imgClickFy();
+slideLi();
+}
+
+//轮播图片左右图片点击翻页
+function imgClickFy(){
+$(".slide .img").removeAttr("onclick");
+$(".slide .img2").attr("onclick","left()");
+$(".slide .img4").attr("onclick","right()");
+}
+
+//修改当前最中间图片对应按钮选中状态
+function slideLi(){
+var slideList = parseInt($(".slide .img3").attr("data-slide-imgId")) + 1;
+$(".slide-bt span").removeClass("on");
+$(".slide-bt span[data-slide-bt="+slideList+"]").addClass("on");
+}
+
+//轮播按钮点击翻页
+function tz(id){
+var tzcs = id - (parseInt($(".slide .img3").attr("data-slide-imgId")) + 1);
+if(tzcs>0){
+	for(i=0;i<tzcs;i++){
+		setTimeout(function(){
+		  right();  
+		},1);
+	}
+}
+if(tzcs<0){
+	tzcs=(-tzcs);
+	for(i=0;i<tzcs;i++){
+		setTimeout(function(){
+		  left();  
+		},1);
+	}
+}
+slideLi();
+}
+//触摸滑动模块
+function k_touch() {
+var _start = 0, _end = 0, _content = document.getElementById("slide");
+_content.addEventListener("touchstart", touchStart, false);
+_content.addEventListener("touchmove", touchMove, false);
+_content.addEventListener("touchend", touchEnd, false);
+function touchStart(event) {
+	var touch = event.targetTouches[0];
+	_start = touch.pageX;
+}
+function touchMove(event) {
+	var touch = event.targetTouches[0];
+	_end = (_start - touch.pageX);
+}
+
+function touchEnd(event) {
+	if (_end < -100) {
+		left();
+		_end=0;
+	}else if(_end > 100){
+		right();
+		_end=0;
+	}
+}
+}
+
+</script>
+
+</body>
+</html>

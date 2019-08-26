@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>订单评价</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Doctor/css/style.css">
+</head>
+<body>
+	<include file="DoctorPublic/cheader" />
+	<include file="DoctorPublic/chead" />
+	<div class="ccontent">
+		
+		<h3><img src="__PUBLIC__/Doctor/images/queren1.png">订单评价</h3>
+		<div class="evaluation">
+			<div>
+				<h4>
+					<span class="span1">订单号：{$order.order_number}</span>
+					<span class="span2">待评价</span>
+				</h4>
+				<div>
+					<p>{$order.order_dohospital}(就医)</p>
+					<p>
+						<span class="span1">订单日期：{$order.order_time}</span>
+						<span class="span2">￥{$order.order_price}</span>
+					</p>
+				</div>
+			</div>
+			<form action="{:U('Doctor/evalu_deal')}" method="post">
+				<p class="evalu">医师评价：
+					<input type="radio" name="ev_dlevel" value="1">一般
+					<input type="radio" name="ev_dlevel" value="2">好
+					<input type="radio" name="ev_dlevel" value="3" checked="checked">非常好
+				</p>
+				<p class="evalu">服务评价：
+					<input type="radio" name="ev_mylevel" value="1">一般
+					<input type="radio" name="ev_mylevel" value="2">好
+					<input type="radio" name="ev_mylevel" value="3" checked="checked">非常好
+				</p>
+				<p class="evalu">综合评价：
+					<input type="radio" name="ev_all" value="1">一般
+					<input type="radio" name="ev_all" value="2">好
+					<input type="radio" name="ev_all" value="3" checked="checked">非常好
+				</p>
+				<p class="evalu"><textarea rows="5" name="ev_content" placeholder="请输入"></textarea></p>
+				<span>
+					<input type="hidden" name="ev_number" value="{$order.order_number}">
+					<input type="hidden" name="ev_doctor" value="{$order.order_doctor}">
+					<input type="hidden" name="ev_user" value="{$order.order_user}">
+				</span>
+				<input type="submit" name="" value="提交评价">
+			</form>
+		</div>	
+	</div>
+	<include file="DoctorPublic/footer" />
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>金融免抵押预约</title>
+    <meta name="keywords" content="{$SEO['keyword']}" />
+    <meta name="description" content="{$SEO['description']}" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+    <link rel="shortcut icon" href="http://www.qudaoclub.com/images/favicon.ico" type="image/x-icon"/>
+    <script src="__JS__jquery.min.js"></script>
+    <script src="__JS__mobiscroll.jquery.min.js"></script>
+
+    <link href="__css__mobiscroll.jquery.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="__css__reservers.css">
+    <script type="text/javascript">
+      function pushHistory() {
+        var state = {
+          title: "title",
+          url: "#"
+        };
+        window.history.pushState(state, "title", "#");
+      }
+      pushHistory();
+
+      setTimeout(function(){
+            window.addEventListener("popstate", function(e){
+                setTimeout(function(){
+                    location.href="http://www.qudaoplus.cn/merber_all_show/index.php/home/financial/index"
+                },1000)
+            }, false)
+        },1000);
+
+    </script>
+</head>
+
+<body class="information">
+
+    <img class="information-top" src="__img__reservers/loans.jpg" alt="">
+
+    <section class="information-title">
+        <b>预约项目：金融免抵押</b>
+    </section>
+    <a href="{:U('Reserve/appointment')}"><button>推荐送积分</button></a>
+    <section class="information-content">
+        <h2><b></b>预约信息</h2>
+        <ul>
+            <li>
+                <span><span style="color:red;">*</span> 姓 名：</span>
+                <input type="text" placeholder="请输入您的姓名" value="{$username}">
+            </li>
+            <li>
+                <span><span style="color:red;">*</span> 手 机：</span>
+                <input type="text" placeholder="请输入您的手机号码" value="{$phone}">
+            </li>
+            <li>
+                <span><span style="color:red;">*</span> 企业名称：</span>
+                <input type="text" placeholder="请输入企业名称">
+            </li>
+            <li>
+                <span><span style="color:red;">*</span> 个人职位：</span>
+                <input type="text" placeholder="请输入个人职位">
+            </li>
+            <li>
+                <span><span style="color:red;">*</span> 贷款金额：</span>
+                <select style="width: 200px;height: 25px;">
+                    <option value="">--请选择贷款金额--</option>
+                    <option value="100W-200W">100W-200W</option>
+                    <option value="200W-300W">200W-300W</option>
+                    <option value="300W-500W">300W-500W</option>
+                    <!-- 上面最新修改2018-12-29 -->
+                    <!-- <option value="100W-150W">100W-150W</option>
+                    <option value="150W-200W">150W-200W</option>
+                    <option value="200W-250W">200W-250W</option>
+                    <option value="250W-300W">250W-300W</option>
+                    <option value="300W-350W">300W-350W</option>
+                    <option value="350W-400W">350W-400W</option>
+                    <option value="400W-450W">400W-450W</option>
+                    <option value="450W-500W">450W-500W</option> -->
+                </select>
+                <!-- <input type="radio" name="money1" value="100W-150W">100W-150W
+                <input type="radio" name="money1" value="150W-200W">150W-200W
+                <input type="radio" name="money1" value="200W-250W">200W-250W
+                <input type="radio" name="money1" value="250W-300W">250W-300W -->
+                <!-- <input type="text" placeholder="请输入贷款金额"> -->
+            </li>
+            <li>
+                <span><!-- <span style="color:red;">*</span> --> 面谈地址：</span>
+                <input type="text" placeholder="请输入面谈地址">
+            </li>
+            <li>
+                <span><!-- <span style="color:red;">*</span> --> 日 期：</span>
+                <input type="text" placeholder="请选择预约日期">
+                <b></b>
+            </li>
+            <li>
+                <span>备 注：</span>
+                <input type="text" placeholder="请填写备注">
+            </li>
+        </ul>
+    </section>
+    <button id="btn">提交申请</button>
+    <!-- <section class="information-bottom">
+        <h2><b></b>在线支付</h2>
+        <h2><b></b>权益</h2>
+        <ul>
+            <li>
+                <span>剩余权益</span>
+                <span class="right">×1</span>
+            </li>
+            <li>
+                <span>积分（<span class="integral">2</span>）</span>
+                <div class="right">
+                    <i></i>
+                </div>
+            </li>
+            <li>
+                <h2><b></b>微信支付<span class="money">500</span>元<span class="right">尊享价</span></h2>
+            </li>
+        </ul>
+    </section> -->
+
+    <!-- <button>预约付款</button> -->
+
+</body>
+
+</html>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+
+        var $top = $('.information-top'),
+            $content = $('.information-content'),
+            $bottom = $('.information-bottom'),
+            $title = $top.find('b'),
+            $conList = $content.find('li'),
+
+            $name = $conList.eq(0).find('input'),
+            $mobile = $conList.eq(1).find('input'),
+            $itemname = $conList.eq(2).find('input'),
+            $position = $conList.eq(3).find('input'),
+            $loanment = $conList.eq(4).find('select'),
+            $address = $conList.eq(5).find('input'),
+            $date = $conList.eq(6).find('input'),
+            $other = $conList.eq(7).find('input'),
+
+            $botList = $bottom.find('li'),
+            $surplus = $botList.eq(0).find('.right'),
+            $integral = $botList.eq(1).find('.integral'),
+            $integralBtn = $botList.eq(1).find('.right'),
+            $money = $botList.eq(2).find('.money'),
+            $btn = $('#btn');
+
+        var cardid = '<?php echo $cardid;?>';
+
+        var integral = $integral.text(),
+            money  = $money.text();
+
+        var zero = integral > money;
+
+        $integralBtn.click(function(){
+            if(!$(this).hasClass('open')){
+                $(this).addClass('open');
+                if(zero){
+                    $integral.text(integral - money);
+                    $money.text(0);
+                }
+                else{
+                    $integral.text(0);
+                    $money.text(money - integral);
+                }
+            }
+            else{
+                $(this).removeClass('open');
+                $integral.text(integral);
+                $money.text(money);
+            }
+        });
+
+        var now = new Date(),
+            maxDate = new Date(now.getFullYear() + 1, 11, 31);
+        $date.mobiscroll().date({
+            theme: 'ios',
+            display: 'bottom',
+            mode: 'bubble',
+            dateFormat: 'yyyy-mm-dd',
+            lang: 'zh',
+            min: now,
+            max: maxDate,
+            onSet:function(valueText,inst){
+               //点击确定以后的结果
+             console.log(1);
+            }
+        }).siblings('b').click(function(){
+            $date.mobiscroll('show');
+        });
+
+        $btn.click(function(){
+
+            var open = $integralBtn.hasClass('open');
+
+           var name = $name.val(),
+               mobile = $mobile.val(),
+               itemname = $itemname.val(),
+               position = $position.val(),
+               loanment = $loanment.val(),
+               address = $address.val(),
+               date = $date.val(),
+               other = $other.val();
+               if (!name) {
+                 alert('请填写姓名');
+                 return false;
+               }
+               if (!mobile) {
+                 alert('请填写手机号');
+                 return false;
+               }
+               if (!itemname) {
+                 alert('请填写企业名称');
+                 return false;
+               }
+               if (!position) {
+                 alert('请填写个人职位');
+                 return false;
+               }
+               if (!loanment) {
+                 alert('请填写贷款金额');
+                 return false;
+               }
+               // if (!address) {
+               //   alert('请填写面谈地址');
+               //   return false;
+               // }
+               // if (!date) {
+               //   alert('请选择日期');
+               //   return false;
+               // }
+
+
+           $.ajax({
+               type: "POST",
+               url: "{:U('Reserve/loans')}",      //会员注册接口
+               data:{
+                 ritem: '金融免抵押',
+                 rname: name,
+                 cardid: cardid,
+                 rmobile: mobile,
+                 itemname: itemname,
+                 position: position,
+                 loanment: loanment,
+                 address: address,
+                 rdate : date,
+                 remark: other
+               },
+               error: function(request) {
+                   errorMsgg('连接服务器超时，请重新注册', $prompt, $verification);
+               },
+               success: function(data) {
+                 data = eval( '(' +data+ ')' );
+                 if (data.code=='1') {
+                   alert(data.message);
+                   window.location.href =data.url;
+                 }else if(data.code=='0') {
+                   alert(data.message);
+                 }
+               }
+           });
+
+        });
+       /* $('#appointment-btn').click(function () {
+            $.ajax({
+                type : 'post',
+                url  :  "{:U('Reserve/appointment')}",
+                data : {
+
+                },
+                dataType : 'json',
+                success: function (res) {
+
+                }
+            })
+        })*/
+    })
+
+</script>

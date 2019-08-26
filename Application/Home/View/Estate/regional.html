@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>区域房源</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Estate/css/style.css">
+<style type="text/css">
+.shops>form{
+	width: 65%;
+	margin: 10px auto;
+	overflow: hidden;
+}
+.shops>form>input{
+	border: none;
+	line-height: 25px;
+}
+.shops>form>.text{
+	width: 73%;
+	background: rgb(207,207,207);
+	padding: 0px;
+	padding-left: 2%;
+	border-radius:2px;
+	display: block;
+	float: left;
+}
+.shops>form>.sub{
+	-webkit-appearance: none;
+	width: 25%;
+	background: rgb(28,28,28);
+	color: rgb(245,213,95);
+}
+.shops>h4{
+	border-bottom: 1px solid rgb(216,216,216);
+	line-height: 20px;
+	font-size: 14px;
+	width: 85%;
+	margin: auto;
+	color: rgb(255,209,89);
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.shops>ul{
+	width: 90%;
+	margin: auto;
+}
+.shops>ul>a>li{
+	border-bottom: 1px solid rgb(216,216,216);
+	overflow: hidden;
+	margin-top: 10px;
+}
+.shops>ul>a>li>img{
+	width: 35%;
+	display: block;
+	float: left;
+}
+.shops>ul>a>li>div{
+	width: 64%;
+	margin-left: 1%;
+	display: block;
+	float: left;
+	color: rgb(238,238,238);
+}
+.shops>ul>a>li>div>h4{
+	font-size: 14px;
+	margin-top: 5px;
+	margin-bottom: 0px;
+}
+.shops>ul>a>li>div>p{
+	font-size: 12px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.shops>ul>a>li>div>span{
+	color: #f00;
+}
+.shops>.menu{
+	width: 90%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.shops>.menu>details>summary{
+	text-align: right;
+}
+.shops>.menu>details>h4{
+	color: rgb(255,209,89);
+	font-size: 14px;
+}
+.shops>.menu>details>ul>a>li{
+	display: block;
+	float: left;
+	font-size: 12px;
+	padding: 5px;
+}
+</style>
+</head>
+<body class="shops">
+	<form action="{:U('Estate/sousuo')}" method="post">
+			<input type="text" name="keywords" class="text" placeholder="请输入"><input type="submit" class="sub" name="查询">
+		</form>
+<!-- 	<div class="menu">
+		<details close="">
+		    <summary>筛选</summary>
+		    <h4>区域选择</h4>
+		    <ul>
+		        <a href=""><li>徐汇区</li></a><a href=""><li>黄浦区</li></a>
+		        <a href=""><li>普陀区</li></a><a href=""><li>静安区</li></a>
+		        <a href=""><li>长宁区</li></a><a href=""><li>虹口区</li></a>
+		        <a href=""><li>嘉定区</li></a><a href=""><li>松江区</li></a>
+		        <a href=""><li>青浦区</li></a><a href=""><li>金山区</li></a>
+		    </ul>
+		    <h4>租金选择</h4>
+		    <ul>
+		        <a href=""><li>2500-3000</li></a><a href=""><li>3000-3500</li></a>
+		        <a href=""><li>3500-4000</li></a><a href=""><li>4000-5000</li></a>
+		        <a href=""><li>5000-6000</li></a><a href=""><li>6000-8000</li></a>
+		        <a href=""><li>8000-12000</li></a><a href=""><li>12000以上</li></a>
+		    </ul>
+		    <h4>房型选择</h4>
+		    <ul>
+		        <a href=""><li>一居</li></a><a href=""><li>二居</li></a>
+		        <a href=""><li>三居</li></a><a href=""><li>四居+</li></a>
+		    </ul>
+		</details>
+	</div> -->
+	<h4><span>区域房源</span><img src=""></h4>
+	<ul>
+		<volist id="regional" name="regional">
+			<a href="{:U('Estate/content')}?e_id={$regional.e_id}&openid={$_SESSION['openid']}">
+				<li>
+					<img src="__PUBLIC__/Uploads/Estate/{$regional.p_photo}">
+					<div>
+						<h4>{$regional.e_title|htmlspecialchars_decode|strip_tags|mb_substr=0,13,'utf-8'}...</h4>
+						<p>{$regional.e_describe|htmlspecialchars_decode|strip_tags|mb_substr=0,20,'utf-8'}</p>
+						<span>{$regional.e_rent}元/月</span>
+					</div>
+				</li>
+			</a>
+		</volist>
+	</ul>
+	<p id="margin-bottom"></p>
+	<include file="EstatePublic/footer" />
+</body>
+</html>

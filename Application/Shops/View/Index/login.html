@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>渠道PLUS微管家商户平台V1.0</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/AdminShops/css/ertao.css">
+</head>
+<body class="login">
+	<header>渠道PLUS微管家商户平台V1.0</header>
+	<div class="cont">
+		<p><img src="__PUBLIC__/AdminShops/images/icon/logo.png"></p>
+		<form  method="post" class="layui-form" method="post">
+			<p><input type="text" name="username" placeholder="请输入账号"></p>
+			<p><input type="password" name="password" placeholder="请输入密码"></p>
+			<input type="submit" name="" value="登录" lay-submit lay-filter="login">
+		</form>
+	</div>
+	<footer>渠道PLUS © 2019-2022</footer>
+<!-- 请在下方写相关业务代码 -->
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Project/css/H-ui.min.css" />
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/hui/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/layer/2.4/layer.js"></script>
+<script src="__PUBLIC__/Admin/lib/layui/layui.js" charset="utf-8"></script>
+<!-- 请在上方写相关业务脚本 -->
+<script type="text/javascript">
+	$(function  () {
+		layui.use('form', function(){
+			var form = layui.form;
+			layer.msg('欢迎使用渠道PLUS微管家商户平台V1.0！', function(){
+				//关闭后的操作
+			});
+			//监听提交
+			form.on('submit(login)', function(data){
+				var username = $('input[name="username"]').val();	//出行时间
+				var password = $('input[name="password"]').val();	//请输入到店时间
+				if(username == ''){
+					$.Huimodalalert('请输入账号！',1500);
+				}else if(password == ''){
+					$.Huimodalalert('请输入密码！',1500);
+				}else{
+					$.ajax({
+						type:"post",
+						url:"{:U('Index/login')}",//根据自己项目的需要写请求地址
+						data:{
+							'username':username,
+							'password':password,
+						},
+						dataType:'json',
+						success:function(data){
+							//alert(JSON.stringify(data));
+							if (data == 1){
+								layer.confirm('恭喜您登录成功！',function(index){location.href="{:U('Index/index')}"});
+							}else{
+								layer.msg('哎呦，账号或密码输入错误哦！',function(){});
+							}
+						},
+						error:function(data) {
+							console.log(data.msg);
+						},
+					})
+				}
+				return false;
+			});
+		});
+	})
+</script>
+</body>
+</html>

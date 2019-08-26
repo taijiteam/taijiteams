@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 防止手机点击放大问题 -->
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+	<!-- the end -->
+	<title>名医详情</title>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Doctor/css/style.css">
+</head>
+<body>
+<include file="DoctorPublic/cheader" />
+<div class="doctor">
+	<h3><img src="__PUBLIC__/Doctor/images/minigyi1.png">名医详情</h3>
+
+
+
+
+
+
+
+	<div class="doctor_cdiv">
+		<img src="__PUBLIC__/img/{$do.do_photo}">
+		<div>
+			<object><a href="{:U('Doctor/appoint')}?do_id={$do.do_Id}">预约</a></object>
+			<h4>{$do.do_doctor}</h4>
+			<p>{$do_list.do_position|htmlspecialchars_decode|strip_tags|mb_substr=0,4,'utf-8'}</p>
+			<p>科室：{$do.de_department}</p>
+			<p>擅长：{$do.do_adept}</p>
+			<volist name="label" id="label">
+				<span>{$label.la_label}</span>
+			</volist>
+		</div>
+	</div>
+
+
+
+
+
+	<h3><img src="__PUBLIC__/Doctor/images/minigyi1.png">名医简介</h3>
+	<p class="doctor_cp">{$do.do_intorduction}</p>
+	<h3><img src="__PUBLIC__/Doctor/images/yijianfankui.png">用户评价</h3>
+	<p class="doctor_cpj">
+		<img src="__PUBLIC__/Doctor/images/feichanghao.png"><span class="span1">非常好({$ev_dlevel_3})</span><!-- <span class="span2">21</span> -->
+		<img src="__PUBLIC__/Doctor/images/henhao.png"><span class="span1">很好({$ev_dlevel_2})</span><!-- <span class="span2">21</span> -->
+		<img src="__PUBLIC__/Doctor/images/yiban.png"><span class="span1">一般({$ev_dlevel_1})</span><!-- <span class="span2">21</span> -->
+	</p>
+	<ul class="doctor_cul">
+		<volist name="ev_list" id="ev_list">
+			<li>
+				<h4>
+					<img class="img1" src="__PUBLIC__/Doctor/images/IMG_1538.jpg">
+					<span>{$ev_list.ev_user}</span>
+					<if condition="$ev_list.ev_dlevel eq 3"><img class="img2" src="__PUBLIC__/Doctor/images/feichanghao.png">
+						<elseif condition="$ev_list.ev_dlevel eq 2" /><img class="img2" src="__PUBLIC__/Doctor/images/henhao.png">
+						<elseif condition="$ev_list.ev_dlevel eq 1" /><img class="img2" src="__PUBLIC__/Doctor/images/yiban.png">
+					</if>
+					<span>{$ev_list.ev_time}</span>
+				</h4>
+				<p>{$ev_list.ev_content}</p>
+			</li>
+		</volist>
+		<!-- <li>
+            <h4><img class="img1" src="__PUBLIC__/Doctor/images/IMG_1538.jpg"><span>张三</span><img class="img2" src="__PUBLIC__/Doctor/images/feichanghao.png"></h4>
+            <p>曹子昂教授为国内著名食管外科专家，连续四年被评为全国十佳食管外科医生。</p>
+        </li> -->
+	</ul>
+</div>
+<include file="DoctorPublic/footer" />
+</body>
+</html>

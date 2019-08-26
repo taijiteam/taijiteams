@@ -1,0 +1,564 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+<link href="/favicon.ico" rel="shortcut icon">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=375px, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>渠道Plus - 商城</title>
+<meta name="keywords" content="关键词">
+<meta name="description" content="描述">
+<link rel="stylesheet" href="/Public/Mobile/css/swiper.min.css" />
+<link rel="stylesheet" href="/Public/Mobile/css/common.css?v=<?php echo ($versions); ?>" />
+<link rel="stylesheet" href="/Public/Mobile/css/style.css?v=<?php echo ($versions); ?>" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.min.css">
+    <style>
+        .remove-mac-styles {
+            /* 清除原有的样式 */
+            -webkit-appearance: none;
+            background-color: transparent;
+            border: 0;
+            outline: 0 !important;
+        }
+        .swiper-slide>img{
+            width: 100%;
+            height: 100%;
+        }  
+    </style>
+</head>
+<body>
+
+<div class="pb_tp_a">
+    <h1>商品详情</h1>
+    <!--<a href="javascript:history.go(-1);" class="pbjta"><img src="/Public/Mobile/images/01322.png"></a>-->
+</div>
+<!--banner-->
+    <div class="swiper-container ">
+        <div class="swiper-wrapper" style="width: 100%;height: 250px">
+            <!-- 轮播图数据 -->
+             <div class="swiper-slide"><a href="javascript:;"><img width="100%" height="100%"  src="<?php echo ($goods_common['main_img']); ?>"></a></div>
+             <div class="swiper-slide"><a href="javascript:;"><img width="100%" height="100%"  src="<?php echo ($goods_common['main2_img']); ?>"></a></div>
+             <div class="swiper-slide"><a href="javascript:;"><img width="100%" height="100%"  src="<?php echo ($goods_common['main3_img']); ?>"></a></div>
+             <div class="swiper-slide"><a href="javascript:;"><img width="100%" height="100%"  src="<?php echo ($goods_common['main4_img']); ?>"></a></div>
+             <div class="swiper-slide"><a href="javascript:;"><img width="100%" height="100%"  src="<?php echo ($goods_common['main5_img']); ?>"></a></div>
+
+            <!-- 轮播图样式 -->
+            <!--<div class="swiper-slide">
+                <img src="https://www.swiper.com.cn/demo/slow-transition/img/picture-1.jpg">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://www.swiper.com.cn/demo/slow-transition/img/picture-4.jpg">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://www.swiper.com.cn/demo/slow-transition/img/picture-6.jpg">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://www.swiper.com.cn/demo/slow-transition/img/picture-2.jpg">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://www.swiper.com.cn/demo/apple-retail/images/event_1_large.jpg">
+            </div>-->
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+        <!-- 如果需要导航按钮 -->
+        <!-- <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div> -->
+
+    </div>
+        <!-- Add Pagination -->
+       <!-- <div class="swiper-pagination"></div>-->
+    </div>
+
+<!---->
+<div class="trhnrs container">
+    <h1><?php echo ($goods_common['goods_name']); ?></h1>
+    <p class="bznr_a">
+        <span><img src="/Public/Mobile/images/rs1.png"></span>
+        <span class="ice_b"><?php echo ($goods_common['goods_price']); ?>.00</span>
+        <?php if($goods_num == ''): else: ?>
+            <span class="ice_b" style="float: right;font-size: 12px">已售<?php echo ($goods_num); ?>件</span><?php endif; ?>
+    </p>
+    <div class="bznr">
+        <p><?php echo ($goods_common['goods_remark']); ?></p>
+    </div>
+</div>
+
+<!--渠道珍品ship-->
+<div class="container-fluid">
+    <div class="bf pd_m  qdao">
+        <a href="#">渠道PLUS珍品商城</a>
+    </div>
+    <div class="gsz">
+        <!--<div class="bf pd_m  qxz">-->
+            <!--<a href="javascript:void(0);">-->
+                <!--<span class="qsz_a fl">参数详情</span>-->
+                <!--<span class="qsz_b fl">查看</span>-->
+                <!--<span class="qsz_c fr"><img src="/Public/Mobile/images/rcopy.png"></span>-->
+            <!--</a>-->
+        <!--</div>-->
+        <!-- <div class="bf pd_m  qxz">
+            <a href="#">
+                <span class="qsz_a fl">送至</span>
+                <span class="qsz_b fl">
+                    <div class="content-block">
+                        <input id="demo1" type="text" readonly="" placeholder="城市选择特效"  value="广东省   深圳市   南山区">
+                        <input id="value1" type="hidden" value="20,234,504">
+                    </div>
+                </span>
+                <span class="qsz_c fr"><img src="/Public/Mobile/images/rcopy.png"></span>
+            </a>
+        </div> -->
+        <!--<div class="bf pd_m  qxz">-->
+            <!--<a href="javascript:;">-->
+                <!--<span class="qsz_a fl">服务</span>-->
+                <!--<span class="qsz_b fl">-->
+						<!--<small>-->
+							<!--<img src="/Public/Mobile/images/drw.png">江浙沪包邮-->
+						<!--</small>-->
+						<!--<small>-->
+							<!--<img src="/Public/Mobile/images/drw.png">江浙沪包邮-->
+						<!--</small>-->
+						<!--<small>-->
+							<!--<img src="/Public/Mobile/images/drw.png">江浙沪包邮-->
+						<!--</small>-->
+					<!--</span>-->
+                <!--<span class="qsz_c fr">-->
+                    <!--<img src="/Public/Mobile/images/rcopy.png">-->
+                <!--</span>-->
+            <!--</a>-->
+        <!--</div>-->
+    </div>
+</div>
+<!--用户评价100-->
+
+<div class="container ">
+
+    <?php if($goods_evaluate_count != 0 ): ?><div class="yhpjs">
+        <div class="yhpj_a">
+            <span class="fl">用户评价(<?php echo ($goods_evaluate_count); ?>)</span>
+            <span class="fr">98%满意<img src="/Public/Mobile/images/rcopy.png"></span>
+        </div>
+        <!--<div class="yhpj_b">
+            <span>有图(66)</span>
+            <span>分量足(108)</span>
+            <span>完美切工(88)</span>
+            <span>漂亮美观(66)</span>
+        </div>-->
+        <div class="qianjs">
+            <ul>
+                <?php if(is_array($goods_evaluate)): $i = 0; $__LIST__ = $goods_evaluate;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li>
+                        <div class="qianj_nr">
+                            <div class="qian_a">
+                                <span><img src="<?php echo ($vo["e_headimg"]); ?>"></span>
+                                <span><?php echo ($vo["e_name"]); ?></span>
+                                <span>
+                                    <?php switch($vo["e_star"]): case "1": ?><img src="/Public/Mobile/images/xx2.png"><?php break;?>
+                                        <?php case "2": ?><img src="/Public/Mobile/images/xx2.png">
+                                            <img src="/Public/Mobile/images/xx2.png"><?php break;?>
+                                        <?php case "3": ?><img src="/Public/Mobile/images/xx2.png">
+                                            <img src="/Public/Mobile/images/xx2.png">
+                                            <img src="/Public/Mobile/images/xx2.png"><?php break;?>
+                                        <?php case "4": ?><img src="/Public/Mobile/images/xx2.png">
+                                            <img src="/Public/Mobile/images/xx2.png">
+                                            <img src="/Public/Mobile/images/xx2.png">
+                                            <img src="/Public/Mobile/images/xx2.png"><?php break;?>
+                                        <?php case "5": ?><img src="/Public/Mobile/images/xx2.png">
+                                            <img src="/Public/Mobile/images/xx2.png">
+                                            <img src="/Public/Mobile/images/xx2.png">
+                                            <img src="/Public/Mobile/images/xx2.png">
+                                            <img src="/Public/Mobile/images/xx2.png"><?php break; endswitch;?>
+                                </span>
+                            </div>
+                            <div class="qian_b">
+                                <p><?php echo ($vo["e_text"]); ?></p>
+                            </div>
+                        </div>
+                    </li><?php endforeach; endif; else: echo "" ;endif; ?>
+            </ul>
+        </div>
+            <?php if($goods_common['desc_img'] != ''): ?><div class="qiansp">
+                    <h1>商品详情</h1>
+                    <p><?php echo ($goods_common['goods_remark']); ?></p>
+                </div>
+                <?php else: endif; ?>
+    </div>
+    <?php else: endif; ?>
+</div>
+<?php if($goods_common['desc_img'] != ''): ?><div class="proall_img container-fluid" style="width: 375px">
+    <img src="<?php echo ($goods_common['desc_img']); ?>" style="width:100%;margin-bottom: 50px">
+</div>
+    <?php else: endif; ?>
+<!--line-->
+
+<div class="pr_nr_fix">
+    <div class="pr_br_lt fl">
+        <span id="icon-num" style="width: 16px;
+            height: 16px;
+            background-color: red;
+            border: 1px red solid;
+            border-radius: 8px;
+            position: relative;
+            left: -30px;
+            top: 0px;
+            text-align: center;
+            line-height: 16px; visibility: hidden;
+            font-weight: 800;
+            float:right">0
+            </span>
+	    <span>
+             <a href="/Mobile/Cart/index">
+                <img src="/Public/Mobile/images/gwc_bt.png">
+                <p>购物车</p>
+             </a>
+	    </span>
+        <span>
+         <a href="javascript:;" id="data-collect-btn" data-goods-id="<?php echo ($goods_common['goods_common_id']); ?>">
+             <?php if($collect['is_collect'] == '0'): ?><img class="collect-img" src="/Public/Mobile/images/fxx.png" >
+             <?php elseif($collect['is_collect'] == '' ): ?>
+                 <img class="collect-img" src="/Public/Mobile/images/fxx.png" >
+             <?php elseif($collect['is_collect'] == '1'): ?>
+                 <img class="collect-img" src="/Public/Mobile/images/xxb.png" ><?php endif; ?>
+            <p>收藏</p>
+         </a>
+	    </span>
+    </div>
+    <div class="pr_br_rt fr">
+        <span class="ywbt open-spec" data-opt="add_cart"><a href="javascript:void(0);">加入购物车</a></span>
+        <span class="rdbt open-spec" data-opt="create_order"><a href="javascript:void(0);">立即购买</a></span>
+    </div>
+</div>
+
+
+
+<!--点击加入购物车展开-->
+<div class="albs_fix" style="height: 70%;overflow-y: scroll;">
+    <div  class="trhbs_art  container-fluid">
+        <div  class="trh_a container close-spec">
+            <a href="javascript:void(0);"><img src="/Public/Mobile/images/del.png"></a>
+        </div>
+        <div class="container">
+            <div class="fl  ovh">
+                <img src="<?php echo ($goods_common['main_img']); ?>" style="width:120px;height:auto;">
+            </div>
+            <div class="fl spbnr">
+                <h1><?php echo ($goods_common['goods_name']); ?></h1>
+                <h2><span class="fl"><img src="/Public/Mobile/images/rw.png"><span id="choose-goods-price" data-goods-id="0"><?php echo ($goods_common['goods_price']); ?></span>.00</span> </h2>
+                <p id="choose-goods-pocket"></p>
+                <a class="xuanzeguige" href="javascript:void(0);">请选择规格</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="ggzks container-fluid">
+        <div class="ggzknr">
+            <?php if($spec_cnt == 1): ?><!--  单一规格  -->
+                <h2>规格</h2>
+                <div class="ggiput">
+                    <?php if(is_array($spec_info)): foreach($spec_info as $k=>$vo): ?><label>
+                            <input type="radio" name="spec_single_case" value="<?php echo ($k); ?>" class="remove-mac-styles"><?php echo ($vo); ?>
+                        </label><?php endforeach; endif; ?>
+                </div>
+            <?php else: ?>
+                <!--多规格情况-->
+                <?php if(is_array($spec_info)): foreach($spec_info as $spec_class_id=>$spec): ?><div style="margin-bottom:5px">
+                        <h2><?php echo ($spec_name[$spec_class_id]); ?></h2>
+                        <div class="ggiput">
+                            <?php if(is_array($spec)): foreach($spec as $k=>$vo): ?><label>
+                                    <input type="radio" name="spec_multi_case" value="<?php echo ($k); ?>" class="remove-mac-styles"><?php echo ($vo); ?>
+                                </label><?php endforeach; endif; ?>
+                        </div>
+                    </div><?php endforeach; endif; endif; ?>
+        </div>
+    </div>
+
+    <div class="gmshls" style="margin-bottom: 70px">
+        <?php if($goods_common['goods_storage'] == 0 ): ?><h1><dbo class="fl">购买数量</dbo> <span class="fr">无货</span></h1>
+        <?php else: ?>
+            <h1><dbo class="fl">购买数量</dbo> <span class="fr">剩余数量<span id="choose-goods-storage"><?php echo ($goods_common['goods_storage']); ?></span>件</span></h1><?php endif; ?>
+        <div style="clear:both;"></div>
+        <div class="tyjiajian">
+            <button class="b_jian"><img src="/Public/Mobile/images/bjian.png"></button>
+            <input type="number" value="1" name="num" id="choose-num">
+            <button class="b_jia"><img src="/Public/Mobile/images/bjia.png"></button>
+        </div>
+    </div>
+
+    <div  class="pb_fta choose-spec">
+        <a href="#" id="choose-finish-btn">完成</a>
+    </div>
+</div>
+<script src="/Public/Mobile/js/jquery-1.11.0.min.js"></script>
+<script src="/Public/Mobile/js/swiper.min.js"></script>
+<script src="/Public/Mobile/js/jquery.SuperSlide.2.1.3.js"></script>
+<script src="/Public/Mobile/js/all.js?v=<?php echo ($versions); ?>"></script>
+</body>
+</html>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
+<script>
+    // 轮播图
+    var mySwiper = new Swiper ('.swiper-container', {
+        loop: true, // 循环模式选项
+        autoplay:true,
+        // 如果需要分页器
+        pagination: {
+          el: '.swiper-pagination',
+        },
+        
+        // 如果需要前进后退按钮
+        // navigation: {
+        //   nextEl: '.swiper-button-next',
+        //   prevEl: '.swiper-button-prev',
+        // }
+    });
+
+    $(function(){
+        var opt = "";
+        var choosed_goods_id = 0;
+        var choosed_goods_storage = 0;
+        var spec_goods = '<?php echo ($spec_goods); ?>'; spec_goods = JSON.parse(spec_goods);
+        var cart_num  = '<?php echo ($cart_num); ?>';
+        var spec_cnt  = parseInt('<?php echo ($spec_cnt); ?>');
+
+        var mid = "<?php echo ($mid); ?>";//用户未登录时为 0
+
+        init();
+
+        //默认选择一个商品
+        function init(){
+            console.log(spec_goods);
+            show_number_span(cart_num);
+            default_spec(spec_cnt);
+        }
+
+        //单个规格选择逻辑
+        $(document).on('click','input[name="spec_single_case"]',function(){
+            var spec_id = $(this).val();
+            var goods_info = spec_goods[spec_id];
+
+            choosed_goods_id = parseInt(goods_info.goods_id);
+            choosed_goods_storage =  parseInt(goods_info.goods_storage);
+
+            set_selected_goods(goods_info);
+            set_pocket_info(goods_info);
+            set_storage_info(choosed_goods_storage);
+        });
+
+        //多规格选择逻辑
+        $(document).on('click','input[name="spec_multi_case"]',function(){
+            // var spec_id = $(this).val();
+            // console.log(spec_id);
+            // var goods_id = spec_goods[spec_id];
+            // console.log(goods_id);
+        });
+
+
+        //打开规格选则
+        $(".open-spec").click(function(){
+            opt = $(this).attr("data-opt");
+            $(".albs_fix").slideToggle(500);
+            $("body").css("overflow-y","hidden");
+        });
+
+        //关闭规格选择
+        $(".close-spec").click(function(){
+            opt = "";
+            $(".albs_fix").slideToggle(500);
+            $("body").css("overflow-y","auto");
+        });
+
+
+        //选择完成提交
+        $(".choose-spec").click(function(){
+            checkIsLogion();
+
+            if(choosed_goods_storage <= 0){
+                return false;//无货
+            }
+
+            var num = $("#choose-num").val();
+            var goods_id = $("#choose-goods-price").attr("data-goods-id");
+            if(goods_id <= 0){
+                alert("请先选择一个商品规格");
+            }
+
+            console.log(goods_id,num);
+
+            if(opt == "add_cart"){
+                //加入购物车
+                $.ajax
+                ({
+                    type:'get',
+                    url:'/Mobile/Cart/add',
+                    data:{
+                        goods_id:goods_id,
+                        num:num
+                    },
+                    dataType:'json',
+                    success:function (res) {
+                        if (res.code == 200)
+                        {
+                            alert("添加成功");
+                            $(".albs_fix").slideToggle(500);
+                            $("body").css("overflow-y","auto");
+                            var cart_num = parseInt($("#icon-num").text()) + 1;
+                            show_number_span(cart_num);
+                        }else{
+                            alert(res.message);
+                        }
+                    },
+                    error:function(data){
+                        console.log(data.message)
+                    }
+                })
+            } else if(opt == "create_order") {
+                //直接下单
+                window.location.href = "/Mobile/Order/order_confirm?goods_id="+goods_id+"&num="+num;
+            } else {
+                alert("异常操作");
+            }
+
+            $("body").css("overflow-y","hidden");
+        });
+
+
+        //商品数量选择
+        $('.tyjiajian button').on('click',function(){
+            if($(this).hasClass("b_jia")){
+                var num = $(this).prev();
+                if(num.val() < choosed_goods_storage) {
+                    num.val(parseInt(num.val()) + 1);
+                }
+            }else if($(this).hasClass("b_jian")){
+                var num = $(this).next();
+                num.val( parseInt( num.val() ) - 1 );
+                if(num.val() < 1){
+                    num.val(1);
+                }
+            }
+        });
+
+        function set_selected_goods(goods_info)
+        {
+            $("#choose-goods-price").attr("data-goods-id",choosed_goods_id);
+            $("#choose-goods-price").text(goods_info.goods_price);
+        }
+
+        function set_pocket_info(goods_info)
+        {
+            var pocket_info = "";
+            //a积分和d积分
+            var a_jf =  parseInt(goods_info.goods_pocket_a);
+            if(a_jf > 0){
+                pocket_info += "<p>单件商品最高可使用"+a_jf+"点消费积分抵扣</p>"
+            }
+
+            var d_jf =  parseInt(goods_info.goods_pocket_d);
+            if(d_jf > 0){
+                pocket_info += "<p>单件商品最高可使用"+d_jf+"点奖励积分抵扣</p>"
+            }
+
+            //b积分
+            var t = parseInt(goods_info.goods_pocket_type);
+            if ( t == 201) { //b1 酒积分
+                var b1_jf = parseInt(goods_info.goods_pocket);
+                if( b1_jf > 0 ) {
+                    pocket_info += "<p>单件商品最高可使用"+b1_jf+"点尊享积分抵扣</p>"
+                }
+            }else{
+                //其他b类积分
+            }
+
+            if(pocket_info == ""){
+                $("#choose-goods-pocket").html("无法使用积分抵扣");
+            }else{
+                $("#choose-goods-pocket").html(pocket_info);
+            }
+        }
+
+        function set_storage_info(storage)
+        {
+            //库存显示
+            $("#choose-goods-storage").text(storage);
+
+            //按钮设置
+            if(storage <= 0){
+                $("#choose-finish-btn").text("无货");
+                storage = 1;
+            }else{
+                $("#choose-finish-btn").text("完成");
+            }
+
+            //选择数量设置
+            if($("#choose-num").val() > storage){
+                $("#choose-num").val(storage);
+            }
+        }
+
+        //左下购物车的数字小标
+        function show_number_span(cart_num){
+            if(cart_num > 0){
+                $("#icon-num").text(cart_num);
+                $("#icon-num").css("visibility","visible");
+            }else{
+                $("#icon-num").css("visibility","hidden");
+            }
+        }
+
+        
+        
+        //收藏商品
+        $(document).on('click','#data-collect-btn',function () {
+            checkIsLogion();
+
+            var gc_id = $('#data-collect-btn').attr('data-goods-id');
+            $.ajax({
+                type: 'post',
+                url : '/Mobile/Member/setCollect',
+                data:{
+                    gc_id : gc_id
+                },
+                dataType :'json',
+                success:function (res) {
+                    if (res.message == "success"){
+                            $('.collect-img').attr('src','/Public/Mobile/images/fxx.png')
+                        }else{
+                            $('.collect-img').attr('src','/Public/Mobile/images/xxb.png')
+                        }
+
+                }
+            });
+            return false;
+        });
+
+
+        function default_spec() {
+            if(spec_cnt == 1){
+                var radio_obj = $('.remove-mac-styles:eq(0)');
+                radio_obj.attr("checked","checked");
+                radio_obj.parent().addClass("active");
+
+                var spec_id = radio_obj.val();
+                var goods_info = spec_goods[spec_id];
+
+                choosed_goods_id = parseInt(goods_info.goods_id);
+                choosed_goods_storage =  parseInt(goods_info.goods_storage);
+
+                set_selected_goods(goods_info);
+                set_pocket_info(goods_info);
+                set_storage_info(choosed_goods_storage);
+            }else{
+
+            }
+        }
+
+
+        function checkIsLogion(){
+            if(mid <= 0){
+                alert("授权已过期,准备重新登录");
+                window.location.href = "/Mobile/Index/index?redirect_url="+encodeURI(window.location.href);
+            }
+        }
+
+    });
+</script>

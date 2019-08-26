@@ -1,0 +1,343 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>{$project.p_little}</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Project/css/style.css">
+<link rel="stylesheet" href="__PUBLIC__/Activity/css/jquery-labelauty.css">
+<style type="text/css">
+body{
+	color: #000;
+}
+.dowebok>li>input.labelauty + label{
+	background: none;
+	text-align: center;
+	border: 0.5px solid rgb(248,194,84);
+	color: rgb(248,194,84);
+}
+.dowebok>li>input.labelauty:checked + label{
+	background: rgb(248,194,84);
+}
+.dowebok>li>input.labelauty + label{
+	width: 65px;
+}
+.dowebok>li>input.labelauty:checked + label{
+	width: 65px;
+}
+</style>
+<!-- <link rel="stylesheet" type="text/css" href="__PUBLIC__/Project/hui/static/h-ui/__PUBLIC__/Project/css/H-ui.min.css" /> -->
+<body class="tcontent">
+<!-- 这里是头部 -->
+<header>
+	<!-- banner statr -->
+	<div class="fullSlide">
+		<div class="bd">
+			<ul>
+				<volist name="images" id="images">
+					<li _src="url(__PUBLIC__/Uploads/Project/{$images.i_image})" style="background:#E2025E center 0 no-repeat;background-size:100% 100%;"><a href="#"></a></li>
+				</volist>
+				<!-- <li _src="url(__PUBLIC__/Project/images/2.jpg)" style="background:#DED5A1 center 0 no-repeat;background-size: 200%;"><a href="#"></a></li>
+				<li _src="url(__PUBLIC__/Project/images/3.jpg)" style="background:#B8CED1 center 0 no-repeat;background-size: 200%;"><a href="#"></a></li> -->
+			</ul>
+		</div>
+		<div class="hd"><ul></ul></div>
+		<span class="prev"></span>
+		<span class="next"></span>
+	</div>
+	<!--fullSlide end-->
+</header>
+<!-- 收藏按钮 -->
+<if condition="$collection.c_id eq ''">
+	<div><p class="shoucang"><a onClick="admin_start(this,{$project.p_id},{$_SESSION['cardId']})" href="javascript:;"><img src="__PUBLIC__/Project/images/icon/shoucang1.svg"></a></p></div>
+<else/>
+<div><p class="shoucang"><a onClick="admin_stop(this,{$collection.c_id},{$project.p_id},{$_SESSION['cardId']})" href="javascript:;"><img src="__PUBLIC__/Project/images/icon/shoucang2.svg"></a></p></div>
+</if>
+<!-- 这里是身体 -->
+<div class="body">
+	<!-- 第一栏 -->
+	<div>
+		<p>{$project.p_title}</p>
+		<p><img src="__PUBLIC__/Project/images/icon/rmb.png">&nbsp;<span>{$project.p_price}</span>/人起</p>
+	</div>
+	<!-- 第二栏 -->
+	<div>
+		<h4>产品介绍</h4>
+		<div>
+			<h5>优惠活动</h5>
+			<div>
+				<volist name="p_activitys" id="p_activitys">
+					<p>&nbsp;&nbsp;<b>·</b>&nbsp;&nbsp;{$p_activitys}</p>
+				</volist>
+				<!-- <p>&nbsp;&nbsp;<b>·</b>&nbsp;&nbsp;【2人起订提前90天预订 -500元/单】</p>
+				<p>&nbsp;&nbsp;<b>·</b>&nbsp;&nbsp;【2人起订提前90天预订 -500元/单】</p>
+				<p>&nbsp;&nbsp;<b>·</b>&nbsp;&nbsp;双十一活动立减1000元/对</p> -->
+			</div>
+		</div>
+		<div>
+			<h5>产品特色</h5>
+			<div>
+				<p>&nbsp;&nbsp;<b>·</b>&nbsp;&nbsp;{$project.p_features}</p>
+			</div>
+		</div>
+		<div>
+			<h5>服务保障</h5>
+			<div>
+				<p>&nbsp;&nbsp;<b>·</b>&nbsp;&nbsp;{$project.p_serve}</p>
+			</div>
+		</div>
+		<div>
+			<h5>供应商</h5>
+			<div>
+				<p>&nbsp;&nbsp;<b>·</b>&nbsp;&nbsp;{$project.p_supplier}</p>
+			</div>
+		</div>
+		<div>
+			<h5>推介理由</h5>
+			<div>
+				<volist name="p_merits" id="p_merits">
+					<p>&nbsp;&nbsp;<b>·</b>&nbsp;&nbsp;{$p_merits}</p>
+				</volist>
+				<!-- <p>&nbsp;&nbsp;<b>·</b>&nbsp;&nbsp;双雪山：少女峰+南针峰；双游船：塞纳河游船+日内瓦湖游船+金色山口</p>
+				<p>&nbsp;&nbsp;<b>·</b>&nbsp;&nbsp;自制巧克力+起泡酒博物馆+瑞士特色晚餐+15欧起/人/餐高餐标+充分自由活动</p> -->
+				
+
+			</div>
+		</div>
+	</div>
+	<!-- 第三栏 -->
+	<div>
+		<h4>产品特色</h4>
+		<div>
+			<h5>拒签全退</h5>
+			<div>
+				<p>&nbsp;&nbsp;<b>·</b>&nbsp;&nbsp;{$project.p_refund}</p>
+			</div>
+		</div>
+		<div>
+			<h5>出行礼包之三大赠送</h5>
+			<div>
+				<volist name="p_gifts" id="p_gifts">
+					<p>&nbsp;&nbsp;<b>·</b>&nbsp;&nbsp;{$p_gifts}</p>
+				</volist>
+			</div>
+		</div>
+	</div>
+	<!-- 第四栏 -->
+	<div>
+		<h4>产品展示</h4>
+		<img src="__PUBLIC__/Project/image/lyxc.png">
+	</div>
+	<!-- 第五栏 -->
+	<div class="pinglun">
+		<h4>用户评价</h4>
+		<div class="pinlun">
+			<input type="hidden" name="a_id" value="{$project.p_id}"/>
+			<ul class="dowebok">
+				<li><input class="xinput" type="radio" onclick="pinglun()" name="pinglun" value="环境好" data-labelauty="环境好[{$ev1}]"></li>
+				<li><input class="xinput" type="radio" onclick="pinglun()" name="pinglun" value="性价比高" data-labelauty="性价比高[{$ev2}]"></li>
+				<li><input class="xinput" type="radio" onclick="pinglun()" name="pinglun" value="干净卫生" data-labelauty="干净卫生[{$ev3}]"></li>
+				<li><input class="xinput" type="radio" onclick="pinglun()" name="pinglun" value="服务好" data-labelauty="服务好[{$ev4}]"></li>
+				<li><input class="xinput" type="radio" onclick="pinglun()" name="pinglun" value="周边便利" data-labelauty="周边便利[{$ev5}]"></li>
+				<li><input class="xinput" type="radio" onclick="pinglun()" name="pinglun" value="房间安静" data-labelauty="房间安静[{$ev6}]"></li>
+				<!--<li><input class="xinput" type="radio" name="radio" disabled data-labelauty="不可用"></li>-->
+			</ul>
+		</div>
+		<if condition="$pinglun eq '' or $pinglun eq 0">
+			<else/>
+			<div id="divdiv">
+				<ul id="ulul">
+					<volist name="pinglun" id="pinglun">
+						<li>
+							<img src="{$pinglun.e_userimg}">
+							<div>
+								<h5>{$pinglun.e_name}</h5>
+								<p>打分
+									<if condition="$pinglun.e_level eq 1">
+										<img src="__PUBLIC__/Project/images/icon/pingfen.png">
+										<elseif condition="$pinglun.e_level eq 2"/>
+										<img src="__PUBLIC__/Project/images/icon/pingfen.png"><img src="__PUBLIC__/Project/images/icon/pingfen.png">
+										<elseif condition="$pinglun.e_level eq 3"/>
+										<img src="__PUBLIC__/Project/images/icon/pingfen.png"><img src="__PUBLIC__/Project/images/icon/pingfen.png"><img src="__PUBLIC__/Project/images/icon/pingfen.png">
+										<elseif condition="$pinglun.e_level eq 4"/>
+										<img src="__PUBLIC__/Project/images/icon/pingfen.png"><img src="__PUBLIC__/Project/images/icon/pingfen.png"><img src="__PUBLIC__/Project/images/icon/pingfen.png"><img src="__PUBLIC__/Project/images/icon/pingfen.png">
+										<elseif condition="$pinglun.e_level eq 5"/>
+										<img src="__PUBLIC__/Project/images/icon/pingfen.png"><img src="__PUBLIC__/Project/images/icon/pingfen.png"><img src="__PUBLIC__/Project/images/icon/pingfen.png"><img src="__PUBLIC__/Project/images/icon/pingfen.png"><img src="__PUBLIC__/Project/images/icon/pingfen.png">
+									</if>
+								</p>
+								<p>{$pinglun.e_content}</p>
+								<p>
+									<!--<img src="">-->
+									<span>{$pinglun.e_label}</span>
+								</p>
+								<span>{$pinglun.e_time} 发表</span>
+							</div>
+						</li>
+					</volist>
+				</ul>
+			</div>
+		</if>
+
+	</div>
+</div>
+<!-- 这里是底部 -->
+<footer>
+	<div>
+		<p><img src="__PUBLIC__/Project/images/icon/rmb.png"><span>&nbsp;{$project.p_price}</span>元</p>
+		<span><a href="{:U('Project/tourappoint')}?p_id={$project.p_id}&openid={$_SESSION['openid']}"><img src="/merber_all_show/Public/Project/images/icon/zxyd1.png" style="width: 110px;" alt=""/></a></span>
+		<!-- <span><a href="{:U('Project/tourappoint')}?p_id=1&openid={$_SESSION['openid']}">在线预订</a></span> -->
+	</div>
+</footer>
+</body>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript">
+/*管理员-停用*/
+function admin_stop(obj,cid,pid,cardid){
+	layer.confirm('确认要取消收藏吗？',function(index){
+		$.ajax({
+			type: 'POST',
+			url: "{:U('Project/collecadd')}",
+			data: {
+				cid:cid,
+				p_id:pid,
+				cardid:cardid,
+			},
+			dataType: 'json',
+			success: function(data){
+				if (data.state == 1){
+					//此处请求后台程序，下方是成功后的前台处理……
+		
+					$(obj).parents("div").find(".shoucang").prepend('<a onClick="admin_start(this,'+data.p_id+','+data.cardid+')" href="javascript:;" class="shoucang"><img src="__PUBLIC__/Project/images/icon/shoucang1.svg"></a>');
+					// $(obj).parents("tr").find(".td-status").html('<span class="label label-default radius">已禁用</span>');
+					$(obj).remove();
+					layer.msg('已取消!',{icon: 5,time:1000});
+				}else{
+					layer.msg('哎呦，运气不好哦，取消失败咯！',function(){});
+				}
+			},
+			error:function(data) {
+				console.log(data.msg);
+			},
+		});
+		
+	});
+}
+
+/*管理员-启用*/
+function admin_start(obj,id,cardid){
+	layer.confirm('确认要收藏吗？',function(index){
+		//alert(JSON.stringify(cardid));
+		$.ajax({
+			type: 'POST',
+			url: "{:U('Project/collecadd')}",
+			data: {
+				p_id:id,
+				cardid:cardid,
+			},
+			dataType: 'json',
+			success: function(data){
+				//alert(JSON.stringify(data));
+				if (data.state == 1){
+					//此处请求后台程序，下方是成功后的前台处理……
+					$(obj).parents("div").find(".shoucang").prepend('<a onClick="admin_stop(this,'+data.c_id+','+data.p_id+','+data.cardid+')" href="javascript:;" class="shoucang"><img src="__PUBLIC__/Project/images/icon/shoucang2.svg"></a>');
+					// $(obj).parents("tr").find(".td-status").html('<span class="label label-default radius">已禁用</span>');
+					$(obj).remove();
+					layer.msg('已收藏!', {icon: 6,time:1000});
+				}else{
+					layer.msg('哎呦，运气不好哦，收藏失败咯！',function(){});
+				}
+			},
+			error:function(data) {
+				console.log(data.msg);
+			},
+		});
+	});
+}
+</script>
+<!-- the end -->
+<!-- banner js -->
+<script type="text/javascript" src="__PUBLIC__/Project/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/js/superslide.2.1.js"></script>
+<script type="text/javascript">
+function pinglun() {
+	var pinglun = $('input[name="pinglun"]:checked').val();//
+	var id = $('input[name="a_id"]').val();//
+	//alert(pinglun);
+	$.ajax({
+		type: 'POST',
+		url: "{:U('Project/tourpinglun')}",
+		data: {
+			id:id,
+			pinglun:pinglun,
+		},
+		dataType: 'json',
+		success: function(data){
+			//alert(JSON.stringify(data));
+			if(data != '' || data !=0){
+				var star =''
+				var html ='';
+				for (var i=0;i<data.length;i++){
+					if(data[i].e_level == 1){
+						html += '<li><img src="'+data[i].e_userimg+'"/><div><h5>'+data[i].e_name+'</h5><p>打分&nbsp;&nbsp;<img src="__PUBLIC__/Project/images/icon/pingfen.png"></p><p>'+data[i].e_content+'</p><p><span>'+data[i].e_label+'</span></p><span>'+data[i].e_time+' 发表</span></div></li>';
+					}else if(data[i].e_level == 2){
+						html += '<li><img src="'+data[i].e_userimg+'"/><div><h5>'+data[i].e_name+'</h5><p>打分&nbsp;&nbsp;<img src="__PUBLIC__/Project/images/icon/pingfen.png"><img src="__PUBLIC__/Project/images/icon/pingfen.png"></p><p>'+data[i].e_content+'</p><p><span>'+data[i].e_label+'</span></p><span>'+data[i].e_time+' 发表</span></div></li>';
+					}else if(data[i].e_level == 3){
+						html += '<li><img src="'+data[i].e_userimg+'"/><div><h5>'+data[i].e_name+'</h5><p>打分&nbsp;&nbsp;<img src="__PUBLIC__/Project/images/icon/pingfen.png"><img src="__PUBLIC__/Project/images/icon/pingfen.png"><img src="__PUBLIC__/Project/images/icon/pingfen.png"></p><p>'+data[i].e_content+'</p><p><span>'+data[i].e_label+'</span></p><span>'+data[i].e_time+' 发表</span></div></li>';
+					}else if(data[i].e_level == 4){
+						html += '<li><img src="'+data[i].e_userimg+'"/><div><h5>'+data[i].e_name+'</h5><p>打分&nbsp;&nbsp;<img src="__PUBLIC__/Project/images/icon/pingfen.png"><img src="__PUBLIC__/Project/images/icon/pingfen.png"><img src="__PUBLIC__/Project/images/icon/pingfen.png"><img src="__PUBLIC__/Project/images/icon/pingfen.png"></p><p>'+data[i].e_content+'</p><p><span>'+data[i].e_label+'</span></p><span>'+data[i].e_time+' 发表</span></div></li>';
+					}else if(data[i].e_level == 5){
+						html += '<li><img src="'+data[i].e_userimg+'"/><div><h5>'+data[i].e_name+'</h5><p>打分&nbsp;&nbsp;<img src="__PUBLIC__/Project/images/icon/pingfen.png"><img src="__PUBLIC__/Project/images/icon/pingfen.png"><img src="__PUBLIC__/Project/images/icon/pingfen.png"><img src="__PUBLIC__/Project/images/icon/pingfen.png"><img src="__PUBLIC__/Project/images/icon/pingfen.png"></p><p>'+data[i].e_content+'</p><p><span>'+data[i].e_label+'</span></p><span>'+data[i].e_time+' 发表</span></div></li>';
+					}
+
+				}
+
+				$('#ulul').html(html);
+				$("#divdiv").show();
+			}else {
+				$("#divdiv").hide();
+			}
+
+
+		},
+		error:function(data) {
+			console.log(data.msg);
+		},
+	});
+}
+$(".fullSlide").hover(function(){
+    $(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
+},
+function(){
+    $(this).find(".prev,.next").fadeOut()
+});
+$(".fullSlide").slide({
+    titCell: ".hd ul",
+    mainCell: ".bd ul",
+    effect: "fold",
+    autoPlay: true,
+    autoPage: true,
+    trigger: "click",
+    startFun: function(i) {
+        var curLi = jQuery(".fullSlide .bd li").eq(i);
+        if ( !! curLi.attr("_src")) {
+            curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+        }
+    }
+});
+</script>
+<!-- the end -->
+<!-- 请在上方写相关业务代码 -->
+<script src="__PUBLIC__/Activity/js/jquery-labelauty.js"></script>
+<script>
+	$(function(){
+		$('.xinput').labelauty();
+	});
+</script>
+</html>

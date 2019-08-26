@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>首页</title>
+</head>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Project/css/style.css">
+<style type="text/css">
+
+</style>
+<body class="index">
+<!-- 这里是头部 -->
+<header>
+	<!-- banner statr -->
+	<div class="fullSlide">
+		<div class="bd">
+			<ul>
+				<li _src="url(__PUBLIC__/Project/images/1.jpg)" style="background:#E2025E center 0 no-repeat;background-size: 200%;"><a href="#"></a></li>
+				<li _src="url(__PUBLIC__/Project/images/2.jpg)" style="background:#DED5A1 center 0 no-repeat;background-size: 200%;"><a href="#"></a></li>
+				<li _src="url(__PUBLIC__/Project/images/3.jpg)" style="background:#B8CED1 center 0 no-repeat;background-size: 200%;"><a href="#"></a></li>
+				
+			</ul>
+		</div>
+		<div class="hd"><ul></ul></div>
+		<span class="prev"></span>
+		<span class="next"></span>
+	</div>
+	<!--fullSlide end-->
+	<form action="{:U('Project/search')}">
+		<input type="text" class="text" placeholder="请输入" name="keywords">
+		<input type="submit" class="sub" value="搜索" name="">
+	</form>
+</header>
+<nav>
+	<ul>
+		<a href="{:U('Project/tourlist')}">
+			<li>
+				<img src="__PUBLIC__/Project/images/icon/Group 3@2x.png">
+				<span>旅游</span>
+			</li>
+		</a>
+		<a href="{:U('Project/hotellist')}">
+			<li>
+				<img src="__PUBLIC__/Project/images/icon/Group 7@2x.png">
+				<span>酒店</span>
+			</li>
+		</a>
+		<a href="{:U('Project/foodlist')}">
+			<li>
+				<img src="__PUBLIC__/Project/images/icon/Group 8@2x.png">
+				<span>美食</span>
+			</li>
+		</a>
+	</ul>
+</nav>
+<!-- 这里是身体 -->
+<div class="body">
+	<!-- 这里是第一栏目 -->
+	<div class="div1">
+		<h4>——— 欧洲旅游</h4>
+		<ul>
+			<volist name="tourlist" id="tourlist">
+				<a href="{:U('Project/tourcontent')}?p_id={$tourlist.p_id}&cardid={$_SESSION['cardId']}"><li><img src="__PUBLIC__/Uploads/Project/{$tourlist.i_image}"><span>{$tourlist.p_little}</span></li></a>
+			</volist>
+			<!-- <a href="{:U('Project/tourcontent')}?p_id=1"><li><img src="__PUBLIC__/Project/image/xila1.png"><span>希腊-mykonos岛</span></li></a>
+			<a href="{:U('Project/tourcontent')}?p_id=1"><li><img src="__PUBLIC__/Project/image/xila3.png"><span>希腊-巴特农神庙</span></li></a>
+			<a href="{:U('Project/tourcontent')}?p_id=1"><li><img src="__PUBLIC__/Project/image/faguo1.png"><span>法国-教堂</span></li></a>
+			<a href="{:U('Project/tourcontent')}?p_id=1"><li><img src="__PUBLIC__/Project/image/bali1.png"><span>法国-卢浮宫</span></li></a>
+			<a href="{:U('Project/tourcontent')}?p_id=1"><li><img src="__PUBLIC__/Project/image/fgtt.png"><span>法国-埃菲尔铁塔</span></li></a> -->
+		</ul>
+	</div>
+	<!-- 这里是第二栏目 -->
+	<div class="div2">
+		<h4>——— 美味西餐</h4>
+		<volist name="foodstar" id="foodstar">
+			<a href="{:U('Project/foodcontent')}?p_id={$foodstar.p_id}&cardid={$_SESSION['cardId']}"><img src="__PUBLIC__/Uploads/Project/{$foodstar.p_introimg}"></a>
+		</volist>
+		<ul>
+			<volist name="foodlist" id="foodlist">
+				<a href="{:U('Project/foodcontent')}?p_id={$foodlist.p_id}&cardid={$_SESSION['cardId']}"><li><img src="__PUBLIC__/Uploads/Project/{$foodlist.p_image}" /></li></a>
+			</volist>
+			<!-- <a href="{:U('Project/foodcontent')}"><li><img src="__PUBLIC__/Project/image/meishi2.png"></li></a>
+			<a href="{:U('Project/foodcontent')}"><li><img src="__PUBLIC__/Project/image/canting1.png"></li></a> -->
+		</ul>
+	</div>
+	<!-- 这里是第三栏目 -->
+	<div class="div3">
+		<h4>——— 星级宾馆</h4>
+		<volist name="hotestar" id="hotestar">
+			<a href="{:U('Project/hotelcontent')}?p_id={$hotestar.p_id}&cardid={$_SESSION['cardId']}">
+				<div>
+					<img src="__PUBLIC__/Uploads/Project/{$hotestar.p_introimg}">
+					<span>
+						<h4>{$hotestar.p_little}</h4>
+						<p>{$hotestar.p_introduce|htmlspecialchars_decode|strip_tags|mb_substr=0,55,'utf-8'}...</p>
+					</span>
+				</div>
+			</a>
+		</volist>
+		<ul>
+			<volist name="hotellist" id="hotellist">
+				<a href="{:U('Project/hotelcontent')}?p_id={$hotestar.p_id}&cardid={$_SESSION['cardId']}"><li><img src="__PUBLIC__/Uploads/Project/{$hotellist.i_image}"></li></a>
+			</volist>
+			<!-- <a href="{:U('Project/hotelcontent')}"><li><img src="__PUBLIC__/Project/image/binguan2.png"></li></a>
+			<a href="{:U('Project/hotelcontent')}"><li><img src="__PUBLIC__/Project/image/binguan1.png"></li></a> -->
+		</ul>
+	</div>
+</div>
+<!-- 这里是底部 -->
+<include file="Allfooter/allfooter" />
+<!-- <footer>
+	<ul>
+		<a href="index.html"><li><img src="__PUBLIC__/Project/images/icon/index.png"><span>首页</span></li></a>
+		<a href="order.html"><li><img src="__PUBLIC__/Project/images/icon/order.png"><span>订单</span></li></a>
+		<a href="center.html"><li><img src="__PUBLIC__/Project/images/icon/merber.png"><span>个人中心</span></li></a>
+	</ul>
+</footer> -->
+</body>
+<!-- banner js -->
+<script type="text/javascript" src="__PUBLIC__/Project/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/js/superslide.2.1.js"></script>
+<script type="text/javascript">
+$(".fullSlide").hover(function(){
+    $(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
+},
+function(){
+    $(this).find(".prev,.next").fadeOut()
+});
+$(".fullSlide").slide({
+    titCell: ".hd ul",
+    mainCell: ".bd ul",
+    effect: "fold",
+    autoPlay: true,
+    autoPage: true,
+    trigger: "click",
+    startFun: function(i) {
+        var curLi = jQuery(".fullSlide .bd li").eq(i);
+        if ( !! curLi.attr("_src")) {
+            curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+        }
+    }
+});
+</script>
+<!-- the end -->
+</html>

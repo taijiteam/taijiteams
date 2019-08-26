@@ -1,0 +1,248 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>活动用品</title>
+<link rel="stylesheet" href="__PUBLIC__/Activity/css/jflex.min.css" type="text/css" media="all">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Activity/css/ertaostyle.css">
+</head>
+<style type="text/css">
+.sup>.body{
+	color: #fff;
+	margin-bottom: 60px;
+}
+.sup>.body>div>div{
+	margin: 0 auto;
+}
+.sup>.body>div>h4{
+	color: rgb(248,194,84);
+	font-size: 16px;
+	background: rgb(53,53,53);
+	padding-left: 5%;
+	line-height: 25px;
+	margin-bottom: 5px;
+}
+.sup>.body>div>.infor>p{
+	margin: 0;
+	line-height: 25px;
+	font-size: 14px;
+	overflow: hidden;
+}
+.sup>.body>div>.infor>p>a>.adre{
+	display: block;
+	float: left;
+}
+.sup>.body>div>.infor>p>a>.left{
+	display: block;
+	float: left;
+	margin-left: 35%;
+}
+.sup>.body>div>.infor>p>a>.right{
+	display: block;
+	float: right;
+}
+.sup>.body>div>div{
+	font-size: 14px;
+}
+.sup>.body>div>div>p{
+	margin: 7px;
+}
+.sup>.body>div>ul{
+	width: 90%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.sup>.body>div>ul>a>li{
+	width: 29.63%;
+	height: 26.67vw;
+	display: block;
+	float: left;
+	background: rgb(216,216,216);
+	border-radius: 5px;
+	margin-left: 2.7%;
+	margin-bottom: 10px;
+}
+.sup>footer{
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	height: 45px;
+}
+.sup>footer>.sc{
+	width: 50%;
+	color: #fff;
+	background: rgb(62,62,62);
+	display: block;
+	float: left;
+	text-align: center;
+	line-height: 45px;
+}
+.sup>footer>.sc>p{
+	margin: 0px;
+	overflow: hidden;
+}
+.sup>footer>.sc>p>a{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: inline-block;
+}
+.sup>footer>.sc>p>a>img{
+	width: 20px;
+	display: block;
+	float: left;
+	margin-top: 11px;
+	margin-left: 32%;
+}
+.sup>footer>.sc>p>a>span{
+	display: block;
+	float: left;
+}
+.sup>footer>a{
+	width: 50%;
+	margin: 0;
+	color: #fff;
+	background: rgb(65,117,5);
+	display: block;
+	float: left;
+	text-align: center;
+	line-height: 45px;
+}
+/*the end*/
+</style>
+<body class="sup">
+<div class="banner">
+	<ul class="slides">
+		<li>
+			<img alt="" src="__PUBLIC__/Uploads/Activity/{$content.a_img}">
+		</li>
+		<li>
+			<img alt="" src="__PUBLIC__/Activity/images/beasts_feature.jpg">
+		</li>
+		<li>
+			<img alt="" src="__PUBLIC__/Activity/images/element-taiwan-thmb.jpg">
+		</li>
+		<li>
+			<img alt="" src="__PUBLIC__/Activity/images/streets-newyork.jpg">
+		</li>
+	</ul>
+</div>
+<div class="body">
+	<div>
+		<h4>活动用品</h4>
+		<div>
+			<p>人们常用“打如意算盘”来形容一个人做某件事，自己以为一定成功，“如意算盘”成为民间常用语。</p>
+		</div>
+	</div>
+	<div>
+		<h4>图文展示</h4>
+		<div>
+			<p>如意是我国传统的吉祥物，形如灵芝，貌似祥云，历史上常为番邦进贡之物。玉如意一般取材于天然美玉，经能工巧匠精雕细琢而成。因为它象征着吉祥如意，福寿无疆，放在家中有镇宅、吉祥的作用。如意算盘主体为一个晶莹剔透的玉如意，用和田玉纯手工精雕而成，造型大方，尤为奇巧的是在玉如意的顶端嵌有一把整体雕刻而成的小算盘。</p>
+			<img src="__PUBLIC__/Activity/images/content.jpg" width="100%">
+		</div>
+	</div>
+</div>
+<footer>
+	<if condition="$collect.c_id eq ''">
+		<div class="sc">
+			<p>
+				<a href="javascript:;" onclick="admin_start(this,{$content.a_id},{$_SESSION['cardId']})">
+					<img src="__PUBLIC__/Activity/images/icon/colle1.svg">
+					<span>收藏</span>
+				</a>
+			</p>
+		</div>
+		<else/>
+		<div class="sc">
+			<p>
+				<a href="javascript:;" onclick="admin_stop(this,{$collect.c_id},{$content.a_id},{$_SESSION['cardId']})">
+					<img src="__PUBLIC__/Activity/images/icon/colle2.svg">
+					<span>取消收藏</span>
+				</a>
+			</p>
+		</div>
+	</if>
+	<a href="{:U('Activity/supappoint')}?id={$content.a_id}">提交需求</a>
+</footer>
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript">
+    /*管理员-停用*/
+    function admin_stop(obj,cid,aid,cardid){
+        layer.confirm('确认要取消收藏吗？',function(index){
+            $.ajax({
+                type: 'POST',
+                url: '{:U('Activity/collecadd')}',
+                data: {
+                cid:cid,
+                    a_id:aid,
+                    cardid:cardid,
+            },
+            dataType: 'json',
+                success: function(data){
+                if (data.state == 1){
+                    //此处请求后台程序，下方是成功后的前台处理……
+
+                    $(obj).parents(".sc").find("p").prepend('<a onclick="admin_start(this,'+data.a_id+','+data.cardid+')" href="javascript:;"><img src="__PUBLIC__/Activity/images/icon/colle1.svg"><span>收藏</span></a>');
+                    // $(obj).parents("tr").find(".td-status").html('<span class="label label-default radius">已禁用</span>');
+                    $(obj).remove();
+                    layer.msg('已取消!',{icon: 5,time:1000});
+                }else{
+                    layer.msg('哎呦，运气不好哦，取消失败咯！',function(){});
+                }
+            },
+            error:function(data) {
+                console.log(data.msg);
+            },
+        });
+
+        });
+    }
+
+    /*管理员-启用*/
+    function admin_start(obj,id,cardid){
+        layer.confirm('确认要收藏吗？',function(index){
+            //alert(JSON.stringify(cardid));
+            $.ajax({
+                type: 'POST',
+                url: '{:U('Activity/collecadd')}',
+                data: {
+                a_id:id,
+                    cardid:cardid,
+            },
+            dataType: 'json',
+                success: function(data){
+                //alert(JSON.stringify(data));
+                if (data.state == 1){
+                    //此处请求后台程序，下方是成功后的前台处理……
+
+                    $(obj).parents(".sc").find("p").prepend('<a onclick="admin_stop(this,'+data.c_id+','+data.a_id+','+data.cardid+')" href="javascript:;"><img src="__PUBLIC__/Activity/images/icon/colle2.svg"><span>取消收藏</span></a>');
+                    // $(obj).parents("tr").find(".td-status").html('<span class="label label-default radius">已禁用</span>');
+                    $(obj).remove();
+                    layer.msg('已收藏!', {icon: 6,time:1000});
+                }else{
+                    layer.msg('哎呦，运气不好哦，收藏失败咯！',function(){});
+                }
+            },
+            error:function(data) {
+                console.log(data.msg);
+            },
+        });
+        });
+    }
+</script>
+<!-- 请在上方写相关业务脚本 -->
+<script type="text/javascript" src="__PUBLIC__/Activity/js/jquery-1.10.1.min.js"></script> 
+<!-- 轮播 -->
+<script type="text/javascript" src="__PUBLIC__/Activity/js/jflex.min.js"></script>
+<script type="text/javascript">
+$('.banner').jFlex({
+	autoplay: true
+});
+</script>
+</body>
+</html>

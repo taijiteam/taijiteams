@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>首页</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Doctor/css/style.css">
+</head>
+<body>
+	<include file="DoctorPublic/iheader" />
+	<ul class="ul_head">
+		<a href="{:U('Doctor/hospital')}">
+			<li>
+				<img src="__PUBLIC__/Doctor/images/yuan.png">
+				<p>名院展示</p>
+			</li>
+		</a>
+		<a href="{:U('Doctor/doctor')}">
+			<li>
+				<img src="__PUBLIC__/Doctor/images/mingyi.png">
+				<p>名医预约</p>
+			</li>
+		</a>
+		<a href="{:U('Doctor/ihospital')}">
+			<li>
+				<img src="__PUBLIC__/Doctor/images/zhuyuan.png">
+				<p>住院</p>
+			</li>
+		</a>
+		<a href="{:U('Doctor/department')}">
+			<li>
+				<img src="__PUBLIC__/Doctor/images/kemu.png">
+				<p>科目分类</p>
+			</li>
+		</a>
+		<a href="{:U('Doctor/tellme')}">
+			<li>
+				<img src="__PUBLIC__/Doctor/images/tellme.png">
+				<p>联系我们</p>
+			</li>
+		</a>
+	</ul>
+	<p id="margintop"></p>
+	<div class="div_body_1">
+		<h3><img src="__PUBLIC__/Doctor/images/yuan1.png"><span class="h">名院展示</span><span class="gt"><a href="{:U('Doctor/ranking')}" style="color: #b9b9b9; font-size: 12px;">名院排行 &gt;&gt;</a></span></h3>
+		<ul>
+			<volist name="h_list" id="h_list">
+				<a href="{:U('Doctor/hospital_content')}?h_id={$h_list.h_id}">
+					<li>
+						<img src="__PUBLIC__/img/{$h_list.h_photo}">
+						<h3>{$h_list.h_hospital}</h3>
+						<span>三甲医院</span>
+					</li>
+				</a>
+			</volist>
+			<!-- <a href="">
+				<li>
+					<img src="__PUBLIC__/Doctor/images/diliu.png">
+					<h3>仁济医院</h3>
+					<span>三甲医院</span>
+				</li>
+			</a>
+			<a href="">
+				<li>
+					<img src="__PUBLIC__/Doctor/images/diliu.png">
+					<h3>仁济医院</h3>
+					<span>三甲医院</span>
+				</li>
+			</a> -->
+		</ul>
+	</div>
+	<div class="div_body_1">
+		<h3><img src="__PUBLIC__/Doctor/images/minigyi1.png"><span class="h">名医风采</span><a href="{:U('Doctor/doctor')}"><span class="gt">&gt;</span></a></h3>
+		<ul>
+			<volist name="do_list_2" id="do_list_2">
+			<a href="{:U('Doctor/doctor_content')}?do_id={$do_list_2.do_Id}">
+				<li>
+					<img src="__PUBLIC__/img/{$do_list_2.do_photo}">
+					<h3>{$do_list_2.do_doctor}</h3>
+					<span>职位：{$do_list_2.do_position|htmlspecialchars_decode|strip_tags|mb_substr=0,4,'utf-8'}</span>
+					<span>医院：{$do_list_2.h_hospital}</span>
+				</li>
+			</a>
+			</volist>
+			<!-- <a href="">
+				<li>
+					<img src="__PUBLIC__/Doctor/images/cao.png">
+					<h3>曹子昂</h3>
+					<span>职位：主任医师</span>
+					<span>医院：仁济医院</span>
+				</li>
+			</a>
+			<a href="">
+				<li>
+					<img src="__PUBLIC__/Doctor/images/cao.png">
+					<h3>曹子昂</h3>
+					<span>职位：主任医师</span>
+					<span>医院：仁济医院</span>
+				</li>
+			</a> -->
+		</ul>
+	</div>
+	<div class="div_body_3">
+		<h3><img class="img1" src="__PUBLIC__/Doctor/images/kemu1.png"><span class="h">热门科室</span><img class="img2" src="__PUBLIC__/Doctor/images/hot.png"><a href="{:U('Doctor/department')}"><span class="gt">&gt;</span></a></h3>
+		<!-- 公告消息测试 -->
+
+		<!-- 公告消息 -->
+		<div class="div_kemu">
+			<a href="{:U('Doctor/department_list')}?de_department=儿科">
+			<div class="color_1">
+				<p class="p_1">儿科</p>
+				<p class="p_2">PEDIATRICS</p>
+			</div>
+			</a>
+			<a href="{:U('Doctor/department_list')}?de_department=内科">
+			<div class="color_2">
+				<p class="p_1">内科</p>
+				<p class="p_2">INTERNAL</p>
+				<p class="p_2">MEDICINE</p>
+			</div>
+			</a>
+			<a href="{:U('Doctor/department_list')}?de_department=外科">
+			<div class="color_3">
+				<p class="p_1">外科</p>
+				<p class="p_2">SURGERY</p>
+			</div>
+			</a>
+			<hr>
+			<a href="{:U('Doctor/department_list')}?de_department=肿瘤科">
+			<div class="color_4">
+				<p class="p_1">肿瘤科</p>
+				<p class="p_2">ONGOLOGY</p>
+			</div>
+			</a>
+			<a href="{:U('Doctor/department_list')}?de_department=妇产科">
+			<div class="color_5">
+				<p class="p_1">妇产科</p>
+				<p class="p_2">GYNAECOLOGY</p>
+			</div>
+			</a>
+			<a href="{:U('Doctor/department_list')}?de_department=手术">
+			<div class="color_6">
+				<p class="p_1">手术科</p>
+				<p class="p_2">OPERATION ROOM</p>
+			</div>
+			</a>
+		</div>
+	</div>
+	<include file="Allfooter/allfooter" />
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- 防止手机点击放大问题 -->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+    <!-- the end -->
+    <title>成员风采</title>
+</head>
+<style type="text/css">
+    body{
+        background: #000;
+        margin: 0;
+        padding: 0;
+    }
+    footer{
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+    }
+    footer>ul{
+        margin: 0;
+        padding: 5px 0;
+        background: rgb(35,35,35);
+        overflow: hidden;
+    }
+    footer>ul>a>li{
+        display: block;
+        float: left;
+        width: 25%;
+        text-align: center;
+        margin-left: 6.25%;
+    }
+    footer>ul>a>li>img{
+        width: 25px;
+    }
+    footer>ul>a>li>span{
+        display: block;
+        text-align: center;
+        font-size: 10px;
+        color: rgb(248,194,84);
+    }
+    .content>.body{
+        color: #fff;
+        margin-bottom: 60px;
+    }
+    .content>.body>.con>h4{
+        text-align: center;
+    }
+    .content>.body>.con>h4>img{
+        height: 110px;
+    }
+    .content>.body>.con>p{
+        text-align: center;
+        margin: 0;
+        line-height: 25px;
+    }
+    .content>.body>.con>.p1>img{
+        height: 59px;
+    }
+    .content>.body>.con>.p2>img{
+        height: 13px;
+    }
+    .content>.body>.con>.p3{
+        font-size: 12px;
+    }
+    .content>.body>.con>.merber>img{
+        height: 310px;
+    }
+    .content>.body>.con>h3{
+        text-align: center;
+        font-size: 24px;
+        line-height: 25px;
+        font-weight: normal;
+        margin: 10px 0;
+    }
+    .content>.body>.con>.text{
+        width: 80%;
+        margin: 0 auto;
+        font-size: 14px;
+        overflow: hidden;
+    }
+    .myinfor{
+        display: block;
+        margin: 0 auto;
+        width: 230px;
+        line-height: 30px;
+        font-size: 18px;
+        color: rgb(250,196,84);
+        text-align: center;
+        background:-webkit-linear-gradient(top,rgba(255,255,255,0.5),rgba(29,29,29,0.5),rgba(0,0,0,0.5));/*渐变颜色*/
+        text-decoration: none;
+        border-radius: 15px;
+        margin-bottom: 15px;
+    }
+</style>
+<body class="content">
+<div class="body">
+    <!-- <div class="head">
+        <div class="left1"><a href="javascript:;" onclick="back()"><img src="__PUBLIC__/Merber/images/icon/back.png"></a></div>
+        <div class="left2">
+            <div>
+                <p>MEMBER</p>
+                <p>成员风采</p>
+            </div>
+            <img src="__PUBLIC__/Merber/images/icon/dao.png">
+        </div>
+    </div> -->
+<style type="text/css">
+    @font-face {
+        font-family: 方正兰亭大黑;
+        src:url(方正兰亭大黑_GBK.ttf);
+    }
+    .pp{
+        background: linear-gradient(to right, #724e18, #ffe361,#9b7925);
+        -webkit-background-clip: text;
+        color: transparent;
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: 1.4px;
+        font-family: '方正兰亭大黑';
+    }
+</style>
+    <div class="con" style="    margin-bottom: 50px;">
+        <h4><img src="__PUBLIC__/Merber/images/icon/dao.png"></h4>
+        <p class="p1"><img src="__PUBLIC__/Merber/images/icon/djgxql.png"></p>
+        <if condition="$merber['me_num'] == ''">
+            <p>您没有提交修改的信息！</p>
+            <p>您可以点击信息修改上传您的信息!</p>
+            <p>我们会根据实际情况更新您的信息！</p>
+            <h3></h3>
+            <else/>
+            <p class="merber"><img src="__PUBLIC__/Uploads/Member/{$merber.me_img}"></p>
+            <h3>{$merber.me_cname}</h3>
+            <p class="p2"><img src="__PUBLIC__/Merber/images/icon/qdcy.png"></p>
+            <!--<p class="p2"><img src="__PUBLIC__/Merber/images/icon/qdcy1.png"></p>-->
+            <!--<p class="p2"><img src="__PUBLIC__/Merber/images/icon/huiyuan/guwen.png">-->
+            <!--<p class="p2"><img src="__PUBLIC__/Merber/images/icon/huiyuan/qypg2.png">-->
+            <!--<p class="p2"><img src="__PUBLIC__/Merber/images/icon/huiyuan/guwen.png">-->
+            <!--<p class="p2"><span class="pp">渠道PLUS资源共享平台<br>高级顾问</span></p>-->
+            <!--<p class="p2"><img src="__PUBLIC__/Merber/images/icon/qudaoplus.png" style="height: 30px">-->
+            <volist name="work" id="work">
+                <p class="p3">{$work}</p>
+            </volist>
+            <div class="text">
+                {$merber.me_introduce}
+            </div>
+        </if>
+    </div>
+    <a class="myinfor" href="{:U('Member/site')}?num={$merber.me_num}">继续修改</a>
+    <a class="myinfor" href="">信息确认</a>
+    <p style="margin: 100px 0"></p>
+</div>
+<include file="MemberPublic/footer" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Project/css/H-ui.min.css" />
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/hui/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript">
+    // first
+    function setupfirst(){
+        var category = Lond_ckecked('category');//
+        var sex = $('input[name="sex"]:checked').val();//
+        // alert(JSON.stringify(category));
+        if(sex == '' && category == ''){
+            $.Huimodalalert('警告：小样啥也没选就想筛选！！',2000);
+        }else{
+            $.ajax({
+                type:"post",
+                url:"{:U('Member/setupfirst')}",//根据自己项目的需要写请求地址
+                data:{
+                'category':category,
+                    'sex':sex,
+            },
+            dataType:'json',
+                success:function(data){
+
+                //alert(JSON.stringify(data));
+                var html ='';
+                for (var i=0;i<data.length;i++){
+                    mlist = data[i].erji;
+                    a = mlist[0];
+                    b = mlist[1];
+                    html += '<li class="mui-table-view-cell"><a href="{:U('Member/content')}?id='+data[i].m_id+'"><span><img src="__PUBLIC__/Uploads/Member/'+data[i].m_img+'"></span><div><h4>'+data[i].m_cname+'<input type="checkbox" name="m_id" value="'+data[i].m_id+'"/></h4><p>'+a+'</p><p>'+b+'</p><span>'+data[i].m_category+'</span><object><a href="{:U('Member/content')}?id='+data[i].m_id+'">成员详情»</a></object></div></a></li>';
+                }
+                $('#listm').html(html);
+            },
+            error:function(data) {
+                console.log(data.msg);
+            },
+        })
+        }
+    }
+<!-- 请在上方写相关业务脚本 -->
+<SCRIPT language=javascript>
+    function back() {
+        window.history.back();
+    }
+</SCRIPT>
+</body>
+</html>

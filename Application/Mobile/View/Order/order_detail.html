@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <include file="Components/header" />
+</head>
+<body>
+
+
+<include file="Components/padding" title="订单详情" redirect_url="/Mobile/order/order_list" />
+
+
+<!-- 订单状态 -->
+<switch name="order_info.order_status">
+    <case value="1">
+        <div  class="shadlist  shadliston">
+            <div  class="fl shad_b" style="margin:10px 0px;">
+                <h1>待支付</h1>
+                <p style="color:#999999;font-size:14px;">倒计时</p>
+            </div>
+        </div>
+    </case>
+    <case value="2">
+        <div  class="shadlist  shadliston">
+            <div  class="fl shad_b" style="margin:10px 0px;">
+                <h1>已支付</h1>
+                <p style="color:#999999;font-size:14px;">等待卖家发货</p>
+            </div>
+        </div>
+    </case>
+    <case value="3">
+        <div  class="shadlist  shadliston">
+            <div  class="fl shad_b" style="margin:10px 0px;">
+                <h1>卖家已发货</h1>
+                <p style="color:#999999;font-size:14px;">还剩9天16时自动确认</p>
+            </div>
+        </div>
+    </case>
+    <case value="4">
+        <div  class="shadlist  shadliston">
+            <div  class="fl shad_b" style="margin:10px 0px;">
+                <h1>订单已完成</h1>
+                <p style="color:#999999;font-size:14px;"></p>
+            </div>
+        </div>
+    </case>
+    <case value="9">
+        <div  class="shadlist  shadliston">
+            <div  class="fl shad_b" style="margin:10px 0px;">
+                <h1>订单已取消</h1>
+                <p style="color:#999999;font-size:14px;"></p>
+            </div>
+        </div>
+    </case>
+    <default />
+    <div  class="shadlist  shadliston">
+        <div  class="fl shad_b" style="margin:10px 0px;">
+            <h1>订单进行中</h1>
+            <p style="color:#999999;font-size:14px;">请保持关注</p>
+        </div>
+    </div>
+</switch>
+
+
+<!-- 物流信息 和 联络人-->
+<div class="kjdds container-fluid">
+
+    <switch name="order_info.order_status">
+        <case value="1">
+            <div class="kjddlist container">
+                <a href="#">
+                    <div class="kj_a fl">
+                        <img src="/Public/Mobile/images/dsss.png">
+                    </div>
+                    <div class="kj_b fl">
+                        <p>收货人信息: {$deliver_address.name}  {$deliver_address.mobile} </p>
+                        <span>收货地址: {$deliver_address.address}</span>
+                    </div>
+                </a>
+            </div>
+        </case>
+        <case value="2">
+            <div class="kjddlist container">
+                <a href="#">
+                    <div class="kj_a fl">
+                        <img src="/Public/Mobile/images/dsss.png">
+                    </div>
+                    <div class="kj_b fl">
+                        <p>仓库发货中</p>
+                        <span></span>
+                    </div>
+                </a>
+            </div>
+        </case>
+        <case value="3">
+            <empty name="deliver_info">
+                <div class="kjddlist container">
+                    <a href="#">
+                        <div class="kj_a fl">
+                            <img src="/Public/Mobile/images/dsss.png">
+                        </div>
+                        <div class="kj_b fl">
+                            <p>收货人信息: {$deliver_address.name}  {$deliver_address.mobile} </p>
+                            <span>收货地址: {$deliver_address.address}</span>
+                        </div>
+                    </a>
+                </div>
+                <else />
+                <div class="kjddlist container">
+                    <a href="#">
+                        <div class="kj_a fl">
+                            <img src="/Public/Mobile/images/dsss.png">
+                        </div>
+                        <div class="kj_b fl">
+                            <p>快件到达  [芜湖鸿江集散中心]</p>
+                            <span>2019-05-15  20:48:00</span>
+                        </div>
+                        <div class="kj_c fr">
+                            <img src="/Public/Mobile/images/rcopy.png">
+                        </div>
+                    </a>
+                </div>
+            </empty>
+        </case>
+        <case value="4">
+            <div class="kjddlist container">
+                <a href="#">
+                    <div class="kj_a fl">
+                        <img src="/Public/Mobile/images/dsss.png">
+                    </div>
+                    <div class="kj_b fl">
+                        <p>已确认收货</p>
+                        <span></span>
+                    </div>
+                </a>
+            </div>
+        </case>
+        <case value="9">
+            <div class="kjddlist container">
+                <a href="#">
+                    <div class="kj_a fl">
+                        <img src="/Public/Mobile/images/dsss.png">
+                    </div>
+                    <div class="kj_b fl">
+                        <p>收货人信息: {$deliver_address.name}  {$deliver_address.mobile} </p>
+                        <span>收货地址: {$deliver_address.address}</span>
+                    </div>
+                </a>
+            </div>
+        </case>
+        <default />
+        <div class="kjddlist container">
+            <a href="#">
+                <div class="kj_a fl">
+                    <img src="/Public/Mobile/images/dsss.png">
+                </div>
+                <div class="kj_b fl">
+                    <p>收货人信息: {$deliver_address.name}  {$deliver_address.mobile} </p>
+                    <span>收货地址: {$deliver_address.address}</span>
+                </div>
+            </a>
+        </div>
+    </switch>
+
+
+    <div class="kjddlist container" style="border:none;">
+        <a href="#">
+            <div class="kj_a fl" style="marign-top:10px;">
+                <img src="/Public/Mobile/images/Oval8.png">
+            </div>
+            <div class="kj_b fl">
+                <h1>{$order_info.member_name} <small>{$order_info.member_mobile}</small></h1>
+                <span>{$order_info.addtime|date='Y-m-d H:i:s',###}</span>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+<!--商品详情-->
+<div class="spags_arts container-fluid" style="margin-top:10px;">
+    <div  class="spag_list spag_a ">
+        <div class="container">
+            <h1>商品详情</h1>
+        </div>
+    </div>
+    <div  class="spag_list spag_b">
+        <div class="container">
+            <div class="fl  ovh">
+                <img src="{$goods_info.main_img}" style="width:80px;height:auto;">
+            </div>
+            <div  class="fl spbnr">
+                <h1>{$goods_info.goods_name}</h1>
+                <h2><span class="fl"><img src="/Public/Mobile/images/rw.png">{$goods_info['goods_price']}.00</span> <dbo class="fr">×{$order_info['goods_num']}</dbo></h2>
+                <p>{$goods_info.goods_remark}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="shangp_zjs contianer-fluid mt0" style="margin-bottom:10px;">
+    <div class="sppcall container">
+        <div  class="spcelist spcelistaa">
+            <span class="fl">商品总价</span>
+            <span class="fr"><dbo>¥</dbo>{$goods_info['goods_price'] * $order_info['goods_num']}.00</span>
+        </div>
+        <div  class="spcelist">
+            <span class="fl">运费(快递）</span>
+            <span class="fr"><dbo>¥</dbo>0.00</span>
+        </div>
+
+        <if condition="$order_info['pocket_type'] gt 0">
+            <div  class="spcelist">
+                <span class="fl">使用积分抵扣</span>
+                <span class="fr"><dbo> ¥</dbo>- {$order_info['pocket_value']}.00</span>
+            </div>
+        </if>
+
+    </div>
+    <div class="alllzsjj">
+        <div class="container">
+            <span class="fr"><dbo>¥</dbo>{$order_info['member_payment']}.00</span>
+        </div>
+    </div>
+</div>
+
+
+<!-- 订单详情 -->
+<div class="jfensss container-fluid">
+    <div class="jifennr container">
+        <p><span>商城积分：</span>获得{$send_pocket}兑换积分</p>
+        <p><span>订单编号：</span>{$order_info.order_sn}</p>
+        <p><span>微信交易号：</span>{$order_info.pay_sn}</p>
+        <p><span>创建时间：</span>{$order_info.addtime|date='Y-m-d H:i:s',###}</p>
+        <if condition="$order_info['pocket_type'] gt 0">
+            <p><span>付款时间：</span>{$order_info.pay_time|date='Y-m-d H:i:s',###}</p>
+        </if>
+        <!--<p><span>发货时间：</span>{$order_info.edittime|date='Y-m-d H:i:s',###}</p>-->
+    </div>
+</div>
+<div class="buztel container-fluid">
+    <div class="container">
+        <a href="tel:02153067999"><img src="/Public/Mobile/images/ess.png"> 联系我们</a>
+    </div>
+</div>
+
+<!--去支付-->
+<if condition="$order_info['order_status'] eq 1">
+    <div class="qzhbt container-fluid">
+        <div class="qz_lt fl">
+            <span>合计<dbo>¥</dbo><b>{$order_info.member_payment}.00</b></span>
+        </div>
+        <div class="qz_rt  fr">
+            <a href="#">去支付</a>
+        </div>
+    </div>
+</if>
+
+
+
+<include file="Components/footer" />
+
+</body>
+</html>
+<script>
+    $(function(){
+        var order_sn = "{$order_info['order_sn']}";
+
+        $(document).on("click","#create-order-btn",function () {
+
+            if(!order_sn)
+            {
+                return false;
+            }
+
+            handlePayInfo(order_sn);
+
+            return false;
+        });
+
+        /********** 微信支付  **************************/
+        function handlePayInfo(order_sn) {
+            $.ajax({
+                type:'get',
+                url:'/Mobile/Order/payInfo',
+                data:{
+                    order_sn:order_sn
+                },
+                dataType:'json',
+                success:function (res) {
+                    if (res.code == 200)
+                    {
+                        var data = res.data;
+                        var success_url = "/Mobile/Order/order_detail?order_sn="+order_sn;
+                        if(data.need_pay)
+                        {
+                            callWxpay(data.param,success_url);
+                        }else{
+                            window.location.href = success_url;
+                        }
+                    }
+                    else
+                    {
+                        alert(res.msg);
+                    }
+                }
+            });
+            return false;
+        }
+
+        function callWxpay(param,success_url) {
+            if(isWeixin())
+            {
+                // alert('恭喜您提交成功\n'+'温馨提示：\n'+'因微信交易限额\n'+'推荐使用对公转账方式支付\n'+'公司名:上海渠道商务咨询有限公司\n'+'账号：32494708010140751\n'+'开户行：农商银行康桥支行\n'+'转账成功后三个工作日内，\n'+'会开放正式会员权益及功能\n'+'如有疑问或无法对公转账，\n'+'可以联系客户经理\n'+'或拨打客服热线：\n'+'021-53829777。');die;
+                if (typeof WeixinJSBridge == "undefined"){
+                    if( document.addEventListener ){
+                        document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
+                    }else if (document.attachEvent){
+                        document.attachEvent('WeixinJSBridgeReady', jsApiCall);
+                        document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
+                    }
+                }else{
+                    jsApiCall(param,success_url);
+                }
+            }else{
+                alert("请在微信浏览器中支付");
+            }
+        }
+
+        function jsApiCall(param,success_url) {
+            WeixinJSBridge.invoke(
+                'getBrandWCPayRequest',
+                {
+                    "appId": param.appId,     //公众号名称，由商户传入
+                    "timeStamp": param.timeStamp,         //时间戳，自1970年以来的秒数
+                    "nonceStr": param.nonceStr, //随机串
+                    "package": param.package,
+                    "signType": param.signType,         //微信签名方式：
+                    "paySign": param.paySign //微信签名
+                },
+                function(res){
+                    if (res.err_msg == "get_brand_wcpay_request:ok") {
+                        // alert("支付成功");
+                        window.location.href = success_url;
+                    }else if (res.err_msg == "get_brand_wcpay_request:cancel") {
+                        // alert("已取消微信支付!");
+                    } else {
+                        alert("系统繁忙稍后再试……");
+                    };
+                }
+            );
+        }
+
+        function isWeixin() {
+            var ua = window.navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        /********** 微信支付  **************************/
+    })
+</script>

@@ -1,0 +1,10 @@
+<footer>
+	<ul>
+<!--
+		<a href="{:U('Project/foodlist')}?phone={$_SESSION['infor']['data'][0]['Mobile']}"><li><img src="__PUBLIC__/Project/images/icon/index.png"><span>首页</span></li></a>
+-->
+		<a href="/Home/Home/home"><li><img src="__PUBLIC__/Project/images/icon/index.png"><span>首页</span></li></a>
+		<a href="{:U('Project/order')}?phone={$_SESSION['infor']['data'][0]['Mobile']}"><li><img src="__PUBLIC__/Project/images/icon/order.png"><span>订单</span></li></a>
+		<a href="{:U('Project/center')}?phone={$_SESSION['infor']['data'][0]['Mobile']}"><li><img src="__PUBLIC__/Project/images/icon/merber.png"><span>个人中心</span></li></a>
+	</ul>
+</footer>

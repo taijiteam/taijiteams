@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>星级酒店</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Project/css/style.css">
+<style type="text/css">
+
+</style>
+<body class="binguan">
+<!-- 这里是头部 -->
+<header>
+	<!-- banner statr -->
+	<div class="fullSlide">
+		<div class="bd">
+			<ul>
+				<li _src="url(__PUBLIC__/Project/images/1.jpg)" style="background:#E2025E center 0 no-repeat;background-size: 200%;"><a href="#"></a></li>
+				<li _src="url(__PUBLIC__/Project/images/2.jpg)" style="background:#DED5A1 center 0 no-repeat;background-size: 200%;"><a href="#"></a></li>
+				<li _src="url(__PUBLIC__/Project/images/3.jpg)" style="background:#B8CED1 center 0 no-repeat;background-size: 200%;"><a href="#"></a></li>
+				
+			</ul>
+		</div>
+		<div class="hd"><ul></ul></div>
+		<span class="prev"></span>
+		<span class="next"></span>
+	</div>
+	<!--fullSlide end-->
+	<form action="{:U('Project/search')}">
+		<input type="text" class="text" placeholder="请输入" name="keywords">
+		<input type="submit" class="sub" value="搜索" name="">
+	</form>
+</header>
+<!-- 这里是身体 -->
+<div class="body">
+	<!-- 栏目1 -->
+	<div>
+		<h4>星级酒店</h4>
+		<ul>
+			<volist name="hotellist" id="hotellist">
+				<a href="{:U('Project/hotelcontent')}?p_id={$hotellist.p_id}&cardid={$_SESSION['cardId']}">
+					<li>
+						<p><img src="__PUBLIC__/Uploads/Project/{$hotellist.i_image}"></p>
+						<div>
+							<h4>{$hotellist.p_little}</h4>
+							<div>
+								<span class="span1">4.7</span>
+								<span class="span2">分</span>
+								<span class="span3">5000+消费</span>
+								<span class="span3">豪华型</span>
+							</div>
+							<p class="span3">{$hotellist.p_address|htmlspecialchars_decode|strip_tags|mb_substr=0,15,'utf-8'}..</p>
+							<p><img src="__PUBLIC__/Project/images/icon/rmb.png">&nbsp;<span class="span4">{$hotellist.p_price}</span><span class="span5">起</span></p>
+							<p>
+								<span class="span6">发票推荐</span>
+								<volist name="hotellist.erji" id="hotellist_1">
+									<span class="span7">{$hotellist_1}</span>&nbsp;
+								</volist>
+								<!-- <span class="span7">亲子酒店</span>
+								<span class="span7">购物便捷</span>
+								<span class="span7">休闲度假</span> -->
+							</p>
+						</div>
+					</li>
+				</a>
+			</volist>
+			<!-- <a href="{:U('Project/hotelcontent')}">
+				<li>
+					<p><img src="__PUBLIC__/Project/image/xgll.jpg"></p>
+					<div>
+						<h4>上海世贸皇家艾美酒店</h4>
+						<div>
+							<span class="span1">4.7</span>
+							<span class="span2">分</span>
+							<span class="span3">5000+消费</span>
+							<span class="span3">豪华型</span>
+						</div>
+						<p class="span3">人民广场/外滩，来福士附近</p>
+						<p><img src="__PUBLIC__/Project/images/icon/rmb.png">&nbsp;<span class="span4">2517</span><span class="span5">起</span></p>
+						<p>
+							<span class="span6">发票推荐</span>
+							<span class="span7">套餐</span>
+							<span class="span7">亲子酒店</span>
+							<span class="span7">购物便捷</span>
+							<span class="span7">休闲度假</span>
+						</p>
+					</div>
+				</li>
+			</a>
+			<a href="{:U('Project/hotelcontent')}">
+				<li>
+					<p><img src="__PUBLIC__/Project/image/xgll.jpg"></p>
+					<div>
+						<h4>上海世贸皇家艾美酒店</h4>
+						<div>
+							<span class="span1">4.7</span>
+							<span class="span2">分</span>
+							<span class="span3">5000+消费</span>
+							<span class="span3">豪华型</span>
+						</div>
+						<p class="span3">人民广场/外滩，来福士附近</p>
+						<p><img src="__PUBLIC__/Project/images/icon/rmb.png">&nbsp;<span class="span4">2517</span><span class="span5">起</span></p>
+						<p>
+							<span class="span6">发票推荐</span>
+							<span class="span7">套餐</span>
+							<span class="span7">亲子酒店</span>
+							<span class="span7">购物便捷</span>
+							<span class="span7">休闲度假</span>
+						</p>
+					</div>
+				</li>
+			</a>  -->
+		</ul>
+	</div>
+</div>
+<!-- 这里是底部 -->
+<include file="ProjectPublic/footer" />
+</body>
+<!-- banner js -->
+<script type="text/javascript" src="__PUBLIC__/Project/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/js/superslide.2.1.js"></script>
+<script type="text/javascript">
+$(".fullSlide").hover(function(){
+    $(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
+},
+function(){
+    $(this).find(".prev,.next").fadeOut()
+});
+$(".fullSlide").slide({
+    titCell: ".hd ul",
+    mainCell: ".bd ul",
+    effect: "fold",
+    autoPlay: true,
+    autoPage: true,
+    trigger: "click",
+    startFun: function(i) {
+        var curLi = jQuery(".fullSlide .bd li").eq(i);
+        if ( !! curLi.attr("_src")) {
+            curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+        }
+    }
+});
+</script>
+<!-- the end -->
+</html>

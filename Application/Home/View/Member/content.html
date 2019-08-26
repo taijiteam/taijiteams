@@ -1,0 +1,210 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>成员风采</title>
+</head>
+<style type="text/css">
+body{
+	background: #000;
+	margin: 0;
+	padding: 0;
+}
+footer{
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+}
+footer>ul{
+	margin: 0;
+	padding: 5px 0;
+	background: rgb(35,35,35);
+	overflow: hidden;
+}
+footer>ul>a>li{
+	display: block;
+	float: left;
+	width: 25%;
+	text-align: center;
+	margin-left: 6.25%;
+}
+footer>ul>a>li>img{
+	width: 25px;
+}
+footer>ul>a>li>span{
+	display: block;
+	text-align: center;
+	font-size: 10px;
+	color: rgb(248,194,84);
+}
+.content>.body{
+	color: #fff;
+	margin-bottom: 80px;
+}
+.content>.body>.head{
+	margin-top: 5px;
+	overflow: hidden;
+}
+.content>.body>.head>.left1{
+	/*width: 30%;*/
+	display: block;
+	float: left;
+	overflow: hidden;
+}
+.content>.body>.head>.left1>a{
+	width: 25px;
+	display: block;
+	border: 2px solid #999;
+	text-align: center;
+	margin-left: 15px;
+	margin-top: 10px;
+	line-height: 25px;
+}
+.content>.body>.head>.left1>a>img{
+	width: 20px;
+}
+.content>.body>.head>.left2{
+	/*width: 70%;*/
+	display: block;
+	float: right;
+	overflow: hidden;
+}
+.content>.body>.head>.left2>div{
+	margin-top: 25px;
+	margin-right: 5px;
+	display: block;
+	float: left;
+}
+.content>.body>.head>.left2>div>p{
+	margin: 0;
+	line-height: 18px;
+	font-size: 14px;
+	font-family: "方正兰亭黑";
+}
+.content>.body>.head>.left2>img{
+	margin-top: 12px;
+	margin-right: 10px;
+	width: 90px;
+	display: block;
+	float: left;
+}
+.content>.body>.con>h4{
+	background: #363636;
+	text-align: center;
+	/*color: rgb(178, 163, 130);*/
+	color: rgb(248,194,84);
+	font-size: 12px;
+	line-height: 25px;
+}
+.content>.body>.con>.merback{
+	padding: 20px 0 0 0;
+	background-image: url(http://www.qudaoplus.cn/statics/images/person_list/bg.jpg);
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	background-position: center center;
+}
+.content>.body>.con>.merback>.merber{
+	padding-top: 25px;
+}
+.content>.body>.con>p{
+	text-align: center;
+	margin: 0;
+	line-height: 25px;
+}
+.content>.body>.con>div>p{
+	text-align: center;
+	margin: 0;
+	line-height: 25px;
+}
+.content>.body>.con>div>.p1>img{
+	height: 59px;
+}
+.content>.body>.con>div>.p2{
+	/*margin-bottom: 15px;*/
+}
+.content>.body>.con>div>.p2>img{
+	height: 13px;
+}
+.content>.body>.con>.p3{
+	font-size: 12px;
+}
+.content>.body>.con>div>.merber>img{
+	height: 310px;
+}
+.content>.body>.con>div>h3{
+	text-align: center;
+	font-size: 24px;
+	line-height: 25px;
+	font-weight: normal;
+	margin: 10px 0;
+}
+.content>.body>.con>.text{
+	width: 80%;
+	margin: 15px auto;
+	font-size: 14px;
+	overflow: hidden;
+}
+</style>
+<body class="content">
+<div class="body">
+	<div class="head">
+		<div class="left1"><a href="javascript:;" onclick="back()"><img src="__PUBLIC__/Merber/images/icon/back.png"></a></div>
+		<div class="left2">
+			<div>
+				<p>MEMBER</p>
+				<p>成员风采</p>
+			</div>
+			<img src="__PUBLIC__/Merber/images/icon/dao.png">
+		</div>
+	</div>
+	<div class="con">
+		<h4>成员展示</h4>
+		<div class="merback" style="margin-bottom: 7px">
+			<p class="p1"><img src="__PUBLIC__/Merber/images/icon/djgxql.png"></p>
+			<p class="merber"><img src="__PUBLIC__/Uploads/Member/{$merber.m_img}"></p>
+			<h3>{$merber.m_cname}</h3>
+			<p class="p2"><img src="__PUBLIC__/Merber/images/icon/qdcy.png"></p>
+			<!--<p class="p2"><img src="__PUBLIC__/Merber/images/icon/qdcy1.png"></p>-->
+			<!--<if condition="$merber.m_groupname eq '尊享大咖'">-->
+				<!--<p class="p2"><img src="__PUBLIC__/Merber/images/icon/huiyuan/zunxiang.png">-->
+				<!--<elseif condition="$merber.m_groupname eq '高级顾问'"/>-->
+				<!--<p class="p2"><img src="__PUBLIC__/Merber/images/icon/huiyuan/guwen.png">-->
+				<!--<elseif condition="$merber.m_groupname eq '君享成员'"/>-->
+				<!--<p class="p2"><img src="__PUBLIC__/Merber/images/icon/huiyuan/junxiang.png">-->
+				<!--<elseif condition="$merber.m_groupname eq '真享成员'"/>-->
+				<!--<p class="p2"><img src="__PUBLIC__/Merber/images/icon/huiyuan/zhenxiang.png">-->
+				<!--<elseif condition="$merber.m_groupname eq '悦享成员'"/>-->
+				<!--<p class="p2"><img src="__PUBLIC__/Merber/images/icon/huiyuan/yuexiang.png">-->
+				<!--<elseif condition="$merber.m_groupname eq '致享成员'"/>-->
+				<!--<p class="p2"><img src="__PUBLIC__/Merber/images/icon/huiyuan/zhixiang.png">-->
+				<!--<elseif condition="$merber.m_groupname eq '亦享成员'"/>-->
+				<!--<p class="p2"><img src="__PUBLIC__/Merber/images/icon/huiyuan/yixiang.png">-->
+			<!--</if>-->
+		</div>
+		<volist name="work" id="work">
+			<p class="p3">{$work}</p>
+		</volist>
+		<!--社会职务-->
+		<volist name="socia" id="socia">
+			<p class="p3">{$socia}</p>
+		</volist>
+		<!--个人介绍-->
+		<div class="text">
+			{$merber.m_introduce}
+		</div>
+	</div>
+</div>
+<include file="MemberPublic/footer" />
+<!-- 请在上方写相关业务脚本 -->
+<SCRIPT language=javascript>
+function back()
+{
+	window.history.back();
+}
+</SCRIPT>
+</body>
+</html>

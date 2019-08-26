@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>个人中心</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Doctor/css/style.css">
+</head>
+<body>
+	<include file="DoctorPublic/cheader" />
+	<include file="DoctorPublic/chead" />
+	<div class="ccontent">
+		
+		<h3><img src="__PUBLIC__/Doctor/images/merber.png">个人中心</h3>
+		<div class="corder">
+			<p>我的订单</p>
+			<ul>
+				<a href="{:U('Doctor/order?order_state=1&order_uphone='.$_SESSION['infor']['data'][0]['Mobile'])}">
+					<li>
+						<img src="__PUBLIC__/Doctor/images/queren1.png">
+						<p>待确认</p>
+					</li>
+				</a>
+				<a href="{:U('Doctor/order?order_state=2&order_uphone='.$_SESSION['infor']['data'][0]['Mobile'])}">
+					<li>
+						<img src="__PUBLIC__/Doctor/images/zhifu1.png">
+						<p>待支付</p>
+					</li>
+				</a>
+				<a href="{:U('Doctor/evaluation_list?order_state=3&order_uphone='.$_SESSION['infor']['data'][0]['Mobile'])}">
+					<li>
+						<img src="__PUBLIC__/Doctor/images/pingjia1.png">
+						<p>待评价</p>
+					</li>
+				</a>
+				<a href="{:U('Doctor/order_all?order_state=1&order_uphone='.$_SESSION['infor']['data'][0]['Mobile'])}">
+					<li>
+						<img src="__PUBLIC__/Doctor/images/allorder1.png">
+						<p>全部订单</p>
+					</li>
+				</a>
+			</ul>
+		</div>
+		<div class="div_1">
+			<a href="{:U('Doctor/information')}"><p><img src="__PUBLIC__/Doctor/images/merberxinxi.png"><span>成员信息</span></p></a>
+			<a href=""><p><!-- <img src="__PUBLIC__/Doctor/images/guahao.png"><span>预约看病</span> --></p></a>
+		</div>
+		<div class="div_1">
+			<a href="{:U('Doctor/feedback?f_phone='.$_SESSION['infor']['data'][0]['Mobile'])}"><p><img src="__PUBLIC__/Doctor/images/yijianfankui.png"><span>意见反馈</span></p></a>
+			<a href="{:U('Doctor/message')}?m_merber={$_SESSION['infor']['data'][0]['TrueName']}"><p><img src="__PUBLIC__/Doctor/images/lingdang.png"><span>系统消息</span></p></a>
+		</div>
+	</div>
+<include file="DoctorPublic/footer" />
+</body>
+</html>

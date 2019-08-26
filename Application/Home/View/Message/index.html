@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="http://www.webkfa.com/" />
+<title>留言板</title>
+<!-- <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script> -->
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+*{
+margin:0;padding:0;
+-webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
+-webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
+-webkit-tap-highlight-color: rgba(210,210,210,0.35); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+-webkit-user-select: none; /* prevent copy paste, to allow, change 'none' to 'text' */
+}
+body{font-family:"微软雅黑";font-size:12px;}
+ul,li{list-style:none;}
+.ylcon{width:100%;min-width:320px;}
+.tit{height:26px;line-height:26px;padding:0px 15px;position:relative;font-size:15px;color:#aaa;border-bottom:1px solid rgba(0, 0, 0, 0.15);}
+
+.story{border-bottom:1px dashed #cecece;padding:0 15px 3px;position:relative;}
+.story_t{font-size:1.2em;color:rgba(0,0,0,1);padding-top:5px;padding-bottom:2px;}
+.story_m{color:rgba(110,110,110,1);line-height:21px;word-break:break-all;word-wrap:break-word;overflow:hidden;font-size:1.2em;padding:2px 0;}
+.story_time{color:rgba(154,154,154,1);padding:2px 0;}
+.story_hf{background:rgb(245,245,245);font-size:1.2em;border:1px solid rgba(204,204,204,0.2);border-radius:2px;color:rgba(110,110,110,1);padding:4px;margin-bottom:5px;}
+.opbtn{position:absolute;top: 0;right: 0;}
+</style>
+</head>
+<body>
+<div class="ylcon">
+<p class="tit">
+所有留言
+</p>
+<a href="{:U('Club/logout')}">退出</a>
+<div id="messDivId">
+  <volist id="v" name="info">
+  <div class="story">
+    <div class="opbtn"></div>
+    <p class="story_t"><img src="{$v.mhead}" width="50px" height="50px" >{$v.mname}{$v.msex}</p>
+    <p class="story_time">{$v.mdata}</p>
+    <p class="story_m">{$v.mcontent}</p>
+
+    <?php if( !empty($v['replycard']) ){ ?>
+      <p class="story_hf">@剑花烟雨:的是相对无言眼波如流的默契的是相对无言眼波如流的默契的是相对无言眼波如流的默契的是相对无言眼波如流的默契的是相对无言眼波如流的默契的是相对无言眼波如流的默契</p>
+    <?php } ?>
+    <a href="http://localhost/taijicrm/club.php/message/index?id={$v.cardid}" >回复</a> | <a href="#" >点赞</a>
+    </div>
+  </volist>
+</div>
+</div>
+<div style="width:800px;margin:10px auto">
+<form action="{:U('Message/index')}" method="post">
+内容：<textarea style="width:800px;height:200px" name="content" ></textarea><br />
+<input type="submit" value="提交" />
+</form>
+</div>
+
+<h2>创建模态框（Modal）</h2>
+<!-- 按钮触发模态框 -->
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+	开始演示模态框
+</button>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					模态框（Modal）标题
+				</h4>
+			</div>
+			<div class="modal-body">
+        <div style="width:500px;margin:10px auto">
+        <form action="{:U('Message/index')}" method="post">
+        内容：<textarea style="width:500px;height:200px" name="content" ></textarea><br />
+        <input type="submit" value="提交" />
+        </form>
+        </div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+				<button type="button" class="btn btn-primary">
+					提交更改
+				</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+</body>
+</html>

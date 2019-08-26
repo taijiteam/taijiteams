@@ -1,0 +1,891 @@
+[30-May-2019 10:19:02 PRC] PHP Fatal error:  Class 'Common\Logic\CartLogicClass' not found in /Users/hd/work/Taiji/Application/Mobile/Controller/CartController.class.php on line 35
+[30-May-2019 10:19:02 PRC] PHP Stack trace:
+[30-May-2019 10:19:02 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[30-May-2019 10:19:02 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:24
+[30-May-2019 10:19:02 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[30-May-2019 10:19:02 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[30-May-2019 10:19:02 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[30-May-2019 10:19:02 PRC] PHP   6. controller($name = *uninitialized*, $path = *uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:87
+[30-May-2019 10:19:02 PRC] PHP   7. Mobile\Controller\CartController->__construct() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:612
+[30-May-2019 10:21:10 PRC] PHP Fatal error:  Class 'Common\Logic\CartLogicClass' not found in /Users/hd/work/Taiji/Application/Mobile/Controller/CartController.class.php on line 35
+[30-May-2019 10:21:10 PRC] PHP Stack trace:
+[30-May-2019 10:21:10 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[30-May-2019 10:21:10 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:24
+[30-May-2019 10:21:10 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[30-May-2019 10:21:10 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[30-May-2019 10:21:10 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[30-May-2019 10:21:10 PRC] PHP   6. controller($name = *uninitialized*, $path = *uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:87
+[30-May-2019 10:21:10 PRC] PHP   7. Mobile\Controller\CartController->__construct() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:612
+[30-May-2019 10:26:37 PRC] PHP Fatal error:  Class 'Common\Logic\CartLogicClass' not found in /Users/hd/work/Taiji/Application/Mobile/Controller/CartController.class.php on line 35
+[30-May-2019 10:26:37 PRC] PHP Stack trace:
+[30-May-2019 10:26:37 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[30-May-2019 10:26:37 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:24
+[30-May-2019 10:26:37 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[30-May-2019 10:26:37 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[30-May-2019 10:26:37 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[30-May-2019 10:26:37 PRC] PHP   6. controller($name = *uninitialized*, $path = *uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:87
+[30-May-2019 10:26:37 PRC] PHP   7. Mobile\Controller\CartController->__construct() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:612
+[30-May-2019 10:26:38 PRC] PHP Fatal error:  Class 'Common\Logic\CartLogicClass' not found in /Users/hd/work/Taiji/Application/Mobile/Controller/CartController.class.php on line 35
+[30-May-2019 10:26:38 PRC] PHP Stack trace:
+[30-May-2019 10:26:38 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[30-May-2019 10:26:38 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:24
+[30-May-2019 10:26:38 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[30-May-2019 10:26:38 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[30-May-2019 10:26:38 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[30-May-2019 10:26:38 PRC] PHP   6. controller($name = *uninitialized*, $path = *uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:87
+[30-May-2019 10:26:38 PRC] PHP   7. Mobile\Controller\CartController->__construct() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:612
+[30-May-2019 10:28:05 PRC] PHP Fatal error:  Class 'Common\Logic\CartLogicClass' not found in /Users/hd/work/Taiji/Application/Mobile/Controller/CartController.class.php on line 35
+[30-May-2019 10:28:06 PRC] PHP Stack trace:
+[30-May-2019 10:28:06 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[30-May-2019 10:28:06 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:24
+[30-May-2019 10:28:06 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[30-May-2019 10:28:06 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[30-May-2019 10:28:06 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[30-May-2019 10:28:06 PRC] PHP   6. controller($name = *uninitialized*, $path = *uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:87
+[30-May-2019 10:28:06 PRC] PHP   7. Mobile\Controller\CartController->__construct() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:612
+[30-May-2019 10:29:05 PRC] PHP Fatal error:  Class 'Common\Logic\CartLogicClass' not found in /Users/hd/work/Taiji/Application/Mobile/Controller/CartController.class.php on line 35
+[30-May-2019 10:29:05 PRC] PHP Stack trace:
+[30-May-2019 10:29:05 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[30-May-2019 10:29:05 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:24
+[30-May-2019 10:29:05 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[30-May-2019 10:29:05 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[30-May-2019 10:29:05 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[30-May-2019 10:29:05 PRC] PHP   6. controller($name = *uninitialized*, $path = *uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:87
+[30-May-2019 10:29:05 PRC] PHP   7. Mobile\Controller\CartController->__construct() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:612
+[30-May-2019 10:33:24 PRC] PHP Fatal error:  Class 'Common\Logic\CartLogicClass' not found in /Users/hd/work/Taiji/Application/Mobile/Controller/CartController.class.php on line 35
+[30-May-2019 10:33:24 PRC] PHP Stack trace:
+[30-May-2019 10:33:24 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[30-May-2019 10:33:24 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:24
+[30-May-2019 10:33:24 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[30-May-2019 10:33:24 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[30-May-2019 10:33:24 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[30-May-2019 10:33:24 PRC] PHP   6. controller($name = *uninitialized*, $path = *uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:87
+[30-May-2019 10:33:24 PRC] PHP   7. Mobile\Controller\CartController->__construct() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:612
+[30-May-2019 10:39:30 PRC] PHP Fatal error:  Class 'Common\Logic\CartLogicClass' not found in /Users/hd/work/Taiji/Application/Mobile/Controller/CartController.class.php on line 37
+[30-May-2019 10:39:30 PRC] PHP Stack trace:
+[30-May-2019 10:39:30 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[30-May-2019 10:39:30 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:24
+[30-May-2019 10:39:30 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[30-May-2019 10:39:30 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[30-May-2019 10:39:30 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[30-May-2019 10:39:30 PRC] PHP   6. controller($name = *uninitialized*, $path = *uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:87
+[30-May-2019 10:39:30 PRC] PHP   7. Mobile\Controller\CartController->__construct() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:612
+[30-May-2019 10:39:39 PRC] PHP Fatal error:  Class 'Common\Logic\CartLogicClass' not found in /Users/hd/work/Taiji/Application/Mobile/Controller/CartController.class.php on line 35
+[30-May-2019 10:39:39 PRC] PHP Stack trace:
+[30-May-2019 10:39:39 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[30-May-2019 10:39:39 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:24
+[30-May-2019 10:39:39 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[30-May-2019 10:39:39 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[30-May-2019 10:39:39 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[30-May-2019 10:39:39 PRC] PHP   6. controller($name = *uninitialized*, $path = *uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:87
+[30-May-2019 10:39:39 PRC] PHP   7. Mobile\Controller\CartController->__construct() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:612
+[30-May-2019 10:45:06 PRC] PHP Fatal error:  Class 'Common\Logic\CartLogicClass' not found in /Users/hd/work/Taiji/Application/Mobile/Controller/CartController.class.php on line 37
+[30-May-2019 10:45:06 PRC] PHP Stack trace:
+[30-May-2019 10:45:06 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[30-May-2019 10:45:06 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:24
+[30-May-2019 10:45:06 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[30-May-2019 10:45:06 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[30-May-2019 10:45:06 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[30-May-2019 10:45:06 PRC] PHP   6. controller($name = *uninitialized*, $path = *uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:87
+[30-May-2019 10:45:06 PRC] PHP   7. Mobile\Controller\CartController->__construct() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:612
+[30-May-2019 10:45:37 PRC] PHP Fatal error:  Class 'Common\Logic\CartLogicClass' not found in /Users/hd/work/Taiji/Application/Common/Logic/CartLogic.class.php on line 39
+[30-May-2019 10:45:37 PRC] PHP Stack trace:
+[30-May-2019 10:45:37 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[30-May-2019 10:45:37 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:24
+[30-May-2019 10:45:37 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[30-May-2019 10:45:37 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[30-May-2019 10:45:37 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[30-May-2019 10:45:37 PRC] PHP   6. controller($name = *uninitialized*, $path = *uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:87
+[30-May-2019 10:45:37 PRC] PHP   7. Mobile\Controller\CartController->__construct() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:612
+[30-May-2019 10:45:37 PRC] PHP   8. Common\Logic\CartLogic::instance($member_id = *uninitialized*, $goods_id = *uninitialized*) /Users/hd/work/Taiji/Application/Mobile/Controller/CartController.class.php:37
+[30-May-2019 16:41:40 PRC] PHP Fatal error:  Maximum function nesting level of '256' reached, aborting! in /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php on line 21
+[30-May-2019 16:41:40 PRC] PHP Stack trace:
+[30-May-2019 16:41:40 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[30-May-2019 16:41:40 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:24
+[30-May-2019 16:41:40 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[30-May-2019 16:41:40 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[30-May-2019 16:41:40 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[30-May-2019 16:41:40 PRC] PHP   6. controller($name = *uninitialized*, $path = *uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:87
+[30-May-2019 16:41:40 PRC] PHP   7. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:612
+[30-May-2019 16:41:40 PRC] PHP   8. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP   9. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  10. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  11. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  12. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  13. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  14. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  15. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  16. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  17. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  18. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  19. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  20. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  21. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  22. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  23. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  24. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  25. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  26. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  27. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  28. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  29. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  30. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  31. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  32. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  33. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  34. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  35. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  36. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  37. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  38. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  39. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  40. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  41. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  42. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  43. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  44. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  45. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  46. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  47. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  48. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  49. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  50. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  51. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  52. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  53. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  54. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  55. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  56. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  57. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  58. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  59. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  60. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  61. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  62. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  63. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  64. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  65. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  66. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  67. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  68. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  69. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  70. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  71. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  72. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  73. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  74. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  75. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  76. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  77. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  78. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  79. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  80. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  81. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  82. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  83. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  84. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  85. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  86. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  87. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  88. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  89. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  90. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  91. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  92. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  93. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  94. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  95. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  96. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  97. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  98. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP  99. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 100. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 101. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 102. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 103. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 104. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 105. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 106. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 107. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 108. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 109. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 110. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 111. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 112. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 113. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 114. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 115. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 116. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 117. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 118. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 119. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 120. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 121. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 122. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 123. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 124. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 125. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 126. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 127. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 128. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 129. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 130. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 131. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 132. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 133. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 134. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 135. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 136. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 137. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 138. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 139. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 140. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 141. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 142. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 143. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 144. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 145. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 146. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 147. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 148. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 149. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 150. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 151. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 152. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 153. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 154. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 155. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 156. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 157. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 158. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 159. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 160. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 161. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 162. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 163. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 164. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 165. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 166. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 167. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 168. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 169. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 170. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 171. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 172. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 173. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 174. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 175. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 176. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 177. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 178. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 179. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 180. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 181. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 182. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 183. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 184. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 185. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 186. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 187. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 188. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 189. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 190. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 191. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 192. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 193. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 194. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 195. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 196. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 197. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 198. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 199. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 200. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 201. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 202. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 203. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 204. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 205. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 206. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 207. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 208. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 209. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 210. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 211. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 212. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 213. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 214. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 215. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 216. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 217. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 218. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 219. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 220. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 221. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 222. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 223. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 224. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 225. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 226. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 227. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 228. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 229. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 230. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 231. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 232. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 233. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 234. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 235. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 236. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 237. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 238. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 239. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 240. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 241. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 242. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 243. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 244. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 245. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 246. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 247. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 248. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 249. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 250. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 251. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 252. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 253. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 254. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 255. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[30-May-2019 16:41:40 PRC] PHP 256. Mobile\Controller\OrderController->__construct() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:23
+[31-May-2019 09:52:01 PRC] PHP Fatal error:  Cannot use [] for reading in /Users/hd/work/Taiji/Application/Runtime/Cache/Admin/0625ccdd984322e27e52787535bec737.php on line 125
+[31-May-2019 09:52:01 PRC] PHP Stack trace:
+[31-May-2019 09:52:01 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[31-May-2019 09:52:01 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:24
+[31-May-2019 09:52:01 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[31-May-2019 09:52:01 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[31-May-2019 09:52:01 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[31-May-2019 09:52:01 PRC] PHP   6. ReflectionMethod->invoke() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[31-May-2019 09:52:01 PRC] PHP   7. Admin\Controller\GoodsController->goodsAdd() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[31-May-2019 09:52:01 PRC] PHP   8. Think\Controller->display() /Users/hd/work/Taiji/Application/Admin/Controller/GoodsController.class.php:46
+[31-May-2019 09:52:01 PRC] PHP   9. Think\View->display() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Controller.class.php:56
+[31-May-2019 09:52:01 PRC] PHP  10. Think\View->fetch() /Users/hd/work/Taiji/ThinkPHP/Library/Think/View.class.php:72
+[31-May-2019 09:52:01 PRC] PHP  11. Think\Hook::listen() /Users/hd/work/Taiji/ThinkPHP/Library/Think/View.class.php:124
+[31-May-2019 09:52:01 PRC] PHP  12. Think\Hook::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Hook.class.php:89
+[31-May-2019 09:52:01 PRC] PHP  13. Behavior\ParseTemplateBehavior->run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Hook.class.php:119
+[31-May-2019 09:52:01 PRC] PHP  14. Think\Template->fetch() /Users/hd/work/Taiji/ThinkPHP/Library/Behavior/ParseTemplateBehavior.class.php:32
+[31-May-2019 09:52:01 PRC] PHP  15. Think\Storage::load() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Template.class.php:77
+[31-May-2019 09:52:01 PRC] PHP  16. Think\Storage::__callstatic() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Template.class.php:77
+[31-May-2019 09:52:01 PRC] PHP  17. call_user_func_array:{/Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37}() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37
+[31-May-2019 09:52:01 PRC] PHP  18. Think\Storage\Driver\File->load() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37
+[31-May-2019 16:23:38 PRC] PHP Fatal error:  Call to a member function find_spec() on null in /Users/hd/work/Taiji/Application/Common/Model/GoodsSpecModel.class.php on line 63
+[31-May-2019 16:23:38 PRC] PHP Stack trace:
+[31-May-2019 16:23:38 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[31-May-2019 16:23:38 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:24
+[31-May-2019 16:23:38 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[31-May-2019 16:23:38 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[31-May-2019 16:23:38 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[31-May-2019 16:23:38 PRC] PHP   6. ReflectionMethod->invoke(*uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[31-May-2019 16:23:38 PRC] PHP   7. Admin\Controller\GoodsSpecController->spec_info() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[31-May-2019 16:23:38 PRC] PHP   8. Common\Model\GoodsSpecModel->spec_fomate($spec = *uninitialized*) /Users/hd/work/Taiji/Application/Admin/Controller/GoodsSpecController.class.php:66
+[31-May-2019 16:23:56 PRC] PHP Fatal error:  Call to a member function find_spec() on null in /Users/hd/work/Taiji/Application/Common/Model/GoodsSpecModel.class.php on line 63
+[31-May-2019 16:23:56 PRC] PHP Stack trace:
+[31-May-2019 16:23:56 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[31-May-2019 16:23:56 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:24
+[31-May-2019 16:23:56 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[31-May-2019 16:23:56 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[31-May-2019 16:23:56 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[31-May-2019 16:23:56 PRC] PHP   6. ReflectionMethod->invoke(*uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[31-May-2019 16:23:56 PRC] PHP   7. Admin\Controller\GoodsSpecController->spec_info() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[31-May-2019 16:23:56 PRC] PHP   8. Common\Model\GoodsSpecModel->spec_fomate($spec = *uninitialized*) /Users/hd/work/Taiji/Application/Admin/Controller/GoodsSpecController.class.php:66
+[31-May-2019 16:24:20 PRC] PHP Fatal error:  Call to a member function find_spec() on null in /Users/hd/work/Taiji/Application/Common/Model/GoodsSpecModel.class.php on line 63
+[31-May-2019 16:24:20 PRC] PHP Stack trace:
+[31-May-2019 16:24:20 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[31-May-2019 16:24:20 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:24
+[31-May-2019 16:24:20 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[31-May-2019 16:24:20 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[31-May-2019 16:24:20 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[31-May-2019 16:24:20 PRC] PHP   6. ReflectionMethod->invoke(*uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[31-May-2019 16:24:20 PRC] PHP   7. Admin\Controller\GoodsSpecController->spec_info() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[31-May-2019 16:24:20 PRC] PHP   8. Common\Model\GoodsSpecModel->spec_fomate($spec = *uninitialized*) /Users/hd/work/Taiji/Application/Admin/Controller/GoodsSpecController.class.php:66
+[31-May-2019 16:25:13 PRC] PHP Fatal error:  Call to a member function find_spec() on null in /Users/hd/work/Taiji/Application/Common/Model/GoodsSpecModel.class.php on line 63
+[31-May-2019 16:25:13 PRC] PHP Stack trace:
+[31-May-2019 16:25:13 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[31-May-2019 16:25:13 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:24
+[31-May-2019 16:25:13 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[31-May-2019 16:25:13 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[31-May-2019 16:25:13 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[31-May-2019 16:25:13 PRC] PHP   6. ReflectionMethod->invoke(*uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[31-May-2019 16:25:13 PRC] PHP   7. Admin\Controller\GoodsSpecController->spec_info() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[31-May-2019 16:25:13 PRC] PHP   8. Common\Model\GoodsSpecModel->spec_fomate($spec = *uninitialized*) /Users/hd/work/Taiji/Application/Admin/Controller/GoodsSpecController.class.php:66
+[01-Jun-2019 13:44:44 PRC] PHP Fatal error:  Call to a member function page_list() on null in /Users/hd/work/Taiji/Application/Admin/Controller/OrderController.class.php on line 26
+[01-Jun-2019 13:44:44 PRC] PHP Stack trace:
+[01-Jun-2019 13:44:44 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[01-Jun-2019 13:44:44 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:24
+[01-Jun-2019 13:44:44 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[01-Jun-2019 13:44:44 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[01-Jun-2019 13:44:44 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[01-Jun-2019 13:44:44 PRC] PHP   6. ReflectionMethod->invoke() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[01-Jun-2019 13:44:44 PRC] PHP   7. Admin\Controller\OrderController->index() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[03-Jun-2019 12:53:05 PRC] PHP Parse error:  syntax error, unexpected '$data' (T_VARIABLE) in /Users/hd/work/Taiji/Application/Mobile/Controller/IndexController.class.php on line 58
+[03-Jun-2019 12:53:05 PRC] PHP Stack trace:
+[03-Jun-2019 12:53:05 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[03-Jun-2019 12:53:05 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:24
+[03-Jun-2019 12:53:05 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[03-Jun-2019 12:53:05 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[03-Jun-2019 12:53:05 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[03-Jun-2019 12:53:05 PRC] PHP   6. controller($name = *uninitialized*, $path = *uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:87
+[03-Jun-2019 12:53:05 PRC] PHP   7. class_exists(*uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[03-Jun-2019 12:53:05 PRC] PHP   8. spl_autoload_call(*uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[03-Jun-2019 12:53:05 PRC] PHP   9. Think\Think::autoload($class = *uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[03-Jun-2019 19:33:22 PRC] PHP Parse error:  syntax error, unexpected ')' in /Users/hd/work/Taiji/Application/Mobile/Controller/CartController.class.php on line 56
+[03-Jun-2019 19:33:22 PRC] PHP Stack trace:
+[03-Jun-2019 19:33:22 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[03-Jun-2019 19:33:22 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:24
+[03-Jun-2019 19:33:22 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[03-Jun-2019 19:33:22 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[03-Jun-2019 19:33:22 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[03-Jun-2019 19:33:22 PRC] PHP   6. controller($name = *uninitialized*, $path = *uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:87
+[03-Jun-2019 19:33:22 PRC] PHP   7. class_exists(*uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[03-Jun-2019 19:33:22 PRC] PHP   8. spl_autoload_call(*uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[03-Jun-2019 19:33:22 PRC] PHP   9. Think\Think::autoload($class = *uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[04-Jun-2019 13:46:54 PRC] PHP Parse error:  syntax error, unexpected '>' in /Users/hd/work/Taiji/Application/Runtime/Cache/Mobile/9d7a03e6b4334ff844039b3968eebedb.php on line 223
+[04-Jun-2019 13:46:54 PRC] PHP Stack trace:
+[04-Jun-2019 13:46:54 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[04-Jun-2019 13:46:54 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:24
+[04-Jun-2019 13:46:54 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[04-Jun-2019 13:46:54 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[04-Jun-2019 13:46:54 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[04-Jun-2019 13:46:54 PRC] PHP   6. ReflectionMethod->invoke() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[04-Jun-2019 13:46:54 PRC] PHP   7. Mobile\Controller\GoodsController->detail() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[04-Jun-2019 13:46:54 PRC] PHP   8. Think\Controller->display() /Users/hd/work/Taiji/Application/Mobile/Controller/GoodsController.class.php:52
+[04-Jun-2019 13:46:54 PRC] PHP   9. Think\View->display() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Controller.class.php:56
+[04-Jun-2019 13:46:54 PRC] PHP  10. Think\View->fetch() /Users/hd/work/Taiji/ThinkPHP/Library/Think/View.class.php:72
+[04-Jun-2019 13:46:54 PRC] PHP  11. Think\Hook::listen() /Users/hd/work/Taiji/ThinkPHP/Library/Think/View.class.php:124
+[04-Jun-2019 13:46:54 PRC] PHP  12. Think\Hook::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Hook.class.php:89
+[04-Jun-2019 13:46:54 PRC] PHP  13. Behavior\ParseTemplateBehavior->run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Hook.class.php:119
+[04-Jun-2019 13:46:54 PRC] PHP  14. Think\Template->fetch() /Users/hd/work/Taiji/ThinkPHP/Library/Behavior/ParseTemplateBehavior.class.php:32
+[04-Jun-2019 13:46:54 PRC] PHP  15. Think\Storage::load() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Template.class.php:77
+[04-Jun-2019 13:46:54 PRC] PHP  16. Think\Storage::__callstatic() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Template.class.php:77
+[04-Jun-2019 13:46:54 PRC] PHP  17. call_user_func_array:{/Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37}() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37
+[04-Jun-2019 13:46:54 PRC] PHP  18. Think\Storage\Driver\File->load() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37
+[05-Jun-2019 20:36:15 PRC] PHP Parse error:  syntax error, unexpected ')', expecting variable (T_VARIABLE) or '$' in /Users/hd/work/Taiji/Application/Runtime/Cache/Mobile/9d7a03e6b4334ff844039b3968eebedb.php on line 184
+[05-Jun-2019 20:36:15 PRC] PHP Stack trace:
+[05-Jun-2019 20:36:15 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[05-Jun-2019 20:36:15 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:24
+[05-Jun-2019 20:36:15 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[05-Jun-2019 20:36:15 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[05-Jun-2019 20:36:15 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[05-Jun-2019 20:36:15 PRC] PHP   6. ReflectionMethod->invoke(*uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[05-Jun-2019 20:36:15 PRC] PHP   7. Mobile\Controller\GoodsController->detail() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[05-Jun-2019 20:36:15 PRC] PHP   8. Think\Controller->display($templateFile = *uninitialized*, $charset = *uninitialized*, $contentType = *uninitialized*, $content = *uninitialized*, $prefix = *uninitialized*) /Users/hd/work/Taiji/Application/Mobile/Controller/GoodsController.class.php:78
+[05-Jun-2019 20:36:15 PRC] PHP   9. Think\View->display($templateFile = *uninitialized*, $charset = *uninitialized*, $contentType = *uninitialized*, $content = *uninitialized*, $prefix = *uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/Controller.class.php:56
+[05-Jun-2019 20:36:15 PRC] PHP  10. Think\View->fetch($templateFile = *uninitialized*, $content = *uninitialized*, $prefix = *uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/View.class.php:72
+[05-Jun-2019 20:36:15 PRC] PHP  11. Think\Hook::listen($tag = *uninitialized*, $params = *uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/View.class.php:124
+[05-Jun-2019 20:36:15 PRC] PHP  12. Think\Hook::exec($name = *uninitialized*, $tag = *uninitialized*, $params = *uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/Hook.class.php:89
+[05-Jun-2019 20:36:15 PRC] PHP  13. Behavior\ParseTemplateBehavior->run($_data = *uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/Hook.class.php:119
+[05-Jun-2019 20:36:15 PRC] PHP  14. Think\Template->fetch($templateFile = *uninitialized*, $templateVar = *uninitialized*, $prefix = *uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Behavior/ParseTemplateBehavior.class.php:32
+[05-Jun-2019 20:36:15 PRC] PHP  15. Think\Storage::load(*uninitialized*, *uninitialized*, *uninitialized*, *uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/Template.class.php:77
+[05-Jun-2019 20:36:15 PRC] PHP  16. Think\Storage::__callstatic($method = *uninitialized*, $args = *uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/Template.class.php:77
+[05-Jun-2019 20:36:15 PRC] PHP  17. call_user_func_array:{/Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37}(*uninitialized*, *uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37
+[05-Jun-2019 20:36:15 PRC] PHP  18. Think\Storage\Driver\File->load($_filename = *uninitialized*, $vars = *uninitialized*, *uninitialized*, *uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37
+[06-Jun-2019 17:39:34 PRC] PHP Fatal error:  Call to a member function page_list() on null in /Users/hd/work/Taiji/Application/Admin/Controller/OrderController.class.php on line 26
+[06-Jun-2019 17:39:35 PRC] PHP Stack trace:
+[06-Jun-2019 17:39:35 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[06-Jun-2019 17:39:35 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:24
+[06-Jun-2019 17:39:35 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[06-Jun-2019 17:39:35 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[06-Jun-2019 17:39:35 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[06-Jun-2019 17:39:35 PRC] PHP   6. ReflectionMethod->invoke() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[06-Jun-2019 17:39:35 PRC] PHP   7. Admin\Controller\OrderController->index() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[10-Jun-2019 14:51:30 PRC] PHP Fatal error:  Class 'Mobile\Controller\MobileController' not found in /Users/hd/work/Taiji/Application/Mobile/Controller/CartController.class.php on line 16
+[10-Jun-2019 14:51:30 PRC] PHP Stack trace:
+[10-Jun-2019 14:51:30 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[10-Jun-2019 14:51:30 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:27
+[10-Jun-2019 14:51:30 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[10-Jun-2019 14:51:30 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[10-Jun-2019 14:51:30 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[10-Jun-2019 14:51:30 PRC] PHP   6. controller() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:87
+[10-Jun-2019 14:51:30 PRC] PHP   7. class_exists() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[10-Jun-2019 14:51:30 PRC] PHP   8. spl_autoload_call() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[10-Jun-2019 14:51:30 PRC] PHP   9. Think\Think::autoload() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[10-Jun-2019 14:51:30 PRC] PHP  10. include() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:168
+[10-Jun-2019 14:52:04 PRC] PHP Fatal error:  Class 'Mobile\Controller\MobileController' not found in /Users/hd/work/Taiji/Application/Mobile/Controller/CartController.class.php on line 16
+[10-Jun-2019 14:52:04 PRC] PHP Stack trace:
+[10-Jun-2019 14:52:04 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[10-Jun-2019 14:52:04 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:27
+[10-Jun-2019 14:52:04 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[10-Jun-2019 14:52:04 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[10-Jun-2019 14:52:04 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[10-Jun-2019 14:52:04 PRC] PHP   6. controller() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:87
+[10-Jun-2019 14:52:04 PRC] PHP   7. class_exists() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[10-Jun-2019 14:52:04 PRC] PHP   8. spl_autoload_call() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[10-Jun-2019 14:52:04 PRC] PHP   9. Think\Think::autoload() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[10-Jun-2019 14:52:04 PRC] PHP  10. include() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:168
+[10-Jun-2019 14:54:38 PRC] PHP Fatal error:  Class 'Mobile\Controller\MobileController' not found in /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php on line 18
+[10-Jun-2019 14:54:38 PRC] PHP Stack trace:
+[10-Jun-2019 14:54:38 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[10-Jun-2019 14:54:38 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:27
+[10-Jun-2019 14:54:38 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[10-Jun-2019 14:54:38 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[10-Jun-2019 14:54:38 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[10-Jun-2019 14:54:38 PRC] PHP   6. controller() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:87
+[10-Jun-2019 14:54:38 PRC] PHP   7. class_exists() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[10-Jun-2019 14:54:38 PRC] PHP   8. spl_autoload_call() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[10-Jun-2019 14:54:38 PRC] PHP   9. Think\Think::autoload() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[10-Jun-2019 14:54:38 PRC] PHP  10. include() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:168
+[10-Jun-2019 15:07:46 PRC] PHP Fatal error:  Class 'Common\Controller\MobileController' not found in /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php on line 19
+[10-Jun-2019 15:07:46 PRC] PHP Stack trace:
+[10-Jun-2019 15:07:46 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[10-Jun-2019 15:07:46 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:27
+[10-Jun-2019 15:07:46 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[10-Jun-2019 15:07:46 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[10-Jun-2019 15:07:46 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[10-Jun-2019 15:07:46 PRC] PHP   6. controller() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:87
+[10-Jun-2019 15:07:46 PRC] PHP   7. class_exists() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[10-Jun-2019 15:07:46 PRC] PHP   8. spl_autoload_call() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[10-Jun-2019 15:07:46 PRC] PHP   9. Think\Think::autoload() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[10-Jun-2019 15:07:46 PRC] PHP  10. include() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:168
+[10-Jun-2019 15:07:49 PRC] PHP Fatal error:  Class 'Common\Controller\MobileController' not found in /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php on line 19
+[10-Jun-2019 15:07:49 PRC] PHP Stack trace:
+[10-Jun-2019 15:07:49 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[10-Jun-2019 15:07:49 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:27
+[10-Jun-2019 15:07:49 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[10-Jun-2019 15:07:49 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[10-Jun-2019 15:07:49 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[10-Jun-2019 15:07:49 PRC] PHP   6. controller() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:87
+[10-Jun-2019 15:07:49 PRC] PHP   7. class_exists() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[10-Jun-2019 15:07:49 PRC] PHP   8. spl_autoload_call() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[10-Jun-2019 15:07:49 PRC] PHP   9. Think\Think::autoload() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[10-Jun-2019 15:07:49 PRC] PHP  10. include() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:168
+[10-Jun-2019 15:08:25 PRC] PHP Fatal error:  Class 'Common\Controller\MobileController' not found in /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php on line 19
+[10-Jun-2019 15:08:25 PRC] PHP Stack trace:
+[10-Jun-2019 15:08:25 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[10-Jun-2019 15:08:25 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:27
+[10-Jun-2019 15:08:25 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[10-Jun-2019 15:08:25 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[10-Jun-2019 15:08:25 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[10-Jun-2019 15:08:25 PRC] PHP   6. controller() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:87
+[10-Jun-2019 15:08:25 PRC] PHP   7. class_exists() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[10-Jun-2019 15:08:25 PRC] PHP   8. spl_autoload_call() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[10-Jun-2019 15:08:25 PRC] PHP   9. Think\Think::autoload() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[10-Jun-2019 15:08:25 PRC] PHP  10. include() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:168
+[10-Jun-2019 15:08:32 PRC] PHP Fatal error:  Class 'Common\Controller\MobileController' not found in /Users/hd/work/Taiji/Application/Mobile/Controller/CartController.class.php on line 17
+[10-Jun-2019 15:08:32 PRC] PHP Stack trace:
+[10-Jun-2019 15:08:32 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[10-Jun-2019 15:08:32 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:27
+[10-Jun-2019 15:08:32 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[10-Jun-2019 15:08:32 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[10-Jun-2019 15:08:32 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[10-Jun-2019 15:08:32 PRC] PHP   6. controller() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:87
+[10-Jun-2019 15:08:32 PRC] PHP   7. class_exists() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[10-Jun-2019 15:08:32 PRC] PHP   8. spl_autoload_call() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[10-Jun-2019 15:08:32 PRC] PHP   9. Think\Think::autoload() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[10-Jun-2019 15:08:32 PRC] PHP  10. include() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:168
+[10-Jun-2019 15:09:32 PRC] PHP Fatal error:  Class 'Common\Controller\MobileController' not found in /Users/hd/work/Taiji/Application/Mobile/Controller/CartController.class.php on line 17
+[10-Jun-2019 15:09:32 PRC] PHP Stack trace:
+[10-Jun-2019 15:09:32 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[10-Jun-2019 15:09:33 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:27
+[10-Jun-2019 15:09:33 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[10-Jun-2019 15:09:33 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[10-Jun-2019 15:09:33 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[10-Jun-2019 15:09:33 PRC] PHP   6. controller() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:87
+[10-Jun-2019 15:09:33 PRC] PHP   7. class_exists() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[10-Jun-2019 15:09:33 PRC] PHP   8. spl_autoload_call() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[10-Jun-2019 15:09:33 PRC] PHP   9. Think\Think::autoload() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[10-Jun-2019 15:09:33 PRC] PHP  10. include() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:168
+[10-Jun-2019 15:10:45 PRC] PHP Fatal error:  Class 'Common\Controller\MobileController' not found in /Users/hd/work/Taiji/Application/Mobile/Controller/CartController.class.php on line 17
+[10-Jun-2019 15:10:45 PRC] PHP Stack trace:
+[10-Jun-2019 15:10:45 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[10-Jun-2019 15:10:45 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:27
+[10-Jun-2019 15:10:45 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[10-Jun-2019 15:10:45 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[10-Jun-2019 15:10:45 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[10-Jun-2019 15:10:45 PRC] PHP   6. controller() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:87
+[10-Jun-2019 15:10:45 PRC] PHP   7. class_exists() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[10-Jun-2019 15:10:45 PRC] PHP   8. spl_autoload_call() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[10-Jun-2019 15:10:45 PRC] PHP   9. Think\Think::autoload() /Users/hd/work/Taiji/ThinkPHP/Common/functions.php:611
+[10-Jun-2019 15:10:45 PRC] PHP  10. include() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:168
+[10-Jun-2019 15:34:03 PRC] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /Users/hd/work/Taiji/Application/Runtime/Cache/Mobile/01be1cccde1235c328fffa3727efd49c.php on line 26
+[10-Jun-2019 15:34:03 PRC] PHP Stack trace:
+[10-Jun-2019 15:34:03 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[10-Jun-2019 15:34:03 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:27
+[10-Jun-2019 15:34:03 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[10-Jun-2019 15:34:03 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[10-Jun-2019 15:34:03 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[10-Jun-2019 15:34:03 PRC] PHP   6. ReflectionMethod->invoke() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[10-Jun-2019 15:34:03 PRC] PHP   7. Mobile\Controller\MemberController->index() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[10-Jun-2019 15:34:03 PRC] PHP   8. Think\Controller->display() /Users/hd/work/Taiji/Application/Mobile/Controller/MemberController.class.php:29
+[10-Jun-2019 15:34:03 PRC] PHP   9. Think\View->display() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Controller.class.php:56
+[10-Jun-2019 15:34:03 PRC] PHP  10. Think\View->fetch() /Users/hd/work/Taiji/ThinkPHP/Library/Think/View.class.php:72
+[10-Jun-2019 15:34:03 PRC] PHP  11. Think\Hook::listen() /Users/hd/work/Taiji/ThinkPHP/Library/Think/View.class.php:124
+[10-Jun-2019 15:34:03 PRC] PHP  12. Think\Hook::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Hook.class.php:89
+[10-Jun-2019 15:34:03 PRC] PHP  13. Behavior\ParseTemplateBehavior->run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Hook.class.php:119
+[10-Jun-2019 15:34:03 PRC] PHP  14. Think\Template->fetch() /Users/hd/work/Taiji/ThinkPHP/Library/Behavior/ParseTemplateBehavior.class.php:32
+[10-Jun-2019 15:34:03 PRC] PHP  15. Think\Storage::load() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Template.class.php:77
+[10-Jun-2019 15:34:03 PRC] PHP  16. Think\Storage::__callstatic() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Template.class.php:77
+[10-Jun-2019 15:34:03 PRC] PHP  17. call_user_func_array:{/Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37}() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37
+[10-Jun-2019 15:34:03 PRC] PHP  18. Think\Storage\Driver\File->load() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37
+[10-Jun-2019 16:09:46 PRC] PHP Parse error:  syntax error, unexpected '/', expecting variable (T_VARIABLE) or '$' in /Users/hd/work/Taiji/Application/Runtime/Cache/Mobile/37e97d381a1997d9d449fee3730d1e51.php on line 19
+[10-Jun-2019 16:09:46 PRC] PHP Stack trace:
+[10-Jun-2019 16:09:46 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[10-Jun-2019 16:09:46 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:27
+[10-Jun-2019 16:09:46 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[10-Jun-2019 16:09:46 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[10-Jun-2019 16:09:46 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[10-Jun-2019 16:09:46 PRC] PHP   6. ReflectionMethod->invoke() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[10-Jun-2019 16:09:46 PRC] PHP   7. Mobile\Controller\OrderController->order_detail() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[10-Jun-2019 16:09:46 PRC] PHP   8. Think\Controller->display() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:135
+[10-Jun-2019 16:09:46 PRC] PHP   9. Think\View->display() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Controller.class.php:56
+[10-Jun-2019 16:09:46 PRC] PHP  10. Think\View->fetch() /Users/hd/work/Taiji/ThinkPHP/Library/Think/View.class.php:72
+[10-Jun-2019 16:09:46 PRC] PHP  11. Think\Hook::listen() /Users/hd/work/Taiji/ThinkPHP/Library/Think/View.class.php:124
+[10-Jun-2019 16:09:46 PRC] PHP  12. Think\Hook::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Hook.class.php:89
+[10-Jun-2019 16:09:46 PRC] PHP  13. Behavior\ParseTemplateBehavior->run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Hook.class.php:119
+[10-Jun-2019 16:09:46 PRC] PHP  14. Think\Template->fetch() /Users/hd/work/Taiji/ThinkPHP/Library/Behavior/ParseTemplateBehavior.class.php:32
+[10-Jun-2019 16:09:46 PRC] PHP  15. Think\Storage::load() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Template.class.php:77
+[10-Jun-2019 16:09:46 PRC] PHP  16. Think\Storage::__callstatic() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Template.class.php:77
+[10-Jun-2019 16:09:46 PRC] PHP  17. call_user_func_array:{/Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37}() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37
+[10-Jun-2019 16:09:46 PRC] PHP  18. Think\Storage\Driver\File->load() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37
+[10-Jun-2019 16:11:28 PRC] PHP Parse error:  syntax error, unexpected '/', expecting variable (T_VARIABLE) or '$' in /Users/hd/work/Taiji/Application/Runtime/Cache/Mobile/37e97d381a1997d9d449fee3730d1e51.php on line 19
+[10-Jun-2019 16:11:28 PRC] PHP Stack trace:
+[10-Jun-2019 16:11:28 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[10-Jun-2019 16:11:28 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:27
+[10-Jun-2019 16:11:28 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[10-Jun-2019 16:11:28 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[10-Jun-2019 16:11:28 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[10-Jun-2019 16:11:28 PRC] PHP   6. ReflectionMethod->invoke() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[10-Jun-2019 16:11:28 PRC] PHP   7. Mobile\Controller\OrderController->order_detail() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[10-Jun-2019 16:11:28 PRC] PHP   8. Think\Controller->display() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:135
+[10-Jun-2019 16:11:28 PRC] PHP   9. Think\View->display() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Controller.class.php:56
+[10-Jun-2019 16:11:28 PRC] PHP  10. Think\View->fetch() /Users/hd/work/Taiji/ThinkPHP/Library/Think/View.class.php:72
+[10-Jun-2019 16:11:28 PRC] PHP  11. Think\Hook::listen() /Users/hd/work/Taiji/ThinkPHP/Library/Think/View.class.php:124
+[10-Jun-2019 16:11:28 PRC] PHP  12. Think\Hook::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Hook.class.php:89
+[10-Jun-2019 16:11:28 PRC] PHP  13. Behavior\ParseTemplateBehavior->run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Hook.class.php:119
+[10-Jun-2019 16:11:28 PRC] PHP  14. Think\Template->fetch() /Users/hd/work/Taiji/ThinkPHP/Library/Behavior/ParseTemplateBehavior.class.php:32
+[10-Jun-2019 16:11:28 PRC] PHP  15. Think\Storage::load() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Template.class.php:77
+[10-Jun-2019 16:11:28 PRC] PHP  16. Think\Storage::__callstatic() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Template.class.php:77
+[10-Jun-2019 16:11:28 PRC] PHP  17. call_user_func_array:{/Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37}() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37
+[10-Jun-2019 16:11:28 PRC] PHP  18. Think\Storage\Driver\File->load() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37
+[10-Jun-2019 16:11:49 PRC] PHP Parse error:  syntax error, unexpected '/', expecting variable (T_VARIABLE) or '$' in /Users/hd/work/Taiji/Application/Runtime/Cache/Mobile/37e97d381a1997d9d449fee3730d1e51.php on line 19
+[10-Jun-2019 16:11:49 PRC] PHP Stack trace:
+[10-Jun-2019 16:11:49 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[10-Jun-2019 16:11:49 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:27
+[10-Jun-2019 16:11:49 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[10-Jun-2019 16:11:49 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[10-Jun-2019 16:11:49 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[10-Jun-2019 16:11:49 PRC] PHP   6. ReflectionMethod->invoke() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[10-Jun-2019 16:11:49 PRC] PHP   7. Mobile\Controller\OrderController->order_detail() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[10-Jun-2019 16:11:49 PRC] PHP   8. Think\Controller->display() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:135
+[10-Jun-2019 16:11:49 PRC] PHP   9. Think\View->display() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Controller.class.php:56
+[10-Jun-2019 16:11:49 PRC] PHP  10. Think\View->fetch() /Users/hd/work/Taiji/ThinkPHP/Library/Think/View.class.php:72
+[10-Jun-2019 16:11:49 PRC] PHP  11. Think\Hook::listen() /Users/hd/work/Taiji/ThinkPHP/Library/Think/View.class.php:124
+[10-Jun-2019 16:11:49 PRC] PHP  12. Think\Hook::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Hook.class.php:89
+[10-Jun-2019 16:11:49 PRC] PHP  13. Behavior\ParseTemplateBehavior->run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Hook.class.php:119
+[10-Jun-2019 16:11:49 PRC] PHP  14. Think\Template->fetch() /Users/hd/work/Taiji/ThinkPHP/Library/Behavior/ParseTemplateBehavior.class.php:32
+[10-Jun-2019 16:11:49 PRC] PHP  15. Think\Storage::load() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Template.class.php:77
+[10-Jun-2019 16:11:49 PRC] PHP  16. Think\Storage::__callstatic() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Template.class.php:77
+[10-Jun-2019 16:11:49 PRC] PHP  17. call_user_func_array:{/Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37}() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37
+[10-Jun-2019 16:11:49 PRC] PHP  18. Think\Storage\Driver\File->load() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37
+[10-Jun-2019 16:12:01 PRC] PHP Parse error:  syntax error, unexpected '[', expecting variable (T_VARIABLE) or '$' in /Users/hd/work/Taiji/Application/Runtime/Cache/Mobile/37e97d381a1997d9d449fee3730d1e51.php on line 19
+[10-Jun-2019 16:12:01 PRC] PHP Stack trace:
+[10-Jun-2019 16:12:01 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[10-Jun-2019 16:12:01 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:27
+[10-Jun-2019 16:12:01 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[10-Jun-2019 16:12:01 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[10-Jun-2019 16:12:01 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[10-Jun-2019 16:12:01 PRC] PHP   6. ReflectionMethod->invoke() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[10-Jun-2019 16:12:01 PRC] PHP   7. Mobile\Controller\OrderController->order_detail() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[10-Jun-2019 16:12:01 PRC] PHP   8. Think\Controller->display() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:135
+[10-Jun-2019 16:12:01 PRC] PHP   9. Think\View->display() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Controller.class.php:56
+[10-Jun-2019 16:12:01 PRC] PHP  10. Think\View->fetch() /Users/hd/work/Taiji/ThinkPHP/Library/Think/View.class.php:72
+[10-Jun-2019 16:12:01 PRC] PHP  11. Think\Hook::listen() /Users/hd/work/Taiji/ThinkPHP/Library/Think/View.class.php:124
+[10-Jun-2019 16:12:01 PRC] PHP  12. Think\Hook::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Hook.class.php:89
+[10-Jun-2019 16:12:01 PRC] PHP  13. Behavior\ParseTemplateBehavior->run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Hook.class.php:119
+[10-Jun-2019 16:12:01 PRC] PHP  14. Think\Template->fetch() /Users/hd/work/Taiji/ThinkPHP/Library/Behavior/ParseTemplateBehavior.class.php:32
+[10-Jun-2019 16:12:01 PRC] PHP  15. Think\Storage::load() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Template.class.php:77
+[10-Jun-2019 16:12:01 PRC] PHP  16. Think\Storage::__callstatic() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Template.class.php:77
+[10-Jun-2019 16:12:01 PRC] PHP  17. call_user_func_array:{/Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37}() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37
+[10-Jun-2019 16:12:01 PRC] PHP  18. Think\Storage\Driver\File->load() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37
+[10-Jun-2019 16:12:15 PRC] PHP Parse error:  syntax error, unexpected '/' in /Users/hd/work/Taiji/Application/Runtime/Cache/Mobile/37e97d381a1997d9d449fee3730d1e51.php on line 19
+[10-Jun-2019 16:12:15 PRC] PHP Stack trace:
+[10-Jun-2019 16:12:15 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[10-Jun-2019 16:12:15 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:27
+[10-Jun-2019 16:12:15 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[10-Jun-2019 16:12:15 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[10-Jun-2019 16:12:15 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[10-Jun-2019 16:12:15 PRC] PHP   6. ReflectionMethod->invoke() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[10-Jun-2019 16:12:15 PRC] PHP   7. Mobile\Controller\OrderController->order_detail() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[10-Jun-2019 16:12:15 PRC] PHP   8. Think\Controller->display() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:135
+[10-Jun-2019 16:12:15 PRC] PHP   9. Think\View->display() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Controller.class.php:56
+[10-Jun-2019 16:12:15 PRC] PHP  10. Think\View->fetch() /Users/hd/work/Taiji/ThinkPHP/Library/Think/View.class.php:72
+[10-Jun-2019 16:12:15 PRC] PHP  11. Think\Hook::listen() /Users/hd/work/Taiji/ThinkPHP/Library/Think/View.class.php:124
+[10-Jun-2019 16:12:15 PRC] PHP  12. Think\Hook::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Hook.class.php:89
+[10-Jun-2019 16:12:15 PRC] PHP  13. Behavior\ParseTemplateBehavior->run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Hook.class.php:119
+[10-Jun-2019 16:12:15 PRC] PHP  14. Think\Template->fetch() /Users/hd/work/Taiji/ThinkPHP/Library/Behavior/ParseTemplateBehavior.class.php:32
+[10-Jun-2019 16:12:15 PRC] PHP  15. Think\Storage::load() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Template.class.php:77
+[10-Jun-2019 16:12:15 PRC] PHP  16. Think\Storage::__callstatic() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Template.class.php:77
+[10-Jun-2019 16:12:15 PRC] PHP  17. call_user_func_array:{/Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37}() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37
+[10-Jun-2019 16:12:15 PRC] PHP  18. Think\Storage\Driver\File->load() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37
+[11-Jun-2019 11:10:15 PRC] PHP Parse error:  syntax error, unexpected ')' in /Users/hd/work/Taiji/Application/Runtime/Cache/Admin/346dfcdf6ec8d3c93d33b5eb4f636a21.php on line 217
+[11-Jun-2019 11:10:15 PRC] PHP Stack trace:
+[11-Jun-2019 11:10:15 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[11-Jun-2019 11:10:15 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:27
+[11-Jun-2019 11:10:15 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[11-Jun-2019 11:10:15 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[11-Jun-2019 11:10:15 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[11-Jun-2019 11:10:15 PRC] PHP   6. ReflectionMethod->invoke() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[11-Jun-2019 11:10:15 PRC] PHP   7. Admin\Controller\GoodsController->goods_detail() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[11-Jun-2019 11:10:15 PRC] PHP   8. Think\Controller->display() /Users/hd/work/Taiji/Application/Admin/Controller/GoodsController.class.php:182
+[11-Jun-2019 11:10:15 PRC] PHP   9. Think\View->display() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Controller.class.php:56
+[11-Jun-2019 11:10:15 PRC] PHP  10. Think\View->fetch() /Users/hd/work/Taiji/ThinkPHP/Library/Think/View.class.php:72
+[11-Jun-2019 11:10:15 PRC] PHP  11. Think\Hook::listen() /Users/hd/work/Taiji/ThinkPHP/Library/Think/View.class.php:124
+[11-Jun-2019 11:10:15 PRC] PHP  12. Think\Hook::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Hook.class.php:89
+[11-Jun-2019 11:10:15 PRC] PHP  13. Behavior\ParseTemplateBehavior->run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Hook.class.php:119
+[11-Jun-2019 11:10:15 PRC] PHP  14. Think\Template->fetch() /Users/hd/work/Taiji/ThinkPHP/Library/Behavior/ParseTemplateBehavior.class.php:32
+[11-Jun-2019 11:10:15 PRC] PHP  15. Think\Storage::load() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Template.class.php:77
+[11-Jun-2019 11:10:15 PRC] PHP  16. Think\Storage::__callstatic() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Template.class.php:77
+[11-Jun-2019 11:10:15 PRC] PHP  17. call_user_func_array:{/Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37}() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37
+[11-Jun-2019 11:10:15 PRC] PHP  18. Think\Storage\Driver\File->load() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37
+[11-Jun-2019 11:12:24 PRC] PHP Fatal error:  Call to undefined function value() in /Users/hd/work/Taiji/Application/Runtime/Cache/Admin/346dfcdf6ec8d3c93d33b5eb4f636a21.php on line 217
+[11-Jun-2019 11:12:24 PRC] PHP Stack trace:
+[11-Jun-2019 11:12:24 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[11-Jun-2019 11:12:24 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:27
+[11-Jun-2019 11:12:24 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[11-Jun-2019 11:12:24 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[11-Jun-2019 11:12:24 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[11-Jun-2019 11:12:24 PRC] PHP   6. ReflectionMethod->invoke() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[11-Jun-2019 11:12:24 PRC] PHP   7. Admin\Controller\GoodsController->goods_detail() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[11-Jun-2019 11:12:24 PRC] PHP   8. Think\Controller->display() /Users/hd/work/Taiji/Application/Admin/Controller/GoodsController.class.php:182
+[11-Jun-2019 11:12:24 PRC] PHP   9. Think\View->display() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Controller.class.php:56
+[11-Jun-2019 11:12:24 PRC] PHP  10. Think\View->fetch() /Users/hd/work/Taiji/ThinkPHP/Library/Think/View.class.php:72
+[11-Jun-2019 11:12:24 PRC] PHP  11. Think\Hook::listen() /Users/hd/work/Taiji/ThinkPHP/Library/Think/View.class.php:124
+[11-Jun-2019 11:12:24 PRC] PHP  12. Think\Hook::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Hook.class.php:89
+[11-Jun-2019 11:12:24 PRC] PHP  13. Behavior\ParseTemplateBehavior->run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Hook.class.php:119
+[11-Jun-2019 11:12:24 PRC] PHP  14. Think\Template->fetch() /Users/hd/work/Taiji/ThinkPHP/Library/Behavior/ParseTemplateBehavior.class.php:32
+[11-Jun-2019 11:12:24 PRC] PHP  15. Think\Storage::load() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Template.class.php:77
+[11-Jun-2019 11:12:24 PRC] PHP  16. Think\Storage::__callstatic() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Template.class.php:77
+[11-Jun-2019 11:12:24 PRC] PHP  17. call_user_func_array:{/Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37}() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37
+[11-Jun-2019 11:12:24 PRC] PHP  18. Think\Storage\Driver\File->load() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage.class.php:37
+[11-Jun-2019 11:12:24 PRC] PHP  19. include() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Storage/Driver/File.class.php:78
+[11-Jun-2019 14:07:39 PRC] PHP Fatal error:  Call to undefined function Admin\Controller\alert() in /Users/hd/work/Taiji/Application/Admin/Controller/GoodsController.class.php on line 166
+[11-Jun-2019 14:07:39 PRC] PHP Stack trace:
+[11-Jun-2019 14:07:39 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[11-Jun-2019 14:07:39 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:27
+[11-Jun-2019 14:07:39 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[11-Jun-2019 14:07:39 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[11-Jun-2019 14:07:39 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[11-Jun-2019 14:07:39 PRC] PHP   6. ReflectionMethod->invoke() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[11-Jun-2019 14:07:39 PRC] PHP   7. Admin\Controller\GoodsController->addNewGoodsItem() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[11-Jun-2019 14:08:24 PRC] PHP Fatal error:  Call to undefined function Admin\Controller\alert() in /Users/hd/work/Taiji/Application/Admin/Controller/GoodsController.class.php on line 166
+[11-Jun-2019 14:08:24 PRC] PHP Stack trace:
+[11-Jun-2019 14:08:24 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[11-Jun-2019 14:08:24 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:27
+[11-Jun-2019 14:08:24 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[11-Jun-2019 14:08:24 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[11-Jun-2019 14:08:24 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[11-Jun-2019 14:08:24 PRC] PHP   6. ReflectionMethod->invoke() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[11-Jun-2019 14:08:24 PRC] PHP   7. Admin\Controller\GoodsController->addNewGoodsItem() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[11-Jun-2019 20:22:31 PRC] PHP Fatal error:  Call to undefined function Admin\Controller\alert() in /Users/hd/work/Taiji/Application/Admin/Controller/GoodsController.class.php on line 162
+[11-Jun-2019 20:22:31 PRC] PHP Stack trace:
+[11-Jun-2019 20:22:31 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[11-Jun-2019 20:22:31 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:27
+[11-Jun-2019 20:22:31 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[11-Jun-2019 20:22:31 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[11-Jun-2019 20:22:31 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[11-Jun-2019 20:22:31 PRC] PHP   6. ReflectionMethod->invoke(*uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[11-Jun-2019 20:22:31 PRC] PHP   7. Admin\Controller\GoodsController->addNewGoodsItem() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[11-Jun-2019 20:22:39 PRC] PHP Fatal error:  Call to undefined function Admin\Controller\alert() in /Users/hd/work/Taiji/Application/Admin/Controller/GoodsController.class.php on line 162
+[11-Jun-2019 20:22:39 PRC] PHP Stack trace:
+[11-Jun-2019 20:22:39 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[11-Jun-2019 20:22:39 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:27
+[11-Jun-2019 20:22:39 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[11-Jun-2019 20:22:39 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[11-Jun-2019 20:22:39 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[11-Jun-2019 20:22:39 PRC] PHP   6. ReflectionMethod->invoke(*uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[11-Jun-2019 20:22:39 PRC] PHP   7. Admin\Controller\GoodsController->addNewGoodsItem() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[11-Jun-2019 20:22:39 PRC] PHP Fatal error:  Call to undefined function Admin\Controller\alert() in /Users/hd/work/Taiji/Application/Admin/Controller/GoodsController.class.php on line 162
+[11-Jun-2019 20:22:39 PRC] PHP Stack trace:
+[11-Jun-2019 20:22:39 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[11-Jun-2019 20:22:39 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:27
+[11-Jun-2019 20:22:39 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[11-Jun-2019 20:22:39 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[11-Jun-2019 20:22:39 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[11-Jun-2019 20:22:39 PRC] PHP   6. ReflectionMethod->invoke(*uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[11-Jun-2019 20:22:39 PRC] PHP   7. Admin\Controller\GoodsController->addNewGoodsItem() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[11-Jun-2019 20:23:30 PRC] PHP Fatal error:  Call to undefined function Admin\Controller\alert() in /Users/hd/work/Taiji/Application/Admin/Controller/GoodsController.class.php on line 162
+[11-Jun-2019 20:23:30 PRC] PHP Stack trace:
+[11-Jun-2019 20:23:30 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[11-Jun-2019 20:23:30 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:27
+[11-Jun-2019 20:23:30 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[11-Jun-2019 20:23:30 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[11-Jun-2019 20:23:30 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[11-Jun-2019 20:23:30 PRC] PHP   6. ReflectionMethod->invoke(*uninitialized*) /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[11-Jun-2019 20:23:30 PRC] PHP   7. Admin\Controller\GoodsController->addNewGoodsItem() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[12-Jun-2019 14:42:56 PRC] PHP Fatal error:  Class 'Common\Service\JsApiPay' not found in /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php on line 169
+[12-Jun-2019 14:42:56 PRC] PHP Stack trace:
+[12-Jun-2019 14:42:56 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[12-Jun-2019 14:42:56 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:27
+[12-Jun-2019 14:42:56 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[12-Jun-2019 14:42:56 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[12-Jun-2019 14:42:56 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[12-Jun-2019 14:42:56 PRC] PHP   6. ReflectionMethod->invoke() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[12-Jun-2019 14:42:56 PRC] PHP   7. Mobile\Controller\OrderController->payInfo() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[12-Jun-2019 14:45:24 PRC] PHP Fatal error:  Class 'Common\Service\JsApiPayService' not found in /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php on line 169
+[12-Jun-2019 14:45:24 PRC] PHP Stack trace:
+[12-Jun-2019 14:45:24 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[12-Jun-2019 14:45:24 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:27
+[12-Jun-2019 14:45:24 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[12-Jun-2019 14:45:24 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[12-Jun-2019 14:45:24 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[12-Jun-2019 14:45:24 PRC] PHP   6. ReflectionMethod->invoke() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[12-Jun-2019 14:45:24 PRC] PHP   7. Mobile\Controller\OrderController->payInfo() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[12-Jun-2019 15:05:30 PRC] PHP Fatal error:  require(): Failed opening required './IPay.class.php' (include_path='.:/usr/local/php5.6.31/lib/php') in /Users/hd/work/Taiji/Application/Common/Service/Pay/JsApiPayService.class.php on line 9
+[12-Jun-2019 15:05:30 PRC] PHP Stack trace:
+[12-Jun-2019 15:05:30 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[12-Jun-2019 15:05:30 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:27
+[12-Jun-2019 15:05:30 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[12-Jun-2019 15:05:30 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[12-Jun-2019 15:05:30 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[12-Jun-2019 15:05:30 PRC] PHP   6. ReflectionMethod->invoke() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[12-Jun-2019 15:05:30 PRC] PHP   7. Mobile\Controller\OrderController->payInfo() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[12-Jun-2019 15:05:30 PRC] PHP   8. spl_autoload_call() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:169
+[12-Jun-2019 15:05:30 PRC] PHP   9. Think\Think::autoload() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:169
+[12-Jun-2019 15:05:30 PRC] PHP  10. include() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:168
+[12-Jun-2019 15:06:46 PRC] PHP Fatal error:  Class 'WxPayUnifiedOrder' not found in /Users/hd/work/Taiji/Application/Common/Service/Pay/JsApiPayService.class.php on line 37
+[12-Jun-2019 15:06:46 PRC] PHP Stack trace:
+[12-Jun-2019 15:06:46 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[12-Jun-2019 15:06:46 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:27
+[12-Jun-2019 15:06:46 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[12-Jun-2019 15:06:46 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[12-Jun-2019 15:06:46 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[12-Jun-2019 15:06:46 PRC] PHP   6. ReflectionMethod->invoke() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[12-Jun-2019 15:06:46 PRC] PHP   7. Mobile\Controller\OrderController->payInfo() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[12-Jun-2019 15:06:46 PRC] PHP   8. Common\Service\Pay\JsApiPayService->gen_pay() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:178
+[12-Jun-2019 15:07:47 PRC] PHP Fatal error:  Class 'WxPayUnifiedOrder' not found in /Users/hd/work/Taiji/Application/Common/Service/Pay/JsApiPayService.class.php on line 38
+[12-Jun-2019 15:07:47 PRC] PHP Stack trace:
+[12-Jun-2019 15:07:47 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[12-Jun-2019 15:07:47 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:27
+[12-Jun-2019 15:07:47 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[12-Jun-2019 15:07:47 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[12-Jun-2019 15:07:47 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[12-Jun-2019 15:07:47 PRC] PHP   6. ReflectionMethod->invoke() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[12-Jun-2019 15:07:47 PRC] PHP   7. Mobile\Controller\OrderController->payInfo() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[12-Jun-2019 15:07:47 PRC] PHP   8. Common\Service\Pay\JsApiPayService->gen_pay() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:178
+[12-Jun-2019 15:11:23 PRC] PHP Fatal error:  Class 'WxPayUnifiedOrder' not found in /Users/hd/work/Taiji/Application/Common/Service/Pay/JsApiPayService.class.php on line 38
+[12-Jun-2019 15:11:23 PRC] PHP Stack trace:
+[12-Jun-2019 15:11:23 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[12-Jun-2019 15:11:23 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:27
+[12-Jun-2019 15:11:23 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[12-Jun-2019 15:11:23 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[12-Jun-2019 15:11:23 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[12-Jun-2019 15:11:23 PRC] PHP   6. ReflectionMethod->invoke() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[12-Jun-2019 15:11:23 PRC] PHP   7. Mobile\Controller\OrderController->payInfo() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[12-Jun-2019 15:11:23 PRC] PHP   8. Common\Service\Pay\JsApiPayService->gen_pay() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:178
+[12-Jun-2019 15:15:16 PRC] PHP Fatal error:  Class 'WxPayApi' not found in /Users/hd/work/Taiji/Application/Common/Service/Pay/JsApiPayService.class.php on line 51
+[12-Jun-2019 15:15:16 PRC] PHP Stack trace:
+[12-Jun-2019 15:15:16 PRC] PHP   1. {main}() /Users/hd/work/Taiji/index.php:0
+[12-Jun-2019 15:15:16 PRC] PHP   2. require() /Users/hd/work/Taiji/index.php:27
+[12-Jun-2019 15:15:16 PRC] PHP   3. Think\Think::start() /Users/hd/work/Taiji/ThinkPHP/ThinkPHP.php:96
+[12-Jun-2019 15:15:16 PRC] PHP   4. Think\App::run() /Users/hd/work/Taiji/ThinkPHP/Library/Think/Think.class.php:120
+[12-Jun-2019 15:15:16 PRC] PHP   5. Think\App::exec() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:200
+[12-Jun-2019 15:15:16 PRC] PHP   6. ReflectionMethod->invoke() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[12-Jun-2019 15:15:16 PRC] PHP   7. Mobile\Controller\OrderController->payInfo() /Users/hd/work/Taiji/ThinkPHP/Library/Think/App.class.php:162
+[12-Jun-2019 15:15:16 PRC] PHP   8. Common\Service\Pay\JsApiPayService->gen_pay() /Users/hd/work/Taiji/Application/Mobile/Controller/OrderController.class.php:178

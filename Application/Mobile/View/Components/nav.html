@@ -1,0 +1,48 @@
+<div class="container-fluid foots" style="padding-top: 4px;padding-bottom: 10px;height: 100px;bottom: -51px;">
+    <ul>
+        <if condition="[title] == 'Home'">
+            <li class="active"> <else /> <li>
+        </if>
+            <a href="/Mobile/Index/home">
+					<span>
+						<img class="foimg_a" src="/Public/Mobile/images/nav_icon/home_2.png">
+						<img class="foimg_b" src="/Public/Mobile/images/nav_icon/home_1.png">
+					</span>
+                <p>首页</p>
+            </a>
+        </li>
+        <if condition="[title] == 'Category'">
+            <li class="active"> <else /> <li>
+        </if>
+            <a href="/Mobile/Index/category">
+					<span>
+						<img class="foimg_a" src="/Public/Mobile/images/nav_icon/category_2.png">
+						<img class="foimg_b" src="/Public/Mobile/images/nav_icon/category_1.png">
+					</span>
+                <p>分类</p>
+            </a>
+        </li>
+        <if condition="[title] == 'Cart'">
+            <li class="active"> <else /> <li>
+        </if>
+            <a href="/Mobile/Cart/index">
+					<span>
+						<img class="foimg_a" src="/Public/Mobile/images/nav_icon/cart_2.png">
+						<img class="foimg_b" src="/Public/Mobile/images/nav_icon/cart_1.png">
+					</span>
+                <p>购物车</p>
+            </a>
+        </li>
+        <if condition="[title] == 'Member'">
+            <li class="active"> <else /> <li>
+        </if>
+            <a href="/Mobile/Member/index">
+					<span>
+                        <img class="foimg_b" src="/Public/Mobile/images/nav_icon/member_1.png">
+						<img class="foimg_a" src="/Public/Mobile/images/nav_icon/member_2.png">
+					</span>
+                <p>我的</p>
+            </a>
+        </li>
+    </ul>
+</div>

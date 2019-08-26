@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>活动报名</title>
+</head>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Activity/css/style.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Activity/css/ertaostyle.css">
+<style type="text/css">
+.order>.body>.nav{
+	overflow: hidden;
+}
+.order>.body>.nav>ul>a>li{
+	width: 25%;
+	display:  block;
+	float: left;
+	color: rgb(248,194,84);
+	text-align: center;
+	font-size: 12px;
+	line-height: 20px;
+}
+.order>.body>.nav>ul>a>li>img{
+	width: 40%;
+	display: block;
+	margin: 0 auto;
+}
+.order>.body>.list>h4{
+	margin: 0;
+	margin-left: 20px;
+	color: rgb(248,194,84);
+}
+.order>.body>.list>ul>a>li{
+	overflow: hidden;
+	background: rgba(53, 53, 53, 0.81);
+	margin: 0 auto;
+}
+.order>.body>.list>ul>a>li>h5{
+	border-bottom: 1px solid rgb(250,196,84);
+	padding-left: 20px;
+	margin: 0;
+	overflow: hidden;
+}
+.order>.body>.list>ul>a>li>h5>span{
+	color: rgb(248,194,84);
+	display: block;
+	float: left;
+	line-height: 40px;
+}
+.order>.body>.list>ul>a>li>h5>object>a{
+	display: block;
+	float: right;
+	width: 70px;
+	color: #fff;
+	text-align: center;
+	margin-top: 5px;
+	margin-right: 20px;
+	line-height: 20px;
+	border-radius: 5px;
+}
+.order>.body>.list>ul>a>li>div{
+	overflow: hidden;
+	border-bottom: 1px solid rgb(250,196,84);
+	padding: 5px 5%;
+}
+.order>.body>.list>ul>a>li>div>div{
+	display: block;
+	float: left;
+	width: 68%;
+}
+.order>.body>.list>ul>a>li>div>div>p{
+	margin: 0;
+	font-size: 12px;
+	line-height: 16px;
+}
+.order>.body>.list>ul>a>li>div>div>p>span{
+	text-align: right;
+	display: inline-block;
+	float: right;
+	color: #5eb95e;
+}
+.order>.body>.list>ul>a>li>div>span{
+	width: 30%;
+	display: block;
+	float: left;
+	margin-right: 2%;
+}
+.order>.body>.list>ul>a>li>div>span>img{
+	width: 100%;
+}
+.order>.body>.list>ul>.zwdd{
+	color: #fff;
+	background: rgb(53,53,53);
+	text-align: center;
+	line-height: 70px;
+	margin: 0px;
+}
+</style>
+<body class="order">
+<!-- 这里是头部 -->
+<header class="cheader">
+	<div>
+		<p><img src="{$_SESSION['information']['headimgurl']}"></p>
+	</div>
+	<p>
+		<span class="span1">
+			<img style=" width: 23px;margin-top: 3px;" src="__PUBLIC__/Activity/images/icon/quanbudingdan.svg">
+			<if condition="$o_state eq 1">
+				待确认订单
+			<elseif condition="$o_state eq 2"/>
+				待支付订单
+			<elseif condition="$o_state eq 3"/>
+				待评价订单
+			<else/>
+				活动报名
+			</if>
+		</span>
+		<img class="dao" src="__PUBLIC__/Project/images/icon/dao.png"><!-- <span class="span2"></span> -->
+	</p>
+</header>
+
+<!-- <p><a href="input.html">input</a></p> -->
+<!-- 这里是身体 -->
+<div class="body">
+	<!-- 栏目1 -->
+	<div class="nav">
+		<ul>
+			<a href="{:U('Activity/actorder')}?o_state=1&cardid={$_SESSION['cardId']}">
+				<li><img src="__PUBLIC__/Project/images/icon/daiqueren.svg"><span>待确认</span></li>
+			</a>
+			<a href="{:U('Activity/actorder')}?o_state=2&cardid={$_SESSION['cardId']}">
+				<li><img src="__PUBLIC__/Project/images/icon/daizhifu.svg"><span>待支付</span></li>
+			</a>
+			<a href="{:U('Activity/actorder')}?o_state=3&cardid={$_SESSION['cardId']}">
+				<li><img src="__PUBLIC__/Project/images/icon/daipingjia.svg"><span>待评价</span></li>
+			</a>
+			<a href="{:U('Activity/actorder')}?cardid={$_SESSION['cardId']}">
+				<li><img src="__PUBLIC__/Project/images/icon/quanbudingdan.svg"><span>全部</span></li>
+			</a>
+		</ul>
+	</div>
+	<!-- 栏目2 -->
+	<div class="list">
+		<h4>活动订单</h4>
+		<ul>
+			<if condition="$count eq 0">
+				<p class="zwdd">暂无</p>
+			<else />
+				<volist name="order" id="order">
+					<a href="{:U('Activity/actordercon')}?o_number={$order.o_number}">
+						<li>
+							<h5><span>报名编号：{$order.o_number}</span>
+								
+									<if condition="$order.o_state eq 1">
+										<object><a href="" style="background: #E6602E;">待确认</a></object>
+									<elseif condition="$order.o_state eq 2"/>
+										<object><a href="" style="background: #8D0415;">待支付</a></object>
+									<elseif condition="$order.o_state eq 3"/>
+										<object><a href="{:U('Activity/evaluate')}?o_number={$order.o_number}" style="background: #FAC454;">待评价</a></object>
+									<elseif condition="$order.o_state eq 4"/>
+										<object><a href="" style="background: #1D9A74;">已完成</a></object>
+									<else/>
+										<object><a href="" style="background: #838383;">已取消</a></object>
+									</if>
+								
+							</h5>
+							<div>
+								<span><img src="__PUBLIC__/Uploads/Activity/{$order.a_img}"></span>
+								<div>
+									<p>{$order.a_title|htmlspecialchars_decode|strip_tags|mb_substr=0,30,'utf-8'}</p>
+									<p>地址：{$order.a_address|htmlspecialchars_decode|strip_tags|mb_substr=0,4,'utf-8'}</p>
+									<p>活动日期：{$order.a_start|htmlspecialchars_decode|strip_tags|mb_substr=0,10,'utf-8'}~{$order.a_end|htmlspecialchars_decode|strip_tags|mb_substr=0,10,'utf-8'}</p>
+									<p>
+										订单日期：{$order.o_time}
+										<span>
+											<if condition="$order.a_price eq ''">
+												<span class="rmb">免费</span>
+												<else/>
+												<span class="rmb">￥{$order.o_price}</span>
+											</if>
+										</span>
+									</p>
+
+								</div>
+							</div>
+						</li>
+					</a>
+				</volist>
+			</if>
+
+		</ul>
+	</div>
+</div>
+<!-- 这里是底部 -->
+<include file="ActivityPublic/footer" />
+</body>
+</html>

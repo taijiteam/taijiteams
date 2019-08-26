@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>{$name}</title>
+<link rel="stylesheet" href="__PUBLIC__/Activity/css/jflex.min.css" type="text/css" media="all">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Activity/css/ertaostyle.css">
+</head>
+<style type="text/css">
+.actshow>div{
+	color: #fff;width: 90%;margin: 0 auto;overflow: hidden;
+}
+.actshow>div>h4{
+	text-align: center; font-size: 20px;
+}
+.actshow>a{
+	width: 175px;
+	line-height: 30px;
+	text-align: center;
+	display: block;
+	margin: 30px auto;
+	background: rgb(65,117,5);
+	border-radius: 3px;
+	font-size: 15px;
+}
+.actshow>div>div>.site{
+	width: 90%;
+	margin: 0 auto;
+}
+.actshow>div>div>.site>p{
+	font-size: 13px;
+}
+.actshow>div>div>.site>a{
+	display: block;
+	overflow: hidden;
+	line-height: 30px;
+}
+.actshow>div>div>.site>a>p{
+	font-size: 13px;
+	color: #009688;
+	display: block;
+	float: left;
+	margin: 0;
+}
+.actshow>div>div>.site>a>span{
+	font-size: 13px;
+	display: block;
+	float: right;
+	color: #009688;
+}
+/*the end*/
+</style>
+<body class="actshow">
+	<div>
+		<h4>{$name}</h4>
+		<div>
+		<if condition="$data eq ''">
+			{$show}
+			<else/>
+			<div class="site">
+				<p>{$show.a_title}</p>
+				<p>{$show.a_site}</p>
+				<p>{$show.a_scale}</p>
+				<p>{$show.a_address}</p>
+				<img src="__PUBLIC__/Uploads/Activity/{$show.a_img}" width="100%">
+				<h4>曾经举办过的活动</h4>
+				<volist name="alist" id="alist">
+					<a href="{:U('Activity/content')}?id={$alist.a_id}&category={$alist.a_category}&cardid={$_SESSION['cardId']}"><p>{$alist.a_title}</p><span>&gt;</span></a>
+				</volist>
+				<p>上海国际会议中心</p>
+				<p>1999年9月27 ---29日，《财富》全球论坛·上海年会，国家主席江泽民出席开幕式并作主题演讲。</p>
+				<p>·2000年5月10 ---12日，美国亚洲协会第11届企业年会，国务院总理朱鎔基作重要演讲。</p>
+				<p>2001年</p>
+				<p>·1月16 ---19日，朝鲜最高领导人金正日下榻酒店。国务院总理朱鎔基会见并宴请金正日。</p>
+				<p>·9月16 ---21日，来自17个国家和地区有560名代表参加的世界石油大会亚洲区会议，上海市长徐匡迪、世界石油大会主席罗林出席并分别致词。</p>
+				<p>·10月20日，国家主席江泽民与出席亚太经合组织领导人第9次非正式会议（APEC）的成员欢聚一堂。</p>
+			</div>
+		</if>
+		</div>
+
+	</div>
+	<if condition="$data eq ''">
+		<a href="javascript:;" onclick="back()">返回详情页</a>
+		<else/>
+		<a href="{:U('Activity/content')}?id={$show.a_id}&category={$show.a_category}&cardid={$_SESSION['cardId']}" style="background: #bf360c;">查看更多场地详情</a>
+		<a href="javascript:;" onclick="back()">返回详情页</a>
+	</if>
+<!-- 请在上方写相关业务脚本 -->
+<script type="text/javascript">
+function back()
+{
+	window.history.back();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- 防止手机点击放大问题 -->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+    <!-- the end -->
+    <title>修改游玩人信息</title>
+</head>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Project/css/style.css">
+<style type="text/css">
+.toursave{
+    
+}
+.toursave>div{
+    width: 95%;
+    margin: 0 auto;
+    background: #fff;
+    padding: 5px 0px 10px 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.toursave>div>h4{
+    color: #555;
+    padding-left: 10px;
+    border-bottom: 1px solid;
+    padding-bottom: 5px;
+}
+.toursave>div>form{
+    width: 95%;
+    margin: auto;
+    overflow: hidden;
+    text-align: right;
+}
+.toursave>div>form>p{
+    overflow: hidden;
+    line-height: 25px;
+}
+.toursave>div>form>p>span{
+    width: 25%;
+    text-align: right;
+    display: block;
+    float: left;
+    margin-right: 10px;
+}
+.toursave>div>form>p>input{
+    display: block;
+    float: left;
+    line-height: 25px;
+}
+.toursave>div>form>a{
+    padding: 2px 5px 2px 5px;
+    margin-left: 5px;
+    border-radius: 2px;
+    margin-top: 50px;
+}
+.toursave>div>form>.left{
+    color: #fff;
+    background: #555;
+    display: inline-block;
+}
+.toursave>div>form>.right{
+    color: #fff;
+    background: #2da6ff;
+    display: inline-block;
+}
+.toursave>div{
+    border: 1px solid #ccc;
+}
+.layui-layer-content{
+    color: #000;
+}
+</style>
+<body class="toursave">
+<div>
+    <h4>修改游玩人信息</h4>
+    <form>
+        <p><span>姓名</span><input type="text" name="name" value="{$mer.m_name}"/></p>
+        <p><span>证件类型</span><input type="text" value="身份证"/></p>
+        <p><span>证件号</span><input type="text" name="num" value="{$mer.m_num}"/></p>
+        <input type="hidden" value="{$mer.m_id}" name="id"/>
+        <a href="javascript:;" onclick="back()" class="left">关闭</a><a href="javascript:;" onclick="modalalertdemo()" class="right">修改</a>
+    </form>
+</div>
+<!-- js -->
+<script type="text/javascript">
+    function back() {
+        window.history.back();
+    }
+    //消息框
+    function modalalertdemo(){
+        var name = $('input[name="name"]').val();			//联系人
+        var num = $('input[name="num"]').val();		//联系电话
+        var id = $('input[name="id"]').val();		//联系电话
+        if(name == ''){
+            $.Huimodalalert('警告：请填写游玩人姓名！！',20000000);
+        }else if(num == ''){
+            $.Huimodalalert('警告：请填写游玩人证件号！！',20000000);
+        }else{
+            $.ajax({
+                type:"post",
+                url:"{:U('Project/toursave1')}",//根据自己项目的需要写请求地址
+                data:{
+                    'name':name,
+                    'num':num,
+                    'id':id,
+            },
+            dataType:'json',
+                success:function(data){
+                //alert(JSON.stringify(data));
+                if (data == 1){
+                    layer.confirm('信息修改成功！',function(index){
+                        window.history.back();
+                        // location.href="http://www.qudaoplus.cn/merber_all_show/index.php/Home/Project/"
+                        // //window.parent.location.reload();
+                        // // var index = parent.layer.getFrameIndex(window.name);
+                        // // parent.layer.close(index);
+                    });
+                }else{
+                    layer.msg('哎呦，运气不好哦，修改失败咯！',function(){});
+                }
+            },
+            error:function(data) {
+                console.log(data.msg);
+            },
+        })
+        }
+    }
+</script>
+<!-- 浮动框 -->
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/hui/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/hui/static/h-ui.admin/js/H-ui.admin.js"></script>
+<!--/_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+</body>
+</html>

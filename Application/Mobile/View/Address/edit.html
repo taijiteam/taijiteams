@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <include file="Components/header"/>
+</head>
+<body>
+<form action="" id="form1">
+<div  class="screenht" style="margin-bottom: 0px">
+
+    <include file="Components/padding" title="添加地址" redirect_url="javascript:history.go(-1);"/>
+
+    <div class="addresss container-fluid">
+        <div class="addreslist">
+            <label>
+                <span>收货人姓名</span>
+                <input type="text" id="name" value="{$address['consignee']}" placeholder="请输入姓名">
+            </label>
+        </div>
+        <div class="addreslist">
+            <label>
+                <span>手机号码</span>
+                <input type="text" id="mobile" value="{$address['mobile']}" placeholder="请输入手机号码">
+            </label>
+        </div>
+        <div class="addreslist">
+            <label>
+                <span>详细地址</span>
+                <input type="text" id="address" value="{$address['address']}" placeholder="请输入街道">
+            </label>
+        </div>
+        <if condition="$address['is_default'] eq 1">
+            <div class="addreslist2 checkbox">
+                <label><input type="checkbox" name="is_default" value="1" checked ></label>设为默认地址
+            </div>
+            <else/>
+            <div class="addreslist2 checkbox">
+                <label><input type="checkbox" name="is_default" value="1"  ></label>设为默认地址
+            </div>
+        </if>
+
+    </div>
+
+    <div class="screenft_a" style="position: fixed; z-index:9999;bottom: 30px">
+        <a href="#" id="add" data-address-id="{$id}">保&nbsp;&nbsp;存</a>
+    </div>
+</div>
+</form>
+<include file="Components/footer" />
+<!--三级城市联动-->
+<script src="/Public/Mobile/js/LAreaData1.js"></script>
+<script src="/Public/Mobile/js/LAreaData2.js"></script>
+<script src="/Public/Mobile/js/LArea.js"></script>
+<!--三级城市联动-->
+
+<!--<script>
+
+    //三级城市联动
+    var area1 = new LArea();
+    area1.init({
+        'trigger': '#demo1', //触发选择控件的文本框，同时选择完毕后name属性输出到该位置
+        'valueTo': '#value1', //选择完毕后id属性输出到该位置
+        'keys': {
+            id: 'id',
+            name: 'name'
+        }, //绑定数据源相关字段 id对应valueTo的value属性输出 name对应trigger的value属性输出
+        'type': 1, //数据源类型
+        'data': LAreaData //数据源
+    });
+    area1.value=[1,13,3];//控制初始位置，注意：该方法并不会影响到input的value
+
+
+
+    var area2 = new LArea();
+    area2.init({
+        'trigger': '#demo2',
+        'valueTo': '#value2',
+        'keys': {
+            id: 'value',
+            name: 'text'
+        },
+        'type': 2,
+        'data': [provs_data, citys_data, dists_data]
+    });
+</script>-->
+
+
+<script type="text/javascript">
+    $(function () {
+        $('#add').click(function () {
+            var id          = $('#add').attr('data-address-id');
+            var name        = $('#name').val();         //姓名
+            var mobile      = $('#mobile').val();       //手机号
+            var address     = $('#address').val();      //详细地址
+            var is_default  = $("input:checkbox[name='is_default']:checked").val();       //是否默认
+            $.ajax({
+                type:'post',
+                url :"/Mobile/Address/set_edit",
+                data:{
+                    id          : id,
+                    name        : name,
+                    mobile      : mobile,
+                    address     : address,
+                    is_default  : is_default,
+                },
+                dataType:'json',
+                success:function (res) {
+                    if (res.code == "200"){
+                        alert('修改成功');
+                        window.location.href ='/Mobile/Address/index'
+                    }else{
+                        alert('未通过验证');
+                    }
+                }
+            })
+        });
+        return false;
+    })
+
+
+</script>
+</body>
+</html>

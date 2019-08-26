@@ -1,0 +1,211 @@
+<form class="layui-form" id="goods-common-form">
+
+    <empty name="res">
+
+        <!--   商品添加       -->
+        <div class="layui-form-item">
+            <label for="goods_category" class="layui-form-label">
+                <span class="x-red">*</span>商品类别
+            </label>
+            <div class="layui-input-inline">
+                <select id="goods_category" name="goods_category"  autocomplete="off" class="layui-input">
+                    <option value="珠宝首饰">珠宝首饰</option>
+                    <option value="工艺礼品">工艺礼品</option>
+                    <option value="甄选名酒">甄选名酒</option>
+                    <option value="艺术文化">艺术文化</option>
+                    <option value="营养保健">营养保健</option>
+                    <option value="私人定制">私人定制</option>
+                    <option value="积分兑换">积分兑换</option>
+                </select>
+            </div>
+            <label for="goods_code" class="layui-form-label">
+                <span class="x-red">*</span>商品编码
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="goods_code" name="goods_code" required="" lay-verify="nikename" autocomplete="off" class="layui-input">
+                *<span class="x-red" style="color: #7d7d7d">类型首字母大写+数字编号</span>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label for="goods_name" class="layui-form-label"><span class="x-red">*</span>商品名称</label>
+            <div class="layui-input-inline">
+                <input type="text" id="goods_name" name="goods_name" required="" lay-verify="nikename"autocomplete="off" class="layui-input">
+            </div>
+            <label for="is_hidden" class="layui-form-label">是否隐藏</label>
+            <div class="layui-input-inline">
+                <select id="is_hidden" name="is_hidden" autocomplete="off" class="layui-input">
+                    <option selected="selected" value="0">否</option>
+                    <option value="1">是</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label for="goods_unit" class="layui-form-label"><span class="x-red">*</span>商品单位</label>
+            <div class="layui-input-inline">
+                <div class="layui-input-inline">
+                    <input type="text" id="goods_unit" name="goods_unit" autocomplete="off" class="layui-input">
+                    *<span class="x-red" style="color: #7d7d7d">商品单位: 个, 只, 件, 箱...</span>
+                </div>
+            </div>
+            <label for="goods_pocket_type" class="layui-form-label">使用积分</label>
+            <div class="layui-input-inline">
+                <select id="goods_pocket_type" name="goods_pocket_type" autocomplete="off" class="layui-input">
+                    <option selected="selected" value="0">不使用</option>
+                    <!--<option value="1">A积分</option>-->
+                    <option value="201" title="B1积分">酒积分</option>
+                    <!--<option value="C">C</option>
+                    <option value="D">D</option>-->
+                </select>
+            </div>
+        </div>
+        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 100px">
+            <legend>商品简介</legend>
+            <div class="layui-form-label">
+                <div class="layui-input-block">
+                    <textarea name="desc" id="goods_remark"  placeholder="请输入内容" class="layui-textarea"></textarea>
+                </div>
+            </div>
+        </fieldset>
+
+    <else />
+
+        <!--  商品详情带参数  -->
+        <div class="layui-form-item">
+            <label for="goods_categorys" class="layui-form-label">
+                <span class="x-red">*</span>商品类别
+            </label>
+            <div class="layui-input-inline">
+                <select id="goods_categorys" name="goods_categorys"  autocomplete="off" class="layui-input">
+                    <if condition="$res.goods_category =='珠宝首饰' ">
+                        <option  selected='selected' value="珠宝首饰">珠宝首饰</option>
+                        <option value="工艺礼品">工艺礼品</option>
+                        <option value="甄选名酒">甄选名酒</option>
+                        <option value="艺术文化">艺术文化</option>
+                        <option value="营养保健">营养保健</option>
+                        <option value="私人定制">私人定制</option>
+                        <option value="积分兑换">积分兑换</option>
+                        <elseif condition="$res.goods_category =='工艺礼品' "/>
+                        <option value="珠宝首饰">珠宝首饰</option>
+                        <option selected="selected" value="工艺礼品">工艺礼品</option>
+                        <option value="甄选名酒">甄选名酒</option>
+                        <option value="艺术文化">艺术文化</option>
+                        <option value="营养保健">营养保健</option>
+                        <option value="私人定制">私人定制</option>
+                        <option value="积分兑换">积分兑换</option>
+                        <elseif condition="$res.goods_category =='甄选名酒' "/>
+                        <option value="珠宝首饰">珠宝首饰</option>
+                        <option value="工艺礼品">工艺礼品</option>
+                        <option selected="selected" value="甄选名酒">甄选名酒</option>
+                        <option value="艺术文化">艺术文化</option>
+                        <option value="营养保健">营养保健</option>
+                        <option value="私人定制">私人定制</option>
+                        <option value="积分兑换">积分兑换</option>
+                        <elseif condition="$res.goods_category =='艺术文化' "/>
+                        <option value="珠宝首饰">珠宝首饰</option>
+                        <option value="工艺礼品">工艺礼品</option>
+                        <option value="甄选名酒">甄选名酒</option>
+                        <option selected="selected" value="艺术文化">艺术文化</option>
+                        <option value="营养保健">营养保健</option>
+                        <option value="私人定制">私人定制</option>
+                        <option value="积分兑换">积分兑换</option>
+                        <elseif condition="$res.goods_category =='营养保健' "/>
+                        <option value="珠宝首饰">珠宝首饰</option>
+                        <option value="工艺礼品">工艺礼品</option>
+                        <option value="甄选名酒">甄选名酒</option>
+                        <option selected="selected" value="艺术文化">艺术文化</option>
+                        <option value="营养保健">营养保健</option>
+                        <option value="私人定制">私人定制</option>
+                        <option value="积分兑换">积分兑换</option>
+                        <elseif condition="$res.goods_category =='私人定制' "/>
+                        <option value="珠宝首饰">珠宝首饰</option>
+                        <option value="工艺礼品">工艺礼品</option>
+                        <option value="甄选名酒">甄选名酒</option>
+                        <option value="艺术文化">艺术文化</option>
+                        <option value="营养保健">营养保健</option>
+                        <option selected="selected" value="私人定制">私人定制</option>
+                        <option value="积分兑换">积分兑换</option>
+                        <elseif condition="$res.goods_category =='私人定制' "/>
+                        <option value="珠宝首饰">珠宝首饰</option>
+                        <option value="工艺礼品">工艺礼品</option>
+                        <option value="甄选名酒">甄选名酒</option>
+                        <option value="艺术文化">艺术文化</option>
+                        <option value="营养保健">营养保健</option>
+                        <option  value="私人定制">私人定制</option>
+                        <option selected="selected" value="积分兑换">积分兑换</option>
+                    </if>
+                </select>
+            </div>
+            <label for="goods_codes" class="layui-form-label">
+                <span class="x-red">*</span>商品编码
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="goods_codes" disabled name="goods_codes" value="{$res.goods_code}" required="" lay-verify="nikename" autocomplete="off" class="layui-input">
+                *<span class="x-red" style="color: #7d7d7d">类型首字母大写+数字编号</span>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="goods_names" class="layui-form-label"><span class="x-red">*</span>商品名称</label>
+            <div class="layui-input-inline">
+                <input type="text" id="goods_names" disabled name="goods_names" value="{$res.goods_name}" required="" lay-verify="nikename"autocomplete="off" class="layui-input">
+            </div>
+            <label for="is_hiddens" class="layui-form-label">是否隐藏</label>
+            <div class="layui-input-inline">
+                <select id="is_hiddens" name="is_hiddens" autocomplete="off" class="layui-input">
+                    <if condition="$res.is_hidden =='0' ">
+                        <option selected="selected" value="0">否</option>
+                        <option value="1">是</option>
+                        <else />
+                        <option value="0">否</option>
+                        <option selected="selected" value="1">是</option>
+                    </if>
+                </select>
+            </div>
+            <!--<label for="goods_status" class="layui-form-label"><span class="x-red">*</span>展示状态</label>
+            <div class="layui-input-inline">
+                <select id="goods_status" name="goods_status" autocomplete="off" class="layui-input">
+                    <option value="2">上架</option>
+                    <option value="1">下架</option>
+                </select>
+            </div>-->
+
+        </div>
+
+        <div class="layui-form-item">
+            <label for="goods_units" class="layui-form-label"><span class="x-red">*</span>商品单位</label>
+            <div class="layui-input-inline">
+                <div class="layui-input-inline">
+                    <input type="text" id="goods_units" name="goods_units" value="{$res.goods_unit}" autocomplete="off" class="layui-input">
+                    *<span class="x-red" style="color: #7d7d7d">商品单位: 个, 只, 件, 箱...</span>
+                </div>
+            </div>
+            <label for="goods_pocket_types" class="layui-form-label">使用积分</label>
+            <div class="layui-input-inline">
+                <select id="goods_pocket_types" name="goods_pocket_types" autocomplete="off" class="layui-input">
+                    <if condition="$res.goods_pocket_type == '0' ">
+                        <option selected="selected" value="0">不使用</option>
+                        <option value="201">B积分</option>
+                        <elseif condition="$res.goods_pocket_type == '201'" />
+                        <option value="0">不使用</option>
+                        <option selected="selected" value="201">B积分</option>
+                    </if>
+                    <!--<option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>-->
+                </select>
+            </div>
+        </div>
+
+        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 100px">
+            <legend>商品简介</legend>
+            <div class="layui-form-label">
+                <div class="layui-input-block">
+                    <textarea name="desc" id="goods_remarks"  placeholder="请输入内容" class="layui-textarea">{$res.goods_remark}</textarea>
+                </div>
+            </div>
+        </fieldset>
+        <div class="layui-form-item">
+            <button class="layui-btn layui-btn-fluid" id="saveGoods" style="width:70% ;height: 50px">更 新</button>
+        </div>
+    </empty>
+</form>

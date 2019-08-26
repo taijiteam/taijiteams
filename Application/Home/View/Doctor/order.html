@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>订单列表</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Doctor/css/style.css">
+</head>
+<body>
+	<include file="DoctorPublic/cheader" />
+	<include file="DoctorPublic/chead" />
+	<div class="ccontent">
+		
+		<h3><img src="__PUBLIC__/Doctor/images/queren1.png">{$title}</h3>
+		<div class="orderlist">
+			<volist name="order_list" id="order_list">
+			<div>
+				<h4>
+					<span class="span1">订单号：{$order_list.order_number}</span>
+					<if condition="$order_list.order_state eq 1">
+						<a href="{:U('Doctor/order_content')}?order_id={$order_list.order_Id}"><span class="span2" style="background: rgb(210,52,47);">待确认</span></a>
+					<elseif condition="$order_list.order_state eq 2"/>
+						<a href="{:U('Doctor/order_content')}?order_id={$order_list.order_Id}"><span class="span2" style="background: rgb(210,52,47);">待支付</span></a>
+					<elseif condition="$order_list.order_state eq 3"/>
+						<a href="{:U('Doctor/evaluation')}?order_number={$order_list.order_number}"><span class="span2" style="background: rgb(250,196,84);">待评价</span></a>
+					<elseif condition="$order_list.order_state eq 4"/>
+						<a href="{:U('Doctor/order_content')}?order_id={$order_list.order_Id}"><span class="span2" style="background: rgb(29,154,116);">已完成</span></a>
+					<elseif condition="$order_list.order_state eq 5"/>
+					<a href="{:U('Doctor/order_content')}?order_id={$order_list.order_Id}"><span class="span2" style="background: rgb(131,131,131);">已取消</span></a>
+					</if>
+					<!-- <a href="{:U('Doctor/order_content')}?order_id={$order_list.order_Id}"><span class="span2">待确认</span></a> -->
+				</h4>
+				<a href="{:U('Doctor/order_content')}?order_id={$order_list.order_Id}">
+					<div>
+						<p>{$order_list.order_dohospital}(就医)</p>
+						<p>
+							<span class="span1">订单日期：{$order_list.order_time}</span>
+							<span class="span2">￥{$order_list.order_price}</span>
+						</p>
+					</div>
+				</a>
+			</div>
+		</volist>
+		</div>	
+	</div>
+	<include file="DoctorPublic/footer" />
+</body>
+</html>

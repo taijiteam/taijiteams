@@ -1,0 +1,910 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>提交订单</title>
+</head>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Project/css/mobiscroll_date.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Project/css/style.css">
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+	$(function () {
+		var isPageHide = false;
+		window.addEventListener('pageshow', function () {
+			if (isPageHide) {
+				window.location.reload();
+			}
+		});
+		window.addEventListener('pagehide', function () {
+			isPageHide = true;
+		});
+	})
+</script>
+<body class="tappoint">
+<div class="body">
+	<form action="" method="post">
+		<div>
+			<p>{$project.p_title}</p>
+		</div>
+		<div>
+			<p><span class="span1">选择出行时间</span><input type="text" name="or_utime" id="USER_AGE" style="width: 130px" readonly class="input" placeholder="预约出发日期" /></p>
+		</div>
+		<div>
+			<p><span class="span1">成人</span><span><img src="">{$project.p_price}/人</span></p>
+		</div>
+		<div>
+			<p><span class="span1">儿童</span><span><img src="">{$project.p_cprice}/人</span></p>
+		</div>
+		<div class="div1">
+			<div><span class="spanm">同意拼房</span><span class="spanx">房差：0（和他人拼房住，不需要支付房差）</span></div>
+			<!-- <input id="color-input-red1" type="checkbox" checked="checked" name="">
+			<label for="color-input-red1"></label> -->
+			<span class="ren_1">
+				<b class="quan">
+					<input type="checkbox" checked="checked" name="cb" value="1" id="span111"/>
+					<label for="span111">
+				</b>
+			</span>
+		</div>
+		<!--<div class="div1">-->
+			<!--<div><span class="spanm">房间数量</span><span class="spanx">根据您选择的游玩人数分配房间</span></div>-->
+			<!--&lt;!&ndash; <span id="renshu">2间</span> &ndash;&gt;-->
+		<!--</div>-->
+		<div>
+			<p><span>游玩人信息</span><input type="button" class="youwan" value="添加/修改" onclick="onclick_open()"></p>
+			<div class="tname">
+				<!-- js替换 -->
+				<div id="m_id">
+					<!-- <p><span>张三</span><span>230221196547899856</span><input type="hidden" name="m_id" value=""></p> -->
+				</div>
+			</div>
+		</div>
+		<div class="button">
+			<h5>保险选择</h5>
+			<div id="bx">
+				<volist name="cateid_1" id="cateid_1">
+					<p>{$cateid_1.in_category}&nbsp;{$cateid_1.in_title}&nbsp;{$cateid_1.in_price}/人<input type="hidden" name="in_id" value="{$cateid_1.in_id}"></p>
+				</volist>
+				<volist name="cateid_2" id="cateid_2">
+					<p>{$cateid_2.in_category}&nbsp;{$cateid_2.in_title}&nbsp;{$cateid_2.in_price}/人<input type="hidden" name="in_id" value="{$cateid_2.in_id}"></p>
+				</volist>
+				<volist name="cateid_3" id="cateid_3">
+					<p>{$cateid_3.in_category}&nbsp;{$cateid_3.in_title}&nbsp;{$cateid_3.in_price}/人<input type="hidden" name="in_id" value="{$cateid_3.in_id}"></p>
+				</volist>
+				<!-- <p>交通险（航空意外款）30/人 x 2<input type="hidden" name="in_id" value="3"></p>
+				<p>无理由订单取消险（A款赔付70%）175/人 x 2<input type="hidden" name="in_id" value="3"></p> -->
+			</div>
+			<p><input type="button" class="bao_1" value="更改" id="button"></p>
+		</div>
+		<div class="div2">
+			<p><span class="span2">联系姓名</span><input type="text" name="name" value="{$_SESSION['infor']['data'][0]['TrueName']}" placeholder="请输入姓名用于确认身份"></p>
+		</div>
+		<div class="div2">
+			<p><span class="span2">手机</span><input type="text" name="phone" value="{$_SESSION['infor']['data'][0]['Mobile']}" placeholder="请输入手机号用于联系"></p>
+		</div>
+		<div class="div3">
+			<h5>特殊要求(选填)</h5>
+			<div><textarea rows="8" id="text" cols="20" placeholder="请输入"></textarea></div>
+		</div>
+		<div class="div3">
+			<h5>退改政策</h5>
+			<ul>
+				<li><b>·</b><span>订单支持部分人退订</span></li>
+				<li><b>·</b><span>出行前5天0点（含）之后退订，收取100%的违约金</span></li>
+				<li><b>·</b><span>出行前5天0点至出行前15天0点（含）之间退订，收取70%的违约金</span></li>
+				<li><b>·</b><span>出行前15天0点至出行前30天0点（含）之间退订，收取50%的违约金</span></li>
+			</ul>
+<style type="text/css">
+.modal-alert-info{
+	background: #fff;
+	width: 160px;
+	height: 100px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin: auto;
+	margin-top: 50%;
+	padding: 10px;
+}
+.dwbg{
+	position: fixed;
+}
+#check[type="checkbox"]{
+-webkit-appearance: none;
+vertical-align:middle;
+background: #3190e8;
+margin-top:0;
+border-radius: 3px;
+min-height: 16px;
+min-width: 16px;
+}
+#check[type="checkbox"]:checked {
+background: #3190e8;
+}
+#check[type=checkbox]:checked::after{
+content: '';
+bottom: -345px;
+left: 6%;
+position: absolute;
+background: transparent;
+border: #fff solid 2px;
+border-top: none;
+border-right: none;
+height: 6px;
+width: 10px;
+-moz-transform: rotate(-45deg);
+-ms-transform: rotate(-45deg);
+-webkit-transform: rotate(-45deg); 
+transform: rotate(-45deg);
+}
+.btn:hover {
+	color: #6a89ff;
+	text-decoration: none;
+}
+</style>
+			<p>
+				<input type="checkbox" name="tiaoyue" value="1" class="regular-checkbox" checked="checked" />
+				&nbsp;我已阅读并接受
+				<a href="cluase.html">（渠道PLUS微管家用户须知）</a>
+			</p>
+		</div>
+		<input type="hidden" name="openid" value="{$_SESSION['openid']}">
+		<input type="hidden" name="p_id" value="{$project.p_id}">
+		<!-- <input type="botton" name="" onclick="submit()" value="提交订单"> -->
+		<a href="javascript:;" style="margin: 10px auto; display: block; width: 165px; background: #f8c254;border-color: #f8c254;" class="btn btn-primary ml-20" onClick="modalalertdemo()">提交订单</a>
+	</form>
+</div>
+
+<style type="text/css">
+
+</style>
+
+<link rel="stylesheet" href="__PUBLIC__/Project/css/bootstrap.min.css">
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+					</button>
+					<h4 class="modal-title" id="myModalLabel" style="color: #000;">
+						新增游玩人
+					</h4>
+				</div>
+				<div class="modal-body">
+					<!-- 新增游玩人 -->
+					<div class="xinzeng">
+						<p><span>姓名</span><input type="text" placeholder="请输入" id="Name" name="Name"></p>
+						<p>
+							<span>证件类型</span>
+							<select>
+								<option>身份证</option>
+							</select>
+						</p>
+						<p><span>证件号</span><input type="text" placeholder="请输入" id="adminName" name="adminName"></p>
+						<input type="hidden" name="m_openid" value="{$_SESSION['openid']}">
+						<input type="hidden" name="m_phone" value="{$_SESSION['infor']['data'][0]['Mobile']}">
+						<!-- <input type="hidden" name="m_openid" value="{$_SESSION['openid']}">
+						<input type="hidden" name="m_phone" value="{$_SESSION['infor']['data'][0]['Mobile']}"> -->
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					<button type="button" class="btn btn-primary" onclick="coll_add()" value="新增">新增</button>
+				</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- js -->
+<script type="text/javascript">
+function Lond_text(objname){
+    obj = document.getElementsByName(objname);
+    checkval = [];
+    for (var i=0;i<obj.length;i++) {
+    	checkval.push(obj[i].value);
+    }
+    return checkval;
+} 
+//消息框
+function modalalertdemo(){
+	var o_start = $('input[name="or_utime"]').val();	//出行时间
+	var o_hopinion = $('input[name="cb"]:checked').val();//同意拼房
+	var o_member = Lond_text('mi_id');					//游玩人id
+	var o_insurance = Lond_text('in_id');				//保险id
+	var o_user = $('input[name="name"]').val();			//联系人
+	var o_phone = $('input[name="phone"]').val();		//联系电话
+	var o_content = $("#text").val();					//特殊需求
+	var o_openid = $('input[name="openid"]').val();		//openid
+	var o_pid = $('input[name="p_id"]').val();			//p_id
+	var o_tiaoyue = $('input[name="tiaoyue"]:checked').val();	//条约
+	if(o_tiaoyue != 1){
+		$.Huimodalalert('如果您拒绝接受（渠道PLUS微管家用户须知），将无法继续享受服务。',2000);
+	}else if(o_member == ''){
+		$.Huimodalalert('警告：请选择游玩人！！',2000);
+	}else if(o_user == ''){
+		$.Huimodalalert('警告：请填写联系人！！',2000);
+	}else if(o_phone == ''){
+		$.Huimodalalert('警告：请填写联系电话！！',2000);
+	}else if (o_start == ''){
+		$.Huimodalalert('警告：请选择出行时间！！',2000);
+	}else{
+		$.ajax({
+			type:"post",
+			url:'{:U('Project/tourorder')}',//根据自己项目的需要写请求地址
+			data:{
+				'o_start':o_start,
+				'o_hopinion':o_hopinion,
+				'o_member':o_member,
+				'o_insurance':o_insurance,
+				'o_user':o_user,
+				'o_phone':o_phone,
+				'o_content':o_content,
+				'o_openid':o_openid,
+				'o_pid':o_pid,
+				'o_tiaoyue':o_tiaoyue,
+			},
+			dataType:'json',
+			success:function(data){
+				//alert(JSON.stringify(data));
+				if (data == 1){
+					layer.confirm('订单提交成功！',function(index){
+						location.href="http://www.qudaoplus.cn/merber_all_show/index.php/Home/Project/"
+						//window.parent.location.reload();
+						// var index = parent.layer.getFrameIndex(window.name);
+						// parent.layer.close(index);
+					});
+				// }else if (data == 2) {
+				// 	layer.msg('角色名称还没填来！！！',function(){});
+				}else{
+					layer.msg('哎呦，运气不好哦，添加失败咯！',function(){});
+				}
+			},
+			error:function(data) {
+				console.log(data.msg);
+			},
+		})
+	}
+}
+function coll_add(){
+	var a_name  = $('input[name="Name"]').val();		//姓名
+	var a_admin  = $('input[name="adminName"]').val();	//证件号
+	var m_openid  = $('input[name="m_openid"]').val();	//证件号
+	var m_phone  = $('input[name="m_phone"]').val();	//证件号
+	// alert(JSON.stringify(a_admin));
+	var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+	if(a_name == ''){
+		alert("姓名不能为空");
+		return false;
+	}else if(reg.test(a_admin) === false) {
+		alert("身份证不正确，或未输入");
+		return false;
+	}else {
+		$.ajax({
+			type:"post",
+			url:"{:U('Project/tourajaxxz')}",//根据自己项目的需要写请求地址
+			data:{
+				'm_name':a_name,
+				'm_num':a_admin,
+				'm_openid':m_openid,
+				'm_phone':m_phone,
+			},
+			dataType:'json',
+			success:function(data){
+				//alert(JSON.stringify(data));
+				if (data != 0 && data != 3){
+					// window.parent.location.reload();
+					var html ='';
+						html += '<p><span>'+data.m_name+'</span><span>'+data.m_num+'</span><input type="hidden" name="mi_id" value="'+data.m_id+'"></p>';
+					$('#m_id').html(html);
+					var shade_content = $("#myModal");
+						shade_content.hide();
+					var shade_content1 = $("#man");
+					var shade = $(".shade");
+						shade_content1.hide();
+						shade.hide();
+				}else{
+					layer.msg('哎呦，运气不好哦，添加失败咯！',function(){});
+				}
+			},
+			error:function(data) {
+				console.log(data.msg);
+			},
+		})
+	}
+}
+
+</script> 
+<!-- 浮动框 -->
+<div class="shade"></div>
+<div id="man">
+	<div>
+		<h4><button class="btn btn-lg blg" data-toggle="modal" data-target="#myModal">新增游玩人<img style="width: 25px; margin-top: -3px;" src="__PUBLIC__/Project/images/icon/jiahao.svg"></button></h4>
+		<span id="memem" style="display: block;overflow:auto;height: 85%;">
+		<volist name="merber" id="merber">
+			<div class="div1">
+				<input id="color-input-label{$key+1}" class="input_label" type="checkbox" checked="checked" name="m_id" value="{$merber.m_id}">
+				<label for="color-input-label{$key+1}"></label>
+				<div class="div2">
+					<p>{$merber.m_name}</p>
+					<p>身份证</p>
+				</div>
+				<div class="div3">
+					<p>{$merber.m_num}</p>
+				</div>
+				<a href="{:U('Project/toursave')}?id={$merber.m_id}"><img src="__PUBLIC__/Project/images/icon/bianji.png"></a>
+			</div>
+		</volist>
+		</span>
+		<div class="module-footer" style="margin-top: 0px;position: fixed;bottom: 0px;">
+			<nav class="btn-group">
+				<div class="btn-group-cell"><a href="javascript:" onclick="onclick_close()" class="btn-reset hideAside">关闭</a></div>
+				<div class="btn-group-cell"><a href="javascript:" onclick="fun()" class="btn-submit hideAside">完成</a></div>
+			</nav>
+		</div>
+	</div>
+</div>
+<style type="text/css">
+.col-xs-12>input{
+	color: #fff;
+	background-color: #337ab7;
+	border-color: #2e6da4;
+	width: 50px;
+	line-height: 25px;
+	text-align: center;
+}
+.col-xs-12>.btn_remove{
+	background: #fff;
+	color: #000;
+}
+</style>
+<!-- the end -->
+<script>
+   $(function () { $('#myModal').modal('hide')});
+</script>
+<script>
+   $(function () { $('#myModal').on('hide.bs.modal', function () {
+      alert('嘿，我听说您喜欢模态框...');})
+   });
+</script>
+<!-- baoxian -->
+<aside id="aside" class="aside">
+<i class="aside-overlay hideAside"></i>
+<div class="aside-content">
+<div class="module module-filter-list">
+<div class="module-main scrollable">
+<!-- 滚动 -->
+<div id="bman">
+	<div>
+		<h4>保险常见问题<input type="button" name="" value="更多>"></h4>
+		<p>订单取消险在支付成功后次日生效，其他保险在出游第一天生效</p>
+	</div>
+	<div>
+		<h4>出境旅行险</h4>
+		<ul>
+			<volist name="cateidlist_1" id="cateidlist_1">
+				<li>
+					<input type="radio"  id="cradio{$key}"  name="cradio" value="{$cateidlist_1.in_id}"  {$key == "0"?'checked':''}/>
+					<label for="cradio{$key}">
+						<h5>{$cateidlist_1.in_title}</h5>
+						<p>{$cateidlist_1.in_little}</p>
+						<b>{$cateidlist_1.in_price}￥/份</b>
+						<!--<object><a href="{:U('Project/bxcon')}?in_id={$cateidlist_1.in_id}" target="_blank">详情</a></object>-->
+						<object><a href="javascript:;" onclick="bxcon('{$cateidlist_1.in_id}')">详情</a></object>
+					</label>
+				</li>
+			</volist>
+		</ul>
+	</div>
+	<div>
+		<h4>交通险</h4>
+		<ul>
+			<volist name="cateidlist_2" id="cateidlist_2">
+				<li>
+					<input type="radio"  id="jradio{$key}" value="{$cateidlist_2.in_id}"  name="jradio"  {$key == "0"?'checked':''}/>
+					<label for="jradio{$key}">
+						<h5>{$cateidlist_2.in_title}</h5>
+						<p>{$cateidlist_2.in_little}</p>
+						<b>{$cateidlist_2.in_price}￥/份</b>
+						<!--<object><a href="{:U('Project/bxcon')}?in_id={$cateidlist_2.in_id}">详情</a></object>-->
+						<object><a href="javascript:;" onclick="bxcon('{$cateidlist_2.in_id}')">详情</a></object>
+					</label>
+				</li>
+			</volist>
+		</ul>
+	</div>
+	<div>
+		<h4>无理由订单取消险</h4>
+		<ul>
+			<volist name="cateidlist_3" id="cateidlist_3">
+				<li>
+					<input type="radio"  id="qradio{$key}" value="{$cateidlist_3.in_id}"  name="qradio"  {$key == "0"?'checked':''}/>
+					<label for="qradio{$key}">
+						<h5>{$cateidlist_3.in_title}</h5>
+						<p>{$cateidlist_3.in_little}</p>
+						<b>{$cateidlist_3.in_price}￥/份</b>
+						<!--<object><a href="{:U('Project/bxcon')}?in_id={$cateidlist_3.in_id}">详情</a></object>-->
+						<object><a href="javascript:;" onclick="bxcon('{$cateidlist_3.in_id}')">详情</a></object>
+					</label>
+				</li>
+			</volist>
+		</ul>
+	</div>
+	<!-- 滚动 -->
+</div>
+</div>
+<div class="module-footer">
+<nav class="btn-group">
+<div class="btn-group-cell"><a href="javascript:" class="btn-reset hideAside">关闭</a></div>
+<div class="btn-group-cell"><a href="javascript:" onclick="baoxian()" class="btn-submit hideAside">完成</a></div>
+</nav>
+</div>
+</div>
+</div>
+</aside>
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/hui/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/hui/static/h-ui.admin/js/H-ui.admin.js"></script>
+<!--/_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/jquery.validation/1.14.0/jquery.validate.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/jquery.validation/1.14.0/messages_zh.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/webuploader/0.1.5/webuploader.min.js"></script> 
+<!-- 日期选择控件 -->
+<script src="__PUBLIC__/Project/js/mobiscroll_date.js" charset="gb2312"></script> 
+<script src="__PUBLIC__/Project/js/mobiscroll.js"></script> 
+<script type="text/javascript">
+	function bxcon(id){
+		$.ajax({
+			type:"post",
+			url:"{:U('Project/bxcon')}",//根据自己项目的需要写请求地址
+			data:{
+				'id':id,
+			},
+			dataType:'json',
+			success:function(data){
+				//alert(JSON.stringify(data));
+				//$('#m_id').html('');//覆盖原数据
+				var html ='';
+					html += ''+data.in_title+'';
+				$('.bxname').html(html);
+				$("#bxcon").show();
+				// var shade_content = $("#man");
+				// shade_content.hide();
+			},
+			error:function(data) {
+				console.log(data.msg);
+			},
+		})
+
+	}
+	/*时间控件*/
+$(function () {
+	var currYear = (new Date()).getFullYear();	
+	var opt={};
+
+	opt.date = {preset : 'date'};
+	opt.datetime = {preset : 'datetime'};
+	opt.time = {preset : 'time'};
+	opt.default = {
+		theme: 'android-ics light', //皮肤样式
+		display: 'modal', //显示方式 
+		mode: 'scroller', //日期选择模式
+		dateFormat: 'yyyy-mm-dd',
+		lang: 'zh',
+		showNow: true,
+		nowText: "今天",
+		startYear: currYear - 50, //开始年份
+		endYear: currYear + 10 //结束年份
+	};
+	$("#USER_AGE").mobiscroll($.extend(opt['date'], opt['default']));
+});
+/*浮动框 更换人员*/
+function onclick_open() {
+	var phone = $('input[name="m_phone"]').val();
+	$.ajax({
+		type:"post",
+		url:"{:U('Project/getmember')}",//根据自己项目的需要写请求地址
+		data:{
+			'phone':phone,
+		},
+		dataType:'json',
+		success:function(data){
+			//alert(JSON.stringify(data));
+			if (data == '' || data == undefined || data == 0) {
+				$("#man").show();
+				$(".shade").show();
+				var input_out = $(".input_style");
+				for (var i = 0; i <= input_out.length; i++) {
+					if ($(input_out[i]).val() != "") {
+						$(input_out[i]).val("");
+					}
+				}
+			}else{
+				var html ='';
+				for(var i=0;i<data.length;i++){
+					html += '<div class="div1"><input id="color-input-label'+i+'" class="input_label" type="checkbox" checked="checked" name="m_id" value="'+data[i].m_id+'"><label for="color-input-label'+i+'"></label><div class="div2"><p>'+data[i].m_name+'</p><p>身份证</p></div><div class="div3"><p>'+data[i].m_num+'</p></div><a href="{:U('Project/toursave')}?id='+data[i].m_id+'"><img src="__PUBLIC__/Project/images/icon/bianji.png"></a></div>';
+				}
+				$('#memem').html(html);
+				$("#man").show();
+				$(".shade").show();
+				var input_out = $(".input_style");
+				for (var i = 0; i <= input_out.length; i++) {
+					if ($(input_out[i]).val() != "") {
+						$(input_out[i]).val("");
+					}
+				}
+			}
+		},
+		error:function(data) {
+			console.log(data.msg);
+		},
+	})
+
+}
+function onclick_close() {
+	var shade_content = $("#man");
+	var shade = $(".shade");
+	// if (confirm("确认关闭么！此操作不可恢复")) {
+		shade_content.hide();
+		shade.hide();
+	// }
+}
+// 保险选择
+function baoxian(){
+	var b_id1  = $('input[name="cradio"]:checked').val();		//
+	var b_id2  = $('input[name="jradio"]:checked').val();		//
+	var b_id3  = $('input[name="qradio"]:checked').val();		//
+	//alert(b_id4);
+	$.ajax({
+		type:"post",
+		url:"{:U('Project/tourajaxbx')}",//根据自己项目的需要写请求地址
+		data:{
+			'b_id1':b_id1,
+			'b_id2':b_id2,
+			'b_id3':b_id3,
+		},
+		dataType:'json',
+		success:function(data){
+			//alert(JSON.stringify(data));
+			//$('#m_id').html('');//覆盖原数据
+			var html ='';
+			for(var i=0;i<data.length;i++){
+				// $('<p><span>'+data[i].m_name+'</span><span>'+data[i].m_num+'</span><input type="hidden" name="m_id" value="'+data[i].m_id+'"></p>').appendTo('#m_id');
+				//html += '<p><span>'+data[i].m_name+'</span><span>'+data[i].m_num+'</span><input type="hidden" name="m_id" value="'+data[i].m_id+'"></p>';
+				html += '<p>'+data[i].in_category+'&nbsp;'+data[i].in_title+'&nbsp;'+data[i].in_price+'/人</p><input type="hidden" name="in_id" value="'+data[i].in_id+'">';
+			}
+			$('#bx').html(html);
+            // var shade_content = $("#man");
+            // shade_content.hide();
+		},
+		error:function(data) {
+			console.log(data.msg);
+		},
+	})
+	// var arr = str.split(" ");
+	
+
+
+	// for(var i=0;i<arr.length;i++){
+	// 	document.writeln(arr[i]);
+	// }
+}
+/* 模态框操作 */
+
+function fun(){
+	var data=Lond_ckeck('m_id');
+	//alert(data);
+	$.ajax({
+		type:"post",
+		url:"{:U('Project/tourajaxrw')}",//根据自己项目的需要写请求地址
+		data:{
+			'data':data,
+		},
+		dataType:'json',
+		success:function(data){
+			//alert(JSON.stringify(data));
+			//$('#m_id').html('');//覆盖原数据
+			var html ='';
+			for(var i=0;i<data.length;i++){
+				// $('<p><span>'+data[i].m_name+'</span><span>'+data[i].m_num+'</span><input type="hidden" name="m_id" value="'+data[i].m_id+'"></p>').appendTo('#m_id');
+				html += '<p><span>'+data[i].m_name+'</span><span>'+data[i].m_num+'</span><input type="hidden" name="mi_id" value="'+data[i].m_id+'"></p>';
+			}
+			// if(i%n == 0){//取余  若结果为0代表能够整除
+			// 	echo "能够整除";
+			// }else{
+			// 	echo "不能整除";
+			// }
+			//var renshu = (i/2)+'间';
+			// alert(i);
+			//$('#renshu').html(renshu);
+			$('#m_id').html(html);
+            var shade_content = $("#man");
+            shade_content.hide();
+		},
+		error:function(data) {
+			console.log(data.msg);
+		},
+	})
+	// var arr = str.split(" ");
+	
+
+
+	// for(var i=0;i<arr.length;i++){
+	// 	document.writeln(arr[i]);
+	// }
+}
+function Lond_ckeck(objname){
+    obj = document.getElementsByName(objname);
+    checkval = [];
+    for(k in obj){
+        if(obj[k].checked)
+            checkval.push(obj[k].value);
+    }
+    return checkval;
+} 
+/* 模态框操作 保险选择 */
+function fun_2(){
+	var a_name  = $('input[name="cradio"]').val();		//昵称
+	var a_name1  = $('input[name="jradio"]').val();		//昵称
+    var a_admin  = $('input[name="qradio"]').val();	//账号
+	alert(JSON.stringify(a_name));
+	// var arr = str.split(" ");
+	// for(var i=0;i<arr.length;i++){
+	// 	document.writeln(arr[i]);
+	// }
+}
+function Lond_ckeck(objname){
+    obj = document.getElementsByName(objname);
+    checkval = [];
+    for(k in obj){
+        if(obj[k].checked)
+            checkval.push(obj[k].value);
+    }
+    return checkval;
+}
+</script>
+<!-- the end -->
+<!-- 滚动浮窗 -->
+<script>
+var elButton = $('#button'), elButtonWith = $('#buttonWith');
+var elAside = $('#aside');
+elButton.on('click', function () {
+	elAside.addClass('active');
+	$('html').addClass('noscroll');
+});
+elButtonWith.on('click', function() {
+	elAside.addClass('active');
+	$.smartScroll(elAside, '.scrollable');
+	elButton.html(elButton.html().replace('没有', '已经'));
+	$('html').addClass('noscroll');
+});
+
+$('.hideAside').on('click', function () {
+	$('html').removeClass('noscroll');
+	elAside.removeClass('active');
+});
+
+$.smartScroll = function(container, selectorScrollable) {
+	// 如果没有滚动容器选择器，或者已经绑定了滚动时间，忽略
+	if (!selectorScrollable || container.data('isBindScroll')) {
+		return;
+	}
+
+	// 是否是搓浏览器
+	// 自己在这里添加判断和筛选
+	var isSBBrowser;
+
+	var data = {
+		posY: 0,
+		maxscroll: 0
+	};
+
+	// 事件处理
+	container.on({
+		touchstart: function (event) {
+			var events = event.touches[0] || event;
+
+			// 先求得是不是滚动元素或者滚动元素的子元素
+			var elTarget = $(event.target);
+
+			if (!elTarget.length) {
+				return;
+			}
+
+			var elScroll;
+
+			// 获取标记的滚动元素，自身或子元素皆可
+			if (elTarget.is(selectorScrollable)) {
+				elScroll = elTarget;
+			} else if ((elScroll = elTarget.parents(selectorScrollable)).length == 0) {
+				elScroll = null;
+			}
+
+			if (!elScroll) {
+				return;
+			}
+
+			// 当前滚动元素标记
+			data.elScroll = elScroll;
+
+			// 垂直位置标记
+			data.posY = events.pageY;
+			data.scrollY = elScroll.scrollTop();
+			// 是否可以滚动
+			data.maxscroll = elScroll[0].scrollHeight - elScroll[0].clientHeight;
+		},
+		touchmove: function (event) {
+			// 如果不足于滚动，则禁止触发整个窗体元素的滚动
+			if (data.maxscroll <= 0 || isSBBrowser) {
+				// 禁止滚动
+				event.preventDefault();
+			}
+			// 滚动元素
+			var elScroll = data.elScroll;
+			// 当前的滚动高度
+			var scrollTop = elScroll.scrollTop();
+
+			// 现在移动的垂直位置，用来判断是往上移动还是往下
+			var events = event.touches[0] || event;
+			// 移动距离
+			var distanceY = events.pageY - data.posY;
+
+			if (isSBBrowser) {
+				elScroll.scrollTop(data.scrollY - distanceY);
+				elScroll.trigger('scroll');
+				return;
+			}
+
+			// 上下边缘检测
+			if (distanceY > 0 && scrollTop == 0) {
+				// 往上滑，并且到头
+				// 禁止滚动的默认行为
+				event.preventDefault();
+				return;
+			}
+
+			// 下边缘检测
+			if (distanceY < 0 && (scrollTop + 1 >= data.maxscroll)) {
+				// 往下滑，并且到头
+				// 禁止滚动的默认行为
+				event.preventDefault();
+				return;
+			}
+		},
+		touchend: function () {
+			data.maxscroll = 0;
+		}
+	});
+
+	// 防止多次重复绑定
+	container.data('isBindScroll', true);
+};
+</script>
+<!--保险详情模态框-->
+<style type="text/css">
+	#bxcon{
+		display: none;
+		position: fixed;
+		z-index: 3;
+		top: 0px;
+		background: #000;
+		width: 100%;
+		height: 100%;
+	}
+	#bxcon>div{
+		height: 100%;
+		overflow: auto;
+	}
+	#bxcon>div>span{
+		display: block;
+		width: 100%;
+		text-align: right;
+	}
+	#bxcon>div>a{
+		display: inline-block;
+		color: rgb(248,194,84);
+		position: fixed;
+		font-size: 20px;
+		border: 1px solid rgb(248,194,84);
+		border-radius: 15px;
+		padding: 0 5.5px;
+		bottom: 40px;
+		left: 47%;
+		text-decoration: none;
+	}
+	#bxcon>div>div{
+		overflow: hidden;
+	}
+	#bxcon>div>div>h5{
+		width: 100%;
+		color: rgb(248,194,84);
+		font-size: 15px;
+		font-weight: initial;
+		border-bottom: 1px solid rgb(151,151,151);
+		margin-top: 10px;
+		padding: 5px 0;
+	}
+	#bxcon>div>div>h5>span{
+		font-size: 13px;
+		display: inline-block;
+		color: rgb(0,122,255);
+		padding: 0 5px 0 10px;
+		font-weight: bold;
+	}
+	#bxcon>div>div>div{
+		color: rgb(186,186,186);
+		font-size: 12px;
+		width: 90%;
+		margin: auto;
+	}
+</style>
+<div id="bxcon">
+	<div>
+		<div>
+			<h5><span>|</span>保险名称</h5>
+			<div class="bxname">{$bxcon.in_title}</div>
+			<h5><span>|</span>保险代码</h5>
+			<div>TP0354551</div>
+			<h5><span>|</span>承保公司</h5>
+			<div>阳光保险有限公司</div>
+			<h5><span>|</span>保险期间说明</h5>
+			<div>包括电子保单和纸质的或电子的发票, 由保险公司直接提供, 详见各保险产品的说明。</div>
+			<h5><span>|</span>保障内容与保额</h5>
+			<div>订单取消险是针对订单本身的保障, 生效日期不可变更; 其它保险均可在保险生效前自助改期, 操作按钮在订单详情页。<h5>修改证件信息</h5>一旦发现证件信息有误, 请直接致电保险公司进行保全变更, 致电时请提供在去哪儿网的保单号(订单详情页有显示)。</div>
+			<h5><span>|</span>份数限制</h5>
+			<div>订单取消险理赔流程:<br>
+				1. 客人向Qunar申请订单退款。<br>
+				2. 订单被裁决为部分退款或拒绝退款时, 可申请取消险理赔。<br>
+				3. 理赔时的各方责任:<br>
+				A. 商家提交损失证明给Qunar;<br>
+				B. Qunar转发订单裁决结果及商家损失证明给保险公司;<br>
+				C. 客人直接致电保险公司申请理赔;<br>
+				D. 保险公司审核材料并根据保单进行理赔。<br>
+				<br>
+				其它险种理赔流程:<br>
+				1. 客人直接向保险公司申请理赔, 并提供Qunar保单号及相关损失证明;<br>
+				2. 保险公司审核材料并根据保单进行理赔。</div>
+			<h5><span>|</span>责任免除</h5>
+			<div>完整的保障条款请参见保险产品说明中的一个或多个附加PDF条款文档。 如遇不明问题, 请直接拨打保险公司热线咨询。</div>
+			<h5><span>|</span>生效与退保规则</h5>
+			<div>订单取消险在订单支付成功后次日生效, 其它保险在出游第一天生效。</div>
+			<h5><span>|</span>投保人要求</h5>
+			<div>各险种都可在生效日期前自助退保, 退保按钮在订单详情页。退保成功后, 已支付款项会原路退回, 根据不同银行的时效性, 一般1~7个工作日到账。注意: 订单取消险在支付次日就生效了, 如需退保只能当天申请。</div>
+			<h5><span>|</span>被保险人要求</h5>
+			<div>包括电子保单和纸质的或电子的发票, 由保险公司直接提供, 详见各保险产品的说明。</div>
+			<h5><span>|</span>投保人义务</h5>
+			<div>订单取消险是针对订单本身的保障, 生效日期不可变更; 其它保险均可在保险</div>
+			<h5><span>|</span>销售区域</h5>
+			<h5><span>|</span>备案信息</h5>
+			<h5><span>|</span>保险特色</h5>
+			<h5><span>|</span>完整条款</h5>
+			<h5><span>|</span>电子保单</h5>
+			<h5><span>|</span>保险发票</h5>
+			<h5><span>|</span>理赔说明</h5>
+			<h5><span>|</span>保险公司司电话</h5>
+			<h5><span>|</span>其他须知</h5>
+			<h5><span>|</span>销售服务方</h5>
+			<!--下方距离-->
+			<p style="margin-bottom: 100px;"></p>
+		</div>
+		<a href="javascript:;" onclick="back111()">X</a>
+	</div>
+</div>
+<script type="text/javascript">
+	function back111() {
+		var shade_content = $("#bxcon");
+		shade_content.hide();
+	}
+</script>
+
+</body>
+</html>

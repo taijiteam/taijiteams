@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>渠道PLUS微管家商户平台V1.0-{$_SESSION["s_name"]}</title>
+</head>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/AdminShops/ertao/icon/iconfont.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/AdminShops/css/erTaoStyle.css">
+<!-- zk -->
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/AdminShops/css/theme.css">
+<!-- the end -->
+
+<body class="public">
+<header>
+	<!-- logo -->
+	<a href="" class="logo"><img src="__PUBLIC__/AdminShops/images/icon/logo.png"><span>渠道PLUS微管家商户平台V1.0</span></a>
+
+	<!--<div class="top">
+		<a href="" class="logo"><span style=" font-size: 20px; color: red;">退出</span></a>
+	</div>-->
+	<div class="top">
+		<a href="{:U('Index/logout')}"><i class="iconfont"><img src="__PUBLIC__/AdminShops/images/icon/logout.png" style="width: 40px;"></i></a>
+	</div>
+
+	<div class="top">
+		<a href=""><i class="iconfont">&#xe6fc;</i></a>
+		<div>
+			<h3>{$_SESSION["s_name"]}</h3>
+			<p>ID:{$_SESSION["s_shopid"]}</p>
+		</div>
+	</div>
+
+</header>
+<div class="shops">
+	<div class="service">
+		<img src="__PUBLIC__/AdminShops/images/icon/Logo2.jpg">
+		<img src="__PUBLIC__/AdminShops/images/icon/qudaoewm.jpg">
+		<h3><i class="iconfont">&#xe613;</i>客服电话</h3>
+		<h3>021-52839777</h3>
+	</div>
+	<div class="content">
+		<div class="left">
+			<div class="content_left">
+				<div class="title"><span>{$_SESSION["s_name"]}</span></div>
+				<div class="left_nav">  
+					<ul>
+						<li>
+							<div class="t"><i></i><a href="{:U('Index/index')}">未结算订单</a></div>
+						</li>
+						<li>
+							<div class="t"><i></i><a href="{:U('Index/order')}">已结算订单</a></div>
+						</li>
+						<li>
+							<div class="t"><i></i><a href="{:U('Index/member')}">会员查询</a></div>
+						</li>
+						<li>
+							<div class="t"><i></i><a href="{:U('Index/memberSave')}">后台管理</a></div>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+		<div class="list">
+			<div>
+				<div class="title-1">
+					<span>密码更改</span>
+				</div>
+				<div class="member">
+					<h3>请输入会员账号</h3>
+					<form id="form1" class="layui-form">
+						<ul class="text">
+							<li style="margin-bottom:20px"><span style="font-size: 16px">
+								账　　号：</span><input type="text" name="username" disabled  value="{$res}" style="height:35px;border: #cccccc 1px solid">
+							</li>
+							<li style="margin-bottom:20px"><span style="font-size: 16px">
+								更改密码：</span><input type="password" name="password" placeholder="请输入新密码"  style="height:35px;border: #cccccc 1px solid"">
+							</li>
+							<li style="margin-bottom:20px"><span style="font-size: 16px">
+								确认密码：</span><input type="password" name="repwd"  placeholder="请再次输入新密码" style="height:35px;border: #cccccc 1px solid">
+							</li>
+						</ul>
+						<!--<input type="button" class="sub" value="提交">-->
+						<input type="button" onclick="but()" name="btn" class="sub" value="提交">
+					</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- zhankai  -->
+<script charset="utf-8" type="text/javascript" src="__PUBLIC__/AdminShops/js/jquery.js"></script>
+<script charset="utf-8" type="text/javascript" src="__PUBLIC__/AdminShops/js/theme.js"></script>
+<!-- 请在下方写相关业务代码 -->
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Project/css/H-ui.min.css" />
+<script type="text/javascript" src="__PUBLIC__/Project/hui/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/layui/layui.js" charset="utf-8"></script>
+<!-- 请在上方写相关业务脚本 -->
+</body>
+<script>
+	/*form.on('#btn', function(data){
+		var password = $('input[name="password"]').val();			//更新的密码
+		var repwd = $('input[name="repwd"]').val();			//更新的确认密码
+		alert(repwd);
+	})
+	/!*$("#btn").click({
+		var password = $('input[name="password"]').val();			//更新的密码
+	var repwd = $('input[name="repwd"]').val();			//更新的确认密码
+	alert(repwd);
+	})*!/*/
+	function but(){
+		var password = $('input[name="password"]').val();			//更新的密码
+		var repwd = $('input[name="repwd"]').val();			//更新的确认密码
+		if(password == "" && repwd == ""){
+			alert('密码不能为空！')
+		}else{
+		$.ajax({
+			type: 'post',
+			url:"{:U('Index/memberGengGai')}",
+			data:{
+				password : password,
+				repwd : repwd,
+			},
+			dataType:'json',
+			success:function(data){
+				// alert(JSON.stringify(data));
+				if(data['status']=='ok'){
+					layer.msg(data['content'],{
+						icon:1,
+						time:2000,
+						shade:[0.6,'#000000']
+					},function(){
+						location="{:U('Index/login')}";
+					});
+				}else{
+					layer.msg(data['content'],{
+						icon:2,
+						time:2000,
+						shade:[0.6,'#000000']
+					});
+				}
+			},
+			error:function(data) {
+				console.log(data.msg);
+			},
+		})
+		}
+	}
+</script>
+</html>

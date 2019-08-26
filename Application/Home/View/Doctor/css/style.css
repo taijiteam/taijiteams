@@ -1,0 +1,1321 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	margin: 0 auto;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+	background: #000;
+}
+a{
+	color: #666;
+	text-decoration:none;
+}
+li{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+body>header>.banner>img{
+	width: 100%;
+}
+body>header>form{
+	position: absolute;
+	margin: 10px auto;
+	width: 100%;
+	text-align: center;
+}
+body>header>form>p{
+	margin: 0 auto;
+	width: 190px;
+	overflow: hidden;
+	background-color: #fff;
+	border-radius: 15px;
+	height: 31px;
+
+}
+body>header>form>p>.input_all{
+	border-radius:15px;/*边框圆角*/
+	border: none;
+	line-height: 29px;
+	width: 125px;
+}
+body>header>form>p>.sub_all{
+	color: rgb(245,166,35);
+	background-color: rgb(51,51,51);
+	border: none;
+	height: 31px;
+}
+/*	================================
+	== header the end 以上为header ==
+	================================*/
+body>.ul_head{
+	padding:0px;
+	margin: 0 auto;
+	overflow: hidden;
+	width: 90%;
+	background-color: rgb(51,51,51);
+	padding-bottom: 10px;
+	position: absolute;
+    margin-top: -20px;
+    margin-left: 5%;
+    border-radius:10px;/*边框圆角*/
+    padding-top: 10px;
+    border: 0.5px solid rgb(247,194,84);
+}
+body>.ul_head>a>li{
+	width: 20%;
+	display: block;
+	float: left;
+	text-align: center;
+}
+body>.ul_head>a>li>img{
+	width: 70%;
+}
+body>.ul_head>a>li>p{
+	font-size: 12px;
+	color: rgb(250,196,84);
+	text-align: center;
+	margin: 0;
+	margin-top: 5px;
+}
+
+/*	================================
+	== ul_head the end 功能区结束 ==
+	================================*/
+#margintop{
+	width: 100%;
+	height: 10vw;
+}
+/*#marginbottom{
+	width: 100%;
+	height: 70px;
+}*/
+body>.div_body_1{
+	overflow: hidden;
+}
+body>.div_body_1>h3{
+	color: rgb(250,196,84);
+	font-size: 15px;
+	overflow: hidden;
+	padding-left: 20px;
+	padding-right: 20px;
+	background: rgb(53,53,53);
+	line-height: 30px;
+}
+body>.div_body_1>h3>img{
+	width: 20px;
+	display: block;
+	float: left;
+	margin-top: 5px;
+	margin-right: 5px;
+}
+body>.div_body_1>h3>.h{
+	display: block;
+	float: left;
+}
+body>.div_body_1>h3>.gt{
+	display: block;
+	float: right;
+}
+body>.div_body_1>h3>a>.gt{
+	display: block;
+	float: right;
+	color: #fbc554;
+}
+body>.div_body_1>ul{
+	margin-left: 5px;
+	padding: 0;
+	display: -webkit-box;
+	overflow-x: scroll;
+	-webkit-overflow-scrolling:touch;
+}
+body>.div_body_1>ul>a{
+	display: block;
+	width: 34%;
+	border:1px solid rgb(250,196,84);
+	margin-right: 30px;
+	color: #fff;
+	text-align: center;
+}
+body>.div_body_1>ul>a>li>img{
+	width: 100%;
+}
+body>.div_body_1>ul>a>li>h3{
+	color: rgb(250,196,84);
+	font-size: 14px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+body>.div_body_1>ul>a>li>span{
+	font-size: 12px;
+	display: block;
+}
+/*	================================
+	= div_body_1 the end 展示区结束 =
+	================================*/
+body>.div_body_3{
+	margin-bottom: 60px;
+}
+body>.div_body_3>h3{
+	color: rgb(250,196,84);
+	font-size: 15px;
+	overflow: hidden;
+	padding-left: 20px;
+	padding-right: 20px;
+	background: rgb(53,53,53);
+	line-height: 30px;
+}
+body>.div_body_3>h3>.img1{
+	width: 20px;
+	display: block;
+	float: left;
+	margin-top: 6px;
+	margin-right: 7px;
+}
+body>.div_body_3>h3>.h{
+	display: block;
+	float: left;
+}
+body>.div_body_3>h3>a>.gt{
+	display: block;
+	float: right;
+	color: #fbc554;
+}
+body>.div_body_3>h3>.img2{
+	width: 20px;
+	display: block;
+	float: left;
+	margin-top: 5px;
+	border-radius:4px;/*边框圆角*/
+	margin-left: 3px;
+}
+/*div_kemu*/
+body>.div_body_3>.div_kemu{
+	margin: 0 auto;
+	width: 90%;
+	overflow: hidden;
+}
+body>.div_body_3>.div_kemu>hr{
+	display: block;
+	width: 100%;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+body>.div_body_3>.div_kemu>a>div{
+	width: 29%;
+	height: 29vw;
+	display: block;
+	float: left;
+	background: #fff;
+	margin-left: 2%;
+	margin-right: 2%;
+	text-align: center;
+	margin-bottom: 15px;
+	overflow: hidden;
+}
+body>.div_body_3>.div_kemu>a>div>p{
+	color: #fff;
+	margin: 0px;
+}
+body>.div_body_3>.div_kemu>a>div>.p_1{
+	font-size: 14px;
+	margin-top: 25%;
+}
+body>.div_body_3>.div_kemu>a>div>.p_2{
+	font-size: 12px;
+}
+body>.div_body_3>.div_kemu>a>.color_1{
+	background-color: rgb(224,159,74);
+}
+body>.div_body_3>.div_kemu>a>.color_2{
+	background-color: rgb(72,131,150);
+}
+body>.div_body_3>.div_kemu>a>.color_3{
+	background-color: rgb(83,89,153);
+}
+body>.div_body_3>.div_kemu>a>.color_4{
+	background-color: rgb(120,64,104);
+}
+body>.div_body_3>.div_kemu>a>.color_5{
+	background-color: rgb(230,97,115);
+}
+body>.div_body_3>.div_kemu>a>.color_6{
+	background-color: rgb(75,183,111);
+}
+/*	================================
+	= div_body_3 the end 展示区结束 =
+	================================*/
+body>footer{
+	width: 100%;
+    /*border-top: 1px solid #b2b2b2;*/
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    height: 60px;
+	background-color: rgb(51,51,51);
+}
+body>footer>ul{
+	padding: 0;
+	width: 90%;
+	margin: 0 auto;
+	overflow: hidden;
+	text-align: center;
+	font-size: 14px;
+}
+body>footer>ul>a>li{
+	display: block;
+	float: left;
+	width: 33%;
+	height: 55px;
+	padding-top: 5px;
+}
+body>footer>ul>a>li>img{
+	width: 30%;
+	height: 8vw;
+}
+body>footer>ul>a>li>p{
+	color: rgb(185,185,185);
+	margin: 0;
+	padding: 0;
+
+}
+/*	================================
+	=== footer the end 展示区结束 ===
+	== bottom tellme stat 联系我们 ==
+	================================*/
+body>.tcontent{
+	margin-bottom: 65px;
+}
+body>.tcontent>h3{
+	color: rgb(250,196,84);
+	font-size: 14px;
+	line-height: 28px;
+	background: rgb(53,53,53);
+	padding-left: 7%;
+	margin-top: 0;
+}
+body>.tcontent>h3>img{
+	width: 20px;
+	display: block;
+	float: left;
+	margin-top: 6px;
+}
+#map{
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+#map>div{
+	border-radius:10px;/*边框圆角*/
+}
+body>.tcontent>div{
+	padding-left: 5%;
+	padding-right: 5%;
+}
+body>.tcontent>div>div>h4{
+	margin: 0;
+	color: rgb(250,196,84);
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+body>.tcontent>div>div>p{
+	font-size: 13px;
+	color: rgb(238,238,238);
+	margin: 0;
+}
+/*	================================
+	== tellme the end 联系我们结束 ==
+	=== bottom message stat 消息 ===
+	================================*/
+body>.mcontent{
+	margin-bottom: 65px;
+	
+}
+body>.mcontent>h3{
+	color: rgb(250,196,84);
+	font-size: 14px;
+	line-height: 28px;
+	background: rgb(53,53,53);
+	padding-left: 7%;
+	margin-top: 0;
+}
+body>.mcontent>h3>img{
+	width: 20px;
+	display: block;
+	float: left;
+	margin-top: 5px;
+	margin-right: 5px;
+}
+body>.mcontent>.head{
+	overflow: hidden;
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+body>.mcontent>.head>img{
+	width: 65px;
+	display: block;
+	float: left;
+}
+body>.mcontent>.head>span{
+	color: #fff;
+	width: 100px;
+	margin:0;
+	display: block;
+	float: left;
+	margin-top: 20px;
+	margin-left: 5px;
+}
+body>.mcontent>.head>span>p{
+	margin: 0;
+}
+body>.mcontent>ul{
+	padding: 0px;
+
+}
+body>.mcontent>ul>a>li{
+	width: 90%;
+	margin: 0 auto;
+	background: #333333;
+	color: #fff;
+	overflow: hidden;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 15px;
+}
+body>.mcontent>ul>a>li>p{
+	font-size: 14px;
+	/*text-align: center;*/
+	margin-top: 10px;
+	margin-bottom: 5px;
+	border-bottom: 1px solid #565656;
+}
+body>.mcontent>ul>a>li>div{
+	width: 95%;
+	display: block;
+	float: left;
+}
+body>.mcontent>ul>a>li>span{
+	width: 5%;
+	display: block;
+	float: right;
+	text-align: right;
+	margin-top: 15px;
+}
+body>.mcontent>ul>a>li>div>h4{
+	margin: 0;
+	font-size: 14px;
+}
+body>.mcontent>ul>a>li>div>h4>img{
+	width: 15px;
+	margin-left: 0px;
+	margin-bottom: 8px;
+}
+body>.mcontent>ul>a>li>div>p{
+	margin: 0;
+	font-size: 12px;
+}
+/*	================================
+	== message the end 系统消息结束 ==
+	= bottom message_c stat 消息详细 =
+	================================*/
+body>.mcontent>h4{
+	background: #333;
+	color: #fff;
+	font-size: 14px;
+	width: 90%;
+	margin: 0 auto;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+body>.mcontent>.xin{
+	width: 90%;
+	margin: 0 auto;
+	padding: 5px;
+	background: #333;
+	color: #fff;
+	line-height: 24px;
+}
+body>.mcontent>.xin>.span1{
+	display: block;
+	font-size: 14px;
+}
+body>.mcontent>.xin>.span2{
+	font-size: 12px;
+}
+/*	================================
+	= message_c the end 消息详细结束 =
+	= bottom back stat 消息详细 =
+	================================*/
+	/**/
+body>.head{
+	overflow: hidden;
+	margin-left: 20px;
+	margin-bottom: 10px;
+	position: absolute;
+	right: 0;
+	left: 0;
+	margin-top: -75px;
+}
+body>.head>img{
+	width: 65px;
+	display: block;
+	float: left;
+}
+body>.head>span{
+	color: #fff;
+	width: 100px;
+	margin:0;
+	display: block;
+	float: left;
+	margin-top: 20px;
+	margin-left: 5px;
+}
+body>.head>span>p{
+	margin: 0;
+}
+	/**/
+body>.ccontent{
+	margin-bottom: 70px;
+
+	overflow: hidden;
+}
+body>.ccontent>h3{
+	color: rgb(250,196,84);
+	font-size: 14px;
+	line-height: 28px;
+	background: rgb(53,53,53);
+	padding-left: 7%;
+	margin-top: 0;
+}
+body>.ccontent>h3>img{
+	width: 20px;
+	display: block;
+	float: left;
+	margin-top: 2px;
+	margin-right: 5px;
+}
+/*body>.ccontent>.head{
+	overflow: hidden;
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+body>.ccontent>.head>img{
+	width: 65px;
+	display: block;
+	float: left;
+}
+body>.ccontent>.head>span{
+	color: #fff;
+	width: 100px;
+	margin:0;
+	display: block;
+	float: left;
+	margin-top: 20px;
+	margin-left: 5px;
+}
+body>.ccontent>.head>span>p{
+	margin: 0;
+}*/
+body>.ccontent>.corder{
+	background: rgb(77,77,77);
+	width: 95%;
+	margin: 0 auto;
+	color: #fff;
+	border-radius:10px;/*边框圆角*/
+}
+body>.ccontent>.corder>p{
+	padding-left: 20px;
+	font-size: 14px;
+	line-height: 25px;
+	margin: 0;
+}
+body>.ccontent>.corder>ul{
+	padding: 0;
+	overflow: hidden;
+	border-top: 1px solid rgb(251,197,84);
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin: 0;
+}
+body>.ccontent>.corder>ul>a>li{
+	width: 25%;
+	display: block;
+	float: left;
+	text-align: center;
+	font-size: 12px;
+	color: #fff;
+}
+body>.ccontent>.corder>ul>a>li>img{
+	width: 25px;
+}
+body>.ccontent>.corder>ul>a>li>p{
+	margin: 0;
+}
+body>.ccontent>.div_1{
+	background: rgb(77,77,77);
+	color: #fff;
+	width: 95%;
+	margin: 0 auto;
+	font-size: 14px;
+	border-radius:10px;/*边框圆角*/
+	margin-top: 20px;
+}
+body>.ccontent>.div_1>a>p{
+	margin: 0;
+	border-top: 1px solid #000;
+	line-height: 39px;
+	color: #fff;
+	padding-left: 20px;
+}
+body>.ccontent>.div_1>a>p>img{
+	width: 20px;
+	display: block;
+	float: left;
+	margin-top: 8px;
+	margin-right: 5px;
+}
+/*	================================
+	== center the end 个人中心结束 ==
+	== bottom inform stat 消息详细 ==
+	================================*/
+body>.ccontent>.inform{
+	width: 90%;
+	margin: 0 auto;
+	background: #1d1d1d;
+	border: 1px solid #504734;
+	color: #fff;
+	font-size: 13px;
+	border-radius:10px;/*边框圆角*/
+}
+body>.ccontent>.inform>h4{
+	width: 150px;
+	margin: 0;
+	overflow: hidden;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background: #75581d;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+body>.ccontent>.inform>h4>img{
+	width: 23px;
+	display: block;
+	float: left;
+	margin-left: 10px;
+}
+body>.ccontent>.inform>p{
+	overflow: hidden;
+	border-bottom: 1px solid #504734;
+}
+body>.ccontent>.inform>p>.span1{
+	width: 40%;
+	display: block;
+	float: left;
+	text-align: right;
+	margin-bottom: 5px;
+}
+body>.ccontent>.inform>p>.span2{
+	width: 60%;
+	display: block;
+	float: left;
+	margin-bottom: 5px;
+	font-family: arial;
+}
+/*	================================
+	==== inform the end 消息结束 ====
+	== bottom feed stat 反馈详细 ==
+	================================*/
+body>.ccontent>.feedback{
+	color: #fff;
+	text-align: center;
+}
+body>.ccontent>.feedback>p{
+	font-size: 13px;
+}
+body>.ccontent>.feedback>form>textarea{
+	display: block;
+	border: none;
+	background: rgb(53,53,53);
+	width: 85%;
+	margin: 0 auto;
+	color: #fff;
+}
+body>.ccontent>.feedback>form>input{
+	border-radius:25px;/*边框圆角*/
+	background:-webkit-linear-gradient(top,rgb(250,217,97),rgb(247,107,28));/*渐变颜色*/
+	width: 150px;
+	color: #fff;
+	font-size: 16px;
+	box-shadow: 1px 1px 2px #aaaaaa;
+	border: none;
+	margin: 0 auto;
+	display: block;
+	line-height: 35px;
+	margin-top: 20px;
+	margin-bottom: 20px; 
+}
+/*	================================
+	==== feed the end 反馈页结束 ====
+	= bottom orderlist stat 订单列表 =
+	================================*/
+body>.ccontent>.orderlist{
+	color: #fff;
+}
+body>.ccontent>.orderlist>div{
+	background: rgb(53,53,53);
+	margin-bottom: 20px;
+}
+body>.ccontent>.orderlist>div>h4{
+	font-size: 14px;
+	border-bottom: 0.5px solid #655024;
+	overflow: hidden;
+	margin-bottom: 0px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: #fff;
+}
+body>.ccontent>.orderlist>div>h4>.span1{
+	display: block;
+	float: left;
+	margin-left: 20px;
+}
+body>.ccontent>.orderlist>div>h4>a>.span2{
+	display: block;
+	float: right;
+	margin-right: 20px;
+	border-radius:2px;/*边框圆角*/
+	width: 60px;
+	height:20px;
+	text-align: center;
+	color: #fff;
+}
+body>.ccontent>.orderlist>div>a>div{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: #fff;
+}
+body>.ccontent>.orderlist>div>a>div>p{
+	width: 200px;
+	margin: 0 auto;
+	line-height: 20px;
+	font-size: 12px;
+	overflow: hidden;
+}
+body>.ccontent>.orderlist>div>a>div>p>.span1{
+	display: block;
+	float: left;
+}
+body>.ccontent>.orderlist>div>a>div>p>.span2{
+	display: block;
+	float: right;
+}
+/*	================================
+	= orderlist the end 订单页结束 ==
+	== bottom orderc stat 订单详细 ==
+	================================*/
+body>.ccontent>.ordercontent{
+	color: #fff;
+}
+body>.ccontent>.ordercontent>form>div{
+	border-bottom: 1px solid rgb(250,196,84);
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+body>.ccontent>.ordercontent>form>div>p{
+	margin: 0;
+}
+body>.ccontent>.ordercontent>form>.div1>p{
+	margin-left: 30px;
+	font-size: 14px;
+}
+body>.ccontent>.ordercontent>form>.div2>p{
+	overflow: hidden;
+	line-height: 25px;
+	height: 25px;
+}
+body>.ccontent>.ordercontent>form>.div2>p>.span1{
+	width: 40%;
+	float: left;
+	display: block;
+	text-align: right;
+	font-size: 14px;
+	height: 25px;
+}
+body>.ccontent>.ordercontent>form>.div2>p>.span2{
+	width: 60%;
+	display: block;
+	float: left;
+	font-size: 12px;
+}
+body>.ccontent>.ordercontent>form>p{
+	margin-left: 15%;
+	font-size: 14px;
+}
+body>.ccontent>.ordercontent>form>span{
+	display: block;
+	margin-left: 15%;
+	width: 70%;
+	font-size: 12px;
+	background: rgb(53,53,53);
+	padding: 5px;
+	border-radius:3px;/*边框圆角*/
+}
+body>.ccontent>.ordercontent>form>h4{
+	color: rgb(255,159,0);
+	font-size: 14px;
+	text-align: center;
+}
+body>.ccontent>.ordercontent>form>input{
+	border-radius:25px;/*边框圆角*/
+	background:-webkit-linear-gradient(top,rgb(250,217,97),rgb(247,107,28));/*渐变颜色*/
+	width: 150px;
+	color: #fff;
+	font-size: 16px;
+	box-shadow: 1px 1px 2px #aaaaaa;
+	border: none;
+	margin: 0 auto;
+	display: block;
+	line-height: 35px;
+	margin-top: 20px;
+	margin-bottom: 20px; 
+}
+/*	================================
+	= orderc the end 订单详细结束 ==
+	= bottom evaluation stat 订单评价=
+	================================*/
+body>.ccontent>.evaluation{
+	color: #fff;
+}
+body>.ccontent>.evaluation>div{
+	margin-bottom: 20px;
+}
+body>.ccontent>.evaluation>div>h4{
+	font-size: 14px;
+	border-bottom: 0.5px solid rgb(250,196,84);
+	overflow: hidden;
+	margin-bottom: 0px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: #fff;
+}
+body>.ccontent>.evaluation>div>h4>.span1{
+	display: block;
+	float: left;
+	margin-left: 20px;
+}
+body>.ccontent>.evaluation>div>h4>.span2{
+	display: block;
+	float: right;
+	margin-right: 20px;
+	background: rgb(250,196,84);
+	border-radius:2px;/*边框圆角*/
+	width: 60px;
+	height:20px;
+	text-align: center;
+	color: #fff;
+}
+body>.ccontent>.evaluation>div>div{
+	border-bottom: 0.5px solid rgb(250,196,84);
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: #fff;
+}
+body>.ccontent>.evaluation>div>div>p{
+	width: 200px;
+	margin: 0 auto;
+	line-height: 20px;
+	font-size: 12px;
+	overflow: hidden;
+}
+body>.ccontent>.evaluation>div>div>p>.span1{
+	display: block;
+	float: left;
+}
+body>.ccontent>.evaluation>div>div>p>.span2{
+	display: block;
+	float: right;
+}
+body>.ccontent>.evaluation>form{
+	font-size: 14px;
+	text-align: center;
+}
+body>.ccontent>.evaluation>form>p>textarea{
+	width: 70%;
+}
+body>.ccontent>.evaluation>form>input{
+	border-radius:25px;/*边框圆角*/
+	background:-webkit-linear-gradient(top,rgb(250,217,97),rgb(247,107,28));/*渐变颜色*/
+	width: 150px;
+	color: #fff;
+	font-size: 16px;
+	box-shadow: 1px 1px 2px #aaaaaa;
+	border: none;
+	margin: 0 auto;
+	display: block;
+	line-height: 35px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+/*	================================
+	=evaluation the end 订单评价结束=
+	=== bottom depa stat 科目分类 ===
+	================================*/
+body>.depa{
+	overflow: hidden;
+	margin-bottom: 60px;
+}
+body>.depa>h3{
+	overflow: hidden;
+	background: rgb(53,53,53);
+	margin-top: 0;
+	color: rgb(250,196,84);
+	font-size: 14px;
+	line-height: 28px;
+}
+body>.depa>h3>img{
+	width: 20px;
+	display: block;
+	float: left;
+	margin-left: 10px;
+	margin-top: 5px;
+	margin-right: 5px;
+}
+body>.depa>.nav{
+	padding-left: 0;
+	overflow: hidden;
+	width: 100%;
+	border: 1px solid rgb(250,196,84);
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+body>.depa>.nav>a>li{
+	color: #fff;
+	font-size: 14px;
+	width: 17%;
+	padding-left: 4%;
+	padding-right: 4%;
+	float: left;
+	text-align: center;
+}
+body>.depa>.nav>a>li>span{
+	width: 70%;
+	height: 12vw;
+	border: 1px solid rgb(166,166,166);
+	border-radius: 5px;/*圆角边框*/
+	display: block;
+	text-align: center;
+	margin: auto;
+}
+body>.depa>.nav>a>li>span>img{
+	width: 70%;
+	margin-top: 15%;
+}
+body>.depa>.nav>a>li>p{
+	margin: 0;
+}
+body>.depa>.list{
+	width: 100%;
+	padding-left: 0;
+	overflow: hidden;
+}
+body>.depa>.list>a>li{
+	color: #fff;
+	overflow: hidden;
+	width: 90%;
+	background: #1d1d1d;
+	border-radius:5px;/*边框圆角*/
+	margin: 0 auto;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+body>.depa>.list>a>li>img{
+	width: 30%;
+	display: block;
+	float: left;
+}
+body>.depa>.list>a>li>div{
+	width: 65%;
+	float: left;
+	margin-left: 5px;
+}
+body>.depa>.list>a>li>div>h4{
+	font-size: 14px;
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+body>.depa>.list>a>li>div>p{
+	font-size: 12px;
+	margin: 0;
+}
+body>.depa>.list>a>li>div>object>a{
+	color: #fff;
+	font-size: 14px;
+	background: rgb(247,107,28);
+	text-align: center;
+	border-radius:5px;/*边框圆角*/
+	display: block;
+	width: 50px;
+	float: right;
+}
+body>.depa>.list>a>li>span{
+	font-size: 12px;
+	color: rgb(250,196,84);
+	border: 1px solid rgb(229,229,229);
+	display: block;
+	width: 60px;
+	text-align: center;
+	float: left;
+	margin-left: 5px;
+	margin-top: 5px;
+}
+/*	================================
+	=== depa the end 科目分类结束 ===
+	== bottom hospital stat  医院 ==
+	================================*/
+body>.hospital{
+	overflow: hidden;
+	margin-bottom: 60px;
+}
+body>.hospital>h3{
+	overflow: hidden;
+	background: rgb(53,53,53);
+	margin-top: 0;
+	color: rgb(250,196,84);
+	font-size: 14px;
+	line-height: 28px;
+}
+body>.hospital>h3>img{
+	width: 20px;
+	display: block;
+	float: left;
+	margin-left: 10px;
+	margin-top: 3px;
+	margin-right: 5px;
+}
+body>.hospital>.list{
+	width: 100%;
+	padding-left: 0;
+	overflow: hidden;
+}
+body>.hospital>.list>a>li{
+	width: 40%;
+	float: left;
+	color: #fff;
+	margin-left: 6%;
+	margin-bottom: 10px;
+	background: rgb(53,53,53);
+	border: 1px solid #fac447;
+	overflow: hidden;
+}
+body>.hospital>.list>a>li>img{
+	width: 100%;
+}
+body>.hospital>.list>a>li>div>h4{
+	color: #fac447;
+	font-size: 14px;
+	margin-left: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+body>.hospital>.list>a>li>div>p{
+	font-size: 12px;
+	margin-left: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+body>.hospital>.list>a>li>object>a{
+	display: block;
+	float: right;
+	color: #b9b9b9;
+	font-size: 12px;
+}
+/*	================================
+	=== hospital the end 医院结束 ===
+	=== bottom doctor stat  医生 ===
+	================================*/
+body>.doctor{
+	overflow: hidden;
+	margin-bottom: 80px;
+	color: #fff;
+}
+body>.doctor>h3{
+	overflow: hidden;
+	background: rgb(53,53,53);
+	margin-top: 0;
+	color: rgb(250,196,84);
+	font-size: 14px;
+	line-height: 28px;
+}
+body>.doctor>h3>img{
+	width: 20px;
+	display: block;
+	float: left;
+	margin-left: 10px;
+	margin-top: 3px;
+    margin-right: 5px;
+}
+body>.doctor>.list{
+	width: 100%;
+	padding-left: 0;
+	overflow: hidden;
+}
+body>.doctor>.list>a>li{
+	width: 44%;
+	float: left;
+	color: #fff;
+	margin-left: 3%;
+	margin-bottom: 10px;
+	background: rgb(53,53,53);
+	border: 1px solid #fac447;
+}
+body>.doctor>.list>a>li>img{
+	width: 100%;
+}
+body>.doctor>.list>a>li>div>h4{
+	color: #fac447;
+	font-size: 14px;
+	margin-left: 5px;
+	margin-top: 2px;
+	margin-bottom: -2px;
+}
+body>.doctor>.list>a>li>div>p{
+	font-size: 12px;
+	margin-left: 5px;
+	margin-top: 3px;
+	margin-bottom: -5px;
+}
+body>.doctor>.list>a>li>object>a{
+	display: block;
+	float: right;
+	color: #b9b9b9;
+	font-size: 12px;
+}
+body>.doctor>.list>a>li>div>object>a{
+	display: block;
+	float: right;
+	font-size: 12px;
+	width: 40px;
+	text-align: center;
+	background: #f76b1c;
+	color: #fff;
+	border-radius: 5px;
+}
+body>.doctor>.list>a>li>div>span{
+	font-size: 12px;
+	color: #f76b1c;
+	margin-left: 5px;
+}
+/*	================================
+	=== doctor the end 医生结束 ===
+	=bottom hospital_c stat 医院内页=
+	================================*/
+body>.hospital>.hospital_cdiv{
+	color: #eee;
+	overflow: hidden;
+	background: #1d1d1d;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	width: 90%;
+	border-radius: 10px;
+	padding: 5px;
+}
+body>.hospital>.hospital_cdiv>img{
+	width: 45%;
+	display: block;
+	float: left;
+}
+body>.hospital>.hospital_cdiv>h4{
+	margin: 0;
+	width: 50%;
+	float: left;
+	font-size: 14px;
+	margin-left: 5px;
+}
+body>.hospital>.hospital_cdiv>p{
+	margin: 0;
+	width: 50%;
+	float: left;
+	font-size: 12px;
+	margin-left: 5px;
+}
+body>.hospital>.hospital_cp{
+	color: #eee;
+	font-size: 12px;
+	width: 90%;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+/*	================================
+	=hospital_c the end 医院内页结束=
+	= bottom doctor_c stat 医生内页 =
+	================================*/
+
+body>.doctor>.doctor_cdiv{
+	overflow: hidden;
+	background: #1d1d1d;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	width: 90%;
+	border-radius: 10px;
+	padding: 5px;
+	overflow: hidden;
+}
+body>.doctor>.doctor_cdiv>img{
+	width: 35%;
+	display: block;
+	float: left;
+}
+body>.doctor>.doctor_cdiv>div{
+	margin: 0;
+	width: 63%;
+	float: left;
+	font-size: 14px;
+	margin-left: 5px;
+	overflow: hidden;
+	margin-top: 2px;
+}
+body>.doctor>.doctor_cdiv>div>object>a{
+	color: #fff;
+	font-size: 14px;
+	background: rgb(247,107,28);
+	text-align: center;
+	border-radius:5px;/*边框圆角*/
+	display: block;
+	width: 50px;
+	float: right;
+}
+body>.doctor>.doctor_cdiv>div>h4{
+	margin: 0;
+	width: 100px;
+	float: left;
+}
+body>.doctor>.doctor_cdiv>div>p{
+	margin: 0;
+	width: 100%;
+	float: left;
+	font-size: 12px;
+}
+body>.doctor>.doctor_cdiv>div>span{
+	display: block;
+	float: left;
+	margin-left: 5px;
+	color: #fac447;
+	border: 1px solid #ccc;
+}
+body>.doctor>.doctor_cp{
+	font-size: 12px;
+	width: 90%;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+body>.doctor>.doctor_cpj{
+	width: 90%;
+	margin: 0 auto;
+	background: #1d1d1d;
+	overflow: hidden;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-radius: 2px;
+}
+body>.doctor>.doctor_cpj>img{
+	width: 20px;
+	display: block;
+	float: left;
+	margin-left: 15px;
+}
+body>.doctor>.doctor_cpj>.span1{
+	display: block;
+	float: left;
+	font-size: 14px;
+	margin-left: 2px;
+}
+body>.doctor>.doctor_cpj>.span2{
+	color: #ccc;
+    font-size: 12px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #f76b1c;
+    border-radius: 20px;
+    display: block;
+    float: left;
+    text-align: center;
+    margin-left: 2px;
+}
+body>.doctor>.doctor_cul{
+	padding: 0;
+	margin: 0 auto;
+	width: 90%;
+	overflow: hidden;
+}
+body>.doctor>.doctor_cul>li{
+	overflow: hidden;
+}
+body>.doctor>.doctor_cul>li>h4{
+	overflow: hidden;
+	font-size: 14px;
+	margin-bottom: 0;
+	color: #ccc;
+}
+body>.doctor>.doctor_cul>li>h4>.img1{
+	width: 30px;
+	display: block;
+	float: left;
+	border-radius: 60px;
+}
+body>.doctor>.doctor_cul>li>h4>span{
+	display: block;
+    float: left;
+    margin-top: 6px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+body>.doctor>.doctor_cul>li>h4>.img2{
+	width: 20px;
+	display: block;
+	float: left;
+	margin-top: 5px;
+	margin-right: 10px;
+}
+body>.doctor>.doctor_cul>li>p{
+	font-size: 12px;
+	width: 90%;
+	float: right;
+	margin-top: 0px;
+}
+/*	================================
+	= doctor_c the end 医生内页结束 =
+	== bottom feed stat 成功返回页 ==
+	================================*/
+.feed{
+	text-align: center;
+	color: #eee;
+	margin-top: 20%;
+}
+.feed>h2{
+	font-family: "宋体";
+	margin: 40px;
+}
+.feed>img{
+	width: 30%;
+}
+.feed>div{
+	font-size: 14px;
+	line-height: 6px;
+}
+#a{
+/*border: 1px solid #666;*/
+	border-radius:25px;/*边框圆角*/
+	background:-webkit-linear-gradient(top,rgb(249,193,82),rgb(247,107,28));/*渐变颜色*/
+	color: #fff;
+	font-size: 18px;
+	text-decoration: none;
+	display: block;
+	width: 80%;
+	line-height: 40px;
+	margin: 35px auto;
+	box-shadow: 2px 2px 3px #aaaaaa;
+}
+//系统消息状态

@@ -1,0 +1,565 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- 防止手机点击放大问题 -->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+    <!-- the end -->
+    <title>订单详情</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Project/css/style.css">
+<style type="text/css">
+.body{
+    color: #fff;
+    margin-top: 10px;
+}
+.body>.binguan{
+    width: 90%;
+    margin: 0 auto;
+}
+.body>.binguan>.top{
+    background: rgb(53,53,53);
+    width: 100%;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.body>.binguan>.top>span{
+    width: 30%;
+    height: 25vw;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 7px;
+    float: left;
+}
+.body>.binguan>.top>span>img{
+    height: 100%;
+    word-wrap: break-word;
+    margin-left: -50px;
+}
+.body>.binguan>.top>div{
+    width: 68%;
+    display: inline-block;
+    float: left;
+    margin-left: 2%;
+}
+.body>.binguan>.top>div>p{
+    font-size: 16px;
+    margin: 0;
+}
+.body>.binguan>.top>div>p>img{
+    width: 9px;
+}
+.body>.binguan>.top>div>p>span{
+    color: rgb(237,122,40);
+    font-size: 14px;
+}
+.body>.binguan>p{
+    font-size: 14px;
+    margin: 0;
+    line-height: 27px;
+}
+.body>.binguan>p>.left{
+    color: rgb(243,194,84);
+    width: 20%;
+    text-align: right;
+    display: inline-block;
+    margin-right: 5px;
+}
+.body>.binguan>.text{
+    border: 1px solid rgb(65,117,5);
+    padding: 10px;
+    font-size: 13px;
+    width: 90%;
+    margin: 0 auto;
+    height: 105px;
+}
+.body>.lvyou>.top{
+    background: rgb(53,53,53);
+    width: 90%;
+    margin: auto;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 5px;
+}
+.body>.lvyou>div{
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+.body>.lvyou>div>div{
+    overflow: hidden;
+}
+.body>.lvyou>div>div>span{
+    width: 30%;
+    height: 21vw;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 15px;
+    float: left;
+}
+.body>.lvyou>div>div>span>img{
+    height: 100%;
+    word-wrap: break-word;
+}
+.body>.lvyou>div>div>div{
+    width: 68%;
+    display: inline-block;
+    font-size: 12px;
+    float: left;
+    margin-left: 2%;
+}
+.body>.lvyou>div>div>div>span{
+    background: rgb(73,114,27);
+    display: inline-block;
+    margin-right: 5px;
+    padding: 1px;
+}
+.body>.lvyou>div>div>p{
+    margin: 0;
+    font-size: 12px;
+}
+.body>.lvyou>div>p{
+    font-size: 14px;
+    color: rgb(248,194,84);
+    margin: 0;
+}
+.body>.lvyou>p{
+    width: 90%;
+    font-size: 14px;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: right;
+}
+.body>.lvyou>p>span{
+    color: rgb(248,194,84);
+    display: inline-block;
+    float: left;
+}
+.body>.lvyou>div>.ywr{
+    display: inline-block;
+    float: left;
+    text-align: center;
+}
+.body>.lvyou>div>.ywr>.ywr1{
+    color: rgb(248,194,84);
+}
+.body>.lvyou>div>span{
+    display: inline-block;
+    float: right;
+    font-size: 12px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+.body>.lvyou>div>span>img{
+    width: 9px;
+    display: inline-block;
+    float: left;
+    margin-top: 2.6px;
+}
+.body>.lvyou>div>.lxfs{
+    display: inline-block;
+    width: 30%;
+    float: left;
+}
+.body>.lvyou>div>.lxfs1{
+    display: inline-block;
+    width: 70%;
+    float: left;
+}
+.body>.lvyou>div>.lxfs1>p{
+    height: 19px;
+}
+.body>.lvyou>.text{
+    border: 1px solid rgb(65,117,5);
+    padding: 10px;
+    font-size: 13px;
+    width: 90%;
+    margin: 0 auto;
+    height: 125px;
+}
+.jiage{
+    text-align: right;
+    font-size: 14px;
+    color: rgb(248,194,84);
+    display: block;
+    margin: auto;
+    width: 90%;
+}
+.jiage>span{
+    font-size: 24px;
+    color: rgb(237,122,40);
+}
+#footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    z-index: 1;
+    overflow: hidden;
+}
+#footer>.left{
+    display: block;
+    width: 50%;
+    background: #6b6b6b;
+    text-align: center;
+    float: left;
+    line-height: 40px;
+
+}
+#footer>.right{
+    display: block;
+    width: 50%;
+    background: #1d9a74;
+    text-align: center;
+    float: right;
+    line-height: 40px;
+}
+</style>
+<body class="order">
+<!-- 这里是头部 -->
+<header class="cheader">
+    <div>
+        <p><img src="{$_SESSION['information']['headimgurl']}"></p>
+    </div>
+    <p>
+		<span class="span1">
+			<img src="__PUBLIC__/Activity/images/icon/quanbudingdan.svg">
+			订单详情
+		</span>
+        <img class="dao" src="__PUBLIC__/Project/images/icon/dao.png"><!-- <span class="span2"></span> -->
+    </p>
+</header>
+<!-- <p><a href="input.html">input</a></p> -->
+<!-- 这里是身体 -->
+<div class="body">
+    <input type="hidden" name="aprace" value="{$order.o_aprace}"/>
+    <input type="hidden" name="o_id" value="{$order.o_id}"/>
+    <if condition="$order.o_pcate eq 宾馆">
+    <div class="binguan">
+        <div class="top">
+           <span><img src="__PUBLIC__/Uploads/Project/{$order.i_image}" /> </span>
+           <div>
+               <p>{$order.r_title}</p>
+               <p><img src="__PUBLIC__/Project/images/icon/rmb.png" /><span>{$order.r_price}</span></p>
+           </div>
+        </div>
+        <p><span class="left">入住日期</span><span class="right">{$order.o_start}</span></p>
+        <p><span class="left">联系人</span><span class="right">{$order.o_user}</span></p>
+        <p><span class="left">联系手机</span><span class="right">{$order.o_phone}</span></p>
+        <p><span class="left">预计到店</span><span class="right">{$order.o_atime}</span></p>
+        <p><span class="left">金额</span><span class="right">{$order.r_price}元</span></p>
+        <p><span class="left">发票</span><span class="right">{$order.o_invoiceh}</span></p>
+        <if condition="$order.o_ein eq ''">
+            <else/>
+        <p><span class="left">税号</span><span class="right">{$order.o_ein}</span></p>
+        </if>
+        <p><span class="left">特殊要求</span>（选填）</p>
+        <div class="text">{$order.o_content}</div>
+
+        <if condition="$order.o_state eq 2">
+            <p>
+                <input type="checkbox" name="jifen" onclick="jifen()" value="{$_SESSION['infor']['data'][0]['EnablePoint']}"/>
+                您共有{$_SESSION['infor']['data'][0]['EnablePoint']}积分，可抵扣{$_SESSION['jfrmb']}元
+            </p>
+            <else/>
+        </if>
+        <em class="jiage">总计：<span id="aaa">{$order.o_aprace}</span>元</em>
+    </div>
+        <elseif condition="$order.o_pcate eq 旅游"/>
+    <div class="lvyou">
+        <div class="top">
+            <div>
+                <span><img src="__PUBLIC__/Uploads/Project/{$order.i_image}" alt=""/></span>
+                <div>
+                    <p>{$order.p_little}</p>
+                    <volist name="p_serves" id="p_serves">
+                    <span>{$p_serves}</span>
+                    </volist>
+                </div>
+            </div>
+            <div>
+                <p>{$order.p_title|htmlspecialchars_decode|strip_tags|mb_substr=0,30,'utf-8'}</p>
+                <p>班期：{$order.p_schedule}</p>
+                <p>供应商：{$order.p_supplier}</p>
+            </div>
+        </div>
+        <hr style="    border-top: 1px solid #000;border-bottom: 1px solid #616161;"/>
+        <div><p>{$order.p_title}</p></div>
+        <hr style="    border-top: 1px solid #000;border-bottom: 1px solid #616161;"/>
+        <p><span>选择出行时间</span>{$order.o_start}</p>
+        <hr style="    border-top: 1px solid #000;border-bottom: 1px solid #616161;"/>
+        <div>
+            <div class="ywr">
+                <p class="ywr1">成人</p>
+                <p>（限购4人）</p>
+            </div>
+            <span><img src="__PUBLIC__/Project/images/icon/rmb.png" />{$order.p_price}/人</span>
+        </div>
+        <hr style="    border-top: 1px solid #000;border-bottom: 1px solid #616161;"/>
+        <div>
+            <div class="ywr">
+                <p class="ywr1">儿童</p>
+                <p>（限购3人）</p>
+            </div>
+            <span><img src="__PUBLIC__/Project/images/icon/rmb.png" />{$order.p_cprice}/人</span>
+        </div>
+        <hr style="    border-top: 1px solid #000;border-bottom: 1px solid #616161;"/>
+        <div>
+            <p>同意拼房</p>
+            <p>房差：0（和他人拼房住，不需要支付房差）</p>
+        </div>
+        <hr style="    border-top: 1px solid #000;border-bottom: 1px solid #616161;"/>
+        <div>
+            <p>房间数量</p>
+            <p>根据您选择的游玩人数分配房间</p>
+        </div>
+        <hr style="border-top: 1px solid #000;border-bottom: 1px solid #616161;"/>
+        <div>
+            <p>保险产品</p>
+            <volist name="insur" id="insur">
+                <p>{$insur.in_title}-{$insur.in_category}-￥{$insur.in_price}/人 x {$order.o_nop}</p>
+            </volist>
+        </div>
+        <hr style="    border-top: 1px solid #000;border-bottom: 1px solid #616161;"/>
+        <div>
+            <p>游玩人信息</p>
+            <div style="float: right;">
+                <volist name="merber" id="merber">
+                    <p>{$merber.m_name}&nbsp;&nbsp;&nbsp;{$merber.m_num}</p>
+                </volist>
+            </div>
+        </div>
+        <hr style="    border-top: 1px solid #000;border-bottom: 1px solid #616161;"/>
+        <div>
+            <p class="lxfs">联系姓名</p>
+            <div class="lxfs1">
+                <p>{$order.o_user}</p>
+            </div>
+            <p class="lxfs">手机</p>
+            <div class="lxfs1">
+                <p>{$order.o_phone}</p>
+            </div>
+        </div>
+        <hr style="    border-top: 1px solid #000;border-bottom: 1px solid #616161;"/>
+        <p><span class="left">特殊要求</span>（选填）</p>
+        <div class="text">{$order.o_content}</div>
+        <if condition="$order.o_state eq 2">
+            <p>
+                <input type="checkbox" name="jifen" onclick="jifen()" value="{$_SESSION['infor']['data'][0]['EnablePoint']}"/>
+                您共有{$_SESSION['infor']['data'][0]['EnablePoint']}积分，可抵扣{$_SESSION['jfrmb']}元
+            </p>
+            <else/>
+        </if>
+        <em class="jiage">总计：<span id="aaa">{$order.o_aprace}</span>元</em>
+        <div>
+            <p>退改政策</p>
+            <div>
+                <p>订单支持部分人退订</p>
+                <p>出行前5天0点（含）之后退订，收取100%的违约金</p>
+                <p>出行前5天0点至出行前15天0点（含）之间退订，收取70%的违约金</p>
+                <p>出行前5天0点至出行前30天0点（含）之间退订，收取50%的违约金</p>
+            </div>
+        </div>
+    </div>
+        <elseif condition="$order.o_pcate eq 美食"/>
+    <div class="binguan">
+        <div class="top">
+            <span><img src="__PUBLIC__/Uploads/Project/{$order.p_image}" /> </span>
+            <div>
+                <p>{$order.p_little}</p>
+                <!--<p><if condition="$order.o_aprace eq ''"><else/>当前应支付<img src="__PUBLIC__/Project/images/icon/rmb.png" /><span>{$order.o_aprace}元</if></span></p>-->
+            </div>
+        </div>
+        <p><span class="left">就餐日期</span><span class="right">{$order.o_start}</span></p>
+        <p><span class="left">就餐人数</span><span class="right">{$order.o_nop}人</span></p>
+        <p><span class="left">联系人</span><span class="right">{$order.o_user}</span></p>
+        <p><span class="left">联系手机</span><span class="right">{$order.o_phone}</span></p>
+        <p><span class="left">预计到店</span><span class="right">{$order.o_atime}</span></p>
+
+        <p><span class="left">环境</span><span class="right">{$order.o_around}</span></p>
+        <p><span class="left">金额</span><span class="right">请根据实际用餐，与店家确认后买单！</span></p>
+        <p><span class="left">特殊要求</span>（选填）</p>
+        <div class="text">{$order.o_content}{$order.o_foodstart}</div>
+        <p style="font-size: 14px;text-align: center;"><if condition="$order.o_allrmb eq ''"><else/>当前应支付<span style="color: #f37b1d;">￥{$order.o_allrmb}元</if></span></p>
+        <a href="tel:021-53069999" class="right" style="border-radius: 25px;position: fixed;bottom: 60px;right: 20px;overflow: hidden;"><img src="__PUBLIC__/Project/images/icon/tellmedt.gif" style="word-wrap: break-word;" width="50px"  alt=""/></a>
+    </div>
+    </if>
+</div>
+<!-- 这里是底部 -->
+<div id="footer">
+    <a href="javascript:;" onclick="back()" class="left">返回</a>
+    <if condition="$order.o_state eq 2">
+        <!--支付分类-->
+        <if condition="$order.o_pcate eq 宾馆 and $order.o_state eq 2">
+            <a href="{:U('Wxpay/projectapi')}?id={$order.o_id}&cate=宾馆" class="right">支付订单</a>
+            <elseif condition="$order.o_pcate eq 旅游 and $order.o_state eq 2"/>
+            <a href="{:U('Wxpay/projectapi')}?id={$order.o_id}&cate=旅游" class="right">支付订单</a>
+            <elseif condition="$order.o_pcate eq 美食 and $order.o_state eq 2"/>
+            <a href="{:U('Project/projectorder')}?o_number={$order.o_number}" class="right">用餐完成</a>
+            <!--<a href="tle:1111" class="right">联系我们</a>-->
+            <!--<elseif condition="$order.o_pcate eq 美食 and $order.o_state eq 2 and $order.o_foodstart != 1"/>-->
+            <!--<a href="javascript:;" onclick="modaldemo()" class="right">买单</a>-->
+        </if>
+        <!--分割-->
+        <elseif condition="$order.o_state eq 1"/>
+        <a href="" class="right">待确认</a>
+        <elseif condition="$order.o_state eq 3"/>
+        <a href="{:U('Project/evaluation')}?o_id={$order.o_id}" class="right">待评价</a>
+        <elseif condition="$order.o_state eq 4"/>
+        <a href="" class="right">已完成</a>
+        <elseif condition="$order.o_state eq 5"/>
+        <a href="" class="right">已取消</a>
+    </if>
+</div>
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Project/css/H-ui.min.css" />
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/hui/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript">
+    function modaldemo(){
+        $("#modal-demo").modal("show");
+    }
+    function jifen() {
+        var id = $('input[name="o_id"]').val();	//出行时间
+        var jifen = $('input[name="jifen"]:checked').val();//积分
+        var aprace = $('input[name="aprace"]').val();	//价格
+        if (jifen == undefined) {
+            $.ajax({
+                type:"post",
+                url:"{:U('Project/jifen')}",//根据自己项目的需要写请求地址
+                data:{
+                    'allrmb':aprace,
+                    'id':id,
+                    'aprace':aprace,
+                },
+                dataType:'json',
+                success:function(data){
+                    //alert(JSON.stringify(data));
+                    if (data == 0) {
+                        alert("系统超时！");
+                    }else {
+                        var html ='';
+                        html += ''+data.o_allrmb+'';
+                        $('#aaa').html(html);
+                    }
+                },
+                error:function(data) {
+                    console.log(data.msg);
+                },
+            })
+        }else{
+            var jifen2 = (jifen/100);
+            if (jifen2 < aprace){
+                var allrmb = (aprace - jifen2);
+            }else{
+                var allrmb = 0.01;
+            }
+            $.ajax({
+                type:"post",
+                url:"{:U('Project/jifen')}",//根据自己项目的需要写请求地址
+                data:{
+                    'allrmb':allrmb,
+                    'id':id,
+                    'aprace':aprace,
+                },
+                dataType:'json',
+                success:function(data){
+                    //alert(JSON.stringify(data));
+                    if (data == 0) {
+                        alert("系统超时！");
+                    }else {
+                        var html ='';
+                        html += ''+data.o_allrmb+'';
+                        $('#aaa').html(html);
+                    }
+                },
+                error:function(data) {
+                    console.log(data.msg);
+                },
+            })
+        }
+
+    }
+</script>
+<script language=javascript>
+function back()
+{
+    window.history.back();
+}
+</script>
+<style type="text/css">
+    .modal-body{
+        overflow: hidden;
+        text-align: center;
+    }
+    .modal-body>input{
+        -webkit-appearance: none;/*兼容苹果手机*/
+        line-height: 30px;
+        display: block;
+        margin: auto;
+        font-size: 14px;
+    }
+    .suuure{
+        -webkit-appearance: none;/*兼容苹果手机*/
+        font-size: 15px;
+        color: #fff;
+        background-color: #009688;
+        border-color: #009688;
+        display: inline-block;
+        box-sizing: border-box;
+        cursor: pointer;
+        text-align: center;
+        font-weight: 400;
+        white-space: nowrap;
+        vertical-align: middle;
+        border: solid 1px #ddd;
+        width: auto;
+        -webkit-transition: background-color .1s linear;
+        -moz-transition: background-color .1s linear;
+        -o-transition: background-color .1s linear;
+        transition: background-color .1s linear;
+    }
+    .modal-header .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        padding: 0 5px;
+        background: #f95c5c;
+    }
+    .btn{
+        font-size: 15px;
+    }
+    .modal-title{
+        color: #666;
+    }
+</style>
+<!--普通弹出层-->
+<form action="{:U('Project/orderfood')}" method="post" style="overflow: hidden;" class="search">
+    <div id="modal-demo" class="modal fade middle" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content radius">
+                <div class="modal-header">
+                    <h3 class="modal-title">请与商家确认价格并输入买单</h3>
+                    <a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void();">×</a>
+                </div>
+                <div class="modal-body">
+                    <input style="display:inline-block;" type="text" class="sousuo" name="keywords" class="text" placeholder="请输入金额"/>单位：元
+                    <input type="hidden" name="o_id" value="{$order.o_id}"/>
+                    <input type="hidden" name="cate" value="美食"/>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" value="确定" class="suuure" />
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>

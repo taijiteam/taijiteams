@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>我的收藏</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Activity/css/style.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Activity/css/ertaostyle.css">
+<style type="text/css">
+.center>.cbody{
+	margin-bottom: 60px;
+}
+.center>.cbody>h4{
+	color: rgb(248,194,84);
+	width: 90%;
+	margin: auto;
+	margin-top: 25px;
+}
+.center>.cbody>ul>a>li>div>object>a>img{
+	width: 25px;
+	display: block;
+	float: right;
+}
+.center>.cbody>ul{
+	width: 90%;
+	margin: 0 auto;
+	padding: 0;
+	overflow: hidden;
+	border-top: 1px solid rgb(151,151,151);
+}
+.center>.cbody>ul>a>li{
+	padding: 15px 0;
+	width: 100%;
+	margin: 0px;
+	border-bottom: 1px solid rgb(151,151,151);
+	overflow: hidden;
+}
+.center>.cbody>ul>a>li>span{
+	width: 38.52%;
+	height: 21.335vw;
+	background: rgb(216,216,216);
+	border-radius: 2px;
+	display: block;
+	float: left;
+}
+.center>.cbody>ul>a>li>span>img{
+	width: 100%;
+	height: 100%;
+}
+.center>.cbody>ul>a>li>div{
+	margin-left: 2.373%;
+	width: 57%;
+	display: block;
+	float: left;
+}
+.center>.cbody>ul>a>li>div>p{
+	margin: 0px;
+	font-size: 12px;
+	overflow: hidden;
+	line-height: 19px;
+}
+.center>.cbody>ul>a>li>div>.title{
+	font-size: 14px;
+}
+.center>.cbody>ul>a>li>div>p>.rmb{
+	display: block;
+	float: left;
+	width: 33.3%;
+	color: rgb(147,208,67);
+}
+.center>.cbody>ul>a>li>div>p>.address{
+	display: block;
+	float: left;
+	width: 33.3%;
+}
+.center>.cbody>ul>a>li>div>p>.xddd{
+	display: block;
+	float: left;
+}
+.center>.cbody>ul>a>li>div>p>object>a{
+	display: block;
+	float: right;
+	width: 33.3%;
+	text-align: center;
+	border: 1px solid rgb(147,208,67);
+	border-radius: 10px;
+}
+</style>
+<body class="center">
+<!-- 这里是头部 -->
+<header class="cheader">
+	<div>
+		<p><img src="{$_SESSION['information']['headimgurl']}"></p>
+	</div>
+	<p><span class="span1"><img style=" width: 23px;margin-top: 4px;" src="__PUBLIC__/Activity/images/icon/shoucang.svg">我的收藏</span><img class="dao" src="__PUBLIC__/Project/images/icon/dao.png"><!-- <span class="span2"></span> --></p>
+</header>
+<!-- 这里是身体 -->
+<div class="cbody">
+	<!-- 栏目1 -->
+	<h4>活动用品</h4>
+	<ul>
+		<volist name="suplist" id="suplist">
+			<a href="{:U('Activity/content')}?id={$suplist.a_id}&category={$suplist.a_category}&cardid={$_SESSION['cardId']}">
+				<li>
+					<span><img src="__PUBLIC__/Uploads/Activity/{$suplist.a_img}"></span>
+					<div>
+						<object><a href="javascript:;" onclick="admin_del(this,{$suplist.c_id})"><img src="__PUBLIC__/Project/images/icon/shoucang2.svg"></a></object>
+						<p class="title">{$suplist.a_title|htmlspecialchars_decode|strip_tags|mb_substr=0,20,'utf-8'}</p>
+						<p><span class="time">{$suplist.a_cate}</span></p>
+						<p><span class="time">{$suplist.a_ziying}</span></p>
+						<p>
+							<!-- <span class="address">上海黄浦</span> -->
+							<span class="rmb">￥{$suplist.a_price}</span>
+							<object><a href="{:U('Activity/content')}?id={$suplist.a_id}&category={$suplist.a_category}&cardid={$_SESSION['cardId']}">详情</a></object>
+						</p>
+					</div>
+				</li>
+			</a>
+		</volist>
+	</ul>
+	<h4>活动场地</h4>
+	<ul>
+		<volist name="sitelist" id="sitelist">
+			<a href="{:U('Activity/content')}?id={$sitelist.a_id}&category={$sitelist.a_category}&cardid={$_SESSION['cardId']}">
+				<li>
+					<span><img src="__PUBLIC__/Uploads/Activity/{$sitelist.a_img}"></span>
+					<div>
+						<object><a href="javascript:;" onclick="admin_del(this,{$sitelist.c_id})"><img src="__PUBLIC__/Project/images/icon/shoucang2.svg"></a></object>
+						<p class="title">{$sitelist.a_title|htmlspecialchars_decode|strip_tags|mb_substr=0,30,'utf-8'}</p>
+						<p><span class="time">类型：{$sitelist.a_type}</span></p>
+						<p><span class="time">场地：{$sitelist.a_site}</span></p>
+						<p>
+							<span class="xddd">规模：{$sitelist.a_scale}</span>
+							<!-- <span class="rmb">￥50起</span> -->
+							<object><a href="{:U('Activity/content')}?id={$sitelist.a_id}&category={$sitelist.a_category}&cardid={$_SESSION['cardId']}">详情</a></object>
+						</p>
+					</div>
+				</li>
+			</a>
+		</volist>
+	</ul>
+	<h4>活动项目</h4>
+	<ul>
+		<volist name="actlist" id="actlist">
+			<a href="{:U('Activity/content')}?id={$actlist.a_id}&category={$actlist.a_category}&cardid={$_SESSION['cardId']}">
+				<li>
+					<span><img src="__PUBLIC__/Uploads/Activity/{$actlist.a_img}"></span>
+					<div>
+						<object><a href="javascript:;" onclick="admin_del(this,{$actlist.c_id})"><img src="__PUBLIC__/Project/images/icon/shoucang2.svg"></a></object>
+						<p class="title">{$actlist.a_title|htmlspecialchars_decode|strip_tags|mb_substr=0,30,'utf-8'}</p>
+						<p><span class="time">{$actlist.a_start|htmlspecialchars_decode|strip_tags|mb_substr=0,10,'utf-8'}~{$actlist.a_end|htmlspecialchars_decode|strip_tags|mb_substr=0,10,'utf-8'}</span></p>
+						<p>
+							<span class="address">{$actlist.a_address|htmlspecialchars_decode|strip_tags|mb_substr=0,4,'utf-8'}</span>
+							<if condition="$actlist.a_price eq ''">
+								<else/>
+								<span class="rmb">￥{$actlist.a_price}起</span>
+							</if>
+							<if condition="$time lt $endTime ">
+								<object><a href="{:U('Activity/actappoint')}?id={$actlist.a_id}">立即报名</a></object>
+								<else/>
+								<object><a href="javascript:;">已结束</a></object>
+							</if>
+						</p>
+					</div>
+				</li>
+			</a>
+		</volist>
+	</ul>
+</div>
+<!-- 这里是底部 -->
+<include file="ActivityPublic/footer" />
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript">
+/*管理员-删除*/
+function admin_del(obj,id){
+	layer.confirm('确认要取消收藏吗？',function(index){
+		$.ajax({
+			type: 'POST',
+			url: '{:U('Activity/collecdel')}',
+			data: {cid:id},
+			dataType: 'json',
+			success: function(data){
+				if (data == 1){
+					//alert(data);
+					$(obj).parents("a").remove();
+					layer.msg('已经取消咯!',{icon:1,time:1000});
+				}else{
+					layer.msg('哎呦，运气不好哦，取消失败咯！',function(){});
+				}
+			},
+			error:function(data) {
+				console.log(data.msg);
+			},
+		});		
+	});
+}
+</script>
+<!-- the end -->
+</body>
+</html>

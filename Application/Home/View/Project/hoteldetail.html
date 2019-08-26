@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>房间详情</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Project/css/style.css">
+<style type="text/css">
+
+</style>
+<body class="hdetail">
+<!-- 这里是头部 -->
+<header>
+	<!-- banner statr -->
+	<div class="fullSlide">
+		<div class="bd">
+			<ul>
+				<volist name="images" id="images">
+					<li _src="url(__PUBLIC__/Uploads/Project/{$images.i_image})" style="background:#E2025E center 0 no-repeat;background-size: 100% 100%;"><a href="#"></a></li>
+				</volist>
+				
+			</ul>
+		</div>
+		<div class="hd"><ul></ul></div>
+		<span class="prev"></span>
+		<span class="next"></span>
+	</div>
+	<!--fullSlide end-->
+</header>
+<!-- 这里是身体 -->
+<div class="body">
+	<!-- 第一栏 -->
+	<div>
+		<h4>{$room.r_title}</h4>
+		<div>
+			<p>
+				<span class="span1">面积</span><span class="span2">{$room.r_area}㎡</span>
+				<span class="span1">早餐</span><span class="span2">{$room.r_breakfast}</span>
+			</p>
+			<p>
+				<span class="span1">楼层</span><span class="span2">{$room.r_floor}</span>
+				<span class="span1">窗户</span><span class="span2">{$room.r_window}</span>
+			</p>
+			<p>
+				<span class="span1">可住</span><span class="span2">可住</span>
+				<span class="span1">宽带</span><span class="span2">{$room.r_broadband}</span>
+			</p>
+			<p>
+				<span class="span1">卫浴</span><span class="span2">{$room.r_bathroom}</span>
+				<span class="span1">空调</span><span class="span2">{$room.r_tac}</span>
+			</p>
+			<p>
+				<span class="span1">房型</span><span class="span2">套房</span>
+				<span class="span1">床型</span><span class="span2">{$room.r_bedtype}</span>
+			</p>
+		</div>
+	</div>
+	<!-- 第二栏 -->
+	<div>
+		<h4>其他配套</h4>
+		<div>
+			<span class="span1">浴室配套</span><span class="span2">{$room.r_brf}</span>
+			<span class="span1">媒体设备</span><span class="span2">{$room.r_media}</span>
+			<span class="span1">生活电器</span><span class="span2">{$room.r_lea}</span>
+			<span class="span1">休闲娱乐</span><span class="span2">{$room.r_tle}</span>
+			<span class="span1">预订说明</span><span class="span2">{$room.r_instruction}</span>
+		</div>
+	</div>
+</div>
+<!-- 这里是底部 -->
+<footer>
+	<div>
+		<p><img src="__PUBLIC__/Project/images/icon/rmb.png">&nbsp;<span>{$room.r_price}</span>元</p>
+		<span><a href="{:U('Project/hotelappoint')}?r_id={$room.r_id}&openid={$_SESSION['openid']}">在线预订</a></span>
+	</div>
+</footer>
+</body>
+<!-- banner js -->
+<script type="text/javascript" src="__PUBLIC__/Project/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/js/superslide.2.1.js"></script>
+<script type="text/javascript">
+$(".fullSlide").hover(function(){
+    $(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
+},
+function(){
+    $(this).find(".prev,.next").fadeOut()
+});
+$(".fullSlide").slide({
+    titCell: ".hd ul",
+    mainCell: ".bd ul",
+    effect: "fold",
+    autoPlay: true,
+    autoPage: true,
+    trigger: "click",
+    startFun: function(i) {
+        var curLi = jQuery(".fullSlide .bd li").eq(i);
+        if ( !! curLi.attr("_src")) {
+            curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+        }
+    }
+});
+</script>
+<!-- the end -->
+</html>

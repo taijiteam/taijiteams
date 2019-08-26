@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>名医预约</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Doctor/css/style.css">
+</head>
+<body>
+	<include file="DoctorPublic/iheader" />
+	<div class="doctor">
+		<h3><img src="__PUBLIC__/Doctor/images/minigyi1.png">名医预约</h3>
+		<ul class="list">
+			<volist name="do_list" id="do_list">
+			<a href="{:U('Doctor/doctor_content')}?do_id={$do_list.do_Id}">
+				<li>
+					<img src="__PUBLIC__/img/{$do_list.do_photo}">
+					<div>
+						<object><a href="{:U('Doctor/appoint')}?do_id={$do_list.do_Id}">预约</a></object>
+						<h4>{$do_list.do_doctor}</h4>
+						<p>职位：{$do_list.do_position|htmlspecialchars_decode|strip_tags|mb_substr=0,4,'utf-8'}</p>
+						<p>医院：{$do_list.h_hospital}</p>
+						<volist name="do_list.erji" id="do_list_1">
+						<span>{$do_list_1.la_label}</span>
+						</volist>
+						<!-- <span>肺癌</span>
+						<span>食道癌</span> -->
+					</div>
+					<object><a href="{:U('Doctor/doctor_content')}?do_id={$do_list.do_Id}">详情&gt;&gt;</a></object>
+				</li>
+			</a>
+			</volist>
+			<!-- <a href="">
+				<li>
+					<img src="__PUBLIC__/Doctor/images/cao.png">
+					<div>
+						<object><a href="">预约</a></object>
+						<h4>曹子昂</h4>
+						<p>职位：主任医师</p>
+						<p>医院：仁济医院</p>
+						<span>肺部结节</span>
+						<span>肺癌</span>
+						<span>食道癌</span>
+					</div>
+					<object><a href="">详情&gt;&gt;</a></object>
+				</li>
+			</a>
+			<a href="">
+				<li>
+					<img src="__PUBLIC__/Doctor/images/cao.png">
+					<div>
+						<object><a href="">预约</a></object>
+						<h4>曹子昂</h4>
+						<p>职位：主任医师</p>
+						<p>医院：仁济医院</p>
+						<span>肺部结节</span>
+						<span>肺癌</span>
+						<span>食道癌</span>
+					</div>
+					<object><a href="">详情&gt;&gt;</a></object>
+				</li>
+			</a> -->
+		</ul>
+	</div>
+	<include file="DoctorPublic/footer" />
+</body>
+</html>

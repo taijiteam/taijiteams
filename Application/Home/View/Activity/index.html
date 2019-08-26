@@ -1,0 +1,404 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title>精彩活动</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Activity/css/default.css">
+<link rel="stylesheet" href="__PUBLIC__/Activity/css/jflex.min.css" type="text/css" media="all">
+<link href="http://fonts.useso.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="__PUBLIC__/Activity/css/idangerous.swiper.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Activity/css/ertaostyle.css">
+</head>
+<body class="index">
+<div class="banner">
+	<ul class="slides">
+		<li>
+			<img alt="" src="__PUBLIC__/Activity/images/shouyebanner.jpg">
+		</li>
+		<li>
+			<img alt="" src="__PUBLIC__/Activity/images/beasts_feature.jpg">
+		</li>
+		<li>
+			<img alt="" src="__PUBLIC__/Activity/images/element-taiwan-thmb.jpg">
+		</li>
+		<li>
+			<img alt="" src="__PUBLIC__/Activity/images/streets-newyork.jpg">
+		</li>
+	</ul>
+</div>
+<!--<a href="" id="back"><img src="__PUBLIC__/Activity/images/icon/fanhui.svg">返回至主页</a>-->
+<nav>
+	<ul>
+		<a href="{:U('Activity/list_sact')}?category=活动&catetime=最新活动">
+			<li>
+				<span><img src="__PUBLIC__/Activity/images/icon/zuixin.svg"></span>
+				<p>最新活动</p>
+			</li>
+		</a>
+		<a href="{:U('Activity/list_act')}?category=活动&catetime=往期活动">
+			<li>
+				<span><img src="__PUBLIC__/Activity/images/icon/wangqi.svg"></span>
+				<p>往期活动</p>
+			</li>
+		</a>
+		<a href="{:U('Activity/list_site')}?category=场地&catetime=活动场地">
+			<li>
+				<span><img src="__PUBLIC__/Activity/images/icon/changdi.svg"></span>
+				<p>活动场地</p>
+			</li>
+		</a>
+		<a href="{:U('Activity/list_sup')}?category=用品&catetime=活动用品">
+			<li>
+				<span><img src="__PUBLIC__/Activity/images/icon/yongpin.svg"></span>
+				<p>活动用品</p>
+			</li>
+		</a>
+	</ul>
+</nav>
+<div class="body">
+	<div class="div-hdtj">
+	 	<h4>活动推荐</h4>
+	 	<div class="wrap">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<ul class="bankuai">
+							<volist name="taglist_1" id="taglist_1">
+								<a href="{:U('Activity/content')}?id={$taglist_1.a_id}&category={$taglist_1.a_category}&cardid={$_SESSION['cardId']}">
+									<li>
+										<span><img src="__PUBLIC__/Uploads/Activity/{$taglist_1.a_img}"></span>
+										<p class="title">{$taglist_1.a_title|htmlspecialchars_decode|strip_tags|mb_substr=0,20,'utf-8'}</p>
+										<p><span class="time">{$taglist_1.a_start|htmlspecialchars_decode|strip_tags|mb_substr=0,10,'utf-8'}</span><span class="address">{$taglist_1.a_address|htmlspecialchars_decode|strip_tags|mb_substr=0,4,'utf-8'}</span></p>
+									</li>
+								</a>
+							</volist>
+						</ul>
+					</div>
+					<div class="swiper-slide">
+						<ul class="bankuai">
+							<volist name="taglist_2" id="taglist_2">
+								<a href="{:U('Activity/content')}?id={$taglist_2.a_id}&category={$taglist_2.a_category}&cardid={$_SESSION['cardId']}">
+									<li>
+										<span><img src="__PUBLIC__/Uploads/Activity/{$taglist_2.a_img}"></span>
+										<p class="title">{$taglist_2.a_title|htmlspecialchars_decode|strip_tags|mb_substr=0,20,'utf-8'}</p>
+										<p><span class="time">{$taglist_2.a_start|htmlspecialchars_decode|strip_tags|mb_substr=0,10,'utf-8'}</span><span class="address">{$taglist_2.a_address|htmlspecialchars_decode|strip_tags|mb_substr=0,4,'utf-8'}</span></p>
+									</li>
+								</a>
+							</volist>
+						</ul>
+					</div>
+					<div class="swiper-slide">
+						<ul class="bankuai">
+							<volist name="taglist_3" id="taglist_3">
+								<a href="{:U('Activity/content')}?id={$taglist_3.a_id}&category={$taglist_3.a_category}&cardid={$_SESSION['cardId']}">
+									<li>
+										<span><img src="__PUBLIC__/Uploads/Activity/{$taglist_3.a_img}"></span>
+										<p class="title">{$taglist_3.a_title|htmlspecialchars_decode|strip_tags|mb_substr=0,20,'utf-8'}</p>
+										<p><span class="time">{$taglist_3.a_start|htmlspecialchars_decode|strip_tags|mb_substr=0,10,'utf-8'}</span><span class="address">{$taglist_3.a_address|htmlspecialchars_decode|strip_tags|mb_substr=0,4,'utf-8'}</span></p>
+									</li>
+								</a>
+							</volist>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="tabs">
+				<a href="#" hidefocus="true" class="active"></a>
+				<a href="#" hidefocus="true"></a>
+				<a href="#" hidefocus="true"></a>
+			</div>
+			<p class="more"><a href="{:U('Activity/list_act')}?category=活动&catetime=最新活动">查看更多<img src="__PUBLIC__/Activity/images/icon/more.svg"></a>&nbsp;&nbsp;</p>
+		</div>
+	</div>
+	<div class="div-zxhd">
+	 	<div class="banner"><a href=""><img src="__PUBLIC__/Uploads/Activity/2018-11-21/wqdplus.png"></a></div>
+	 	<h4>最新活动</h4>
+	 	<div class="wrap">
+			<div class="swiper-container1">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<ul class="liebiao">
+							<volist name="newlist_1" id="newlist_1">
+								<a href="{:U('Activity/content')}?id={$newlist_1.a_id}&category={$newlist_1.a_category}&cardid={$_SESSION['cardId']}">
+									<li>
+										<span><img src="__PUBLIC__/Uploads/Activity/{$newlist_1.a_img}"></span>
+										<div>
+											<p class="title">{$newlist_1.a_title|htmlspecialchars_decode|strip_tags|mb_substr=0,30,'utf-8'}</p>
+											<p><span class="time">{$newlist_1.a_start|htmlspecialchars_decode|strip_tags|mb_substr=0,10,'utf-8'}</span></p>
+											<p>
+												<span class="address">{$newlist_1.a_address|htmlspecialchars_decode|strip_tags|mb_substr=0,4,'utf-8'}</span>
+												<if condition="$newlist_1.a_price eq ''"><else/>
+													<span class="rmb">￥{$newlist_1.a_price}起</span>
+												</if>
+												<object><a href="{:U('Activity/actappoint')}?id={$newlist_1.a_id}">立即报名</a></object>
+											</p>
+										</div>
+									</li>
+								</a>
+							</volist>
+						</ul>
+					</div>
+					<if condition="$newlist_2.a_id == ''"><else />
+					<div class="swiper-slide">
+						<ul class="liebiao">
+							<volist name="newlist_2" id="newlist_2">
+								<a href="{:U('Activity/content')}?id={$newlist_2.a_id}&category={$newlist_2.a_category}&cardid={$_SESSION['cardId']}">
+									<li>
+										<span><img src="__PUBLIC__/Uploads/Activity/{$newlist_2.a_img}"></span>
+										<div>
+											<p class="title">{$newlist_2.a_title|htmlspecialchars_decode|strip_tags|mb_substr=0,30,'utf-8'}</p>
+											<p><span class="time">{$newlist_2.a_start|htmlspecialchars_decode|strip_tags|mb_substr=0,10,'utf-8'}</span></p>
+											<p>
+												<span class="address">{$newlist_2.a_address|htmlspecialchars_decode|strip_tags|mb_substr=0,4,'utf-8'}</span>
+												<if condition="$newlist_3.a_price eq ''"><else/>
+													<span class="rmb">￥{$newlist_3.a_price}起</span>
+												</if>
+												<object><a href="{:U('Activity/actappoint')}?id={$newlist_2.a_id}">立即报名</a></object>
+											</p>
+										</div>
+									</li>
+								</a>
+							</volist>
+						</ul>
+					</div>
+					</if>
+					<if condition="$newlist_3.a_id == ''"><else />
+					<div class="swiper-slide">
+						<ul class="liebiao">
+							<volist name="newlist_3" id="newlist_3">
+								<a href="{:U('Activity/content')}?id={$newlist_3.a_id}&category={$newlist_3.a_category}&cardid={$_SESSION['cardId']}">
+									<li>
+										<span><img src="__PUBLIC__/Uploads/Activity/{$newlist_3.a_img}"></span>
+										<div>
+											<p class="title">{$newlist_3.a_title|htmlspecialchars_decode|strip_tags|mb_substr=0,30,'utf-8'}</p>
+											<p><span class="time">{$newlist_3.a_start|htmlspecialchars_decode|strip_tags|mb_substr=0,10,'utf-8'}</span></p>
+											<p>
+												<span class="address">{$newlist_3.a_address|htmlspecialchars_decode|strip_tags|mb_substr=0,4,'utf-8'}</span>
+												<if condition="$newlist_3.a_price eq ''"><else/>
+													<span class="rmb">￥{$newlist_3.a_price}起</span>
+												</if>
+												<object><a href="{:U('Activity/actappoint')}?id={$newlist_3.a_id}">立即报名</a></object>
+											</p>
+										</div>
+									</li>
+								</a>
+							</volist>
+						</ul>
+					</div>
+					</if>
+				</div>
+			</div>
+
+			<div class="tabs1">
+				<a href="#" hidefocus="true" class="active1"></a>
+				<if condition="$newlist_2.a_id == ''"><else />
+					<a href="#" hidefocus="true"></a>
+				</if>
+				<if condition="$newlist_3.a_id == ''"><else />
+				<a href="#" hidefocus="true"></a>
+				</if>
+			</div>
+			<p class="more"><a href="{:U('Activity/list_act')}?category=活动&catetime=最新活动">查看更多<img src="__PUBLIC__/Activity/images/icon/more.svg"></a>&nbsp;&nbsp;</p>
+		</div>
+	</div>
+	<div class="div-zxhd">
+	 	<div class="banner"><a href=""><img src="__PUBLIC__/Uploads/Activity/2018-11-21/jrfzlt.png"></a></div>
+	 	<h4>往期活动</h4>
+	 	<div class="wrap">
+			<div class="swiper-container2">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<ul class="liebiao">
+							<volist name="oldlist_1" id="oldlist_1">
+								<a href="{:U('Activity/content')}?id={$oldlist_1.a_id}&category={$oldlist_1.a_category}&cardid={$_SESSION['cardId']}">
+									<li>
+										<span><img src="__PUBLIC__/Uploads/Activity/{$oldlist_1.a_img}"></span>
+										<div>
+											<p class="title">{$oldlist_1.a_title|htmlspecialchars_decode|strip_tags|mb_substr=0,30,'utf-8'}</p>
+											<p><span class="time">{$oldlist_1.a_start|htmlspecialchars_decode|strip_tags|mb_substr=0,10,'utf-8'}~{$oldlist_1.a_end|htmlspecialchars_decode|strip_tags|mb_substr=0,10,'utf-8'}</span></p>
+											<p>
+												<span class="address">{$oldlist_1.a_address|htmlspecialchars_decode|strip_tags|mb_substr=0,4,'utf-8'}</span>
+												<if condition="$oldlist_1.a_price eq ''"><else/>
+													<span class="rmb">￥{$oldlist_1.a_price}起</span>
+												</if>
+												<!-- <object><a href="">立即报名</a></object> -->
+											</p>
+										</div>
+									</li>
+								</a>
+							</volist>
+						</ul>
+					</div>
+					<div class="swiper-slide">
+						<ul class="liebiao">
+							<volist name="oldlist_2" id="oldlist_2">
+								<a href="{:U('Activity/content')}?id={$oldlist_2.a_id}&category={$oldlist_2.a_category}&cardid={$_SESSION['cardId']}">
+									<li>
+										<span><img src="__PUBLIC__/Uploads/Activity/{$oldlist_2.a_img}"></span>
+										<div>
+											<p class="title">{$oldlist_2.a_title|htmlspecialchars_decode|strip_tags|mb_substr=0,30,'utf-8'}</p>
+											<p><span class="time">{$oldlist_2.a_start|htmlspecialchars_decode|strip_tags|mb_substr=0,10,'utf-8'}~{$oldlist_2.a_end|htmlspecialchars_decode|strip_tags|mb_substr=0,10,'utf-8'}</span></p>
+											<p>
+												<span class="address">{$oldlist_2.a_address|htmlspecialchars_decode|strip_tags|mb_substr=0,4,'utf-8'}</span>
+												<if condition="$oldlist_2.a_price eq ''"><else/>
+													<span class="rmb">￥{$oldlist_2.a_price}起</span>
+												</if>
+												<!-- <object><a href="">立即报名</a></object> -->
+											</p>
+										</div>
+									</li>
+								</a>
+							</volist>
+						</ul>
+					</div>
+					<div class="swiper-slide">
+						<ul class="liebiao">
+							<volist name="oldlist_3" id="oldlist_3">
+								<a href="{:U('Activity/content')}?id={$oldlist_3.a_id}&category={$oldlist_3.a_category}&cardid={$_SESSION['cardId']}">
+									<li>
+										<span><img src="__PUBLIC__/Uploads/Activity/{$oldlist_3.a_img}"></span>
+										<div>
+											<p class="title">{$oldlist_3.a_title|htmlspecialchars_decode|strip_tags|mb_substr=0,30,'utf-8'}</p>
+											<p><span class="time">{$oldlist_3.a_start|htmlspecialchars_decode|strip_tags|mb_substr=0,10,'utf-8'}~{$oldlist_3.a_end|htmlspecialchars_decode|strip_tags|mb_substr=0,10,'utf-8'}</span></p>
+											<p>
+												<span class="address">{$oldlist_3.a_address|htmlspecialchars_decode|strip_tags|mb_substr=0,4,'utf-8'}</span>
+												<if condition="$oldlist_3.a_price eq ''"><else/>
+													<span class="rmb">￥{$oldlist_3.a_price}起</span>
+												</if>
+												<!-- <object><a href="">立即报名</a></object> -->
+											</p>
+										</div>
+									</li>
+								</a>
+							</volist>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="tabs2">
+				<a href="#" hidefocus="true" class="active2"></a>
+				<a href="#" hidefocus="true"></a>
+				<a href="#" hidefocus="true"></a>
+			</div>
+			<p class="more"><a href="{:U('Activity/list_act')}?category=活动&catetime=往期活动">查看更多<img src="__PUBLIC__/Activity/images/icon/more.svg"></a>&nbsp;&nbsp;</p>
+		</div>
+	</div>
+	<div class="div-cdtj">
+	 	<div class="banner"><a href=""><img src="__PUBLIC__/Uploads/Activity/2018-11-21/suuek.png"></a></div>
+	 	<h4>场地推荐</h4>
+	 	<ul>
+	 		<volist name="sitelist" id="sitelist">
+		 		<a href="{:U('Activity/content')}?id={$sitelist.a_id}&category={$sitelist.a_category}&cardid={$_SESSION['cardId']}">
+		 			<li>
+		 				<span><img src="__PUBLIC__/Uploads/Activity/{$sitelist.a_img}"></span>
+		 				<p>{$sitelist.a_title|htmlspecialchars_decode|strip_tags|mb_substr=0,9,'utf-8'}</p>
+		 			</li>
+		 		</a>
+		 	</volist>
+	 	</ul>
+	 	<p class="more"><a href="{:U('Activity/list_site')}?category=场地&catetime=活动场地">查看更多<img src="__PUBLIC__/Activity/images/icon/more.svg"></a>&nbsp;&nbsp;</p>
+	</div>
+	<div class="div-hdyp">
+	 	<div class="banner"><a href=""><img src="__PUBLIC__/Uploads/Activity/2018-11-21/hzgy.png"></a></div>
+	 	<h4>活动用品</h4>
+	 	<ul>
+	 		<volist name="supplist" id="supplist">
+		 		<a href="{:U('Activity/content')}?id={$supplist.a_id}&category={$supplist.a_category}&cardid={$_SESSION['cardId']}">
+		 			<li>
+		 				<span><img src="__PUBLIC__/Uploads/Activity/{$supplist.a_img}"></span>
+		 				<p>{$supplist.a_title|htmlspecialchars_decode|strip_tags|mb_substr=0,5,'utf-8'}</p>
+		 			</li>
+		 		</a>
+		 	</volist>
+	 	</ul>
+	 	<p class="more"><a href="{:U('Activity/list_sup')}?category=用品&catetime=活动用品">查看更多<img src="__PUBLIC__/Activity/images/icon/more.svg"></a>&nbsp;&nbsp;</p>
+	</div>
+</div>
+<include file="Allfooter/allfooter" />
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/jquery/1.9.1/jquery.min.js"></script>
+<!-- 请在上方写相关业务脚本 -->
+<script type="text/javascript" src="__PUBLIC__/Activity/js/idangerous.swiper.min.js"></script> 
+<script type="text/javascript">
+//
+//	选项卡一
+//
+var tabsSwiper = new Swiper('.swiper-container',{
+	speed:500,
+	onSlideChangeStart: function(){
+		$(".tabs .active").removeClass('active');
+		$(".tabs a").eq(tabsSwiper.activeIndex).addClass('active');
+	}
+});
+
+$(".tabs a").on('touchstart mousedown',function(e){
+	e.preventDefault()
+	$(".tabs .active").removeClass('active');
+	$(this).addClass('active');
+	tabsSwiper.swipeTo($(this).index());
+});
+
+$(".tabs a").click(function(e){
+	e.preventDefault();
+});
+//
+//	选项卡二
+//
+var tabsSwiper1 = new Swiper('.swiper-container1',{
+	speed:500,
+	onSlideChangeStart: function(){
+		$(".tabs1 .active1").removeClass('active1');
+		$(".tabs1 a").eq(tabsSwiper1.activeIndex).addClass('active1');
+	}
+});
+
+$(".tabs1 a").on('touchstart mousedown',function(e){
+	e.preventDefault()
+	$(".tabs1 .active1").removeClass('active1');
+	$(this).addClass('active1');
+	tabsSwiper1.swipeTo($(this).index());
+});
+
+$(".tabs1 a").click(function(e){
+	e.preventDefault();
+});
+//
+//	选项卡三
+//
+var tabsSwiper2 = new Swiper('.swiper-container2',{
+	speed:500,
+	onSlideChangeStart: function(){
+		$(".tabs2 .active2").removeClass('active2');
+		$(".tabs2 a").eq(tabsSwiper2.activeIndex).addClass('active2');
+	}
+});
+
+$(".tabs2 a").on('touchstart mousedown',function(e){
+	e.preventDefault()
+	$(".tabs2 .active2").removeClass('active2');
+	$(this).addClass('active2');
+	tabsSwiper2.swipeTo($(this).index());
+});
+
+$(".tabs2 a").click(function(e){
+	e.preventDefault();
+});
+</script>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Project/css/H-ui.min.css" />
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/hui/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Project/hui/lib/layer/2.4/layer.js"></script>
+<!-- 轮播 -->
+<script type="text/javascript" src="__PUBLIC__/Activity/js/jflex.min.js"></script>
+<script type="text/javascript">
+$('.banner').jFlex({
+	autoplay: true
+});
+</script>
+</body>
+</html>

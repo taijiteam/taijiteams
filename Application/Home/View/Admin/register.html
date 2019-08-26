@@ -1,0 +1,681 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>注册</title>
+    <meta name="keywords" content="渠道PLUS" />
+    <meta name="description" content="渠道PLUS" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <link rel="shortcut icon" href="http://www.qudaoplus.cn/images/favicon.ico?v=1" type="image/x-icon"/>
+    <link href="/Public/Club/regStatics/css/register.css?v=1" rel="stylesheet" type="text/css" />
+    <link href="/Public/Club/regStatics/css/mobiscroll.jquery.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="tk1">
+    <div class="alert-prompt prompt">
+        <div class="alert-content">
+            <h2></h2>
+            <div class="alert-btn">
+                <div class="close">确认</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="alert-prompt wait">
+        <div class="alert-content">
+            <h2></h2>
+        </div>
+    </div>
+
+    <div class="content register" style="display: block;">
+        <div class="login">
+            <span class="con-prompt"><strong>友情提醒: </strong>成员的任何消费本公司皆不支持现金支付。本公司任何形式的收款账户统一为: 上海渠道商务咨询有限公司</span><br><br>
+            <span>已是成员，点击 <a href="merberLogin?id=<?php echo $_REQUEST['id']; ?>"> 立即登录</a></span><!-- <br><span>非成员，点击 <a href=""> 了解成员权益</a></span> -->
+        </div>
+        <div class="mobile">
+            <input type="number" placeholder="请输入您的手机号码">
+            <b></b>
+        </div>
+        <div class="password">
+            <input type="password" placeholder="密码请输入6位数字">
+            <b></b>
+        </div>
+        <div class="password-again">
+            <input type="password" placeholder="确认密码">
+            <b></b>
+        </div>
+        <div class="verification">
+            <input type="number" placeholder="请输入验证码">
+            <b></b>
+            <i>获取验证码</i>
+        </div>
+        <div class="name">
+            <input type="text" placeholder="请输入您的真实姓名">
+            <b></b>
+        </div>
+        <div class="sex">
+            <span>请选择性别</span>
+            <label><input name="sex" type="radio" value="2"><span>女士</span></label>
+            <label><input name="sex" type="radio" value="1"><span>先生</span></label>
+        </div>
+        <div class="birth">
+            <input id="birth" type="text" placeholder="请选择您的生日">
+            <b></b>
+            <b class="list"></b>
+        </div>
+        <!-- <div class="recommend">
+            <input type="number" placeholder="推荐人卡号或手机号（选填）">
+            <b></b>
+        </div> -->
+
+        <div class="btn next">
+            <button>下一步</button>
+        </div>
+
+        <div class="agreement">
+            <!--<label><input type="checkbox"><span>同意</span></label>-->
+            <label id="tkty" style="display: none"><input id="tkty11" type="checkbox"><span>同意</span></label>
+            <!--<a href="http://www.qudaoclub.com/index.php?m=content&c=index&a=lists&catid=31">《渠道PLUS服务条款和条件》</a>-->
+            <a href="javascript:;" onclick="tkshow()">《渠道PLUS服务条款和条件》</a>
+        </div>
+
+    </div>
+
+    <div class="content sigi" style="display: none;">
+        <div class="recommend">
+            <input type="number" placeholder="推荐人卡号或手机号（选填）">
+            <b></b>
+        </div>
+        <div class="register-list">
+            <div class="service">
+                <h2>您更感兴趣的服务（选填）：</h2>
+                <div>
+                    <label for="service1"><input type="checkbox" id="service1"><span>高端人脉</span></label>
+                    <label for="service2"><input type="checkbox" id="service2"><span>名医特约</span></label>
+                    <label for="service3"><input type="checkbox" id="service3"><span>机场特享</span></label>
+                    <label for="service4"><input type="checkbox" id="service4"><span>金融支持</span></label>
+                </div>
+            </div>
+            <div class="personal">
+                <h2>私人定制：</h2>
+                <input type="text" placeholder="请填写您期望得到的服务">
+            </div>
+        </div>
+        <div class="register-list">
+            <div class="service">
+                <h2>您更感兴趣的活动（选填）：</h2>
+            </div>
+
+            <div class="work">
+                <select id="work">
+                    <option>工商</option>
+                    <option>税务</option>
+                    <option>金融</option>
+                    <option>法律</option>
+                    <option>法规</option>
+                    <option>政策</option>
+                </select>
+                <b class="list"></b>
+            </div>
+            <div class="social">
+                <select id="social">
+                    <option>金融</option>
+                    <option>IT</option>
+                    <option>互联网</option>
+                    <option>影视娱乐</option>
+                    <option>政府机关</option>
+                </select>
+                <b class="list"></b>
+            </div>
+            <div class="livelihood">
+                <select id="livelihood">
+                    <option>高尔夫</option>
+                    <option>红酒</option>
+                    <option>雪茄</option>
+                    <option>运动</option>
+                    <option>美食</option>
+                    <option>古玩</option>
+                </select>
+                <b class="list"></b>
+            </div>
+            <div class="art">
+                <select id="art">
+                    <option>昆曲</option>
+                    <option>京剧</option>
+                    <option>书法</option>
+                    <option>绘画</option>
+                    <option>歌曲</option>
+                    <option>歌剧</option>
+                    <option>交响乐</option>
+                    <option>摄影</option>
+                </select>
+                <b class="list"></b>
+            </div>
+
+            <div class="activity">
+                <input type="text" placeholder="其他感兴趣的活动">
+            </div>
+
+        </div>
+
+        <div class="btn submit">
+            <button>提交</button>
+        </div>
+
+    </div>
+<style type="text/css">
+.tk1{
+    overflow: hidden;
+}
+.tk{
+    position: fixed;
+    z-index: 1;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    /*overflow: auto;*/
+    /*display: none;*/
+}
+.tk>.head{
+    overflow: hidden;
+    color: #fff;
+    background: #000;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+}
+.tk>.head>.left1{
+    /*width: 30%;*/
+    display: block;
+    float: left;
+    overflow: hidden;
+}
+.tk>.head>.left1>a{
+    width: 25px;
+    display: block;
+    border: 2px solid #999;
+    text-align: center;
+    margin-left: 15px;
+    margin-top: 10px;
+    line-height: 25px;
+    padding: 3px 0;
+}
+.tk>.head>.left1>a>img{
+    width: 20px;
+}
+.tk>.head>.left2{
+    /*width: 70%;*/
+    display: block;
+    float: right;
+    overflow: hidden;
+}
+.tk>.head>.left2>div{
+    margin-top: 25px;
+    margin-right: 5px;
+    display: block;
+    float: left;
+}
+.tk>.head>.left2>div>p{
+    margin: 0;
+    line-height: 18px;
+    font-size: 14px;
+    font-family: "方正兰亭黑";
+}
+.tk>.head>.left2>img{
+    margin-top: 12px;
+    margin-right: 10px;
+    width: 90px;
+    display: block;
+    float: left;
+}
+.tk>.over{
+    position: fixed;
+    width: 100%;
+    height: 90%;
+    background: #fff;
+    /*overflow: auto;*/
+    overflow-y: scroll;
+    -webkit-overflow-scrolling : touch;
+}
+.tk>.over>.cont{
+    width: 90%;
+    margin: 0 auto;
+}
+.tk>.over>.cont>h3{
+    text-align: center;
+    margin: 4px 0;
+    font-size: 16px;
+    color: #555;
+}
+.tk>.over>.cont>span{
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    color: #555;
+}
+.tk>.over>.cont>p{
+    font-size: 12px;
+    text-indent:2em;
+    color: #555;
+    line-height: 21px;
+}
+.tk>.over>.cont>a{
+    display: block;
+    width: 150px;
+    margin: 30px auto;
+    background: #a09274;
+    color: #fff;
+    font-size: 15px;
+    padding: 3px 5px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 2px;
+    margin-bottom: 80px;
+}
+.tk>.title{
+    color: #dac79d;
+    background: #363636;
+    margin: 0;
+    text-align: center;
+    font-size: 14px;
+    line-height: 30px;
+    margin-top: 72px;
+}
+</style>
+<div class="tk">
+
+    <div class="head">
+        <div class="left1"><!--<a href="javascript:;" onclick="back()"><img src="__PUBLIC__/Merber/images/icon/back.png"></a>--></div>
+        <div class="left2">
+            <div>
+                <p>SERVICE TERMS</p>
+                <p>服务条款</p>
+            </div>
+            <img src="/Public/Merber/images/icon/dao.png">
+        </div>
+    </div>
+    <h3 class="title">服务条款</h3>
+    <div class="over">
+        <div class="cont">
+            <h3>渠道PLUS服务条款和条件</h3>
+            <span>请仔细阅读使用条款.</span>
+            <p>本条款和条件(包括以下提及的使用条款和隐私权政策)适用于中国境内的渠道PLUS活动，并且将构成您与特定的渠道关联公司、被特许人或被许可人（以下简称“渠道PLUS”）之间的法律协议，该特定的渠道PLUS关联公司、被特许人或被许可人指的是运营您的渠道PLUS成员卡的渠道PLUS或渠道PLUS的关联公司、被特许人或被许可人及其服务提供者。本条款和条件中的某些用词具有下述“定义”部分所规定的特定含义（在本文中另有定义的除外）。</p>
+            <p>在将使用条款和隐私权政策适用于渠道PLUS资源共享平台活动时，“渠道PLUS”一词应被解释为具有在本文上文中设定的定义。本条款和条件、使用条款和隐私权政策旨在构建一份一致的且完整的协议，但是，在本条款和条件与使用条款或隐私权政策存在任何分歧的情形下，应遵循本条款和条件的规定。本文在下文中将本文中规定的条款和条件以及上述使用条款及隐私权政策统称为“本条款和条件”。本条款和条件以中文书就。</p>
+            <h3>一、加入的资格和条件</h3>
+            <p>您确认、声明且保证您的年龄不小于18周岁，并且完全有能力签署本条款和条件并遵守和符合其规定。您同意按照渠道PLUS的要求提供准确完整的信息（例如在您向渠道PLUS注册您的帐户时），包括您的真实姓名、电子邮箱地址、邮寄地址和电话号码。此外，您同意维护并及时更新您的帐户信息，确保该等信息均为准确的、最新的和完整的。</p>
+            <p>您在选择加入渠道PLUS之前，应了解并认可渠道PLUS的概念、理念、信念。在加入渠道PLUS之后，您将贡献您的力量，并从中获益。在选择成为渠道PLUS的一员时，您已了解渠道PLUS成员的设置级别，您将授权我们通过合法且适当的渠道了解您个人和您所在企业的信用状况，这有助于我们向您推荐适当的产品和服务。具体的成员设置方式以及对应的加入资格和条件，渠道PLUS将根据您的具体情况予以审核批准。</p>
+            <h3>二、成员注册和隐私保护</h3>
+            <p>是否决定成为渠道PLUS的成员，完全取决于您本身，渠道PLUS完全尊重您的选择。要成为渠道PLUS的正式成员必须完全同意本条款和条件并完成相关的注册程序。对于您在注册时提供的个人信息和资料，渠道PLUS将根据内部的保密政策和隐私权政策进行保存和处理。这些资料和信息将用于渠道PLUS的信息发送、产品发送、编辑渠道PLUS的网站和应用统计资料及其他相关活动，为确保实现上述目的，这些信息和资料还可能在渠道PLUS关联公司内部或被特许人、被许可人或服务提供者内部之间共享。您的注册即为同意和许可渠道PLUS为上述目的使用您所提供的个人信息和资料。渠道PLUS将采取适当的技术和组织上的措施防止您的个人信息和资料为任何未经授权的第三方应用获取或使用。渠道PLUS原则上不得向任何第三方透露成员的注册资料，否则将向成员承担法律责任，除非：</p>
+            <p>1、应成员要求或同意；</p>
+            <p>2、应相应的法律或司法程序要求；</p>
+            <p>3、渠道PLUS及其关联公司或被特许人、被许可人及其相关服务提供者的相关业务（如产品更新信息、用户建议报告等）需要；</p>
+            <p>4、非因渠道PLUS及其关联公司过错导致的成员注册信息泄露；</p>
+            <p>由于不准确的信息而导致成员无法得到来自渠道PLUS的信息、产品或其他服务及活动，渠道PLUS不予负责，同时，渠道PLUS保留随时终止其成员资格和删除该成员个人信息的权利。</p>
+            <p>您在完成注册并或渠道PLUS批准后将成为渠道PLUS成员。请牢记您注册时的用户名和密码。您的注册信息是唯一的，请妥善保管，不得将其转让或授予他人使用，并对以此用户名从事的一切活动承担责任。</p>
+            <p>由于渠道PLUS内部开放性特征，一旦加入渠道PLUS，您将获得渠道PLUS、关联公司、被特许人和被许可人及其服务提供者以及渠道PLUS其他成员的个人信息以及服务信息，您承诺对此等信息以及所获得的服务的完全保密，不得向任何第三方泄露。</p>
+            <h3>三、服务条款的修改及责任限制</h3>
+            <p>渠道PLUS保留随时修改本服务条款、服务条件的权利，保留随时修改、暂停或中断本应用成员活动的权利。渠道PLUS不保证向成员提供的服务是连续的、精准的或及时的，不保证缺陷一定会被纠正，也不保证所提供的服务或者服务器不受病毒或其他有害程序、成分的侵袭。渠道PLUS服务条款或成员活动一旦发生变动，渠道PLUS将及时在相关应用、网站或以邮件的形式通知您，以保证您的权利。</p>
+            <h3>四、成员活动管理</h3>
+            <p>在您成为渠道PLUS成员后，将获得渠道PLUS的邀请参与渠道PLUS的各项成员服务。您将获得一份匹配您成员等级的《成员权益表》。您可以通过渠道PLUS的相关应用查看渠道PLUS成员的名录、查看折扣价优选商品和服务、并获得渠道PLUS提供的与您成员等级对应的免费服务。如前所述，渠道PLUS不保证所有服务的连续性、精准性和及时性。当您选择的服务无法适时获取时，在您所对应的成员等级中免费享有的部分，渠道PLUS可为您调换为价值相应的其他服务予以替换。</p>
+            <p>成员对服务的使用必须遵循中国的法律、法规、相关的国际条约以及本服务条款和条件。您必须对您在使用服务过程中的一切行为负责。成员承诺不发表任何非法的、中伤他人的、辱骂性的、恐吓性的、伤害性的、庸俗和淫秽的言论和信息资料；不发表任何危害国家安全或有损社会公共利益的言论和资料；不发表干扰渠道PLUS正常运行的言论和信息资料。否则渠道PLUS有权决定取消其成员资格并根据情节追求其法律责任。</p>
+            <h3>五、服务终止</h3>
+            <p>除本服务条款和条件已经阐明的责任之外，您仍应对下列情形承担责任：</p>
+            <p>1、从事违法经营，在社会上造成不良影响，或对渠道PLUS的正常活动产生不良影响的；</p>
+            <p>2、触犯刑法，被判处刑罚的；</p>
+            <p>3、渠道PLUS认为成员的行为对平台有损害或与平台的利益、理念相违的；</p>
+            <p>4、擅自转让渠道PLUS会籍的；</p>
+            <p>5、成员资格到期后未续费，经渠道PLUS确认的；</p>
+            <p>上述情形若有发生，渠道PLUS亦有权终止您的成员资格并保留追究您法律责任的权利。</p>
+            <p>渠道PLUS已经通过专人告知、书面通知等方式使您得知，您同意无论因何等原因导致的服务终止，已经支付的成员费用均不予退还。</p>
+            <h3>六、免责</h3>
+            <p>渠道PLUS所提供的各项服务（包括收费和免费的服务或者商品）均来自于渠道PLUS的被许可人、被特许人以及第三方服务提供者。渠道PLUS在选择服务时已履行审慎注意义务。在您通过渠道PLUS选择相关的服务的同时，您应对所获得的服务或商品进行确认。在购买和使用服务或商品时，您与该服务或商品的提供者产生了一般意义上的法律行为，并由该行为双方承担相应的法律责任。渠道PLUS有义务在发生问题或纠纷时为双方提供咨询和意见以更好的解决该等纠纷，但渠道PLUS并不直接对此承担法律责任。</p>
+            <p>因渠道PLUS内部开放性特征，您在与渠道PLUS其他成员、服务提供者形成活动时，除应遵循本服务条款和条件规定的行为准则之外，亦因对活动的安全、合法承担相应的责任。渠道PLUS将竭力为所有成员和提供帮助和服务，但并不直接对成员的各项行为承担法律责任。</p>
+            <h3>七、法律效力</h3>
+            <p>本服务条款受中华人民共和国法律管辖。渠道PLUS和渠道PLUS成员一致同意遵守中国法律。若本服务条款和条件的任何部分与中国法律相抵触，则这些条款将参照中国法律进行修改，并不影响其他条款的执行；若本服务条款与渠道PLUS相关规定抵触，则这些条款将参照渠道PLUS的规定进行解释或者修改，并不影响其他条款执行。</p>
+            <h3>八、适用法律及争议解决</h3>
+            <p>本服务条款和条件适用中国法律，并依据中国法律解释。凡因本服务条款和条件引起的或任何与渠道PLUS活动、服务、商品的购买和使用有关的纠纷、争议或索赔，首先应由该等纠纷、争议或索赔的相关当事方通过友好协商解决，如果无法友好协商解决的，均应提交上海市黄浦区人民法院予以裁判。</p>
+            <h3>九、本服务条款和条件的解释权归渠道PLUS运营方所有。</h3>
+            <p style="text-align: right">渠道PLUS资源共享平台</p>
+            <a href="javascript:;" onclick="tkclose()">已阅读并同意条款</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<!--<script type="text/javascript" src="__Club__/regStatics/js/jquery.js"></script>-->
+<!--<script type="text/javascript" src="__Club__/regStatics/js/mobiscroll.jquery.min.js"></script>-->
+<script type="text/javascript" src="/Public/Club/regStatics/js/jquery.js"></script>
+<script type="text/javascript" src="/Public/Club/regStatics/js/mobiscroll.jquery.min.js"></script>
+<script type="text/javascript">
+    var openId = "<?php echo $_GET['identity']; ?>";        //一卡易接口获取微信openid
+    var openId = '<?php echo $id; ?>';        //微信接口获取openid
+
+    //绑定选择
+    $(document).ready(function(){
+
+        $('#birth').mobiscroll().date({
+            theme: 'ios',
+            display: 'bottom',
+            mode: 'bubble',
+            dateFormat: 'yyyy年mm月dd日',
+            lang: 'zh',
+            max: new Date()
+        }).siblings('b').click(function(){
+            $('#birth').mobiscroll('show');
+        });
+
+        //工作类
+        $('#work').mobiscroll().select({
+            theme: 'ios',
+            display: 'bottom',
+            lang: 'zh'
+        });
+
+        $('.work input').val('').attr('placeholder','工作类');
+
+        //社交类
+        $('#social').mobiscroll().select({
+            theme: 'ios',
+            display: 'bottom',
+            lang: 'zh'
+        });
+
+        $('.social input').val('').attr('placeholder','社交类');
+
+        //生活类
+        $('#livelihood').mobiscroll().select({
+            theme: 'ios',
+            display: 'bottom',
+            lang: 'zh'
+        });
+
+        $('.livelihood input').val('').attr('placeholder','生活类');
+
+        //艺术类
+        $('#art').mobiscroll().select({
+            theme: 'ios',
+            display: 'bottom',
+            lang: 'zh'
+        });
+
+        $('.art input').val('').attr('placeholder','艺术类');
+
+    });
+
+
+
+
+    $(document).ready(function(){
+
+        //撑满背景
+        function changeBg(){
+            $('body').css({height: 'auto'});
+            if($('body').height() < $(window).height()){
+                $('body').height($(window).height());
+            }
+        }
+
+        changeBg();
+
+        //定义对象
+        var
+            $prompt = $('.prompt'),
+            $wait = $('.wait'),
+            $promptClose = $prompt.find('.close'),
+            $register = $('.register'),
+            $sigi = $('.sigi'),
+            $mobile = $register.find('.mobile'),
+            $password = $register.find('.password'),
+            $passwordAgain = $register.find('.password-again'),
+            $verification = $register.find('.verification'),
+            $verBtn = $verification.find('i'),
+            $name = $register.find('.name'),
+            $sex = $register.find('.sex'),
+            $birth  = $register.find('.birth'),
+            $nextBtn = $register.find('.next button'),
+            $agreement = $register.find('.agreement'),
+            $recommend = $sigi.find('.recommend'),
+            $service = $sigi.find('.service'),
+            $personal = $sigi.find('.personal'),
+            $work = $sigi.find('.work'),
+            $social = $sigi.find('.social'),
+            $livelihood = $sigi.find('.livelihood'),
+            $art = $sigi.find('.art'),
+            $activity = $sigi.find('.activity'),
+            $submitBtn = $sigi.find('.submit');
+
+        //定义变量
+        var timeOver = true, recommendClear,
+            mobile, password, passwordAgain, verification, name, sex, birth, recommend, agreement,
+            service1, service2, service3, service4, personal, work, social, livelihood, art, activity;
+
+        //错误标红
+        function errorMsgg(txt, $alert, $this){
+            if($this){
+                $this.addClass('error').siblings().removeClass('error');
+            }
+            $alert.find('h2').html(txt);
+            $alert.fadeIn();
+        }
+
+        //获取验证码
+        function times(){
+            var tim, t = 59;
+
+            tim = setInterval(function(){
+                if(t > 0){
+                    t--;
+                    $verBtn.text(t);
+                }
+                else{
+                    clearInterval(tim);
+                    $verBtn.text('重新发送');
+                    timeOver = true;
+                }
+            },1000);
+
+            $verBtn.text(t);
+        }
+
+        $verBtn.click(function(){
+            if(timeOver){
+                if(!(/^1\d{10}$/.test($mobile.find('input').val()))){
+                    errorMsgg('您输入的手机号码有误，请重新输入', $prompt, $mobile);
+                }
+                else{
+                    timeOver = false;
+                    $.ajax({
+                        type: "POST",
+                        url: "{:U('Admin/sendSms')}",      //短信验证
+                        data:{
+                          mobile: $mobile.find('input').val()
+                        },
+                        error: function(request) {
+                            errorMsgg('连接服务器超时，请检查您的网络连接', $prompt);
+                            timeOver = true;
+                        },
+                        success: function(data) {
+                            data = eval( '(' +data+ ')' );
+                            // console.log(data);
+                            if(data.code == '-2') {
+                                errorMsgg(data.message, $prompt, $mobile);
+                                timeOver = true;
+                            }
+                            else{
+                                times();
+                            }
+
+                        }
+                    });
+                }
+            }
+        });
+
+        //关闭提示框
+        $promptClose.click(function(){
+            $prompt.fadeOut();
+            if(recommendClear){
+                $recommend.find('input').val('');
+                recommendClear = false;
+            }
+        });
+
+        //切换性别
+        $sex.find('label').click(function(){
+            $(this).addClass('checked').siblings().removeClass('checked');
+        });
+
+        //必填的获取信息与验证
+        $nextBtn.click(function(){
+            $(document).scrollTop(0);
+            mobile = $mobile.find('input').val();
+            password = $password.find('input').val();
+            passwordAgain = $passwordAgain.find('input').val();
+            verification = $verification.find('input').val();
+            name = $name.find('input').val();
+            sex = $sex.find('.checked').find('input').val();
+            birth = $birth.find('input').val();
+            agreement = $agreement.find('input').attr('checked');
+
+            if(!(/^1\d{10}$/.test(mobile))){
+                errorMsgg('您输入的手机号码有误，请重新输入', $prompt, $mobile);
+            }
+            else if(password.length != 6){
+                errorMsgg('请输入正确的密码（6位的纯数字）', $prompt, $password);
+            }
+            else if(password != passwordAgain){
+                errorMsgg('两次输入的密码不同，请确认', $prompt, $passwordAgain);
+            }
+            else if(!verification){
+                errorMsgg('请填写短信验证码', $prompt, $verification);
+            }
+            else if(!name){
+                errorMsgg('请输入您的姓名', $prompt, $name);
+            }
+            else if(!sex){
+              errorMsgg('请选择您的性别', $prompt);
+            }
+            else if(!birth){
+                errorMsgg('请选择您的生日', $prompt, $birth);
+            }
+            else if(!agreement){
+                errorMsgg('请阅读服务条款后确认勾选', $prompt);
+            }
+            else{
+                $register.fadeOut('fast', function(){
+                    $sigi.fadeIn();
+                    changeBg();
+                });
+            }
+
+        });
+
+        //服务挑选
+        $service.find('label input').click(function(){
+            if($(this).parent().hasClass('checked')){
+                $(this).parent().removeClass('checked');
+            }
+            else{
+                $(this).parent().addClass('checked');
+            }
+        });
+
+        //选填的信息获取与注册
+        $submitBtn.click(function(){
+            recommend = $recommend.find('input').val();
+            service1 = $service.find('#service1').parent().hasClass('checked') ? $service.find('#service1').parent().text() : '';
+            service2 = $service.find('#service2').parent().hasClass('checked') ? $service.find('#service2').parent().text() : '';
+            service3 = $service.find('#service3').parent().hasClass('checked') ? $service.find('#service3').parent().text() : '';
+            service4 = $service.find('#service4').parent().hasClass('checked') ? $service.find('#service4').parent().text() : '';
+            personal = $personal.find('input').val();
+            work = $work.find('input').val();
+            social = $social.find('input').val();
+            livelihood = $livelihood.find('input').val();
+            art = $art.find('input').val();
+            activity = $activity.find('input').val();
+            errorMsgg('注册中，请稍候...', $wait);
+
+            $.ajax({
+                type: "POST",
+                url: "{:U('Admin/merberRegister')}",      //会员注册接口
+                data:{
+                  thirdOpenId : openId,
+                  cardId : mobile,
+                  password : password,
+                  smsyzm : verification,            //验证码
+                  trueName : name,       //姓名
+                  sex : sex,
+                  birth : birth,              //生日
+                  recommendCardId : recommend,           //推荐人卡号
+                  service1 : service1,
+                  service2 : service2,
+                  service3 : service3,
+                  service4 : service4,
+                  personal : personal,
+                  work : work,
+                  social : social,
+                  livelihood : livelihood,
+                  art : art,
+                  activity : activity
+                },
+                error: function(request) {
+                    errorMsgg('连接服务器超时，请重新注册', $prompt, $verification);
+                },
+                success: function(data) {
+                    //return console.log(data);
+                    //alert(data.message);
+                    // alert(JSON.stringify(data));
+                  data = eval('('+data+')');
+
+                  if( data.code == '0' && data.message == '注册成功'  ){
+                    window.location.href = data.url;
+                  }else if( data.code == '0' && data.message == '卡号已存在'  ){
+                    $wait.hide();
+                    errorMsgg( data.message , $prompt, $verification);
+                  }else if ( data.code == '-1' && data.message == '推荐人卡号不存在！' ) {
+                    recommendClear = true;
+                    $wait.hide();
+                    errorMsgg( '推荐人卡号不存在<br>请填写正确卡号或不填写' , $prompt, $recommend);
+                    $(document).scrollTop(0);
+                  }else if(data.code == '-2') {
+                    $wait.hide();
+                    errorMsgg('您输入的短信验证码有误，请重新输入', $prompt, $verification);
+                    $register.fadeIn();
+                    $sigi.fadeOut();
+                    changeBg();
+                  }else{
+                    $wait.hide();
+                    //alert('警告！');
+                    errorMsgg('连接服务器超时，请重新登录', $prompt);
+                  }
+                }
+            });
+        });
+
+    });
+
+
+function tkshow() {
+    // 添加class属性
+    $("#tk1").addClass("tk1");
+    //显示
+    $(".tk").show();
+}
+function tkclose() {
+    $("#tk1").removeClass("tk1");
+    $("#tkty").show();
+    $("#tkty11").prop("checked",true);
+    var shade = $(".tk");
+    shade.hide();
+}
+function back() {
+    var shade = $(".tk");
+    shade.hide();
+}
+
+</script>

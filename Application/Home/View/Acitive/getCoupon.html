@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>渠道PLUS丨亦享会员2019年天朝上品贵人计划</title>
+    <meta name="keywords" content="天朝上品" />
+    <meta name="description" content="渠道PLUS天朝上品" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="x-ua-compatible" content="IE=edge, chorme=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="__css__coupon.css">
+    <!-- <link href="https://cdn.bootcss.com/framework7/1.6.5/css/framework7.ios.min.css" rel="stylesheet"> -->
+
+</head>
+
+<body>
+  <section>
+      <div class="coupon-top">
+          <figure>
+              <img src="__img__coupon/alcohol.jpg" alt="">
+          </figure>
+      </div>
+      <div class="coupon-content">
+          <h2 style="margin: 20px 0;">渠道PLUS亦享会员</h2>
+          <h2>2019年天朝上品贵人计划</h2>
+          <div class="mobile"><input type="number" placeholder="请输入您的手机号"></div>
+          <div class="verification"><input type="number" placeholder="请输入您的验证码"><em>获取验证码</em></div>
+          <div class="userName"><input type="text" placeholder="请输入您的姓名"></div>
+          <div class="address"><input type="text" placeholder="请输入您的地址"></div>
+          <div class="recommend"><input  class="error"  type="number" placeholder="请输入六位数推荐码"></div>
+          <input type="hidden" value="{$audo}"/><input type="hidden" value="{$_COOKIE['audo']}"/><input type="hidden" value="{$_SESSION['audo']}"/>
+          <div class="btn"><button>提交注册</button></div>
+      </div>
+  </section>
+  <div>
+    <figure>
+      <img src="__img__coupon/particular.jpg?v=1" alt="">
+    </figure>
+  </div>
+
+</body>
+
+</html>
+<script type="text/javascript" src="__JS__jquery.min.js"></script>
+<!-- <script src="https://cdn.bootcss.com/framework7/1.6.5/js/framework7.min.js"></script>
+<script type="text/javascript" src="__JS__cityPicker.js"></script>
+<script type="text/javascript" src="__JS__regionsObject2.js"></script> -->
+<script>
+    $(document).ready(function(){
+      // var str = '<?php echo $overJson ?>';
+      // if ( str ) {
+      //   var obj = eval('(' + str + ')');
+      //   if ( obj.code=='-4' ) {
+      //     setTimeout(function(){
+      //       // alert(obj.message);
+      //       window.location.href = obj.url;
+      //     },500);
+      //   }
+      // }
+      var errorStr = '<?php echo $errorJson ?>';
+      if ( errorStr ) {
+        var errorObj = eval('(' + errorStr + ')');
+        if ( errorObj.code=='-1' ) {
+          console.log(errorObj.message);
+        }
+      }
+
+      var $con = $('.coupon-content'),
+          $mobile = $con.find('.mobile'),
+          $verification = $con.find('.verification'),
+          $verBtn = $verification.find('em'),
+          $recommend = $con.find('.recommend'),
+          $userName = $con.find('.userName'),
+          $address = $con.find('.address'),
+          $btn = $con.find('.btn button');
+
+        function times(){
+            var tim, t = 59;
+
+            tim = setInterval(function(){
+                if(t > 0){
+                    t--;
+                    $verBtn.text(t+'s');
+                }
+                else{
+                    clearInterval(tim);
+                    $verBtn.text('重新发送').removeClass('disabled');
+                }
+            },1000);
+
+            $verBtn.text(t+'s');
+        }
+
+        $verBtn.click(function(){
+            if(!$(this).hasClass('disabled')){
+                if(!(/^1\d{10}$/.test($mobile.find('input').val()))){
+                    $mobile.addClass('error').find('input').val('').attr('placeholder','手机号码填写有误！').parent().siblings().removeClass('error');
+                }
+                else{
+                    $(this).addClass('disabled');
+                    $.ajax({
+                        type: "POST",
+                        url: "{:U('Admin/sendSms')}",      //短信验证
+                        data:{
+                          state : '2',
+                          mobile: $mobile.find('input').val()
+                        },
+                        error: function(request) {
+                            $verification.addClass('error').find('input').val('').attr('placeholder','服务器错误').parent().siblings().removeClass('error');
+                            $verBtn.removeClass('disabled');
+                        },
+                        success: function(data) {
+                            data = eval( '(' +data+ ')' );
+                            times();
+                        }
+                    });
+                }
+            }
+        });
+
+        $btn.click(function(){
+            var openid = "<?php echo $openid; ?>",
+                mobile = $mobile.find('input').val(),
+                verification = $verification.find('input').val(),
+                userName = $userName.find('input').val(),
+                address = $address.find('input').val(),
+                recommend = $recommend.find('input').val();
+
+                // console.log(openid,mobile,verification,userName,address,recommend);
+                // return false;
+
+            if(!(/^1\d{10}$/.test(mobile))){
+                $mobile.addClass('error').find('input').val('').attr('placeholder','手机号码填写有误！').parent().siblings().removeClass('error');
+            }
+            else if(verification.length !== 4){
+                $verification.addClass('error').find('input').val('').attr('placeholder','验证码错误,请重新输入').parent().siblings().removeClass('error');
+            }
+            else if( recommend.length !== 6 ){
+                $recommend.addClass('error').find('input').val('').attr('placeholder','您输入的推荐码错误').parent().siblings().removeClass('error');
+            }
+            else if( !userName ){
+                $userName.addClass('error').find('input').val('').attr('placeholder','请输入您的姓名').parent().siblings().removeClass('error');
+            }
+            else if( !address ){
+                $address.addClass('error').find('input').val('').attr('placeholder','请输入您的地址').parent().siblings().removeClass('error');
+            }
+            else {
+              $btn.attr('disabled',true);
+              $.ajax({
+                  type: "POST",
+                  url:  "{:U('Acitive/getCoupon')}",
+                  data:{
+                    openid : openid,
+                    mobile : mobile,
+                    smsyzm : verification,
+                    userName : userName,
+                    address : address,
+                    recommend : recommend
+                  },
+                  error: function(request) {
+                      $verification.addClass('error').find('input').val('').attr('placeholder','服务器错误').parent().siblings().removeClass('error');
+                      $verBtn.removeClass('disabled');
+                  },
+                  success: function(data) {
+                      data = eval( '(' +data+ ')' );
+                      if( data.code=='0' ){
+                        //抵用券兑换成功跳转到商品页
+                        alert(data.message);
+                        window.location.href = data.url;
+                      }else if ( data.code=='-2') {
+                        $verification.addClass('error').find('input').val('').attr('placeholder',data.message).parent().siblings().removeClass('error');
+                        $btn.attr('disabled',false);
+                      }else if ( data.code=='-4') {
+                        alert(data.message);
+                        window.location.href = data.url;
+                      }else if ( data.code=='-5') {
+                        $recommend.addClass('error').find('input').val('').attr('placeholder',data.message).parent().siblings().removeClass('error');
+                        $btn.attr('disabled',false);
+                      }else if ( data.code=='-1' ) {
+                        console.log(data.message);
+                        alert('服务器请求超时');
+                        $btn.attr('disabled',false);
+                      }
+                  }
+              });
+            }
+        })
+    })
+</script>
+<!-- <script>
+  function pushHistory() {
+    var state = {
+      title: "title",
+      url: "#"
+    };
+    window.history.pushState(state, "title", "#");
+  }
+  pushHistory();
+
+  setTimeout(function(){
+        window.addEventListener("popstate", function(e){
+            setTimeout(function(){
+                location.href="http://kaid.cn/gUBBn"
+            },1000)
+        }, false)
+    },1000);
+
+</script>
+
+ -->
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+    var url=encodeURIComponent(location.href.split('#')[0]);
+    var title ="渠道PLUS丨亦享会员2018年天朝上品贵人计划";            //标题
+    var description ="成功注册，并购买成员卡成为渠道plus成员即可获赠价值1788元天朝上品（贵人）酒一箱";     //摘要
+    var thisUrl = location.href.split('#')[0];         //跳转的连接
+    var imgUrl ="http://www.qudaoplus.cn/merber_all_show/Public/Club/images/coupon/share.jpg";             // 图片
+    $.ajax({
+        type : "get",
+        url : "http://www.qudaoplus.cn/php/jssdk.php?url="+url,
+        dataType : "jsonp",
+        jsonp: "callback",
+        jsonpCallback:"success_jsonpCallback",
+        success : function(data){
+            wx.config({
+                appId: data.appId,
+                timestamp: data.timestamp,
+                nonceStr: data.nonceStr,
+                signature: data.signature,
+                url: data.url,
+                jsApiList: [
+                   "onMenuShareTimeline", //分享给好友
+                   "onMenuShareAppMessage", //分享到朋友圈
+                   "onMenuShareQQ",  //分享到QQ
+                   "onMenuShareWeibo" //分享到微博
+                ]
+            });
+        },
+        error:function(data){
+            alert("连接失败！");
+        }
+    });
+    wx.ready(function (){
+        var shareData = {
+            title: title,                                    //标题
+            desc: description,                               //内容
+            link: thisUrl,                                   //链接
+            imgUrl: imgUrl                                   //图片
+        };
+        wx.onMenuShareAppMessage(shareData);
+        wx.onMenuShareTimeline(shareData);
+        wx.onMenuShareQQ(shareData);
+        wx.onMenuShareWeibo(shareData);
+    });
+</script>
+<script type=text/javascript>
+  var browser = {
+  ua: navigator.userAgent.toLowerCase(),
+  msie: function() {
+    return /msie/.test(this.ua);
+  },
+  ie6: function() {
+    var self = this;
+    return self.msie() && /msie 6./.test(self.ua);
+  },
+  ie7: function() {
+    var self = this;
+    return self.msie() && /msie 7.0/.test(self.ua);
+  },
+  ie8: function() {
+    var self = this;
+    return self.msie() && /msie 8.0/.test(self.ua);
+  }
+  };
+  if (!browser.ie6() && !browser.ie7()) {} else {
+  window.location.href = 'update.html';
+  }
+  $(document).ready(function(){
+      //	点击menu中的li改变banner中的图片
+          $(".menu li").click(function(){
+              var num=$(this).index();
+              $('.banner li').eq(num).fadeIn(500).siblings().fadeOut(500);
+              $(this).addClass('active').siblings().removeClass('active');
+          });
+      //给banner中的img加遮罩
+          $(".banner li .img-box").hover(function(){
+              $(this).addClass('active').find('a').fadeIn(300);
+          },function(){
+              $(this).removeClass('active').find('a').fadeOut(300);
+          });
+  });
+</script>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- 防止手机点击放大问题 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<!-- the end -->
+<title><if condition="$cate==''">{$catetime}<else/>{$cate}</if></title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Activity/css/default.css">
+<link rel="stylesheet" href="__PUBLIC__/Activity/css/jflex.min.css" type="text/css" media="all">
+<link href="http://fonts.useso.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="__PUBLIC__/Activity/css/idangerous.swiper.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Activity/css/ertaostyle.css">
+<script src="__PUBLIC__/Activity/js/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="__PUBLIC__/Activity/js/comm.js"></script>
+</head>
+<style type="text/css">
+
+</style>
+<body class="list">
+<div class="banner">
+	<ul class="slides">
+		<li>
+			<img alt="" src="__PUBLIC__/Activity/images/shouyebanner.jpg">
+		</li>
+		<li>
+			<img alt="" src="__PUBLIC__/Activity/images/beasts_feature.jpg">
+		</li>
+		<li>
+			<img alt="" src="__PUBLIC__/Activity/images/element-taiwan-thmb.jpg">
+		</li>
+		<li>
+			<img alt="" src="__PUBLIC__/Activity/images/streets-newyork.jpg">
+		</li>
+	</ul>
+</div>
+<div class="body">
+	<div class="title">
+		<h4>{$keywords}</h4>
+		<!-- <ul id="starlist">
+			<li><a href="{:U('Activity/list_act')}?category=活动&catetime=往期活动">全部</a></li>
+			<li><a href="{:U('Activity/list_act')}?category=活动&catetime=往期活动&cate=酒会">酒会</a></li>
+			<li><a href="{:U('Activity/list_act')}?category=活动&catetime=往期活动&cate=论坛">论坛</a></li>
+			<li><a href="{:U('Activity/list_act')}?category=活动&catetime=往期活动&cate=沙龙">沙龙</a></li>
+		</ul> -->
+	</div>
+	<!-- <p><a class="week">最近一周</a><a class="month">最近一月</a></p> -->
+	<ul class="liebiao">
+		<volist name="alist" id="alist">
+			<if condition="$alist.a_category eq 活动">
+			<a href="{:U('Activity/content')}?id={$alist.a_id}&category={$alist.a_category}&cardid={$_SESSION['cardId']}">
+				<li>
+					<span><img src="__PUBLIC__/Uploads/Activity/{$alist.a_img}"></span>
+					<div>
+						<p class="title">{$alist.a_title|htmlspecialchars_decode|strip_tags|mb_substr=0,30,'utf-8'}</p>
+						<p><span class="time">{$alist.a_start|htmlspecialchars_decode|strip_tags|mb_substr=0,10,'utf-8'}~{$alist.a_end|htmlspecialchars_decode|strip_tags|mb_substr=0,10,'utf-8'}</span></p>
+						<p>
+							<span class="address">{$alist.a_address|htmlspecialchars_decode|strip_tags|mb_substr=0,4,'utf-8'}</span>
+							<if condition="$alist.a_price eq ''">
+								<span class="rmb">免费</span>
+								<else/>
+								<span class="rmb">￥{$alist.a_price}起</span>
+							</if>
+							<if condition="$alist.a_end lt $time">
+								<object><a href="{:U('Activity/actappoint')}?id={$alist.a_id}">立即报名</a></object>
+								<else/>
+							</if>
+						</p>
+					</div>
+				</li>
+			</a>
+			<elseif condition="$alist.a_category eq 场地"/>
+			<a href="{:U('Activity/content')}?id={$alist.a_id}&category={$alist.a_category}&cardid={$_SESSION['cardId']}">
+				<li>
+					<span><img src="__PUBLIC__/Uploads/Activity/{$alist.a_img}"></span>
+					<div>
+						<p class="title">{$alist.a_title|htmlspecialchars_decode|strip_tags|mb_substr=0,30,'utf-8'}</p>
+						<p><span class="time">类型：{$alist.a_type}</span></p>
+						<p><span class="time">场地：{$alist.a_site}</span></p>
+						<p>
+							<span class="time">规模：{$alist.a_scale}</span>
+							<!-- <span class="rmb">￥50起</span> -->
+							<!-- <object><a href="">立即报名</a></object> -->
+						</p>
+					</div>
+				</li>
+			</a>
+			<elseif condition="$alist.a_category eq 用品"/>
+			<a href="{:U('Activity/content')}?id={$alist.a_id}&category={$alist.a_category}&cardid={$_SESSION['cardId']}">
+				<li>
+					<span><img src="__PUBLIC__/Uploads/Activity/{$alist.a_img}"></span>
+					<div>
+						<p class="title">{$alist.a_title|htmlspecialchars_decode|strip_tags|mb_substr=0,20,'utf-8'}</p>
+						<p><span class="time">{$alist.a_cate}</span></p>
+						<p><span class="time">{$alist.a_ziying}</span></p>
+						<p>
+							<!-- <span class="address">上海黄浦</span> -->
+							<span class="rmb">￥{$alist.a_price}</span>
+							<object><a href="{:U('Activity/content')}?id={$alist.a_id}&category={$alist.a_category}&cardid={$_SESSION['cardId']}">详情</a></object>
+						</p>
+					</div>
+				</li>
+			</a>
+			</if>
+		</volist>
+	</ul>
+</div>
+<include file="ActivityPublic/footer" />
+<!-- 请在上方写相关业务脚本 -->
+<!-- 轮播 -->
+<script type="text/javascript" src="__PUBLIC__/Activity/js/jflex.min.js"></script>
+<script type="text/javascript">
+$('.banner').jFlex({
+	autoplay: true
+});
+</script>
+</body>
+</html>
